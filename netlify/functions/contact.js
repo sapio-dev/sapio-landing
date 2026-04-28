@@ -1,7 +1,7 @@
 import { Resend } from 'resend';
 
 const TO_EMAIL = process.env.CONTACT_TO || 'diego@sapio.dev';
-const FROM_EMAIL = process.env.RESEND_FROM || 'Sapio <noreply@sapio.dev>';
+const FROM_EMAIL = process.env.RESEND_FROM || 'Sapio <onboarding@sapio.dev>';
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const escapeHtml = (s) =>
