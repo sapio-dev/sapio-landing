@@ -1246,19 +1246,47 @@
     .nav-links .nav-cta { display: inline-flex; }
 
     /* HERO */
-    .hero { padding: 110px 0 0; min-height: 0; display: block; }
+    .hero { padding: 96px 0 48px; min-height: 0; display: block; }
     .hero-main { padding: 0; }
+    .eyebrow {
+      margin-bottom: 24px;
+      font-size: 10.5px;
+      letter-spacing: 0.18em;
+    }
+    .eyebrow::before { width: 24px; }
+    h1.hero-title {
+      font-size: clamp(40px, 10vw, 56px);
+      line-height: 1.02;
+      margin-bottom: 24px;
+      max-width: 100%;
+    }
+    .hero-sub {
+      font-size: 16px;
+      line-height: 1.55;
+      margin-bottom: 32px;
+      max-width: 100%;
+    }
     .hero-footer { padding: 28px 0 36px; }
     .hero-footer .container { flex-direction: column; align-items: flex-start; gap: 20px; }
-    .live-bar { margin-top: 40px; padding-top: 24px; max-width: 100%; }
-    .live-bar .num { font-size: 40px; }
+    .live-bar { margin-top: 32px; padding-top: 20px; max-width: 100%; }
+    .live-bar .num { font-size: 36px; }
     .scroll-hint { display: inline-flex; }
     .scroll-hint::before { width: 28px; }
     .hero-cta { max-width: 100%; }
-    .hero-cta-row { flex-direction: column; gap: 10px; }
-    .hero-form { flex-direction: column; align-items: stretch; gap: 10px; }
+    .hero-cta-row { flex-direction: column; gap: 12px; }
+    .hero-form { flex-direction: column; align-items: stretch; gap: 12px; }
+    /* Mobile: reseteamos el truco de altura forzada que usamos en desktop */
+    .hero-cta-row .hero-input,
+    .hero-cta-row .hero-submit,
+    .hero-cta-row .hero-schedule {
+      height: auto;
+      padding-top: 18px;
+      padding-bottom: 18px;
+      line-height: 1.4;
+    }
+    .hero-cta-row .hero-input { padding-left: 22px; padding-right: 22px; }
     .hero-submit { justify-content: center; }
-    .hero-schedule { justify-content: center; padding: 16px 26px; }
+    .hero-schedule { justify-content: center; padding-left: 26px; padding-right: 26px; }
 
     /* PROBLEM — mantiene parallax. El número gigante queda como watermark detrás del texto */
     .problem { padding: 96px 0 64px; }
@@ -1529,7 +1557,7 @@
 <section class="problem">
   <div class="container">
     <div class="section-header">
-      <div class="section-label"><span class="num">01 /</span> El problema</div>
+      <div class="section-label">El problema</div>
       <h2 class="section-title">Tu marca <em>no duerme</em>. Tu equipo sí.</h2>
     </div>
     <div class="problem-row">
@@ -1605,7 +1633,7 @@
             </div>
           </div>
           <aside class="modules-title-col">
-            <div class="section-label"><span class="num">02 /</span> La plataforma</div>
+            <div class="section-label">La plataforma</div>
             <h2 class="section-title">Una plataforma. <em>Cinco inteligencias.</em> Cero puntos ciegos.</h2>
           </aside>
         </div>
@@ -1618,7 +1646,7 @@
 <section class="results">
   <div class="container">
     <div class="section-header">
-      <div class="section-label"><span class="num">03 /</span> Resultados</div>
+      <div class="section-label">Resultados</div>
       <h2 class="section-title">Lo que <em>cambia</em> cuando Sapio opera tu marca.</h2>
     </div>
     <div class="results-grid" data-counter>
@@ -1651,7 +1679,7 @@
 <section class="differentiator">
   <div class="container">
     <div class="section-header">
-      <div class="section-label"><span class="num">04 /</span> La diferencia</div>
+      <div class="section-label">La diferencia</div>
       <h2 class="section-title">No es otra herramienta. <em>Es una categoría nueva.</em></h2>
     </div>
     <div class="diff-axis">
