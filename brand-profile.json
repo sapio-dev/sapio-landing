@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.0",
+  "brand_name": "Sapio Sense",
+  "website_url": "local://sense/mycelium-public",
+  "extracted_at": "2026-04-25T00:00:00Z",
+  "extraction_source": "local files: index.html, src/index.css, tailwind.config.ts, src/pages/Dashboard.tsx",
+  "voice": {
+    "formal_casual": 4,
+    "rational_emotional": 3,
+    "playful_serious": 3,
+    "bold_subtle": 6,
+    "traditional_innovative": 7,
+    "expert_accessible": 5,
+    "descriptors": ["intelligent", "vigilant", "executive"],
+    "tone_signals": [
+      "tagline: 'Turn social noise into clarity'",
+      "dashboard subheader: 'Resumen de salud conversacional · vista ejecutiva'",
+      "section labels are concise and analytical: KPI Bar, Volume Chart, Sentiment Distribution, Alert Indicators",
+      "no emoji, no exclamations, no consumer-friendly verbosity"
+    ],
+    "confidence": "medium"
+  },
+  "colors": {
+    "primary": "#8b5cf6",
+    "primary_hsl": "263 84% 58%",
+    "primary_role": "single-anchor brand color — appears as ring, sidebar-primary, chart-line, accent-foreground emphasis",
+    "secondary": ["#4a9a73", "#c25555"],
+    "secondary_role": "functional sentiment colors only — positive (green), negative (red). NOT decorative.",
+    "neutral_sentiment": "#858585",
+    "background": "#0a0a0a",
+    "background_alt_light": "#f6f3ee",
+    "text": "#ededed",
+    "text_muted": "#858585",
+    "border": "#1a1a1a",
+    "forbidden": [
+      "saturated brand blues (compete with violet identity)",
+      "warm orange/red as primary (Sense's red is reserved for negative sentiment)",
+      "gradient violet→fucsia or any dual-accent decorative gradient",
+      "yellow/amber accents (no warning role established in app)"
+    ]
+  },
+  "typography": {
+    "heading_font": "DM Sans",
+    "body_font": "DM Sans",
+    "mono_font_suggestion": "JetBrains Mono (not in app, but coherent for landing metadata/labels)",
+    "pairing_descriptor": "Single-font system. DM Sans across display and body. App ships with optical sizing axis (9..40) and tabular nums via feature settings cv02/cv03/cv04/cv11. No serif in product UI.",
+    "size_scale_app": {
+      "xs": "0.85rem",
+      "sm": "0.95rem",
+      "base": "1.05rem",
+      "lg": "1.20rem",
+      "xl": "1.35rem"
+    }
+  },
+  "imagery": {
+    "style": "data visualization + dashboard UI",
+    "subjects": [
+      "live mention cards",
+      "sentiment chips (positive/negative/neutral)",
+      "real-time waveform / volume charts",
+      "social platform glyphs (IG, TW, RD, FB, TikTok)",
+      "country breakdowns for LatAm"
+    ],
+    "composition": "clean dashboard, generous negative space, sentiment color coding, dark default with optional light mode",
+    "forbidden": [
+      "cheesy stock photos",
+      "consumer lifestyle imagery",
+      "celebratory emojis",
+      "before/after comparisons",
+      "cluttered enterprise dashboards (the anti-pattern Sense disrupts)"
+    ]
+  },
+  "aesthetic": {
+    "mood_keywords": ["intelligence", "always-on", "editorial", "executive", "calm authority", "vigilance"],
+    "texture": "minimal",
+    "negative_space": "generous",
+    "motion_signals": [
+      "pulse-dot 2s infinite on live indicators",
+      "fade-in 0.3s on data load",
+      "glow-border 2s on active alerts",
+      "typing 1.4s for processing states"
+    ]
+  },
+  "brand_values": [
+    "clarity over noise",
+    "vigilance over reactivity",
+    "actionable intelligence over raw data"
+  ],
+  "target_audience": {
+    "age_range": "30-55",
+    "profession": "LatAm enterprise marketing leaders — CMOs, brand managers, comms/PR leads, insights teams",
+    "pain_points": [
+      "fragmented social listening across platforms",
+      "delayed crisis detection (find out after trending)",
+      "data without clear action",
+      "US-centric tools that miss LatAm context (Spanish/Portuguese, regional sources)"
+    ],
+    "aspirations": [
+      "informed before everyone else",
+      "proactive brand stewardship",
+      "executive-grade brand intelligence",
+      "ditch the Monday PDF, get continuous intelligence"
+    ]
+  },
+  "differentiators": [
+    "single violet anchor (vs. competitors' generic enterprise blue)",
+    "single-font system DM Sans (vs. competitors' typographic chaos)",
+    "dark mode default (vs. legacy SaaS light dashboards)",
+    "sentiment is functional, not decorative",
+    "LatAm-native sources and language coverage"
+  ]
+}

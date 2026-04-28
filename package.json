@@ -1,0 +1,12 @@
+{
+  "name": "sapio-landing",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "resend": "^4.0.1"
+  }
+}

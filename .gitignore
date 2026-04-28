@@ -1,0 +1,21 @@
+node_modules/
+.netlify/
+.env
+.env.local
+.DS_Store
+*.bak-*
+
+# Design iteration scratch (no son producción)
+hero-glow-opciones.html
+manifiesto-opciones.html
+categoria-opciones.html
+problema-opciones.html
+resultados-opciones.html
+Copia de manifiesto-opciones.html
+sense-opciones.html
+sense-opciones-2.html
+sense-opciones-3.html
+sense-opciones-4.html
+sense-conceptos.html
+sense-conceptos-2.html
+sense-paletas.html
