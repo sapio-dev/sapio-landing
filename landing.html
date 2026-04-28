@@ -920,40 +920,39 @@
     font-family: var(--mono);
   }
 
-  /* ===== HERO CTA — agenda primero, email opt-in secundario ===== */
+  /* ===== HERO CTA — input + Enviar + Agendar demo en una sola línea ===== */
   .hero-cta {
-    max-width: 560px;
+    max-width: 760px;
     animation: fadeUp 1s ease-out 0.5s both;
   }
-  .hero-cta-primary {
-    display: inline-flex;
-    padding: 20px 36px;
-    font-size: 16px;
-    margin-bottom: 28px;
-  }
-  .hero-cta-divider {
+  .hero-cta-row {
     display: flex;
-    align-items: center;
-    gap: 14px;
-    font-family: var(--mono);
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    color: #898590;
-    margin-bottom: 16px;
+    gap: 10px;
+    align-items: stretch;
+    margin-bottom: 14px;
   }
-  .hero-cta-divider::before,
-  .hero-cta-divider::after {
-    content: '';
-    height: 1px;
-    background: var(--line);
-    flex: 1;
-  }
-  .hero-cta-divider::before { max-width: 36px; }
   .hero-form {
     display: flex;
     gap: 10px;
-    margin-bottom: 14px;
+    flex: 1;
+    min-width: 0;
+  }
+  /* Forzamos misma altura exacta entre input + Enviar + Agendar demo */
+  .hero-cta-row .hero-input,
+  .hero-cta-row .hero-submit,
+  .hero-cta-row .hero-schedule {
+    height: 54px;
+    padding-top: 0;
+    padding-bottom: 0;
+    line-height: 1;
+    box-sizing: border-box;
+  }
+  .hero-schedule {
+    white-space: nowrap;
+    padding-left: 26px;
+    padding-right: 26px;
+    font-size: 14px;
+    border: 1px solid transparent;
   }
   .hp-field {
     position: absolute;
@@ -993,6 +992,7 @@
     font-family: var(--sans);
     font-size: 14px;
     font-weight: 500;
+    line-height: 1.2;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
@@ -1254,8 +1254,11 @@
     .live-bar .num { font-size: 40px; }
     .scroll-hint { display: inline-flex; }
     .scroll-hint::before { width: 28px; }
-    .hero-form { flex-direction: column; align-items: stretch; }
+    .hero-cta { max-width: 100%; }
+    .hero-cta-row { flex-direction: column; gap: 10px; }
+    .hero-form { flex-direction: column; align-items: stretch; gap: 10px; }
     .hero-submit { justify-content: center; }
+    .hero-schedule { justify-content: center; padding: 16px 26px; }
 
     /* PROBLEM — mantiene parallax. El número gigante queda como watermark detrás del texto */
     .problem { padding: 96px 0 64px; }
@@ -1459,33 +1462,34 @@
         Tus clientes conversan en WhatsApp, Instagram, correo y redes. <strong>Sapio los escucha, les responde y aprende de cada interacción.</strong>
       </p>
       <div class="hero-cta">
-        <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3sGovaAi4N1e5rO1Mthp4OZde4_G7uCVeHv1eCvK4ZlXiOB5ax9VbgtLGYe6qdLXzPgwHxFiwK"
-           class="btn-primary hero-cta-primary"
-           target="_blank"
-           rel="noopener">
-          Agendar reunión
-          <span class="arrow">→</span>
-        </a>
-        <div class="hero-cta-divider"><span>o dejá tu correo</span></div>
-        <form class="hero-form" id="contactForm" novalidate>
-          <input type="text"
-                 name="website"
-                 class="hp-field"
-                 tabindex="-1"
-                 autocomplete="off"
-                 aria-hidden="true" />
-          <input type="email"
-                 class="hero-input"
-                 id="contactEmail"
-                 placeholder="tu@correo.com"
-                 required
-                 autocomplete="email"
-                 inputmode="email" />
-          <button type="submit" class="btn-secondary-pill hero-submit">
-            Enviar
+        <div class="hero-cta-row">
+          <form class="hero-form" id="contactForm" novalidate>
+            <input type="text"
+                   name="website"
+                   class="hp-field"
+                   tabindex="-1"
+                   autocomplete="off"
+                   aria-hidden="true" />
+            <input type="email"
+                   class="hero-input"
+                   id="contactEmail"
+                   placeholder="Deja tu correo"
+                   required
+                   autocomplete="email"
+                   inputmode="email" />
+            <button type="submit" class="btn-secondary-pill hero-submit">
+              Enviar
+              <span class="arrow">→</span>
+            </button>
+          </form>
+          <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3sGovaAi4N1e5rO1Mthp4OZde4_G7uCVeHv1eCvK4ZlXiOB5ax9VbgtLGYe6qdLXzPgwHxFiwK"
+             class="btn-primary hero-schedule"
+             target="_blank"
+             rel="noopener">
+            Agendar demo
             <span class="arrow">→</span>
-          </button>
-        </form>
+          </a>
+        </div>
         <div class="hero-microcopy" id="contactStatus" aria-live="polite">
           Te contactamos dentro de 24h hábiles.
         </div>
