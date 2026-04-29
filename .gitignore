@@ -1,9 +1,11 @@
 node_modules/
 .netlify/
+.claude/
 .env
 .env.local
 .DS_Store
 *.bak-*
+*.mp4
 
 # Design iteration scratch (no son producción)
 hero-glow-opciones.html
