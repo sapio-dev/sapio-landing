@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insights · Hero Preview — Sapio</title>
+<meta name="theme-color" content="#0a0a0a">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=JetBrains+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --bg-soft: #121212;
+    --fg: #ffffff;
+    --fg-dim: #e7e5ed;
+    --fg-muted: #b8b5c2;
+    --accent: #a78bfa;
+    --accent-soft: #c4b5fd;
+    --accent-deep: rgba(139, 92, 246, 0.5);
+    --line: #3a3740;
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Instrument Sans', -apple-system, sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.5;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    padding: 76px 0 24px;       /* top: nav clearance · bottom: respiro mínimo */
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .hero-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(85px);
+    will-change: top, left, opacity, transform;
+    opacity: 0;
+  }
+  .hero-orb-1 {
+    width: 55vw; height: 65vh;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.16), transparent 65%);
+    animation: hero-orb-1 17s ease-in-out infinite;
+  }
+  .hero-orb-2 {
+    width: 45vw; height: 55vh;
+    background: radial-gradient(circle, rgba(196, 181, 253, 0.12), transparent 65%);
+    animation: hero-orb-2 22s ease-in-out infinite -5s;
+  }
+  .hero-orb-3 {
+    width: 35vw; height: 45vh;
+    background: radial-gradient(circle, rgba(167, 139, 250, 0.10), transparent 65%);
+    animation: hero-orb-3 19s ease-in-out infinite -11s;
+  }
+  .hero-orb-4 {
+    width: 50vw; height: 58vh;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.10), transparent 65%);
+    animation: hero-orb-4 24s ease-in-out infinite -14s;
+  }
+  @keyframes hero-orb-1 {
+    0%   { top: -30%; left: -25%; opacity: 0; transform: scale(0.7); }
+    12%  { opacity: 1; transform: scale(1); }
+    30%  { top: 15%; left: 40%; opacity: 1; transform: scale(1.05); }
+    55%  { top: 45%; left: 10%; opacity: 0.95; transform: scale(1.15); }
+    78%  { top: 60%; left: -20%; opacity: 0.6; transform: scale(1); }
+    92%  { opacity: 0; }
+    100% { top: 70%; left: -30%; opacity: 0; transform: scale(0.8); }
+  }
+  @keyframes hero-orb-2 {
+    0%   { top: 70%; left: 80%; opacity: 0; transform: scale(0.75); }
+    14%  { opacity: 1; transform: scale(1); }
+    35%  { top: 30%; left: 55%; opacity: 0.95; transform: scale(1.1); }
+    58%  { top: 55%; left: 20%; opacity: 1; transform: scale(1.15); }
+    80%  { top: 85%; left: 50%; opacity: 0.55; transform: scale(0.95); }
+    94%  { opacity: 0; }
+    100% { top: 95%; left: 60%; opacity: 0; transform: scale(0.75); }
+  }
+  @keyframes hero-orb-3 {
+    0%   { top: -15%; left: 85%; opacity: 0; transform: scale(0.8); }
+    16%  { opacity: 1; transform: scale(1); }
+    38%  { top: 20%; left: 60%; opacity: 1; transform: scale(1.1); }
+    62%  { top: 10%; left: 85%; opacity: 0.85; transform: scale(1.05); }
+    82%  { top: -10%; left: 100%; opacity: 0.4; transform: scale(0.9); }
+    95%  { opacity: 0; }
+    100% { top: -20%; left: 110%; opacity: 0; transform: scale(0.75); }
+  }
+  @keyframes hero-orb-4 {
+    0%   { top: 85%; left: -20%; opacity: 0; transform: scale(0.75); }
+    18%  { opacity: 1; transform: scale(1); }
+    42%  { top: 40%; left: 25%; opacity: 0.95; transform: scale(1.1); }
+    68%  { top: 50%; left: 70%; opacity: 1; transform: scale(1.2); }
+    88%  { top: 75%; left: 95%; opacity: 0.3; transform: scale(0.95); }
+    100% { top: 90%; left: 110%; opacity: 0; transform: scale(0.8); }
+  }
+
+  .hero-grid {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+  }
+
+  .hero-copy {
+    max-width: 920px;            /* ensanchado para que cada frase del H1 sea 1 línea */
+    margin: 0 auto;
+    text-align: center;
+  }
+  .hero-copy .hero-sub {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-copy .hero-cta {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 28px;
+    animation: fadeUp 0.8s ease-out;
+  }
+  .eyebrow::before,
+  .eyebrow::after {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: var(--accent);
+  }
+  .pulse-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(1.4); }
+  }
+
+  h1.hero-title {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(40px, 4.2vw, 66px);    /* reducido para que entre en 2 líneas */
+    line-height: 1.06;
+    letter-spacing: -0.03em;
+    margin-bottom: 14px;
+    animation: fadeUp 1s ease-out 0.1s both;
+  }
+  h1.hero-title em {
+    font-style: italic;
+    color: var(--accent-soft);
+    font-weight: 400;
+  }
+
+  /* Kicker — la tercera frase como cierre, mismo Fraunces pero más chico y todo italic */
+  .hero-kicker {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(17px, 1.7vw, 23px);
+    letter-spacing: -0.01em;
+    color: var(--accent-soft);
+    margin-bottom: 22px;
+    animation: fadeUp 1s ease-out 0.25s both;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .hero-kicker::before,
+  .hero-kicker::after {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: var(--accent);
+    opacity: 0.55;
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    line-height: 1.5;
+    color: #efedf3;
+    margin-bottom: 26px;
+    animation: fadeUp 1s ease-out 0.4s both;
+  }
+  .hero-sub strong {
+    color: var(--fg);
+    font-weight: 500;
+  }
+
+  /* ===== HERO CTA ===== */
+  .hero-cta {
+    max-width: 580px;
+    animation: fadeUp 1s ease-out 0.55s both;
+  }
+  .hero-cta-row {
+    display: flex;
+    gap: 10px;
+    align-items: stretch;
+    margin-bottom: 14px;
+  }
+  .hero-form {
+    display: flex;
+    gap: 10px;
+    flex: 1;
+    min-width: 0;
+  }
+  .hero-cta-row .hero-input,
+  .hero-cta-row .hero-submit,
+  .hero-cta-row .hero-schedule {
+    height: 50px;
+    padding-top: 0;
+    padding-bottom: 0;
+    line-height: 1;
+    box-sizing: border-box;
+  }
+  .hero-input {
+    flex: 1;
+    min-width: 0;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    padding-left: 24px;
+    padding-right: 24px;
+    font-family: var(--sans);
+    font-size: 15px;
+    color: var(--fg);
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .hero-input::placeholder { color: #898590; }
+  .hero-input:focus {
+    border-color: var(--accent);
+    background: rgba(255, 255, 255, 0.06);
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+    border-radius: 100px;
+    font-size: 15px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s;
+  }
+  .btn-primary:hover {
+    background: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 20px 40px -15px rgba(139, 92, 246, 0.5);
+  }
+  .btn-primary .arrow { transition: transform 0.3s; }
+  .btn-primary:hover .arrow { transform: translateX(4px); }
+  .btn-secondary-pill {
+    background: transparent;
+    color: var(--fg);
+    border: 1px solid var(--fg);
+    border-radius: 100px;
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.2;
+    padding: 16px 26px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    white-space: nowrap;
+    transition: background 0.2s, color 0.2s;
+  }
+  .btn-secondary-pill:hover {
+    background: var(--fg);
+    color: var(--bg);
+  }
+  .hero-schedule {
+    white-space: nowrap;
+    padding-left: 26px;
+    padding-right: 26px;
+    font-size: 14px;
+    border: 1px solid transparent;
+  }
+  .hero-microcopy {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: #898590;
+    letter-spacing: 0.04em;
+  }
+
+  /* ===== CONVERGENCE — paths curvándose desde los bordes hacia un punto central ===== */
+  .convergence {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+  .convergence svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* No hay glow CSS detrás del texto — la lectura es prioridad. La sensación de convergencia
+     se construye solo con paths + radial mask annular (zona central oscura, anillo brillante). */
+
+  /* Starfield muy sutil */
+  .hero-stars {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-image:
+      radial-gradient(1px 1px at 8% 18%, rgba(255,255,255,0.55), transparent 60%),
+      radial-gradient(1px 1px at 22% 64%, rgba(255,255,255,0.4), transparent 60%),
+      radial-gradient(1.2px 1.2px at 38% 28%, rgba(255,255,255,0.5), transparent 60%),
+      radial-gradient(1px 1px at 52% 82%, rgba(255,255,255,0.35), transparent 60%),
+      radial-gradient(1px 1px at 71% 14%, rgba(255,255,255,0.5), transparent 60%),
+      radial-gradient(1px 1px at 88% 56%, rgba(255,255,255,0.35), transparent 60%),
+      radial-gradient(1px 1px at 16% 90%, rgba(255,255,255,0.3), transparent 60%),
+      radial-gradient(1px 1px at 44% 8%, rgba(255,255,255,0.4), transparent 60%),
+      radial-gradient(1.1px 1.1px at 62% 44%, rgba(255,255,255,0.45), transparent 60%),
+      radial-gradient(1px 1px at 92% 86%, rgba(255,255,255,0.3), transparent 60%),
+      radial-gradient(1px 1px at 30% 50%, rgba(255,255,255,0.35), transparent 60%),
+      radial-gradient(1px 1px at 76% 72%, rgba(255,255,255,0.35), transparent 60%);
+    opacity: 0.5;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ===== Note bar (preview only) ===== */
+  .preview-note {
+    position: fixed;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    z-index: 100;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: #898590;
+    letter-spacing: 0.04em;
+    background: rgba(10, 10, 10, 0.85);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 10px 14px;
+    backdrop-filter: blur(8px);
+    text-align: center;
+  }
+  .preview-note strong { color: var(--accent-soft); font-weight: 500; }
+
+  @media (max-width: 720px) {
+    .hero-cta-row { flex-direction: column; }
+    .hero-form { flex-direction: column; }
+    .hero-cta-row .hero-input,
+    .hero-cta-row .hero-submit,
+    .hero-cta-row .hero-schedule { width: 100%; }
+    .hero-kicker { font-size: 18px; }
+    .hero-kicker::before, .hero-kicker::after { width: 18px; }
+    h1.hero-title { font-size: clamp(38px, 9vw, 56px); }
+    .converge-target { width: 220px; height: 220px; }
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="hero-orb hero-orb-3"></div>
+    <div class="hero-orb hero-orb-4"></div>
+    <div class="hero-stars"></div>
+
+    <!-- CONVERGENCE: 15 paths convergen a la zona central (800, 450) ±25px,
+         pero la radial mask es ANNULAR (anillo brillante con centro oscuro).
+         Resultado: las líneas brillan en el anillo alrededor del texto y se desvanecen
+         tanto hacia los bordes como hacia el centro donde está el H1.
+         No hay glow CSS ni pulse central — la lectura del texto es prioridad. -->
+    <div class="convergence" aria-hidden="true">
+      <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <!-- ANNULAR mask: centro oscuro (donde lee el texto) + anillo brillante + bordes diluidos.
+               El gradiente sube de 0.05 (centro) a 0.95 (anillo a ~55%) y vuelve a bajar a 0.15 (bordes). -->
+          <radialGradient id="conv-mask-grad" gradientUnits="userSpaceOnUse" cx="800" cy="450" r="1200">
+            <stop offset="0%"   stop-color="white" stop-opacity="0.05"/>
+            <stop offset="28%"  stop-color="white" stop-opacity="0.40"/>
+            <stop offset="55%"  stop-color="white" stop-opacity="0.95"/>
+            <stop offset="85%"  stop-color="white" stop-opacity="0.55"/>
+            <stop offset="100%" stop-color="white" stop-opacity="0.15"/>
+          </radialGradient>
+          <mask id="conv-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="1600" height="900">
+            <rect width="1600" height="900" fill="url(#conv-mask-grad)"/>
+          </mask>
+
+          <!-- Glow filter para los dots -->
+          <filter id="dot-glow" x="-300%" y="-300%" width="700%" height="700%">
+            <feGaussianBlur stdDeviation="3.2" result="blur"/>
+            <feMerge>
+              <feMergeNode in="blur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+
+          <!-- 15 paths con curvaturas variadas, distribución asimétrica.
+               Targets varían ±25px alrededor de (800, 450). -->
+          <!-- TOP cluster (5 paths) -->
+          <path id="cv-1"  d="M -180 -100 C 80 50, 380 200, 790 425"   fill="none"/>
+          <path id="cv-2"  d="M 280 -130  C 380 80, 580 270, 805 440"  fill="none"/>
+          <path id="cv-3"  d="M 580 -110  C 660 110, 740 280, 798 432" fill="none"/>
+          <path id="cv-4"  d="M 920 -110  C 870 100, 830 280, 808 445" fill="none"/>
+          <path id="cv-5"  d="M 1780 -90  C 1500 70, 1180 230, 815 432" fill="none"/>
+
+          <!-- RIGHT cluster (3 paths) -->
+          <path id="cv-6"  d="M 1740 240 C 1480 290, 1180 380, 820 442" fill="none"/>
+          <path id="cv-7"  d="M 1740 420 C 1450 430, 1150 445, 825 450" fill="none"/>
+          <path id="cv-8"  d="M 1740 640 C 1420 590, 1150 510, 805 460" fill="none"/>
+
+          <!-- BOTTOM cluster (4 paths) -->
+          <path id="cv-9"  d="M 1780 1000 C 1380 800, 1080 640, 815 458" fill="none"/>
+          <path id="cv-10" d="M 1080 1010 C 1020 820, 920 640, 805 460"  fill="none"/>
+          <path id="cv-11" d="M 620 1010  C 680 820, 750 640, 793 455"   fill="none"/>
+          <path id="cv-12" d="M -180 1000 C 200 820, 480 660, 790 460"   fill="none"/>
+
+          <!-- LEFT cluster (3 paths) -->
+          <path id="cv-13" d="M -160 760 C 200 700, 480 580, 798 455"  fill="none"/>
+          <path id="cv-14" d="M -180 480 C 180 470, 480 460, 795 448"  fill="none"/>
+          <path id="cv-15" d="M -160 220 C 200 270, 480 350, 800 435"  fill="none"/>
+        </defs>
+
+        <!-- Todo dentro del mask annular — paths brillan en el anillo, se atenúan al centro y a los bordes -->
+        <g mask="url(#conv-mask)">
+          <!-- Strong (5 paths principales) -->
+          <use href="#cv-1"  stroke="#e9d5ff" stroke-width="0.75" opacity="0.7"/>
+          <use href="#cv-5"  stroke="#e9d5ff" stroke-width="0.75" opacity="0.7"/>
+          <use href="#cv-9"  stroke="#e9d5ff" stroke-width="0.7"  opacity="0.65"/>
+          <use href="#cv-12" stroke="#e9d5ff" stroke-width="0.75" opacity="0.68"/>
+          <use href="#cv-7"  stroke="#c4b5fd" stroke-width="0.6"  opacity="0.6"/>
+
+          <!-- Mid (6 paths secundarios) -->
+          <use href="#cv-2"  stroke="#c4b5fd" stroke-width="0.55" opacity="0.50"/>
+          <use href="#cv-6"  stroke="#c4b5fd" stroke-width="0.55" opacity="0.50"/>
+          <use href="#cv-10" stroke="#c4b5fd" stroke-width="0.5"  opacity="0.45"/>
+          <use href="#cv-13" stroke="#c4b5fd" stroke-width="0.5"  opacity="0.45"/>
+          <use href="#cv-14" stroke="#a78bfa" stroke-width="0.55" opacity="0.45"/>
+          <use href="#cv-15" stroke="#c4b5fd" stroke-width="0.5"  opacity="0.45"/>
+
+          <!-- Faint (4 paths atmósfera de fondo) -->
+          <use href="#cv-3"  stroke="#a78bfa" stroke-width="0.4"  opacity="0.32"/>
+          <use href="#cv-4"  stroke="#a78bfa" stroke-width="0.45" opacity="0.36"/>
+          <use href="#cv-8"  stroke="#a78bfa" stroke-width="0.4"  opacity="0.32"/>
+          <use href="#cv-11" stroke="#a78bfa" stroke-width="0.45" opacity="0.36"/>
+
+          <!-- Dots viajando hacia el centro · se desvanecen al acercarse al texto -->
+          <circle r="2.6" fill="#e9d5ff" filter="url(#dot-glow)" opacity="0">
+            <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.05;0.18;0.72;0.92;1" dur="14s" repeatCount="indefinite"/>
+            <animateMotion dur="14s" repeatCount="indefinite"><mpath href="#cv-1"/></animateMotion>
+          </circle>
+          <circle r="2.4" fill="#c4b5fd" filter="url(#dot-glow)" opacity="0">
+            <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.07;0.20;0.72;0.92;1" dur="17s" begin="-5s" repeatCount="indefinite"/>
+            <animateMotion dur="17s" begin="-5s" repeatCount="indefinite"><mpath href="#cv-5"/></animateMotion>
+          </circle>
+          <circle r="2.2" fill="#a78bfa" filter="url(#dot-glow)" opacity="0">
+            <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.08;0.22;0.72;0.92;1" dur="21s" begin="-3s" repeatCount="indefinite"/>
+            <animateMotion dur="21s" begin="-3s" repeatCount="indefinite"><mpath href="#cv-9"/></animateMotion>
+          </circle>
+          <circle r="2.4" fill="#c4b5fd" filter="url(#dot-glow)" opacity="0">
+            <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.08;0.22;0.72;0.92;1" dur="19s" begin="-10s" repeatCount="indefinite"/>
+            <animateMotion dur="19s" begin="-10s" repeatCount="indefinite"><mpath href="#cv-12"/></animateMotion>
+          </circle>
+          <circle r="2.0" fill="#e9d5ff" filter="url(#dot-glow)" opacity="0">
+            <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.10;0.25;0.72;0.92;1" dur="12s" begin="-6s" repeatCount="indefinite"/>
+            <animateMotion dur="12s" begin="-6s" repeatCount="indefinite"><mpath href="#cv-7"/></animateMotion>
+          </circle>
+          <circle r="2.2" fill="#c4b5fd" filter="url(#dot-glow)" opacity="0">
+            <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.06;0.20;0.72;0.92;1" dur="23s" begin="-8s" repeatCount="indefinite"/>
+            <animateMotion dur="23s" begin="-8s" repeatCount="indefinite"><mpath href="#cv-3"/></animateMotion>
+          </circle>
+          <circle r="2.0" fill="#a78bfa" filter="url(#dot-glow)" opacity="0">
+            <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.08;0.22;0.72;0.92;1" dur="16s" begin="-2s" repeatCount="indefinite"/>
+            <animateMotion dur="16s" begin="-2s" repeatCount="indefinite"><mpath href="#cv-10"/></animateMotion>
+          </circle>
+          <circle r="2.2" fill="#e9d5ff" filter="url(#dot-glow)" opacity="0">
+            <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.06;0.20;0.72;0.92;1" dur="25s" begin="-12s" repeatCount="indefinite"/>
+            <animateMotion dur="25s" begin="-12s" repeatCount="indefinite"><mpath href="#cv-13"/></animateMotion>
+          </circle>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow">
+          <span class="pulse-dot"></span>
+          Brand OS · Insights
+        </div>
+        <h1 class="hero-title">
+          Una señal por separado es <em>ruido.</em><br>
+          Cruzadas, son una <em>decisión.</em>
+        </h1>
+        <div class="hero-kicker">El meeting de los lunes ya pasó.</div>
+        <p class="hero-sub">
+          Sapio cruza todo lo que escucha y entrega <strong>acciones priorizadas para tu marca: qué hacer, por qué, y el análisis detallado detrás de cada decisión.</strong>
+        </p>
+        <div class="hero-cta">
+          <div class="hero-cta-row">
+            <form class="hero-form" id="contactForm" novalidate>
+              <input type="email" class="hero-input" id="contactEmail" placeholder="Deja tu correo" required autocomplete="email" inputmode="email" />
+              <button type="submit" class="btn-secondary-pill hero-submit">
+                Enviar
+                <span class="arrow">→</span>
+              </button>
+            </form>
+            <a href="#"
+               class="btn-primary hero-schedule">
+              Agendar demo
+              <span class="arrow">→</span>
+            </a>
+          </div>
+          <div class="hero-microcopy">
+            Te contactamos dentro de 24h hábiles.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="preview-note">
+  <strong>PREVIEW</strong> · Hero del módulo Insights · radial mask ANNULAR (anillo brillante, centro oscuro) · 15 paths convergen al centro · sin glow CSS · sin pulse central
+</div>
+
+</body>
+</html>
