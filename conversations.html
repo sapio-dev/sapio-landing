@@ -127,6 +127,92 @@
     color: var(--bg) !important;
   }
 
+  /* ===== NAV DROPDOWN — Módulos ===== */
+  .nav-dropdown {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+  }
+  .nav-dropdown > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .nav-dropdown > a::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: rotate(45deg) translateY(-1px);
+    opacity: 0.55;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+  .nav-dropdown:hover > a::after {
+    transform: rotate(225deg) translateY(0);
+    opacity: 1;
+  }
+  .nav-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: -16px;
+    padding-top: 14px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+    pointer-events: none;
+    min-width: 240px;
+  }
+  .nav-dropdown:hover .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  .nav-dropdown-menu-inner {
+    background: rgba(18, 18, 18, 0.92);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 8px 0;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.05),
+      0 18px 50px -10px rgba(0, 0, 0, 0.55);
+  }
+  .nav-dropdown-menu-inner a {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    padding: 11px 18px;
+    font-size: 14px;
+    color: var(--fg-dim) !important;
+    transition: background 0.2s, color 0.2s !important;
+  }
+  .nav-dropdown-menu-inner a:hover {
+    background: rgba(167, 139, 250, 0.08);
+    color: var(--fg) !important;
+  }
+  .nav-dropdown-menu-inner a::after {
+    content: '→';
+    color: var(--accent);
+    opacity: 0.55;
+    margin-left: 18px;
+    transition: transform 0.25s, opacity 0.25s;
+  }
+  .nav-dropdown-menu-inner a:hover::after {
+    transform: translateX(3px);
+    opacity: 1;
+  }
+  .nav-dropdown-menu-inner a.is-current {
+    color: var(--accent) !important;
+  }
+  .nav-dropdown-menu-inner a.is-current::after {
+    content: '·';
+    opacity: 0.8;
+  }
+
   /* ===== HERO ===== */
   .hero {
     min-height: 100vh;
@@ -953,7 +1039,14 @@
     <a href="/" class="logo">Sapio</a>
     <div class="nav-links">
       <a href="/#producto">Producto</a>
-      <a href="/#modulos">Módulos</a>
+      <div class="nav-dropdown">
+        <a href="/#modulos">Módulos</a>
+        <div class="nav-dropdown-menu">
+          <div class="nav-dropdown-menu-inner">
+            <a href="/conversations" class="is-current">Conversaciones</a>
+          </div>
+        </div>
+      </div>
       <a href="/#manifiesto">Manifiesto</a>
       <a href="/#contacto">Contacto</a>
       <a href="#demo" class="nav-cta">Agendar demo</a>
