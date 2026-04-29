@@ -958,38 +958,62 @@
     .nav-links { display: none; }
     .nav-links .nav-cta { display: inline-flex; }
 
-    /* HERO */
+    /* HERO mobile — copy más compacta, sin <br> forzado entre frases para que
+       los puntos hagan el ritmo en vez de quiebres duros */
     .hero {
-      padding: 96px 0 64px;
+      padding: 84px 0 48px;
       min-height: 0;
       display: block;
     }
     .hero-grid { gap: 0; }
     .hero-copy { max-width: 100%; }
-    .eyebrow { margin-bottom: 24px; font-size: 10.5px; letter-spacing: 0.18em; }
-    .eyebrow::before, .eyebrow::after { width: 22px; }
-    h1.hero-title {
-      font-size: clamp(36px, 8.5vw, 52px);
-      line-height: 1.05;
-      margin-bottom: 16px;
+    .eyebrow {
+      margin-bottom: 22px;
+      font-size: 10.5px;
+      letter-spacing: 0.18em;
+      gap: 10px;
     }
-    .hero-kicker { font-size: 16px; margin-bottom: 24px; gap: 10px; }
+    .eyebrow::before, .eyebrow::after { width: 20px; }
+
+    h1.hero-title {
+      font-size: clamp(28px, 7.4vw, 40px);
+      line-height: 1.14;
+      letter-spacing: -0.025em;
+      margin-bottom: 16px;
+      text-wrap: balance;          /* cuando esté soportado, balancea las líneas */
+    }
+    /* En mobile las frases fluyen naturalmente — los puntos hacen el ritmo */
+    h1.hero-title br { display: none; }
+
+    .hero-kicker {
+      font-size: 14.5px;
+      margin-bottom: 22px;
+      gap: 10px;
+    }
     .hero-kicker::before, .hero-kicker::after { width: 18px; }
-    .hero-sub { font-size: 16px; margin-bottom: 32px; }
+
+    .hero-sub {
+      font-size: 15.5px;
+      line-height: 1.55;
+      margin-bottom: 28px;
+    }
+
     .hero-cta { max-width: 100%; }
-    .hero-cta-row { flex-direction: column; gap: 12px; }
-    .hero-form { flex-direction: column; align-items: stretch; gap: 12px; }
+    .hero-cta-row { flex-direction: column; gap: 10px; margin-bottom: 12px; }
+    .hero-form { flex-direction: column; align-items: stretch; gap: 10px; }
     .hero-cta-row .hero-input,
     .hero-cta-row .hero-submit,
     .hero-cta-row .hero-schedule {
       height: auto;
-      padding-top: 18px;
-      padding-bottom: 18px;
+      padding-top: 16px;
+      padding-bottom: 16px;
       line-height: 1.4;
       justify-content: center;
+      font-size: 14.5px;
     }
     .hero-cta-row .hero-input { padding-left: 22px; padding-right: 22px; }
     .hero-schedule { padding-left: 26px; padding-right: 26px; }
+    .hero-microcopy { font-size: 11px; }
 
     /* PROBLEM */
     .problem { padding: 96px 0 72px; }
