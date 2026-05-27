@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sapio Agent — El agente que responde por tu marca, 24/7</title>
-<meta name="description" content="Agentes conversacionales de IA que responden en WhatsApp, Instagram, Facebook y correo con el tono de tu marca. Mientras tu equipo duerme, tu marca sigue respondiendo.">
-<meta name="keywords" content="agente conversacional, IA para WhatsApp, chatbot de marca, atención al cliente con IA, inbox unificado, respuesta automática WhatsApp Instagram">
+<meta name="description" content="Agentes conversacionales de IA que responden en WhatsApp, Instagram, Facebook y chat web con el tono de tu marca. Mientras tu equipo duerme, tu marca sigue respondiendo.">
+<meta name="keywords" content="agente conversacional, IA para WhatsApp, chatbot de marca, chat web para sitio, widget de chat, atención al cliente con IA, respuesta automática WhatsApp Instagram">
 <meta name="author" content="Sapio">
 <meta name="theme-color" content="#0a0a0a">
 <link rel="canonical" href="https://sapio.dev/">
@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Sapio">
 <meta property="og:url" content="https://sapio.dev/">
 <meta property="og:title" content="Sapio Agent — El agente que responde por tu marca, 24/7">
-<meta property="og:description" content="Agentes conversacionales de IA que responden en WhatsApp, Instagram, Facebook y correo con el tono de tu marca. 24/7.">
+<meta property="og:description" content="Agentes conversacionales de IA que responden en WhatsApp, Instagram, Facebook y chat web con el tono de tu marca. 24/7.">
 <meta property="og:image" content="https://sapio.dev/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@sapio">
 <meta name="twitter:title" content="Sapio Agent — El agente que responde por tu marca, 24/7">
-<meta name="twitter:description" content="Agentes conversacionales de IA que responden en WhatsApp, Instagram, Facebook y correo con el tono de tu marca. 24/7.">
+<meta name="twitter:description" content="Agentes conversacionales de IA que responden en WhatsApp, Instagram, Facebook y chat web con el tono de tu marca. 24/7.">
 <meta name="twitter:image" content="https://sapio.dev/og-image.png">
 <meta name="twitter:image:alt" content="Sapio Agent — Agente conversacional de marca">
 
@@ -43,7 +43,7 @@
   "name": "Sapio Agent",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Web",
-  "description": "Agentes conversacionales de IA que responden en WhatsApp, Instagram, Facebook y correo con el tono de tu marca, 24/7.",
+  "description": "Agentes conversacionales de IA que responden en WhatsApp, Instagram, Facebook y chat web con el tono de tu marca, 24/7.",
   "url": "https://sapio.dev/",
   "offers": {
     "@type": "Offer",
@@ -904,6 +904,170 @@
     color: #e7e5ed;
   }
 
+  /* ===== PRICING ===== */
+  .pricing {
+    padding: 88px 0 96px;
+    border-top: 1px solid var(--line);
+    text-align: center;
+    position: relative;
+  }
+  .pricing .section-header {
+    margin: 0 auto 36px;
+    max-width: 720px;
+    text-align: center;
+  }
+  .pricing .section-label { justify-content: center; }
+  .pricing .section-title { max-width: 18ch; margin: 0 auto; }
+
+  .pricing-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .pricing-price {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(72px, 7.5vw, 112px);
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    color: var(--fg);
+    display: inline-flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .pricing-price-unit {
+    font-family: var(--sans);
+    font-size: 18px;
+    color: var(--fg-muted);
+    letter-spacing: 0;
+    font-weight: 400;
+  }
+  .pricing-meta {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--fg-muted);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  .pricing-highlight {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(22px, 2.4vw, 30px);
+    line-height: 1.3;
+    color: var(--fg);
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+  .pricing-highlight em {
+    font-style: italic;
+    color: var(--accent-soft);
+  }
+  .pricing-setup {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--fg-dim);
+    line-height: 1.5;
+    margin-bottom: 36px;
+    max-width: 48ch;
+  }
+  .pricing-cta {
+    align-self: center;
+  }
+
+  .pricing-divider {
+    width: 64px;
+    height: 1px;
+    background: var(--line);
+    margin: 56px auto;
+  }
+
+  .pricing-addons {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .pricing-addons-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .pricing-addons-label::before,
+  .pricing-addons-label::after {
+    content: '';
+    width: 22px;
+    height: 1px;
+    background: var(--accent);
+  }
+  .pricing-addons-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 18px;
+  }
+  .addon-item {
+    padding: 22px 20px 20px;
+    text-align: left;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 108px;
+    transition: background 220ms ease;
+  }
+  .addon-item + .addon-item {
+    border-left: 1px solid var(--line);
+  }
+  .addon-item::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 320ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .addon-item:hover {
+    background: rgba(167, 139, 250, 0.04);
+  }
+  .addon-item:hover::before {
+    transform: scaleX(1);
+  }
+  .addon-item-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: var(--accent);
+    text-transform: uppercase;
+  }
+  .addon-item-name {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.25;
+    color: var(--fg);
+    letter-spacing: -0.01em;
+  }
+  .pricing-addons-note {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--fg-muted);
+  }
+
   /* ===== CTA FINAL ===== */
   .cta-final {
     padding: 200px 0;
@@ -927,8 +1091,8 @@
   .cta-final h2 {
     font-family: var(--serif);
     font-weight: 300;
-    font-size: clamp(44px, 7vw, 96px);
-    line-height: 1;
+    font-size: clamp(40px, 4.4vw, 64px);
+    line-height: 1.05;
     letter-spacing: -0.03em;
     margin-bottom: 32px;
     position: relative;
@@ -938,7 +1102,7 @@
     color: var(--accent-soft);
   }
   .cta-final p {
-    font-size: 22px;
+    font-size: 19px;
     color: #efedf3;
     margin-bottom: 56px;
     position: relative;
@@ -1295,8 +1459,20 @@
     .testimonial { margin-bottom: 72px; }
     .testimonial-quote { font-size: clamp(24px, 2.6vw, 34px); }
     .cta-final { padding: 140px 0; }
-    .cta-final h2 { font-size: clamp(40px, 5.6vw, 76px); }
-    .cta-final p { font-size: 19px; margin-bottom: 40px; }
+    .cta-final h2 { font-size: clamp(34px, 3.8vw, 56px); }
+    .cta-final p { font-size: 17px; margin-bottom: 40px; }
+    .pricing { padding: 56px 0 64px; }
+    .pricing .section-header { margin-bottom: 28px; }
+    .pricing .section-title { font-size: clamp(30px, 3vw, 40px); }
+    .pricing-price { font-size: clamp(56px, 5.4vw, 80px); margin-bottom: 10px; }
+    .pricing-meta { margin-bottom: 18px; }
+    .pricing-highlight { font-size: clamp(19px, 2vw, 24px); margin-bottom: 10px; }
+    .pricing-setup { font-size: 13.5px; margin-bottom: 24px; max-width: 42ch; }
+    .pricing-divider { margin: 28px auto; }
+    .pricing-addons-label { margin-bottom: 18px; }
+    .pricing-addons-grid { margin-bottom: 16px; }
+    .addon-item { padding: 18px 16px; min-height: 96px; gap: 8px; }
+    .addon-item-name { font-size: 14.5px; }
   }
 
   /* Shallow viewports — window shorter than ~780px */
@@ -1528,6 +1704,23 @@
     .testimonial-mark { font-size: 64px; }
     .cta-final { padding: 120px 0; }
     .cta-final p { font-size: 18px; margin-bottom: 40px; }
+    .pricing { padding: 72px 0; }
+    .pricing .section-header { margin-bottom: 32px; }
+    .pricing-price { font-size: 64px; }
+    .pricing-meta { margin-bottom: 20px; }
+    .pricing-highlight { font-size: 20px; }
+    .pricing-setup { font-size: 14px; margin-bottom: 28px; }
+    .pricing-divider { margin: 40px auto; }
+    .pricing-addons-grid {
+      grid-template-columns: 1fr 1fr;
+      border-top: 1px solid var(--line);
+    }
+    .addon-item { padding: 18px 16px; min-height: 84px; }
+    .addon-item + .addon-item { border-left: none; }
+    .addon-item:nth-child(odd):not(:first-child),
+    .addon-item:nth-child(even) { border-top: 1px solid var(--line); }
+    .addon-item:nth-child(even) { border-left: 1px solid var(--line); }
+    .addon-item-name { font-size: 14.5px; }
     .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px 24px; }
     .footer-bottom { flex-direction: column; gap: 12px; align-items: flex-start; }
   }
@@ -1541,6 +1734,7 @@
     <div class="nav-links">
       <a href="#capacidades">Capacidades</a>
       <a href="#resultados">Resultados</a>
+      <a href="#plan">Precios</a>
       <a href="#contacto">Contacto</a>
       <a href="https://calendar.app.google/vUfSasn1UEhAAsTv8" class="nav-cta" target="_blank" rel="noopener">Agendar demo</a>
     </div>
@@ -1559,13 +1753,13 @@
     <div class="container">
       <div class="eyebrow">
         <span class="pulse-dot"></span>
-        Sapio Agent · Agente conversacional de marca
+        Sapio: El agente que habla como tú
       </div>
       <h1 class="hero-title">
         El agente que responde por tu marca, <em>24/7</em>.
       </h1>
       <p class="hero-sub">
-        WhatsApp, Instagram, Facebook y correo en una sola bandeja. <strong>Agentes de IA que responden con el tono de tu marca</strong> — mientras tu equipo duerme, tus clientes ya tienen respuesta.
+        WhatsApp, Instagram, Facebook y chat web en tu sitio. <strong>Agentes de IA que responden con el tono de tu marca</strong> — mientras tu equipo duerme, tus clientes ya tienen respuesta.
       </p>
       <div class="hero-cta">
         <div class="hero-cta-row">
@@ -1615,7 +1809,7 @@
       <div class="problem-num-col"><span class="problem-num">01</span></div>
       <div class="problem-text-col">
         <h3>Mensajes que <em>se enfrían</em>.</h3>
-        <p>WhatsApp, Instagram, Facebook, correo. Cuatro bandejas, tres turnos, cero coordinación. El cliente que escribe a las 22:00 espera hasta el lunes.</p>
+        <p>WhatsApp, Instagram, Facebook, chat web. Cuatro bandejas, tres turnos, cero coordinación. El cliente que escribe a las 22:00 espera hasta el lunes.</p>
       </div>
     </div>
     <div class="problem-row">
@@ -1645,9 +1839,9 @@
             <div class="module is-active">
               <div class="module-num">01</div>
               <div class="module-content">
-                <div class="module-name">Bandeja unificada</div>
-                <div class="module-hook">"Un solo lugar para responderle a todo el mundo."</div>
-                <div class="module-desc">WhatsApp, Instagram, Facebook y correo en una bandeja única. Tu equipo deja de saltar entre apps — y nada se pierde entre canales.</div>
+                <div class="module-name">Chat web en tu sitio</div>
+                <div class="module-hook">"Una línea de código y tu agente está en línea."</div>
+                <div class="module-desc">Un widget de chat que se instala en tu sitio en minutos. Tu agente responde a quien entra a la web — sin pedirle que cambie de canal, sin perder la visita.</div>
               </div>
             </div>
             <div class="module">
@@ -1719,10 +1913,65 @@
       <div class="result-card">
         <div class="result-num"><span class="count" data-target="4" data-duration="1300">4</span><span class="unit"> canales</span></div>
         <div class="result-label">Una sola bandeja</div>
-        <div class="result-desc">WhatsApp, Instagram, Facebook y correo unificados. Tu equipo deja de saltar entre apps y nada se pierde.</div>
+        <div class="result-desc">WhatsApp, Instagram, Facebook y chat web unificados. Tu equipo deja de saltar entre apps y nada se pierde.</div>
       </div>
     </div>
     <div class="results-footnote">— Benchmarks sobre clientes activos de Sapio · actualizado 2026</div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="plan">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Precios</div>
+      <h2 class="section-title">Una cuota. <em>Todo incluido.</em></h2>
+    </div>
+
+    <div class="pricing-main">
+      <div class="pricing-price">
+        7 UF
+        <span class="pricing-price-unit">/mes</span>
+      </div>
+      <div class="pricing-meta">+ IVA · facturación mensual</div>
+      <p class="pricing-highlight"><em>3.000 interacciones</em> / mes</p>
+      <p class="pricing-setup">Incluye setup, configuración, entrenamiento del modelo y puesta en marcha.</p>
+      <a href="https://calendar.app.google/vUfSasn1UEhAAsTv8"
+         class="btn-primary pricing-cta"
+         target="_blank"
+         rel="noopener">
+        Agendar demo
+        <span class="arrow">→</span>
+      </a>
+    </div>
+
+    <div class="pricing-divider"></div>
+
+    <div class="pricing-addons">
+      <div class="pricing-addons-label">Sumas si lo necesitas</div>
+      <div class="pricing-addons-grid">
+        <div class="addon-item">
+          <div class="addon-item-num">01</div>
+          <div class="addon-item-name">Conexión a agendas</div>
+        </div>
+        <div class="addon-item">
+          <div class="addon-item-num">02</div>
+          <div class="addon-item-name">Insight IA</div>
+        </div>
+        <div class="addon-item">
+          <div class="addon-item-num">03</div>
+          <div class="addon-item-name">Bolsa de interacciones adicionales</div>
+        </div>
+        <div class="addon-item">
+          <div class="addon-item-num">04</div>
+          <div class="addon-item-name">Campañas outbound por WhatsApp</div>
+        </div>
+        <div class="addon-item">
+          <div class="addon-item-num">05</div>
+          <div class="addon-item-name">Conexión a CRM / ERP</div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1771,12 +2020,13 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="logo">Sapio</div>
-        <p>Agentes conversacionales de marca que responden en WhatsApp, Instagram, Facebook y correo. 24/7, con tu tono.</p>
+        <p>Agentes conversacionales de marca que responden en WhatsApp, Instagram, Facebook y chat web. 24/7, con tu tono.</p>
       </div>
       <div class="footer-col">
         <h4>Producto</h4>
         <a href="#capacidades">Capacidades</a>
         <a href="#resultados">Resultados</a>
+        <a href="#plan">Precios</a>
         <a href="/conversations">Ver demo</a>
       </div>
       <div class="footer-col">
