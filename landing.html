@@ -904,135 +904,137 @@
     color: #e7e5ed;
   }
 
-  /* ===== PRICING ===== */
+  /* ===== PRICING — 2 columnas (plan izq + addons der) ===== */
   .pricing {
     padding: 88px 0 96px;
     border-top: 1px solid var(--line);
-    text-align: center;
     position: relative;
   }
-  .pricing .section-header {
-    margin: 0 auto 36px;
-    max-width: 720px;
-    text-align: center;
-  }
-  .pricing .section-label { justify-content: center; }
-  .pricing .section-title { max-width: 22ch; margin: 0 auto; }
-
-  .pricing-main {
-    display: flex;
-    flex-direction: column;
+  .pricing .container {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+    gap: 72px;
     align-items: center;
   }
-  .pricing-price {
-    font-family: var(--serif);
-    font-weight: 300;
-    font-size: clamp(72px, 7.5vw, 112px);
-    line-height: 0.9;
-    letter-spacing: -0.04em;
-    color: var(--fg);
-    display: inline-flex;
-    align-items: baseline;
-    gap: 12px;
-    margin-bottom: 14px;
-  }
-  .pricing-price-unit {
-    font-family: var(--sans);
-    font-size: 18px;
-    color: var(--fg-muted);
-    letter-spacing: 0;
-    font-weight: 400;
-  }
-  .pricing-meta {
-    font-family: var(--mono);
-    font-size: 12px;
-    color: var(--fg-muted);
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    margin-bottom: 28px;
-  }
-  .pricing-highlight {
-    font-family: var(--serif);
-    font-weight: 300;
-    font-size: clamp(22px, 2.4vw, 30px);
-    line-height: 1.3;
-    color: var(--fg);
-    margin-bottom: 12px;
-    letter-spacing: -0.01em;
-  }
-  .pricing-highlight em {
-    font-style: italic;
-    color: var(--accent-soft);
-  }
-  .pricing-setup {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 15px;
-    color: var(--fg-dim);
-    line-height: 1.5;
-    margin-bottom: 36px;
-    max-width: 48ch;
-  }
-  .pricing-cta {
+  .pricing .v-divider {
+    width: 1px;
+    height: 72%;
+    background: linear-gradient(180deg, transparent, var(--line) 20%, var(--line) 80%, transparent);
     align-self: center;
   }
-
-  .pricing-divider {
-    width: 64px;
-    height: 1px;
-    background: var(--line);
-    margin: 56px auto;
+  .pricing .col {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
   }
-
-  .pricing-addons {
-    max-width: 880px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  .pricing-addons-label {
+  .pricing .eyebrow {
     font-family: var(--mono);
     font-size: 11px;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--accent);
-    margin-bottom: 14px;
+    margin-bottom: 18px;
     display: inline-flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
   }
-  .pricing-addons-label::before,
-  .pricing-addons-label::after {
-    content: '';
-    width: 22px;
-    height: 1px;
-    background: var(--accent);
-  }
-  .pricing-addons-title {
+  .pricing .col-title {
     font-family: var(--serif);
     font-weight: 300;
-    font-size: clamp(24px, 2.6vw, 32px);
-    line-height: 1.15;
-    letter-spacing: -0.02em;
-    color: var(--fg);
-    margin: 0 auto 28px;
-    max-width: 22ch;
+    font-size: clamp(34px, 3.4vw, 44px);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    margin-bottom: 28px;
+    max-width: 14ch;
   }
-  .pricing-addons-title em {
-    font-style: italic;
-    color: var(--accent-soft);
+  .pricing .col-title em { font-style: italic; color: var(--accent-soft); }
+
+  /* Plan column — primary */
+  .plan-col {
+    position: relative;
+    isolation: isolate;
+  }
+  .plan-col::before {
+    content: '';
+    position: absolute;
+    left: -10%;
+    top: 15%;
+    width: 80%;
+    height: 60%;
+    background: radial-gradient(ellipse, rgba(167, 139, 250, 0.32), transparent 65%);
+    filter: blur(56px);
+    pointer-events: none;
+    z-index: -1;
+  }
+  .plan-col > * { position: relative; z-index: 1; }
+  .plan-col .price {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(92px, 8.5vw, 112px);
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: baseline;
+    gap: 11px;
+  }
+  .plan-col .price .unit {
+    font-family: var(--sans);
+    font-size: 17px;
+    color: var(--fg-muted);
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+  .plan-col .meta {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--fg-muted);
+    margin-bottom: 22px;
+  }
+  .plan-col .highlight {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+  .plan-col .highlight em { font-style: italic; color: var(--accent-soft); }
+  .plan-col .includes {
+    font-size: 14.5px;
+    color: var(--fg-muted);
+    line-height: 1.55;
+    margin-bottom: 28px;
+    max-width: 38ch;
+  }
+  .plan-col .cta-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 22px;
+  }
+
+  /* Addons column — supporting */
+  .addons-col .col-title {
+    font-size: clamp(18px, 1.6vw, 22px);
+    font-weight: 400;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    color: var(--fg-dim);
+    margin-bottom: 22px;
+    max-width: 22ch;
   }
   .addon-pills {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 10px;
-    margin-bottom: 28px;
+    margin-bottom: 22px;
   }
   .addon-pill {
     background: transparent;
     border: 1px solid var(--line);
     border-radius: 100px;
-    padding: 10px 18px;
+    padding: 9px 16px;
     font-family: var(--sans);
     font-size: 13px;
     color: var(--fg-dim);
@@ -1051,22 +1053,21 @@
   }
   .addon-detail {
     position: relative;
-    min-height: 96px;
-    max-width: 640px;
-    margin: 0 auto;
-    padding: 4px 16px 18px;
-    text-align: center;
+    min-height: 92px;
+    padding: 14px 0 16px;
+    border-top: 1px solid var(--line);
   }
   .addon-detail-text {
     position: absolute;
-    inset: 4px 16px 18px;
+    inset: 14px 0 16px;
     margin: 0;
     display: grid;
-    place-items: center;
-    text-align: center;
+    place-items: start;
+    align-content: start;
+    text-align: left;
     font-family: var(--sans);
     font-weight: 400;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.55;
     color: var(--fg-dim);
     letter-spacing: 0;
@@ -1104,15 +1105,6 @@
   .addon-progress-bar.is-running {
     transform: scaleX(1);
     transition: transform 5400ms linear;
-  }
-  .pricing-addons-note {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--fg-muted);
-    margin-top: 18px;
-    display: block;
   }
 
   /* ===== CTA FINAL ===== */
@@ -1508,19 +1500,17 @@
     .cta-final { padding: 140px 0; }
     .cta-final h2 { font-size: clamp(34px, 3.8vw, 56px); }
     .cta-final p { font-size: 17px; margin-bottom: 40px; }
-    .pricing { padding: 56px 0 64px; }
-    .pricing .section-header { margin-bottom: 28px; }
-    .pricing .section-title { font-size: clamp(30px, 3vw, 40px); }
-    .pricing-price { font-size: clamp(56px, 5.4vw, 80px); margin-bottom: 10px; }
-    .pricing-meta { margin-bottom: 18px; }
-    .pricing-highlight { font-size: clamp(19px, 2vw, 24px); margin-bottom: 10px; }
-    .pricing-setup { font-size: 13.5px; margin-bottom: 24px; max-width: 42ch; }
-    .pricing-divider { margin: 28px auto; }
-    .pricing-addons-label { margin-bottom: 10px; }
-    .pricing-addons-title { font-size: clamp(22px, 2.2vw, 28px); margin-bottom: 22px; }
-    .addon-pill { font-size: 12.5px; padding: 9px 16px; }
-    .addon-detail { min-height: 78px; padding: 18px 20px; }
-    .addon-detail-text { font-size: 16px; line-height: 1.4; }
+    .pricing { padding: 64px 0 72px; }
+    .pricing .container { gap: 56px; }
+    .pricing .col-title { font-size: clamp(28px, 2.8vw, 36px); margin-bottom: 22px; }
+    .addons-col .col-title { font-size: clamp(17px, 1.5vw, 20px); margin-bottom: 18px; }
+    .plan-col .price { font-size: clamp(80px, 7.5vw, 96px); }
+    .plan-col .meta { margin-bottom: 18px; }
+    .plan-col .highlight { font-size: 20px; }
+    .plan-col .includes { font-size: 14px; margin-bottom: 22px; }
+    .addon-pill { font-size: 12.5px; padding: 8px 14px; }
+    .addon-detail { min-height: 84px; padding: 12px 0 14px; }
+    .addon-detail-text { font-size: 14.5px; line-height: 1.5; inset: 12px 0 14px; }
   }
 
   /* Shallow viewports — window shorter than ~780px */
@@ -1753,17 +1743,27 @@
     .cta-final { padding: 120px 0; }
     .cta-final p { font-size: 18px; margin-bottom: 40px; }
     .pricing { padding: 72px 0; }
-    .pricing .section-header { margin-bottom: 32px; }
-    .pricing-price { font-size: 64px; }
-    .pricing-meta { margin-bottom: 20px; }
-    .pricing-highlight { font-size: 20px; }
-    .pricing-setup { font-size: 14px; margin-bottom: 28px; }
-    .pricing-divider { margin: 40px auto; }
-    .pricing-addons-title { font-size: 20px; margin-bottom: 22px; max-width: 18ch; }
-    .addon-pills { gap: 8px; margin-bottom: 22px; }
-    .addon-pill { font-size: 12px; padding: 9px 14px; }
-    .addon-detail { min-height: 110px; padding: 18px 16px; max-width: 100%; }
-    .addon-detail-text { font-size: 15px; line-height: 1.45; }
+    .pricing .container {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+    .pricing .v-divider {
+      width: 64px;
+      height: 1px;
+      background: var(--line);
+      justify-self: start;
+    }
+    .pricing .col-title { font-size: clamp(28px, 7vw, 36px); margin-bottom: 22px; max-width: 100%; }
+    .addons-col .col-title { font-size: 18px; margin-bottom: 18px; max-width: 100%; }
+    .plan-col .price { font-size: clamp(72px, 16vw, 92px); }
+    .plan-col .meta { margin-bottom: 18px; }
+    .plan-col .highlight { font-size: 19px; }
+    .plan-col .includes { font-size: 14px; margin-bottom: 24px; max-width: 100%; }
+    .plan-col .cta-row { gap: 18px; flex-wrap: wrap; }
+    .addon-pills { gap: 8px; margin-bottom: 18px; }
+    .addon-pill { font-size: 12.5px; padding: 9px 14px; }
+    .addon-detail { min-height: 100px; padding: 12px 0 14px; }
+    .addon-detail-text { font-size: 14.5px; line-height: 1.5; inset: 12px 0 14px; }
     .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px 24px; }
     .footer-bottom { flex-direction: column; gap: 12px; align-items: flex-start; }
   }
@@ -1963,36 +1963,32 @@
   </div>
 </section>
 
-<!-- PRICING -->
+<!-- PRICING — 2 columnas: plan izq + adicionales der -->
 <section class="pricing" id="plan">
   <div class="container">
-    <div class="section-header">
-      <div class="section-label">Precios</div>
-      <h2 class="section-title">Un plan base. <em>Sumas si creces.</em></h2>
-    </div>
-
-    <div class="pricing-main">
-      <div class="pricing-price">
-        7 UF
-        <span class="pricing-price-unit">/mes</span>
+    <div class="col plan-col">
+      <div class="eyebrow">— Plan base</div>
+      <h2 class="col-title">Un plan base. <em>Sumas si creces.</em></h2>
+      <div class="price">7 UF<span class="unit">/mes</span></div>
+      <div class="meta">+ IVA · facturación mensual</div>
+      <p class="highlight"><em>3.000 interacciones</em> incluidas</p>
+      <p class="includes">Instalación, configuración, entrenamiento de tu agente y puesta en marcha. Sin costos ocultos.</p>
+      <div class="cta-row">
+        <a href="https://calendar.app.google/vUfSasn1UEhAAsTv8"
+           class="btn-primary"
+           target="_blank"
+           rel="noopener">
+          Agendar demo
+          <span class="arrow">→</span>
+        </a>
+        <a href="#capacidades" class="btn-secondary">Ver capacidades</a>
       </div>
-      <div class="pricing-meta">+ IVA · facturación mensual</div>
-      <p class="pricing-highlight"><em>3.000 interacciones</em> / mes</p>
-      <p class="pricing-setup">Incluye instalación, configuración, entrenamiento de tu agente y puesta en marcha.</p>
-      <a href="https://calendar.app.google/vUfSasn1UEhAAsTv8"
-         class="btn-primary pricing-cta"
-         target="_blank"
-         rel="noopener">
-        Agendar demo
-        <span class="arrow">→</span>
-      </a>
     </div>
 
-    <div class="pricing-divider"></div>
+    <div class="v-divider"></div>
 
-    <div class="pricing-addons">
-      <div class="pricing-addons-label">Adicionales</div>
-      <h3 class="pricing-addons-title">Suma <em>superpoderes</em> cuando los necesites</h3>
+    <div class="col addons-col">
+      <h3 class="col-title">Suma <em>superpoderes</em> cuando los necesites</h3>
       <div class="addon-pills" role="tablist">
         <button class="addon-pill is-active" type="button" data-addon="0">Conexión a agendas</button>
         <button class="addon-pill" type="button" data-addon="1">Insight IA</button>
@@ -2372,7 +2368,7 @@
     const pills = document.querySelectorAll('.addon-pill');
     const texts = document.querySelectorAll('.addon-detail-text');
     const bar = document.querySelector('.addon-progress-bar');
-    const detail = document.querySelector('.addon-detail');
+    const pillsWrap = document.querySelector('.addon-pills');
     if (!pills.length || !texts.length) return;
 
     const DURATION = 5400;
@@ -2420,8 +2416,8 @@
       pill.addEventListener('click', handler);
     });
 
-    if (detail) {
-      detail.addEventListener('mouseenter', () => {
+    if (pillsWrap) {
+      pillsWrap.addEventListener('mouseenter', () => {
         paused = true;
         clearTimeout(autoTimer);
         if (bar) {
@@ -2431,7 +2427,7 @@
           bar.style.transform = cs && cs !== 'none' ? cs : 'scaleX(0)';
         }
       });
-      detail.addEventListener('mouseleave', () => {
+      pillsWrap.addEventListener('mouseleave', () => {
         paused = false;
         advance(current);
       });
