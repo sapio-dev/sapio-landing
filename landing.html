@@ -917,7 +917,7 @@
     text-align: center;
   }
   .pricing .section-label { justify-content: center; }
-  .pricing .section-title { max-width: 18ch; margin: 0 auto; }
+  .pricing .section-title { max-width: 22ch; margin: 0 auto; }
 
   .pricing-main {
     display: flex;
@@ -985,7 +985,7 @@
   }
 
   .pricing-addons {
-    max-width: 1100px;
+    max-width: 880px;
     margin: 0 auto;
     text-align: center;
   }
@@ -995,7 +995,7 @@
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--accent);
-    margin-bottom: 24px;
+    margin-bottom: 14px;
     display: inline-flex;
     align-items: center;
     gap: 12px;
@@ -1007,58 +1007,103 @@
     height: 1px;
     background: var(--accent);
   }
-  .pricing-addons-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-    margin-bottom: 18px;
+  .pricing-addons-title {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(24px, 2.6vw, 32px);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--fg);
+    margin: 0 auto 28px;
+    max-width: 22ch;
   }
-  .addon-item {
-    padding: 22px 20px 20px;
-    text-align: left;
-    position: relative;
+  .pricing-addons-title em {
+    font-style: italic;
+    color: var(--accent-soft);
+  }
+  .addon-pills {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 10px;
-    min-height: 108px;
-    transition: background 220ms ease;
+    margin-bottom: 28px;
   }
-  .addon-item + .addon-item {
-    border-left: 1px solid var(--line);
+  .addon-pill {
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    padding: 10px 18px;
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--fg-dim);
+    cursor: pointer;
+    transition: border-color 240ms ease, color 240ms ease, background 240ms ease;
+    line-height: 1.2;
   }
-  .addon-item::before {
-    content: '';
+  .addon-pill:hover {
+    border-color: var(--accent-soft);
+    color: var(--fg);
+  }
+  .addon-pill.is-active {
+    border-color: var(--accent);
+    color: var(--fg);
+    background: rgba(167, 139, 250, 0.08);
+  }
+  .addon-detail {
+    position: relative;
+    min-height: 96px;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 4px 16px 18px;
+    text-align: center;
+  }
+  .addon-detail-text {
     position: absolute;
-    top: -1px;
+    inset: 4px 16px 18px;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--fg-dim);
+    letter-spacing: 0;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 320ms ease, transform 320ms ease;
+    pointer-events: none;
+  }
+  .addon-detail-text.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .addon-detail-text em {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--accent-soft);
+  }
+  .addon-progress {
+    position: absolute;
+    bottom: 0;
     left: 0;
     right: 0;
-    height: 1px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+    border-radius: 1px;
+  }
+  .addon-progress-bar {
+    height: 100%;
+    width: 100%;
     background: var(--accent);
     transform: scaleX(0);
     transform-origin: left center;
-    transition: transform 320ms cubic-bezier(0.2, 0.7, 0.2, 1);
   }
-  .addon-item:hover {
-    background: rgba(167, 139, 250, 0.04);
-  }
-  .addon-item:hover::before {
+  .addon-progress-bar.is-running {
     transform: scaleX(1);
-  }
-  .addon-item-num {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    color: var(--accent);
-    text-transform: uppercase;
-  }
-  .addon-item-name {
-    font-family: var(--serif);
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.25;
-    color: var(--fg);
-    letter-spacing: -0.01em;
+    transition: transform 5400ms linear;
   }
   .pricing-addons-note {
     font-family: var(--mono);
@@ -1066,6 +1111,8 @@
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--fg-muted);
+    margin-top: 18px;
+    display: block;
   }
 
   /* ===== CTA FINAL ===== */
@@ -1469,10 +1516,11 @@
     .pricing-highlight { font-size: clamp(19px, 2vw, 24px); margin-bottom: 10px; }
     .pricing-setup { font-size: 13.5px; margin-bottom: 24px; max-width: 42ch; }
     .pricing-divider { margin: 28px auto; }
-    .pricing-addons-label { margin-bottom: 18px; }
-    .pricing-addons-grid { margin-bottom: 16px; }
-    .addon-item { padding: 18px 16px; min-height: 96px; gap: 8px; }
-    .addon-item-name { font-size: 14.5px; }
+    .pricing-addons-label { margin-bottom: 10px; }
+    .pricing-addons-title { font-size: clamp(22px, 2.2vw, 28px); margin-bottom: 22px; }
+    .addon-pill { font-size: 12.5px; padding: 9px 16px; }
+    .addon-detail { min-height: 78px; padding: 18px 20px; }
+    .addon-detail-text { font-size: 16px; line-height: 1.4; }
   }
 
   /* Shallow viewports — window shorter than ~780px */
@@ -1711,16 +1759,11 @@
     .pricing-highlight { font-size: 20px; }
     .pricing-setup { font-size: 14px; margin-bottom: 28px; }
     .pricing-divider { margin: 40px auto; }
-    .pricing-addons-grid {
-      grid-template-columns: 1fr 1fr;
-      border-top: 1px solid var(--line);
-    }
-    .addon-item { padding: 18px 16px; min-height: 84px; }
-    .addon-item + .addon-item { border-left: none; }
-    .addon-item:nth-child(odd):not(:first-child),
-    .addon-item:nth-child(even) { border-top: 1px solid var(--line); }
-    .addon-item:nth-child(even) { border-left: 1px solid var(--line); }
-    .addon-item-name { font-size: 14.5px; }
+    .pricing-addons-title { font-size: 20px; margin-bottom: 22px; max-width: 18ch; }
+    .addon-pills { gap: 8px; margin-bottom: 22px; }
+    .addon-pill { font-size: 12px; padding: 9px 14px; }
+    .addon-detail { min-height: 110px; padding: 18px 16px; max-width: 100%; }
+    .addon-detail-text { font-size: 15px; line-height: 1.45; }
     .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px 24px; }
     .footer-bottom { flex-direction: column; gap: 12px; align-items: flex-start; }
   }
@@ -1816,7 +1859,7 @@
       <div class="problem-num-col"><span class="problem-num">02</span></div>
       <div class="problem-text-col">
         <h3>Un equipo que <em>no escala</em>.</h3>
-        <p>Las consultas crecen, el headcount no. Tu gente responde lo mismo veinte veces al día — y deja de tener tiempo para lo que realmente importa.</p>
+        <p>Las consultas crecen, tu equipo no. Tu gente responde lo mismo veinte veces al día — y deja de tener tiempo para lo que realmente importa.</p>
       </div>
     </div>
     <div class="problem-row">
@@ -1841,7 +1884,7 @@
               <div class="module-content">
                 <div class="module-name">Chat web en tu sitio</div>
                 <div class="module-hook">"Una línea de código y tu agente está en línea."</div>
-                <div class="module-desc">Un widget de chat que se instala en tu sitio en minutos. Tu agente responde a quien entra a la web — sin pedirle que cambie de canal, sin perder la visita.</div>
+                <div class="module-desc">Una ventana de chat que se instala en tu sitio en minutos. Tu agente responde a quien entra a la web — sin pedirle que cambie de canal, sin perder la visita.</div>
               </div>
             </div>
             <div class="module">
@@ -1872,8 +1915,8 @@
               <div class="module-num">05</div>
               <div class="module-content">
                 <div class="module-name">Aprende de cada chat</div>
-                <div class="module-hook">"Mejora con cada conversación, no con cada release."</div>
-                <div class="module-desc">Cada interacción ajusta el modelo. El agente entiende mejor a tus clientes y refleja con más precisión cómo habla tu marca con el paso del tiempo.</div>
+                <div class="module-hook">"Mejora con cada conversación, no con cada actualización."</div>
+                <div class="module-desc">Cada interacción afina al agente. Entiende mejor a tus clientes y refleja con más precisión cómo habla tu marca con el paso del tiempo.</div>
               </div>
             </div>
           </div>
@@ -1916,7 +1959,7 @@
         <div class="result-desc">WhatsApp, Instagram, Facebook y chat web unificados. Tu equipo deja de saltar entre apps y nada se pierde.</div>
       </div>
     </div>
-    <div class="results-footnote">— Benchmarks sobre clientes activos de Sapio · actualizado 2026</div>
+    <div class="results-footnote">— Promedios sobre clientes activos de Sapio · actualizado 2026</div>
   </div>
 </section>
 
@@ -1925,7 +1968,7 @@
   <div class="container">
     <div class="section-header">
       <div class="section-label">Precios</div>
-      <h2 class="section-title">Una cuota. <em>Todo incluido.</em></h2>
+      <h2 class="section-title">Un plan base. <em>Sumas si creces.</em></h2>
     </div>
 
     <div class="pricing-main">
@@ -1935,7 +1978,7 @@
       </div>
       <div class="pricing-meta">+ IVA · facturación mensual</div>
       <p class="pricing-highlight"><em>3.000 interacciones</em> / mes</p>
-      <p class="pricing-setup">Incluye setup, configuración, entrenamiento del modelo y puesta en marcha.</p>
+      <p class="pricing-setup">Incluye instalación, configuración, entrenamiento de tu agente y puesta en marcha.</p>
       <a href="https://calendar.app.google/vUfSasn1UEhAAsTv8"
          class="btn-primary pricing-cta"
          target="_blank"
@@ -1948,28 +1991,22 @@
     <div class="pricing-divider"></div>
 
     <div class="pricing-addons">
-      <div class="pricing-addons-label">Sumas si lo necesitas</div>
-      <div class="pricing-addons-grid">
-        <div class="addon-item">
-          <div class="addon-item-num">01</div>
-          <div class="addon-item-name">Conexión a agendas</div>
-        </div>
-        <div class="addon-item">
-          <div class="addon-item-num">02</div>
-          <div class="addon-item-name">Insight IA</div>
-        </div>
-        <div class="addon-item">
-          <div class="addon-item-num">03</div>
-          <div class="addon-item-name">Bolsa de interacciones adicionales</div>
-        </div>
-        <div class="addon-item">
-          <div class="addon-item-num">04</div>
-          <div class="addon-item-name">Campañas outbound por WhatsApp</div>
-        </div>
-        <div class="addon-item">
-          <div class="addon-item-num">05</div>
-          <div class="addon-item-name">Conexión a CRM / ERP</div>
-        </div>
+      <div class="pricing-addons-label">Adicionales</div>
+      <h3 class="pricing-addons-title">Suma <em>superpoderes</em> cuando los necesites</h3>
+      <div class="addon-pills" role="tablist">
+        <button class="addon-pill is-active" type="button" data-addon="0">Conexión a agendas</button>
+        <button class="addon-pill" type="button" data-addon="1">Insight IA</button>
+        <button class="addon-pill" type="button" data-addon="2">Interacciones adicionales</button>
+        <button class="addon-pill" type="button" data-addon="3">Campañas por WhatsApp</button>
+        <button class="addon-pill" type="button" data-addon="4">Conexión a CRM / ERP</button>
+      </div>
+      <div class="addon-detail">
+        <p class="addon-detail-text is-visible" data-addon-text="0"><span>Tu agente <em>agenda reuniones directamente</em> en el calendario que ya usas. Sin formularios intermedios ni rebote a un humano.</span></p>
+        <p class="addon-detail-text" data-addon-text="1"><span>Resúmenes accionables sobre lo que tus clientes <em>piden, dudan y rechazan</em>. Patrones que sólo se ven al leer miles de conversaciones a la vez.</span></p>
+        <p class="addon-detail-text" data-addon-text="2"><span>Si superas las 3.000 interacciones del plan, sumas <em>paquetes adicionales</em> sin interrumpir el servicio ni renegociar contrato.</span></p>
+        <p class="addon-detail-text" data-addon-text="3"><span>Tu agente inicia conversaciones a listas segmentadas — <em>lanzamientos, recordatorios, follow-ups</em> — con plantillas aprobadas por WhatsApp Business.</span></p>
+        <p class="addon-detail-text" data-addon-text="4"><span>Tu agente lee y escribe en <em>HubSpot, Salesforce o tu sistema interno</em>. Cada conversación queda registrada en el lugar correcto del flujo.</span></p>
+        <div class="addon-progress" aria-hidden="true"><div class="addon-progress-bar"></div></div>
       </div>
     </div>
   </div>
@@ -2330,6 +2367,79 @@
     });
   }
 
+  // Pricing add-ons — pill toggle + autoplay with progress bar (pauses on hover)
+  (function addonPills() {
+    const pills = document.querySelectorAll('.addon-pill');
+    const texts = document.querySelectorAll('.addon-detail-text');
+    const bar = document.querySelector('.addon-progress-bar');
+    const detail = document.querySelector('.addon-detail');
+    if (!pills.length || !texts.length) return;
+
+    const DURATION = 5400;
+    let current = 0;
+    let autoTimer = null;
+    let paused = false;
+
+    const startBar = () => {
+      if (!bar) return;
+      bar.style.transition = 'none';
+      bar.style.transform = 'scaleX(0)';
+      bar.classList.remove('is-running');
+      void bar.offsetWidth;
+      bar.style.transition = '';
+      bar.style.transform = '';
+      if (!paused) bar.classList.add('is-running');
+    };
+
+    const setActive = (idx) => {
+      current = idx;
+      pills.forEach(p => p.classList.toggle('is-active', Number(p.dataset.addon) === idx));
+      texts.forEach(t => t.classList.toggle('is-visible', Number(t.dataset.addonText) === idx));
+      startBar();
+    };
+
+    const schedule = () => {
+      clearTimeout(autoTimer);
+      if (paused) return;
+      autoTimer = setTimeout(() => {
+        const next = (current + 1) % pills.length;
+        setActive(next);
+        schedule();
+      }, DURATION);
+    };
+
+    const advance = (idx) => {
+      setActive(idx);
+      schedule();
+    };
+
+    pills.forEach(pill => {
+      const handler = () => advance(Number(pill.dataset.addon));
+      pill.addEventListener('mouseenter', handler);
+      pill.addEventListener('focus', handler);
+      pill.addEventListener('click', handler);
+    });
+
+    if (detail) {
+      detail.addEventListener('mouseenter', () => {
+        paused = true;
+        clearTimeout(autoTimer);
+        if (bar) {
+          const cs = getComputedStyle(bar).transform;
+          bar.classList.remove('is-running');
+          bar.style.transition = 'none';
+          bar.style.transform = cs && cs !== 'none' ? cs : 'scaleX(0)';
+        }
+      });
+      detail.addEventListener('mouseleave', () => {
+        paused = false;
+        advance(current);
+      });
+    }
+
+    advance(0);
+  })();
+
   // Results — touch: tap-to-expand (un card abierto a la vez). Desktop sigue con hover.
   (function resultsTap() {
     const isTouch = window.matchMedia('(hover: none)').matches || window.matchMedia('(max-width: 900px)').matches;
@@ -2345,6 +2455,8 @@
     });
   })();
 </script>
+
+<script src="https://agent.sapio.dev/widget.js" data-token="10b5843a-63e7-42e7-ab60-5b37d981bef8"></script>
 
 </body>
 </html>
