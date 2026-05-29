@@ -123,7 +123,7 @@
   }
   .nav-links {
     display: flex;
-    gap: 40px;
+    gap: 28px;
     align-items: center;
     font-size: 14px;
     color: #efedf3;
@@ -134,16 +134,29 @@
     transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--fg); }
-  .nav-cta {
-    padding: 10px 20px;
-    border: 1px solid var(--fg);
+  /* Control segmentado: Iniciar sesión + Crear cuenta en una píldora outline */
+  .nav-auth {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.85);
     border-radius: 100px;
-    color: var(--fg) !important;
-    transition: all 0.2s !important;
+    overflow: hidden;
   }
-  .nav-cta:hover {
-    background: var(--fg);
-    color: var(--bg) !important;
+  .nav-auth a {
+    padding: 9px 18px;
+    white-space: nowrap;
+    color: #fff !important;
+    transition: all 0.22s ease !important;
+  }
+  .nav-seg-login { background: transparent; }
+  .nav-seg-login:hover { background: rgba(255, 255, 255, 0.08); }
+  .nav-seg-signup {
+    font-weight: 600;
+    border-left: 1px solid rgba(255, 255, 255, 0.85);
+  }
+  .nav-seg-signup:hover {
+    background: var(--accent);
+    color: #0a0a0a !important;
   }
 
   /* ===== NAV DROPDOWN — Módulos ===== */
@@ -685,7 +698,7 @@
   }
   .modules-scroll {
     position: relative;
-    height: 320vh;
+    height: 384vh;
   }
   .modules-sticky {
     position: sticky;
@@ -910,7 +923,15 @@
     border-top: 1px solid var(--line);
     position: relative;
   }
-  .pricing .container {
+  .pricing-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 48px;
+  }
+  .pricing-grid {
     display: grid;
     grid-template-columns: 1fr 1px 1fr;
     gap: 72px;
@@ -948,6 +969,13 @@
     max-width: 14ch;
   }
   .pricing .col-title em { font-style: italic; color: var(--accent-soft); }
+  .addons-col .col-title { margin-bottom: 10px; }
+  .addons-sub {
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--fg-muted);
+    margin-bottom: 28px;
+  }
 
   /* Plan column — primary */
   .plan-col {
@@ -1367,6 +1395,15 @@
     font-style: italic;
     font-weight: 400;
   }
+  .result-num .unit-pre {
+    font-size: inherit;
+    color: var(--fg);
+    margin-left: 0;
+    margin-right: 2px;
+    font-style: normal;
+    transition: color 0.4s ease;
+  }
+  .result-card.is-hover .result-num .unit-pre { color: var(--accent-soft); }
   .result-label {
     font-family: var(--mono);
     font-size: 11px;
@@ -1385,7 +1422,7 @@
     transition: max-height 0.5s ease, opacity 0.4s ease, margin-top 0.5s ease;
   }
   .result-card.is-hover .result-desc {
-    max-height: 140px;
+    max-height: 200px;
     opacity: 1;
     margin-top: -6px;
   }
@@ -1501,7 +1538,7 @@
     .cta-final h2 { font-size: clamp(34px, 3.8vw, 56px); }
     .cta-final p { font-size: 17px; margin-bottom: 40px; }
     .pricing { padding: 64px 0 72px; }
-    .pricing .container { gap: 56px; }
+    .pricing-grid { gap: 56px; }
     .pricing .col-title { font-size: clamp(28px, 2.8vw, 36px); margin-bottom: 22px; }
     .addons-col .col-title { font-size: clamp(17px, 1.5vw, 20px); margin-bottom: 18px; }
     .plan-col .price { font-size: clamp(80px, 7.5vw, 96px); }
@@ -1524,7 +1561,7 @@
     .hero-footer { padding: 20px 0 24px; }
     .live-bar { margin-top: 32px; padding-top: 20px; }
     .live-bar .num { font-size: 36px; }
-    .modules-scroll { height: 280vh; }
+    .modules-scroll { height: 336vh; }
     .module { padding: 12px 0; grid-template-columns: 48px 1fr; gap: 16px; }
     .module-num { font-size: 32px; }
     .module-name { font-size: 21px; }
@@ -1535,8 +1572,8 @@
 
   @media (max-width: 900px) {
     .container { padding: 0 20px; }
-    .nav-links { display: none; }
-    .nav-links .nav-cta { display: inline-flex; }
+    .nav-links > a { display: none; }
+    .nav-auth a { padding: 8px 15px; font-size: 13.5px; }
 
     /* HERO */
     .hero { padding: 96px 0 48px; min-height: 0; display: block; }
@@ -1743,7 +1780,7 @@
     .cta-final { padding: 120px 0; }
     .cta-final p { font-size: 18px; margin-bottom: 40px; }
     .pricing { padding: 72px 0; }
-    .pricing .container {
+    .pricing-grid {
       grid-template-columns: 1fr;
       gap: 48px;
     }
@@ -1779,7 +1816,10 @@
       <a href="#resultados">Resultados</a>
       <a href="#plan">Precios</a>
       <a href="#contacto">Contacto</a>
-      <a href="https://calendar.app.google/vUfSasn1UEhAAsTv8" class="nav-cta" target="_blank" rel="noopener">Agendar demo</a>
+      <span class="nav-auth">
+        <a href="https://agent.sapio.dev/login" class="nav-seg-login" target="_blank" rel="noopener">Iniciar sesión</a>
+        <a href="https://agent.sapio.dev/signup" class="nav-seg-signup" target="_blank" rel="noopener">Crear cuenta</a>
+      </span>
     </div>
   </div>
 </nav>
@@ -1802,7 +1842,7 @@
         El agente que responde por tu marca, <em>24/7</em>.
       </h1>
       <p class="hero-sub">
-        WhatsApp, Instagram, Facebook y chat web en tu sitio. <strong>Agentes de IA que responden con el tono de tu marca</strong> — mientras tu equipo duerme, tus clientes ya tienen respuesta.
+        Responde a cada cliente, en el canal que escriba y a la hora que sea. <strong>Sin hacer esperar, sin perder el tono de tu marca.</strong>
       </p>
       <div class="hero-cta">
         <div class="hero-cta-row">
@@ -1851,22 +1891,22 @@
     <div class="problem-row">
       <div class="problem-num-col"><span class="problem-num">01</span></div>
       <div class="problem-text-col">
-        <h3>Mensajes que <em>se enfrían</em>.</h3>
-        <p>WhatsApp, Instagram, Facebook, chat web. Cuatro bandejas, tres turnos, cero coordinación. El cliente que escribe a las 22:00 espera hasta el lunes.</p>
+        <h3>Clientes que <em>se van</em>.</h3>
+        <p>Escriben fuera de horario, esperan, no reciben respuesta — y compran en otro lado. No es un problema de mensajes; es un problema de ventas.</p>
       </div>
     </div>
     <div class="problem-row">
       <div class="problem-num-col"><span class="problem-num">02</span></div>
       <div class="problem-text-col">
-        <h3>Un equipo que <em>no escala</em>.</h3>
-        <p>Las consultas crecen, tu equipo no. Tu gente responde lo mismo veinte veces al día — y deja de tener tiempo para lo que realmente importa.</p>
+        <h3>Tu equipo <em>se quema</em>.</h3>
+        <p>Mientras los mensajes se acumulan, tu equipo repite las mismas respuestas todo el día. Se cansa de lo que nuestro agente puede resolver — y deja de hacer lo que solo un humano puede.</p>
       </div>
     </div>
     <div class="problem-row">
       <div class="problem-num-col"><span class="problem-num">03</span></div>
       <div class="problem-text-col">
-        <h3>Tono que <em>se diluye</em>.</h3>
-        <p>Cada persona responde distinto. Los bots genéricos suenan a bot. Tu marca llegó a sonar diferente según quién esté en turno.</p>
+        <h3>Tu marca <em>se diluye</em>.</h3>
+        <p>Cada persona del equipo responde con su propio tono. Lo que construiste durante años se desarma en cada conversación que tú no controlas.</p>
       </div>
     </div>
   </div>
@@ -1882,17 +1922,17 @@
             <div class="module is-active">
               <div class="module-num">01</div>
               <div class="module-content">
-                <div class="module-name">Chat web en tu sitio</div>
-                <div class="module-hook">"Una línea de código y tu agente está en línea."</div>
-                <div class="module-desc">Una ventana de chat que se instala en tu sitio en minutos. Tu agente responde a quien entra a la web — sin pedirle que cambie de canal, sin perder la visita.</div>
+                <div class="module-name">Tu tono, no un bot</div>
+                <div class="module-hook">"Suena como tu marca. Porque aprende de tu marca."</div>
+                <div class="module-desc">El agente se entrena con tu manual de marca, tus respuestas históricas y tus FAQs. No suena a chatbot genérico — suena a ti.</div>
               </div>
             </div>
             <div class="module">
               <div class="module-num">02</div>
               <div class="module-content">
-                <div class="module-name">Tu tono, no un bot</div>
-                <div class="module-hook">"Suena como tu marca. Porque aprende de tu marca."</div>
-                <div class="module-desc">El agente se entrena con tu manual de marca, tus respuestas históricas y tus FAQs. No suena a chatbot genérico — suena a ti.</div>
+                <div class="module-name">Convierte conversaciones en clientes</div>
+                <div class="module-hook">"Cada chat es una oportunidad de venta."</div>
+                <div class="module-desc">El agente responde, asesora y deriva — al carro, a la agenda o a tu vendedor — para que ninguna intención de compra se quede a medias.</div>
               </div>
             </div>
             <div class="module">
@@ -1906,13 +1946,21 @@
             <div class="module">
               <div class="module-num">04</div>
               <div class="module-content">
+                <div class="module-name">Está donde tus clientes ya escriben</div>
+                <div class="module-hook">"En todos sus canales, sin que cambien de app."</div>
+                <div class="module-desc">WhatsApp, Instagram, Facebook y tu sitio web. Sin pedirles que cambien de canal ni llenar formularios. Donde te buscan, ahí los atiendes.</div>
+              </div>
+            </div>
+            <div class="module">
+              <div class="module-num">05</div>
+              <div class="module-content">
                 <div class="module-name">Humano en el loop</div>
                 <div class="module-hook">"La IA propone. Tu equipo decide cuándo entrar."</div>
                 <div class="module-desc">Reglas claras de escalamiento: el agente responde lo simple y entrega contexto completo cuando un humano debe tomar la conversación.</div>
               </div>
             </div>
             <div class="module">
-              <div class="module-num">05</div>
+              <div class="module-num">06</div>
               <div class="module-content">
                 <div class="module-name">Aprende de cada chat</div>
                 <div class="module-hook">"Mejora con cada conversación, no con cada actualización."</div>
@@ -1922,7 +1970,7 @@
           </div>
           <aside class="modules-title-col">
             <div class="section-label">Qué hace</div>
-            <h2 class="section-title">No es un chatbot. <em>Es tu agente de marca</em> respondiendo en cada canal.</h2>
+            <h2 class="section-title">No es un chatbot. <em>Es tu agente de marca</em> respondiendo a cada cliente.</h2>
           </aside>
         </div>
       </div>
@@ -1939,9 +1987,14 @@
     </div>
     <div class="results-grid" data-counter>
       <div class="result-card">
+        <div class="result-num"><span class="count" data-target="99" data-duration="1500">99</span><span class="unit">%</span></div>
+        <div class="result-label">Clientes con respuesta</div>
+        <div class="result-desc">Ningún mensaje queda sin contestar. Cada cliente recibe respuesta, sin importar la hora ni el canal.</div>
+      </div>
+      <div class="result-card">
         <div class="result-num"><span class="count" data-target="-87" data-duration="1400">-87</span><span class="unit">%</span></div>
         <div class="result-label">Tiempo de respuesta</div>
-        <div class="result-desc">Reducción promedio en tiempo de primera respuesta al cliente tras activar el agente conversacional.</div>
+        <div class="result-desc">Lo que antes tardaba horas en contestarse, ahora se contesta en segundos. El cliente no espera.</div>
       </div>
       <div class="result-card">
         <div class="result-num"><span class="count" data-target="24" data-duration="1500">24</span><span class="unit">/7</span></div>
@@ -1949,14 +2002,9 @@
         <div class="result-desc">El agente responde a cualquier hora, en cualquier canal, con el tono de tu marca. Sin turnos, sin pausa.</div>
       </div>
       <div class="result-card">
-        <div class="result-num"><span class="count" data-target="4" data-duration="1200">4</span><span class="unit">×</span></div>
-        <div class="result-label">Capacidad por agente</div>
-        <div class="result-desc">Cada persona del equipo gestiona más conversaciones — la IA resuelve lo repetitivo y entrega contexto listo en lo que requiere criterio.</div>
-      </div>
-      <div class="result-card">
-        <div class="result-num"><span class="count" data-target="4" data-duration="1300">4</span><span class="unit"> canales</span></div>
-        <div class="result-label">Una sola bandeja</div>
-        <div class="result-desc">WhatsApp, Instagram, Facebook y chat web unificados. Tu equipo deja de saltar entre apps y nada se pierde.</div>
+        <div class="result-num"><span class="unit unit-pre">+</span><span class="count" data-target="60" data-duration="1200">60</span><span class="unit">%</span></div>
+        <div class="result-label">Tiempo del equipo recuperado</div>
+        <div class="result-desc">Tu equipo deja lo repetitivo y vuelve a lo que solo un humano puede: cerrar ventas y cuidar relaciones.</div>
       </div>
     </div>
     <div class="results-footnote">— Promedios sobre clientes activos de Sapio · actualizado 2026</div>
@@ -1966,9 +2014,10 @@
 <!-- PRICING — 2 columnas: plan izq + adicionales der -->
 <section class="pricing" id="plan">
   <div class="container">
+    <div class="pricing-label">Precios</div>
+    <div class="pricing-grid">
     <div class="col plan-col">
-      <div class="eyebrow">— Plan base</div>
-      <h2 class="col-title">Un plan base. <em>Sumas si creces.</em></h2>
+      <h2 class="col-title">Un <em>plan.</em></h2>
       <div class="price">7 UF<span class="unit">/mes</span></div>
       <div class="meta">+ IVA · facturación mensual</div>
       <p class="highlight"><em>3.000 interacciones</em> incluidas</p>
@@ -1988,22 +2037,24 @@
     <div class="v-divider"></div>
 
     <div class="col addons-col">
-      <h3 class="col-title">Suma <em>superpoderes</em> cuando los necesites</h3>
+      <h3 class="col-title">Activa <em>capacidades</em> cuando las necesites.</h3>
+      <p class="addons-sub">Tu plan crece contigo.</p>
       <div class="addon-pills" role="tablist">
-        <button class="addon-pill is-active" type="button" data-addon="0">Conexión a agendas</button>
+        <button class="addon-pill is-active" type="button" data-addon="0">Conexión a CRM / ERP</button>
         <button class="addon-pill" type="button" data-addon="1">Insight IA</button>
-        <button class="addon-pill" type="button" data-addon="2">Interacciones adicionales</button>
+        <button class="addon-pill" type="button" data-addon="2">Conexión a agendas</button>
         <button class="addon-pill" type="button" data-addon="3">Campañas por WhatsApp</button>
-        <button class="addon-pill" type="button" data-addon="4">Conexión a CRM / ERP</button>
+        <button class="addon-pill" type="button" data-addon="4">Interacciones adicionales</button>
       </div>
       <div class="addon-detail">
-        <p class="addon-detail-text is-visible" data-addon-text="0"><span>Tu agente <em>agenda reuniones directamente</em> en el calendario que ya usas. Sin formularios intermedios ni rebote a un humano.</span></p>
+        <p class="addon-detail-text is-visible" data-addon-text="0"><span>Tu agente <em>consulta el sistema que ya usas</em>. Nos conectamos a cualquier plataforma con API para que responda con datos reales: stock, estado de pedidos, historial del cliente.</span></p>
         <p class="addon-detail-text" data-addon-text="1"><span>Resúmenes accionables sobre lo que tus clientes <em>piden, dudan y rechazan</em>. Patrones que sólo se ven al leer miles de conversaciones a la vez.</span></p>
-        <p class="addon-detail-text" data-addon-text="2"><span>Si superas las 3.000 interacciones del plan, sumas <em>paquetes adicionales</em> sin interrumpir el servicio ni renegociar contrato.</span></p>
+        <p class="addon-detail-text" data-addon-text="2"><span>Tu agente <em>agenda reuniones directamente</em> en el calendario que ya usas. Sin formularios intermedios ni rebote a un humano.</span></p>
         <p class="addon-detail-text" data-addon-text="3"><span>Tu agente inicia conversaciones a listas segmentadas — <em>lanzamientos, recordatorios, follow-ups</em> — con plantillas aprobadas por WhatsApp Business.</span></p>
-        <p class="addon-detail-text" data-addon-text="4"><span>Tu agente lee y escribe en <em>HubSpot, Salesforce o tu sistema interno</em>. Cada conversación queda registrada en el lugar correcto del flujo.</span></p>
+        <p class="addon-detail-text" data-addon-text="4"><span>Si superas las 3.000 interacciones del plan, sumas <em>paquetes adicionales</em> sin interrumpir el servicio ni renegociar contrato.</span></p>
         <div class="addon-progress" aria-hidden="true"><div class="addon-progress-bar"></div></div>
       </div>
+    </div>
     </div>
   </div>
 </section>
