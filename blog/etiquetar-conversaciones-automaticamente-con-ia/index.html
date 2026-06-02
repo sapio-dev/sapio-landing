@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PJV4JL2J');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Etiquetar conversaciones automáticamente con IA | Sapio</title>
+<meta name="description" content="Etiquetar conversaciones automáticamente con IA: el agente clasifica cada chat por estado y proyecto sin trabajo manual. Cómo funciona y para qué sirve.">
+<meta name="keywords" content="etiquetar conversaciones automáticamente con IA, etiquetado automático con IA, clasificar chats con IA, etiquetas de estado y proyecto, organizar conversaciones con IA">
+<meta name="author" content="Sapio">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="canonical" href="https://sapio.dev/blog/etiquetar-conversaciones-automaticamente-con-ia/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Sapio">
+<meta property="og:url" content="https://sapio.dev/blog/etiquetar-conversaciones-automaticamente-con-ia/">
+<meta property="og:title" content="Etiquetar conversaciones automáticamente con IA">
+<meta property="og:description" content="El agente clasifica cada conversación por estado y proyecto sin trabajo manual, con tolerancia a typos y acentos.">
+<meta property="og:image" content="https://sapio.dev/og-image.png">
+<meta property="og:locale" content="es_CL">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Etiquetar conversaciones automáticamente con IA">
+<meta name="twitter:description" content="El agente clasifica cada chat por estado y proyecto sin trabajo manual. Bandeja siempre ordenada.">
+<meta name="twitter:image" content="https://sapio.dev/og-image.png">
+
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Etiquetar conversaciones automáticamente con IA",
+  "description": "Etiquetar conversaciones automáticamente con IA: el agente clasifica cada chat por estado y proyecto sin trabajo manual, con tolerancia a typos y acentos.",
+  "image": "https://sapio.dev/og-image.png",
+  "inLanguage": "es",
+  "datePublished": "2026-06-02",
+  "dateModified": "2026-06-02",
+  "author": {"@type": "Organization", "name": "Sapio", "url": "https://sapio.dev/"},
+  "publisher": {"@type": "Organization", "name": "Sapio", "url": "https://sapio.dev/", "logo": {"@type": "ImageObject", "url": "https://sapio.dev/icon-512.png"}},
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://sapio.dev/blog/etiquetar-conversaciones-automaticamente-con-ia/"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://sapio.dev/"},
+    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://sapio.dev/blog/"},
+    {"@type": "ListItem", "position": 3, "name": "Etiquetar conversaciones automáticamente con IA", "item": "https://sapio.dev/blog/etiquetar-conversaciones-automaticamente-con-ia/"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "¿Qué es etiquetar conversaciones automáticamente con IA?", "acceptedAnswer": {"@type": "Answer", "text": "Es dejar que el agente clasifique cada conversación por su cuenta, asignándole etiquetas de estado y de proyecto a medida que conversa. No hay que ordenar la bandeja a mano: el agente lee de qué trata el caso y lo etiqueta al instante, en WhatsApp, Instagram, Facebook y chat web, manteniendo todo organizado 24/7."}},
+    {"@type": "Question", "name": "¿Qué tipo de etiquetas pone el agente?", "acceptedAnswer": {"@type": "Answer", "text": "Etiquetas de estado, que reflejan en qué punto va la conversación, y etiquetas de proyecto, que indican a qué línea, campaña o tema pertenece. Con ellas la bandeja se ordena sola y el equipo puede filtrar, priorizar y ver el pipeline sin clasificar nada manualmente."}},
+    {"@type": "Question", "name": "¿Qué pasa si el cliente escribe con errores o sin acentos?", "acceptedAnswer": {"@type": "Answer", "text": "El etiquetado tolera typos y acentos: el agente reconoce la intención aunque la persona escriba rápido, con faltas o sin tildes, y aplica la etiqueta correcta igual. Así la clasificación no se rompe por la forma en que la gente realmente escribe en el chat."}},
+    {"@type": "Question", "name": "¿Para qué sirve tener las conversaciones etiquetadas?", "acceptedAnswer": {"@type": "Answer", "text": "Sirve para ver el pipeline de un vistazo, filtrar por estado o proyecto, priorizar lo urgente y medir cómo avanzan los casos. Con todo etiquetado, el equipo trabaja sobre una bandeja ordenada y puede ver las conversaciones por etapa, como un Kanban, sin esfuerzo manual."}}
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css">
+</head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJV4JL2J"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<nav>
+  <div class="container nav-inner">
+    <a href="/" class="logo">Sapio</a>
+    <div class="nav-links">
+      <a href="/#capacidades">Capacidades</a>
+      <a href="/#resultados">Resultados</a>
+      <a href="/#plan">Precios</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#contacto">Contacto</a>
+      <span class="nav-auth">
+        <a href="https://agent.sapio.dev/login" class="nav-seg-login" target="_blank" rel="noopener">Iniciar sesión</a>
+        <a href="https://agent.sapio.dev/signup" class="nav-seg-signup" target="_blank" rel="noopener">Crear cuenta</a>
+      </span>
+    </div>
+  </div>
+</nav>
+
+<article class="article">
+  <div class="prose-wrap">
+    <nav class="breadcrumb"><a href="/">Inicio</a> / <a href="/blog/">Blog</a> / Etiquetar conversaciones automáticamente con IA</nav>
+    <div class="article-meta">Operación · 5 min de lectura</div>
+    <h1>Etiquetar conversaciones automáticamente con IA</h1>
+    <p class="standfirst">Una bandeja con cientos de chats sin etiquetar es un desorden caro: nadie sabe qué priorizar. El agente clasifica cada conversación a medida que conversa, sin que nadie tenga que ordenarla a mano.</p>
+
+    <div class="article-body">
+
+      <div class="tldr">
+        <div class="tldr-label">Respuesta directa</div>
+        <p><strong>Etiquetar conversaciones automáticamente con IA</strong> es dejar que el agente clasifique cada chat por su cuenta, asignándole etiquetas de estado y de proyecto a medida que conversa. No hay que ordenar la bandeja a mano: el agente lee de qué trata el caso y lo etiqueta al instante, en WhatsApp, Instagram, Facebook y chat web, manteniendo todo organizado 24/7.</p>
+      </div>
+
+      <h2>¿Qué es etiquetar conversaciones automáticamente con IA?</h2>
+      <p>Es delegar al agente la clasificación de cada conversación. En lugar de que el equipo abra cada chat y le ponga una etiqueta, el agente <strong>entiende de qué trata el caso</strong> y le asigna las etiquetas correctas mientras conversa, sin pasos manuales.</p>
+      <p>La diferencia con etiquetar a mano es que la bandeja <strong>nunca se desordena</strong>: cada conversación llega ya clasificada por estado y por proyecto, y se mantiene actualizada a medida que avanza.</p>
+
+      <h2>¿Qué tipo de etiquetas pone el agente?</h2>
+      <p>El agente trabaja con dos familias de etiquetas que cubren las dos preguntas clave de cualquier bandeja: en qué punto va y a qué pertenece.</p>
+      <table>
+        <thead>
+          <tr><th>Tipo de etiqueta</th><th>Qué responde</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Etiqueta de estado</td><td>En qué punto va la conversación (nuevo, en proceso, cerrado, etc.)</td></tr>
+          <tr><td>Etiqueta de proyecto</td><td>A qué línea, campaña o tema pertenece el caso</td></tr>
+        </tbody>
+      </table>
+      <p>Con ambas, la bandeja se ordena sola y el equipo puede filtrar, priorizar y ver el pipeline sin clasificar nada manualmente.</p>
+
+      <h2>¿Qué pasa si el cliente escribe con errores?</h2>
+      <p>La gente escribe rápido, con faltas y sin tildes. El etiquetado de Sapio está hecho para eso: <strong>tolera typos y acentos</strong>. El agente reconoce la intención aunque el mensaje venga mal escrito y aplica la etiqueta correcta igual. Por ejemplo:</p>
+      <ul>
+        <li>Reconoce el caso aunque la palabra venga sin tilde o con una letra cambiada.</li>
+        <li>No crea etiquetas duplicadas por una variación de escritura.</li>
+        <li>Mantiene la clasificación consistente sin depender de cómo teclee cada cliente.</li>
+      </ul>
+      <p>Así la organización de la bandeja no se rompe por la forma en que la gente realmente escribe en el chat.</p>
+
+      <h2>¿Para qué sirve tener todo etiquetado?</h2>
+      <p>Una bandeja etiquetada deja de ser una lista y se convierte en una herramienta de gestión. Con las etiquetas al día, el equipo puede:</p>
+      <ul>
+        <li><strong>Ver el pipeline de un vistazo:</strong> las conversaciones se ordenan por etapa, como un Kanban.</li>
+        <li><strong>Filtrar y priorizar:</strong> separar lo urgente, lo nuevo o un proyecto concreto en segundos.</li>
+        <li><strong>Repartir el trabajo:</strong> asignar por estado o proyecto sin revisar cada chat.</li>
+        <li><strong>Medir el avance:</strong> seguir cómo se mueven los casos sin reportes manuales.</li>
+      </ul>
+      <p>Todo esto ocurre solo, 24/7, mientras el agente atiende y la primera respuesta crítica se mantiene por debajo de los 5 minutos.</p>
+
+      <h2>¿Cómo lo hace Sapio?</h2>
+      <p><strong>Sapio</strong> es un agente conversacional de IA que responde por tu marca 24/7 en WhatsApp, Instagram, Facebook y chat web, con el tono de tu marca y todo en una sola bandeja. Mientras conversa, etiqueta cada caso por estado y por proyecto —con tolerancia a typos y acentos— para que tu bandeja se mantenga ordenada sin trabajo manual, mantiene la primera respuesta crítica por debajo de los 5 minutos y escala a tu equipo cuando un caso lo amerita. Opera hoy con clientes en Chile y Argentina, desde 7 UF al mes más addons.</p>
+
+      <div class="cta-box">
+        <h2>¿Quieres ver tu bandeja ordenándose sola?</h2>
+        <p>Te mostramos en una demo cómo el agente etiqueta cada conversación por estado y proyecto, sin trabajo manual.</p>
+        <a class="btn" href="https://calendar.app.google/vUfSasn1UEhAAsTv8" target="_blank" rel="noopener">Agendar demo</a>
+      </div>
+
+      <section class="faq">
+        <h2>Preguntas frecuentes</h2>
+        <div class="faq-item">
+          <h3>¿Qué es etiquetar conversaciones automáticamente con IA?</h3>
+          <p>Es dejar que el agente clasifique cada conversación por su cuenta, asignándole etiquetas de estado y de proyecto a medida que conversa. No hay que ordenar la bandeja a mano: el agente lee de qué trata el caso y lo etiqueta al instante, en WhatsApp, Instagram, Facebook y chat web, manteniendo todo organizado 24/7.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Qué tipo de etiquetas pone el agente?</h3>
+          <p>Etiquetas de estado, que reflejan en qué punto va la conversación, y etiquetas de proyecto, que indican a qué línea, campaña o tema pertenece. Con ellas la bandeja se ordena sola y el equipo puede filtrar, priorizar y ver el pipeline sin clasificar nada manualmente.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Qué pasa si el cliente escribe con errores o sin acentos?</h3>
+          <p>El etiquetado tolera typos y acentos: el agente reconoce la intención aunque la persona escriba rápido, con faltas o sin tildes, y aplica la etiqueta correcta igual. Así la clasificación no se rompe por la forma en que la gente realmente escribe en el chat.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Para qué sirve tener las conversaciones etiquetadas?</h3>
+          <p>Sirve para ver el pipeline de un vistazo, filtrar por estado o proyecto, priorizar lo urgente y medir cómo avanzan los casos. Con todo etiquetado, el equipo trabaja sobre una bandeja ordenada y puede ver las conversaciones por etapa, como un Kanban, sin esfuerzo manual.</p>
+        </div>
+      </section>
+
+      <div class="related">
+        <div class="post-tag">Seguir leyendo</div>
+        <div class="related-list">
+          <a href="/blog/pipeline-de-ventas-por-chat-kanban/">Pipeline de ventas por chat con IA (Kanban) →</a>
+          <a href="/blog/metricas-de-atencion-al-cliente/">Métricas de atención al cliente →</a>
+          <a href="/blog/bandeja-unificada-multicanal/">Bandeja unificada multicanal →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">Sapio</a>
+        <p>Agentes conversacionales de marca que responden en WhatsApp, Instagram, Facebook y chat web. 24/7, con tu tono.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Producto</h4>
+        <a href="/#capacidades">Capacidades</a>
+        <a href="/#resultados">Resultados</a>
+        <a href="/#plan">Precios</a>
+        <a href="/conversations">Ver demo</a>
+      </div>
+      <div class="footer-col">
+        <h4>Recursos</h4>
+        <a href="/blog/">Blog</a>
+        <a href="/blog/que-es-un-agente-conversacional-de-ia/">Qué es un agente de IA</a>
+      </div>
+      <div class="footer-col">
+        <h4>Acceso</h4>
+        <a href="https://calendar.app.google/vUfSasn1UEhAAsTv8" target="_blank" rel="noopener">Agendar demo</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Sapio · sapio.dev</div>
+      <div>Hecho con intención desde Chile</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

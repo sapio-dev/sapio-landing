@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PJV4JL2J');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consultar stock en tiempo real por chat con IA | Sapio</title>
+<meta name="description" content="Consultar stock en tiempo real por chat con IA: el agente conecta con tu sistema vía API y responde disponibilidad al momento, 24/7. Cómo funciona.">
+<meta name="keywords" content="consultar stock en tiempo real por chat, consultar disponibilidad por WhatsApp, stock por chat con IA, agente de IA con API en vivo, responder disponibilidad con IA">
+<meta name="author" content="Sapio">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="canonical" href="https://sapio.dev/blog/consultar-stock-en-tiempo-real-por-chat/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Sapio">
+<meta property="og:url" content="https://sapio.dev/blog/consultar-stock-en-tiempo-real-por-chat/">
+<meta property="og:title" content="Consultar stock en tiempo real por chat con IA">
+<meta property="og:description" content="El agente conecta con tu sistema vía API y responde disponibilidad al momento, 24/7, sin pasar la consulta a una persona.">
+<meta property="og:image" content="https://sapio.dev/og-image.png">
+<meta property="og:locale" content="es_CL">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Consultar stock en tiempo real por chat con IA">
+<meta name="twitter:description" content="El agente responde disponibilidad al momento consultando tu sistema en vivo, 24/7.">
+<meta name="twitter:image" content="https://sapio.dev/og-image.png">
+
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Consultar stock en tiempo real por chat con IA",
+  "description": "Consultar stock en tiempo real por chat con IA es dejar que un agente conectado a tu sistema vía API responda la disponibilidad al momento, 24/7 y con el tono de tu marca.",
+  "image": "https://sapio.dev/og-image.png",
+  "inLanguage": "es",
+  "datePublished": "2026-06-02",
+  "dateModified": "2026-06-02",
+  "author": {"@type": "Organization", "name": "Sapio", "url": "https://sapio.dev/"},
+  "publisher": {"@type": "Organization", "name": "Sapio", "url": "https://sapio.dev/", "logo": {"@type": "ImageObject", "url": "https://sapio.dev/icon-512.png"}},
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://sapio.dev/blog/consultar-stock-en-tiempo-real-por-chat/"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://sapio.dev/"},
+    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://sapio.dev/blog/"},
+    {"@type": "ListItem", "position": 3, "name": "Consultar stock en tiempo real por chat con IA", "item": "https://sapio.dev/blog/consultar-stock-en-tiempo-real-por-chat/"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "¿Qué es consultar stock en tiempo real por chat con IA?", "acceptedAnswer": {"@type": "Answer", "text": "Es dejar que un agente conversacional conectado a tu sistema vía API responda la disponibilidad de un producto al momento de la pregunta, por WhatsApp, Instagram, Facebook o chat web, 24/7 y con el tono de tu marca, sin que una persona tenga que revisar el inventario manualmente."}},
+    {"@type": "Question", "name": "¿Cómo obtiene el agente el stock actualizado?", "acceptedAnswer": {"@type": "Answer", "text": "El agente llama a una API en vivo que tú registras y que expone los datos de tu sistema (inventario, ERP o e-commerce). Cuando el cliente pregunta por un producto, el agente consulta la API en ese momento y responde con la cifra real, no con una lista estática que puede estar desactualizada."}},
+    {"@type": "Question", "name": "¿En qué se diferencia consultar stock por API de usar el catálogo?", "acceptedAnswer": {"@type": "Answer", "text": "El catálogo (RAG) responde fichas, descripciones y precios relativamente estables que se entrenan con tus documentos. La API en vivo responde datos que cambian a cada rato, como la cantidad disponible. Para stock conviene la API; el agente combina ambas según la pregunta."}},
+    {"@type": "Question", "name": "¿Qué pasa si un producto está agotado?", "acceptedAnswer": {"@type": "Answer", "text": "El agente lo informa con claridad en el mismo chat y puede ofrecer alternativas, registrar el interés del cliente con una etiqueta y avisar a tu equipo. Si el caso requiere criterio humano, escala la conversación a un ejecutivo con todo el contexto recogido."}}
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css">
+</head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJV4JL2J"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<nav>
+  <div class="container nav-inner">
+    <a href="/" class="logo">Sapio</a>
+    <div class="nav-links">
+      <a href="/#capacidades">Capacidades</a>
+      <a href="/#resultados">Resultados</a>
+      <a href="/#plan">Precios</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#contacto">Contacto</a>
+      <span class="nav-auth">
+        <a href="https://agent.sapio.dev/login" class="nav-seg-login" target="_blank" rel="noopener">Iniciar sesión</a>
+        <a href="https://agent.sapio.dev/signup" class="nav-seg-signup" target="_blank" rel="noopener">Crear cuenta</a>
+      </span>
+    </div>
+  </div>
+</nav>
+
+<article class="article">
+  <div class="prose-wrap">
+    <nav class="breadcrumb"><a href="/">Inicio</a> / <a href="/blog/">Blog</a> / Consultar stock en tiempo real por chat con IA</nav>
+    <div class="article-meta">Caso de uso · 6 min de lectura</div>
+    <h1>Consultar stock en tiempo real por chat con IA</h1>
+    <p class="standfirst">"¿Les queda?" es la pregunta que más se repite y la que más tiempo quema. Así un agente conectado a tu sistema responde la disponibilidad al momento, sin pasar la consulta a nadie.</p>
+
+    <div class="article-body">
+
+      <div class="tldr">
+        <div class="tldr-label">Respuesta directa</div>
+        <p><strong>Consultar stock en tiempo real por chat con IA</strong> es dejar que un agente conectado a tu sistema vía API responda la disponibilidad de un producto al momento de la pregunta. Funciona 24/7 en WhatsApp, Instagram, Facebook y chat web, con el tono de tu marca, sin que una persona revise el inventario a mano.</p>
+      </div>
+
+      <h2>¿Qué es consultar stock en tiempo real por chat con IA?</h2>
+      <p>Es delegar a un agente conversacional la pregunta más frecuente del comercio: <strong>"¿les queda?"</strong>. En vez de que un cliente espere a que alguien revise el sistema y conteste, el agente consulta la disponibilidad en el momento exacto en que se la preguntan y responde con la cifra real, por el mismo canal donde escribió.</p>
+      <p>La clave es que el dato no sale de una lista estática que se desactualiza, sino de una <strong>API en vivo</strong> conectada a tu inventario. Así, lo que el cliente lee en el chat es lo que efectivamente hay disponible en ese segundo.</p>
+
+      <h2>¿Cómo obtiene el agente el stock actualizado?</h2>
+      <p>El flujo es directo y ocurre en segundos, sin que nadie del equipo intervenga en lo repetitivo:</p>
+      <ol>
+        <li><strong>Pregunta:</strong> el cliente escribe "¿tienen el modelo X en talla M?" por WhatsApp, Instagram, Facebook o chat web, a cualquier hora.</li>
+        <li><strong>Comprensión:</strong> el agente interpreta qué producto y variante busca, incluso si lo escribe con errores o de forma coloquial.</li>
+        <li><strong>Consulta en vivo:</strong> llama a la API que registraste —conectada a tu inventario, ERP o e-commerce— y obtiene la disponibilidad real en ese momento.</li>
+        <li><strong>Respuesta:</strong> contesta con la cifra o estado actual, mantiene la primera respuesta crítica por debajo de los 5 minutos y sigue la conversación hacia la compra o la reserva.</li>
+      </ol>
+      <p>Como la consulta se hace al instante, el agente nunca promete algo que ya se vendió ni descarta un producto que acaba de reponerse.</p>
+
+      <h2>¿En qué se diferencia el stock por API de usar el catálogo?</h2>
+      <p>El agente trabaja con dos fuentes de información y elige la correcta según la pregunta. No es lo mismo describir un producto que saber cuántos quedan.</p>
+      <table>
+        <thead>
+          <tr><th>Aspecto</th><th>Catálogo (RAG)</th><th>API en vivo</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Qué responde</td><td>Fichas, descripciones, precios estables</td><td>Disponibilidad y datos que cambian a cada rato</td></tr>
+          <tr><td>De dónde sale</td><td>Tus documentos (PDF, Excel, fichas)</td><td>Tu sistema, consultado en el momento</td></tr>
+          <tr><td>Frecuencia de cambio</td><td>Baja</td><td>Alta, minuto a minuto</td></tr>
+          <tr><td>Ideal para</td><td>"¿Qué incluye este producto?"</td><td>"¿Les queda? ¿Cuántos hay?"</td></tr>
+        </tbody>
+      </table>
+      <p>Para responder existencias conviene la API en vivo; para explicar qué es un producto, el catálogo. El agente combina ambas en la misma conversación según lo que pregunte el cliente.</p>
+
+      <h2>¿Qué pasa si un producto está agotado?</h2>
+      <p>Un "no queda" bien manejado puede salvar la venta. Cuando la consulta en vivo devuelve cero disponibilidad, el agente:</p>
+      <ul>
+        <li><strong>Lo informa con claridad</strong> en el mismo chat, sin dejar al cliente esperando.</li>
+        <li><strong>Ofrece alternativas</strong> cuando existen productos similares en stock.</li>
+        <li><strong>Registra el interés</strong> con una etiqueta automática para reponer o avisar después.</li>
+        <li><strong>Escala a tu equipo</strong> con todo el contexto si el caso requiere criterio humano.</li>
+      </ul>
+      <p>Así, incluso cuando algo está agotado, la conversación no se corta: queda una acción de seguimiento en marcha.</p>
+
+      <h2>¿Para qué rubros tiene más sentido?</h2>
+      <p>Cualquier negocio donde la disponibilidad cambie seguido y los clientes pregunten antes de comprar gana con esto. En retail evita que el equipo revise el sistema una y otra vez por la misma duda; en automotriz e inmobiliario confirma si una unidad o propiedad sigue disponible; en distribución responde existencias de bodega sin llamadas internas. En todos los casos opera 24/7 y en los canales reales: WhatsApp, Instagram, Facebook y chat web.</p>
+
+      <h2>¿Cómo lo hace Sapio?</h2>
+      <p><strong>Sapio</strong> es un agente conversacional de IA que responde por tu marca 24/7 en <strong>WhatsApp, Instagram, Facebook y chat web</strong>, con el tono de tu marca y todo en una sola bandeja. Para el stock, llama a las APIs en vivo que registras y responde la disponibilidad real al momento de la pregunta, manteniendo la primera respuesta crítica por debajo de los 5 minutos y escalando a tu equipo cuando un caso lo amerita. Opera hoy con clientes en Chile y Argentina, desde 7 UF al mes más addons.</p>
+
+      <div class="cta-box">
+        <h2>¿Quieres que tu agente responda stock al instante?</h2>
+        <p>Te mostramos en una demo cómo Sapio conecta con tu sistema y contesta disponibilidad en vivo, 24/7 y con tu tono.</p>
+        <a class="btn" href="https://calendar.app.google/vUfSasn1UEhAAsTv8" target="_blank" rel="noopener">Agendar demo</a>
+      </div>
+
+      <section class="faq">
+        <h2>Preguntas frecuentes</h2>
+        <div class="faq-item">
+          <h3>¿Qué es consultar stock en tiempo real por chat con IA?</h3>
+          <p>Es dejar que un agente conversacional conectado a tu sistema vía API responda la disponibilidad de un producto al momento de la pregunta, por WhatsApp, Instagram, Facebook o chat web, 24/7 y con el tono de tu marca, sin que una persona revise el inventario manualmente.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Cómo obtiene el agente el stock actualizado?</h3>
+          <p>El agente llama a una API en vivo que tú registras y que expone los datos de tu sistema (inventario, ERP o e-commerce). Cuando el cliente pregunta por un producto, el agente consulta la API en ese momento y responde con la cifra real, no con una lista estática que puede estar desactualizada.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿En qué se diferencia consultar stock por API de usar el catálogo?</h3>
+          <p>El catálogo (RAG) responde fichas, descripciones y precios relativamente estables que se entrenan con tus documentos. La API en vivo responde datos que cambian a cada rato, como la cantidad disponible. Para stock conviene la API; el agente combina ambas según la pregunta.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Qué pasa si un producto está agotado?</h3>
+          <p>El agente lo informa con claridad en el mismo chat y puede ofrecer alternativas, registrar el interés del cliente con una etiqueta y avisar a tu equipo. Si el caso requiere criterio humano, escala la conversación a un ejecutivo con todo el contexto recogido.</p>
+        </div>
+      </section>
+
+      <div class="related">
+        <div class="post-tag">Seguir leyendo</div>
+        <div class="related-list">
+          <a href="/blog/que-es-un-agente-conversacional-de-ia/">Qué es un agente conversacional de IA →</a>
+          <a href="/blog/conectar-tu-agente-de-ia-con-tus-sistemas/">Conectar tu agente de IA con tus sistemas →</a>
+          <a href="/blog/responder-precios-y-catalogo-con-ia/">Responder precios y catálogo con IA →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">Sapio</a>
+        <p>Agentes conversacionales de marca que responden en WhatsApp, Instagram, Facebook y chat web. 24/7, con tu tono.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Producto</h4>
+        <a href="/#capacidades">Capacidades</a>
+        <a href="/#resultados">Resultados</a>
+        <a href="/#plan">Precios</a>
+        <a href="/conversations">Ver demo</a>
+      </div>
+      <div class="footer-col">
+        <h4>Recursos</h4>
+        <a href="/blog/">Blog</a>
+        <a href="/blog/que-es-un-agente-conversacional-de-ia/">Qué es un agente de IA</a>
+      </div>
+      <div class="footer-col">
+        <h4>Acceso</h4>
+        <a href="https://calendar.app.google/vUfSasn1UEhAAsTv8" target="_blank" rel="noopener">Agendar demo</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Sapio · sapio.dev</div>
+      <div>Hecho con intención desde Chile</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

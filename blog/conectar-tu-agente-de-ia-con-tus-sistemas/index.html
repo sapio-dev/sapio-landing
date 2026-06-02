@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PJV4JL2J');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conectar tu agente de IA con tus sistemas | Sapio</title>
+<meta name="description" content="Conectar tu agente de IA con tus sistemas: expón stock, precios y estados en vivo por API para que el agente los use al responder. Cómo funciona.">
+<meta name="keywords" content="conectar un agente de IA con tus sistemas, integrar agente de IA por API, datos en vivo en el chat, API en vivo agente, consultar sistemas desde el chat">
+<meta name="author" content="Sapio">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="canonical" href="https://sapio.dev/blog/conectar-tu-agente-de-ia-con-tus-sistemas/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Sapio">
+<meta property="og:url" content="https://sapio.dev/blog/conectar-tu-agente-de-ia-con-tus-sistemas/">
+<meta property="og:title" content="Conectar tu agente de IA con tus sistemas (API en vivo)">
+<meta property="og:description" content="Exponer datos en vivo —stock, precios, estados— por API para que el agente los use al responder.">
+<meta property="og:image" content="https://sapio.dev/og-image.png">
+<meta property="og:locale" content="es_CL">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Conectar tu agente de IA con tus sistemas">
+<meta name="twitter:description" content="Cómo el agente consulta tus sistemas por API y responde con datos en vivo.">
+<meta name="twitter:image" content="https://sapio.dev/og-image.png">
+
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Conectar tu agente de IA con tus sistemas (API en vivo)",
+  "description": "Conectar un agente de IA con tus sistemas es exponer datos en vivo —stock, precios, estados— por API para que el agente los use al responder.",
+  "image": "https://sapio.dev/og-image.png",
+  "inLanguage": "es",
+  "datePublished": "2026-06-02",
+  "dateModified": "2026-06-02",
+  "author": {"@type": "Organization", "name": "Sapio", "url": "https://sapio.dev/"},
+  "publisher": {"@type": "Organization", "name": "Sapio", "url": "https://sapio.dev/", "logo": {"@type": "ImageObject", "url": "https://sapio.dev/icon-512.png"}},
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://sapio.dev/blog/conectar-tu-agente-de-ia-con-tus-sistemas/"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://sapio.dev/"},
+    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://sapio.dev/blog/"},
+    {"@type": "ListItem", "position": 3, "name": "Conectar tu agente de IA con tus sistemas", "item": "https://sapio.dev/blog/conectar-tu-agente-de-ia-con-tus-sistemas/"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "¿Qué significa conectar un agente de IA con tus sistemas?", "acceptedAnswer": {"@type": "Answer", "text": "Significa exponer datos de tus sistemas —stock, precios, estado de pedidos, datos de cuenta— mediante una API para que el agente los consulte en tiempo real al responder. Así el cliente recibe información actualizada al momento por WhatsApp, Instagram, Facebook o chat web, en vez de datos estáticos."}},
+    {"@type": "Question", "name": "¿Qué datos puede consultar el agente en vivo?", "acceptedAnswer": {"@type": "Answer", "text": "Los que tu negocio exponga por API: disponibilidad de stock, precios actualizados, estado de un pedido o despacho, saldos o datos de cuenta, y otra información que cambie al momento. El agente llama a la API registrada cuando la conversación lo necesita y responde con el dato fresco."}},
+    {"@type": "Question", "name": "¿Sapio se integra de forma nativa con mi CRM?", "acceptedAnswer": {"@type": "Answer", "text": "No hay integración nativa con CRMs externos como Salesforce o HubSpot. La conexión se hace por API: expones los datos que quieres que el agente use y se registran en la plataforma. Es un enfoque flexible que funciona con tus propios sistemas y servicios, no un conector prearmado por marca."}},
+    {"@type": "Question", "name": "¿Qué se necesita de mi equipo técnico para conectarlo?", "acceptedAnswer": {"@type": "Answer", "text": "Que exponga los datos por una API y la deje disponible para registrarla en la plataforma. Tu equipo define qué información comparte y con qué seguridad. Una vez registrada, el agente la consulta solo cuando la conversación lo requiere, sin que nadie tenga que intervenir cada vez."}}
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css">
+</head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJV4JL2J"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<nav>
+  <div class="container nav-inner">
+    <a href="/" class="logo">Sapio</a>
+    <div class="nav-links">
+      <a href="/#capacidades">Capacidades</a>
+      <a href="/#resultados">Resultados</a>
+      <a href="/#plan">Precios</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#contacto">Contacto</a>
+      <span class="nav-auth">
+        <a href="https://agent.sapio.dev/login" class="nav-seg-login" target="_blank" rel="noopener">Iniciar sesión</a>
+        <a href="https://agent.sapio.dev/signup" class="nav-seg-signup" target="_blank" rel="noopener">Crear cuenta</a>
+      </span>
+    </div>
+  </div>
+</nav>
+
+<article class="article">
+  <div class="prose-wrap">
+    <nav class="breadcrumb"><a href="/">Inicio</a> / <a href="/blog/">Blog</a> / Conectar tu agente de IA con tus sistemas</nav>
+    <div class="article-meta">How-to · 6 min de lectura</div>
+    <h1>Conectar tu agente de IA con tus sistemas (API en vivo)</h1>
+    <p class="standfirst">Responder "déjame revisar y te aviso" mata la conversación. Conectar el agente a tus sistemas por API le permite contestar con el dato exacto, en el momento, sin que nadie consulte a mano.</p>
+
+    <div class="article-body">
+
+      <div class="tldr">
+        <div class="tldr-label">Respuesta directa</div>
+        <p><strong>Conectar un agente de IA con tus sistemas</strong> es exponer datos en vivo —stock, precios, estado de pedidos— por una API para que el agente los consulte en tiempo real al responder. Así el cliente recibe información actualizada al momento por WhatsApp, Instagram, Facebook o chat web. La conexión es por API; no hay integración nativa de CRMs externos.</p>
+      </div>
+
+      <h2>¿Qué significa conectar el agente con tus sistemas?</h2>
+      <p>Significa darle al agente una <strong>línea directa a tus datos en vivo</strong>. En vez de responder solo con lo que sabe de antemano, el agente consulta tus sistemas a través de una API en el momento de la conversación y contesta con el dato actualizado.</p>
+      <p>El mecanismo es una <strong>API registrada</strong>: tu negocio expone cierta información —por ejemplo, disponibilidad o precio— y esa API queda disponible para que el agente la use cuando una pregunta lo requiere. No es magia ni un conector mágico por marca: es una integración por API que tú controlas.</p>
+
+      <h2>¿Qué datos puede consultar en vivo?</h2>
+      <p>Todo lo que tu sistema pueda entregar por API y cambie con el tiempo. Algunos ejemplos típicos:</p>
+      <table>
+        <thead>
+          <tr><th>Dato en vivo</th><th>Pregunta que el cliente hace</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Stock</td><td>"¿Tienen disponible este modelo?"</td></tr>
+          <tr><td>Precio actualizado</td><td>"¿Cuánto cuesta hoy?"</td></tr>
+          <tr><td>Estado de pedido</td><td>"¿Dónde está mi pedido?"</td></tr>
+          <tr><td>Datos de cuenta o saldo</td><td>"¿Cuánto debo?"</td></tr>
+        </tbody>
+      </table>
+      <p>En todos, el agente entrega el dato fresco en segundos, sin escalar a una persona que tenga que revisar otro sistema.</p>
+
+      <h2>¿En qué se diferencia de entrenar con documentos?</h2>
+      <p>Son dos formas complementarias de darle conocimiento al agente, para tipos de información distintos:</p>
+      <ul>
+        <li><strong>Documentos (RAG):</strong> para lo que cambia poco —fichas, políticas, catálogo base, preguntas frecuentes—. Subes archivos PDF, Excel o Word.</li>
+        <li><strong>API en vivo:</strong> para lo que cambia al momento —stock, precios, estados—. El agente consulta tus sistemas en tiempo real.</li>
+      </ul>
+      <p>Un negocio bien montado usa ambos: los documentos responden "¿qué incluye este servicio?" y la API responde "¿hay disponibilidad ahora?". Juntos, el agente cubre tanto el conocimiento estable como el dato del minuto.</p>
+
+      <h2>¿Cómo se hace la conexión?</h2>
+      <p>La integración se apoya en tu equipo técnico, pero el flujo es claro y acotado:</p>
+      <ol>
+        <li><strong>Define qué datos exponer:</strong> decides qué información debe poder consultar el agente (stock, precios, estados).</li>
+        <li><strong>Expón la API:</strong> tu equipo deja disponible una API con esos datos y la seguridad que corresponda.</li>
+        <li><strong>Regístrala en la plataforma:</strong> la API queda conectada para que el agente pueda llamarla.</li>
+        <li><strong>El agente la usa solo cuando hace falta:</strong> ante una pregunta que requiere el dato en vivo, consulta la API y responde.</li>
+        <li><strong>Prueba y ajusta:</strong> verificas que las respuestas sean correctas con casos reales.</li>
+      </ol>
+      <p>Una aclaración importante: <strong>no existe integración nativa de CRMs externos</strong> como Salesforce o HubSpot. La conexión siempre pasa por API, lo que la hace flexible y compatible con tus propios sistemas.</p>
+
+      <h2>¿Cómo lo hace Sapio?</h2>
+      <p><strong>Sapio</strong> es un agente conversacional de IA que responde por tu marca 24/7 en <strong>WhatsApp, Instagram, Facebook y chat web</strong>, con el tono de tu marca y todo en una sola bandeja. Conectas tus sistemas por API en vivo —stock, precios, estados— y el agente consulta esos datos en tiempo real al responder; para el conocimiento estable usa tus documentos con RAG. Entiende el contexto de cada cliente, mantiene la primera respuesta crítica por debajo de los 5 minutos y escala a tu equipo cuando un caso lo amerita. Opera hoy con clientes en Chile y Argentina, desde 7 UF al mes más addons.</p>
+
+      <div class="cta-box">
+        <h2>¿Quieres que el agente responda con tus datos en vivo?</h2>
+        <p>Te mostramos en una demo cómo conectar tus sistemas por API y dejar que el agente conteste al momento, 24/7.</p>
+        <a class="btn" href="https://calendar.app.google/vUfSasn1UEhAAsTv8" target="_blank" rel="noopener">Agendar demo</a>
+      </div>
+
+      <section class="faq">
+        <h2>Preguntas frecuentes</h2>
+        <div class="faq-item">
+          <h3>¿Qué significa conectar un agente de IA con tus sistemas?</h3>
+          <p>Significa exponer datos de tus sistemas —stock, precios, estado de pedidos, datos de cuenta— mediante una API para que el agente los consulte en tiempo real al responder. Así el cliente recibe información actualizada al momento por WhatsApp, Instagram, Facebook o chat web, en vez de datos estáticos.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Qué datos puede consultar el agente en vivo?</h3>
+          <p>Los que tu negocio exponga por API: disponibilidad de stock, precios actualizados, estado de un pedido o despacho, saldos o datos de cuenta, y otra información que cambie al momento. El agente llama a la API registrada cuando la conversación lo necesita y responde con el dato fresco.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Sapio se integra de forma nativa con mi CRM?</h3>
+          <p>No hay integración nativa con CRMs externos como Salesforce o HubSpot. La conexión se hace por API: expones los datos que quieres que el agente use y se registran en la plataforma. Es un enfoque flexible que funciona con tus propios sistemas y servicios, no un conector prearmado por marca.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Qué se necesita de mi equipo técnico para conectarlo?</h3>
+          <p>Que exponga los datos por una API y la deje disponible para registrarla en la plataforma. Tu equipo define qué información comparte y con qué seguridad. Una vez registrada, el agente la consulta solo cuando la conversación lo requiere, sin que nadie tenga que intervenir cada vez.</p>
+        </div>
+      </section>
+
+      <div class="related">
+        <div class="post-tag">Seguir leyendo</div>
+        <div class="related-list">
+          <a href="/blog/integrar-agente-de-ia-con-tu-crm/">Integrar agente de IA con tu CRM →</a>
+          <a href="/blog/consultar-stock-en-tiempo-real-por-chat/">Consultar stock en tiempo real por chat →</a>
+          <a href="/blog/entrenar-un-agente-de-ia-con-tus-documentos/">Entrenar un agente de IA con tus documentos →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">Sapio</a>
+        <p>Agentes conversacionales de marca que responden en WhatsApp, Instagram, Facebook y chat web. 24/7, con tu tono.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Producto</h4>
+        <a href="/#capacidades">Capacidades</a>
+        <a href="/#resultados">Resultados</a>
+        <a href="/#plan">Precios</a>
+        <a href="/conversations">Ver demo</a>
+      </div>
+      <div class="footer-col">
+        <h4>Recursos</h4>
+        <a href="/blog/">Blog</a>
+        <a href="/blog/que-es-un-agente-conversacional-de-ia/">Qué es un agente de IA</a>
+      </div>
+      <div class="footer-col">
+        <h4>Acceso</h4>
+        <a href="https://calendar.app.google/vUfSasn1UEhAAsTv8" target="_blank" rel="noopener">Agendar demo</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Sapio · sapio.dev</div>
+      <div>Hecho con intención desde Chile</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

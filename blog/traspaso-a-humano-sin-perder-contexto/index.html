@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PJV4JL2J');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Traspaso a humano sin perder contexto, con IA | Sapio</title>
+<meta name="description" content="Traspaso a humano sin perder contexto: el agente de IA escala al ejecutivo correcto con todo el historial (handoff sticky). Cómo funciona.">
+<meta name="keywords" content="traspaso a humano sin perder contexto, handoff de IA a humano, escalar a un humano con IA, derivar conversación a ejecutivo, handoff sticky">
+<meta name="author" content="Sapio">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="canonical" href="https://sapio.dev/blog/traspaso-a-humano-sin-perder-contexto/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Sapio">
+<meta property="og:url" content="https://sapio.dev/blog/traspaso-a-humano-sin-perder-contexto/">
+<meta property="og:title" content="Traspaso a humano sin perder contexto, con IA">
+<meta property="og:description" content="Cómo el agente escala al ejecutivo correcto con todo el historial —handoff sticky— y avisa por email, sin pedirle al cliente que repita.">
+<meta property="og:image" content="https://sapio.dev/og-image.png">
+<meta property="og:locale" content="es_CL">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Traspaso a humano sin perder contexto">
+<meta name="twitter:description" content="El agente escala al ejecutivo correcto con todo el historial y avisa por email. Sin repetir.">
+<meta name="twitter:image" content="https://sapio.dev/og-image.png">
+
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Traspaso a humano sin perder contexto, con IA",
+  "description": "Traspaso a humano sin perder contexto: el agente de IA escala al ejecutivo correcto con todo el historial (handoff sticky) y avisa por email.",
+  "image": "https://sapio.dev/og-image.png",
+  "inLanguage": "es",
+  "datePublished": "2026-06-02",
+  "dateModified": "2026-06-02",
+  "author": {"@type": "Organization", "name": "Sapio", "url": "https://sapio.dev/"},
+  "publisher": {"@type": "Organization", "name": "Sapio", "url": "https://sapio.dev/", "logo": {"@type": "ImageObject", "url": "https://sapio.dev/icon-512.png"}},
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://sapio.dev/blog/traspaso-a-humano-sin-perder-contexto/"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://sapio.dev/"},
+    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://sapio.dev/blog/"},
+    {"@type": "ListItem", "position": 3, "name": "Traspaso a humano sin perder contexto", "item": "https://sapio.dev/blog/traspaso-a-humano-sin-perder-contexto/"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "¿Qué es un traspaso a humano sin perder contexto?", "acceptedAnswer": {"@type": "Answer", "text": "Es cuando el agente de IA deriva una conversación a una persona del equipo entregándole todo el historial: qué pidió el cliente, qué se respondió y en qué punto va. El cliente no repite nada. Sapio lo hace con handoff sticky, dejando la conversación con el mismo ejecutivo, y avisa por email con el contexto."}},
+    {"@type": "Question", "name": "¿Qué significa que el handoff es sticky?", "acceptedAnswer": {"@type": "Answer", "text": "Significa que, una vez derivada, la conversación queda asignada al mismo ejecutivo y no vuelve a repartirse al azar. El cliente sigue hablando con la persona que ya conoce su caso, dentro del mismo hilo y canal, lo que da continuidad y evita que tenga que explicar todo otra vez."}},
+    {"@type": "Question", "name": "¿Cómo se entera el ejecutivo de que debe tomar la conversación?", "acceptedAnswer": {"@type": "Answer", "text": "Cuando el agente escala, además de dejar la conversación en la bandeja, envía un email de aviso con el contexto del caso. Así el ejecutivo asignado sabe que hay algo que atender y llega con la información necesaria sin tener que reconstruirla."}},
+    {"@type": "Question", "name": "¿Cuándo conviene que el agente escale a una persona?", "acceptedAnswer": {"@type": "Answer", "text": "Cuando el caso se sale de lo estándar: un reclamo, una negociación de alto valor, una solicitud especial o algo que requiere criterio humano. El agente resuelve lo repetitivo 24/7 y deriva solo lo que de verdad necesita una persona, con todo el contexto ya recogido."}}
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css">
+</head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJV4JL2J"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<nav>
+  <div class="container nav-inner">
+    <a href="/" class="logo">Sapio</a>
+    <div class="nav-links">
+      <a href="/#capacidades">Capacidades</a>
+      <a href="/#resultados">Resultados</a>
+      <a href="/#plan">Precios</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#contacto">Contacto</a>
+      <span class="nav-auth">
+        <a href="https://agent.sapio.dev/login" class="nav-seg-login" target="_blank" rel="noopener">Iniciar sesión</a>
+        <a href="https://agent.sapio.dev/signup" class="nav-seg-signup" target="_blank" rel="noopener">Crear cuenta</a>
+      </span>
+    </div>
+  </div>
+</nav>
+
+<article class="article">
+  <div class="prose-wrap">
+    <nav class="breadcrumb"><a href="/">Inicio</a> / <a href="/blog/">Blog</a> / Traspaso a humano sin perder contexto</nav>
+    <div class="article-meta">Operación · 5 min de lectura</div>
+    <h1>Traspaso a humano sin perder contexto, con IA</h1>
+    <p class="standfirst">Nada irrita más a un cliente que explicar todo de nuevo cuando lo pasan con "otra persona". Un buen traspaso entrega el caso completo al ejecutivo correcto y la conversación sigue donde iba.</p>
+
+    <div class="article-body">
+
+      <div class="tldr">
+        <div class="tldr-label">Respuesta directa</div>
+        <p>Un <strong>traspaso a humano sin perder contexto</strong> es cuando el agente de IA deriva la conversación a una persona del equipo entregándole todo el historial: qué pidió el cliente, qué se respondió y en qué punto va. El cliente no repite nada. Sapio lo hace con <strong>handoff sticky</strong>, dejando el caso con el mismo ejecutivo, y avisa por email con el contexto.</p>
+      </div>
+
+      <h2>¿Qué es un traspaso a humano sin perder contexto?</h2>
+      <p>Es el momento en que el agente reconoce que un caso necesita una persona y lo <strong>deriva con todo el contexto</strong>. En vez de un "te paso con un asesor" que obliga al cliente a empezar de cero, el ejecutivo recibe el hilo completo: la consulta original, lo conversado y el estado del caso.</p>
+      <p>La diferencia con un traspaso tradicional es la <strong>continuidad</strong>. El cliente no nota un corte: sigue en el mismo canal y el mismo hilo, y quien toma la conversación ya sabe de qué se trata.</p>
+
+      <h2>¿Cómo funciona el handoff sticky?</h2>
+      <p>El traspaso de Sapio es <strong>sticky</strong>: una vez derivada, la conversación queda con el mismo ejecutivo y no se reparte al azar. El flujo es así:</p>
+      <ol>
+        <li><strong>Detección:</strong> el agente identifica que el caso necesita una persona.</li>
+        <li><strong>Escala con contexto:</strong> deja la conversación en la bandeja con todo el historial recogido.</li>
+        <li><strong>Asignación fija:</strong> el caso queda con un ejecutivo y se mantiene con él, no rebota entre agentes.</li>
+        <li><strong>Aviso por email:</strong> el ejecutivo recibe un correo con el contexto para saber que debe atender.</li>
+        <li><strong>Continuidad:</strong> el cliente sigue en el mismo canal y hilo, sin repetir nada.</li>
+      </ol>
+      <p>Todo dentro de la misma bandeja unificada, sin saltar a otra herramienta.</p>
+
+      <h2>¿Por qué importa no perder el contexto?</h2>
+      <p>Un traspaso mal hecho deshace todo el trabajo previo. Esta tabla compara las dos formas:</p>
+      <table>
+        <thead>
+          <tr><th>Traspaso sin contexto</th><th>Traspaso sticky de Sapio</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>El cliente repite todo desde cero</td><td>El ejecutivo llega con el caso completo</td></tr>
+          <tr><td>La conversación rebota entre personas</td><td>Queda con el mismo ejecutivo</td></tr>
+          <tr><td>Se pierde lo conversado con el agente</td><td>El historial viaja junto al caso</td></tr>
+          <tr><td>El cliente percibe descoordinación</td><td>La experiencia se siente continua</td></tr>
+        </tbody>
+      </table>
+      <p>El resultado: el agente resuelve lo repetitivo 24/7 y, cuando deriva, lo hace sin fricción ni pérdida de información.</p>
+
+      <h2>¿Cuándo conviene escalar a una persona?</h2>
+      <p>El agente está para resolver lo estándar de forma rápida y derivar solo lo que de verdad necesita criterio humano. Eso ocurre, por ejemplo, cuando hay:</p>
+      <ul>
+        <li>Un reclamo o una situación delicada que conviene que vea una persona.</li>
+        <li>Una negociación o un caso de alto valor.</li>
+        <li>Una solicitud especial o una excepción fuera del flujo normal.</li>
+        <li>Una consulta que el cliente pide explícitamente hablar con alguien del equipo.</li>
+      </ul>
+      <p>Así nadie queda atrapado: lo repetitivo lo resuelve el agente y lo sensible llega a la persona indicada con todo el contexto.</p>
+
+      <h2>¿Cómo lo hace Sapio?</h2>
+      <p><strong>Sapio</strong> es un agente conversacional de IA que responde por tu marca 24/7 en WhatsApp, Instagram, Facebook y chat web, con el tono de tu marca y todo en una sola bandeja. Entiende el contexto de cada cliente, mantiene la primera respuesta crítica por debajo de los 5 minutos y, cuando un caso lo amerita, escala a tu equipo con handoff sticky: la conversación queda con el mismo ejecutivo y un email de aviso lleva todo el contexto. Opera hoy con clientes en Chile y Argentina, desde 7 UF al mes más addons.</p>
+
+      <div class="cta-box">
+        <h2>¿Quieres ver el handoff sticky en acción?</h2>
+        <p>Te mostramos en una demo cómo el agente escala al ejecutivo correcto con todo el historial, sin que el cliente repita nada.</p>
+        <a class="btn" href="https://calendar.app.google/vUfSasn1UEhAAsTv8" target="_blank" rel="noopener">Agendar demo</a>
+      </div>
+
+      <section class="faq">
+        <h2>Preguntas frecuentes</h2>
+        <div class="faq-item">
+          <h3>¿Qué es un traspaso a humano sin perder contexto?</h3>
+          <p>Es cuando el agente de IA deriva una conversación a una persona del equipo entregándole todo el historial: qué pidió el cliente, qué se respondió y en qué punto va. El cliente no repite nada. Sapio lo hace con handoff sticky, dejando la conversación con el mismo ejecutivo, y avisa por email con el contexto.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Qué significa que el handoff es sticky?</h3>
+          <p>Significa que, una vez derivada, la conversación queda asignada al mismo ejecutivo y no vuelve a repartirse al azar. El cliente sigue hablando con la persona que ya conoce su caso, dentro del mismo hilo y canal, lo que da continuidad y evita que tenga que explicar todo otra vez.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Cómo se entera el ejecutivo de que debe tomar la conversación?</h3>
+          <p>Cuando el agente escala, además de dejar la conversación en la bandeja, envía un email de aviso con el contexto del caso. Así el ejecutivo asignado sabe que hay algo que atender y llega con la información necesaria sin tener que reconstruirla.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Cuándo conviene que el agente escale a una persona?</h3>
+          <p>Cuando el caso se sale de lo estándar: un reclamo, una negociación de alto valor, una solicitud especial o algo que requiere criterio humano. El agente resuelve lo repetitivo 24/7 y deriva solo lo que de verdad necesita una persona, con todo el contexto ya recogido.</p>
+        </div>
+      </section>
+
+      <div class="related">
+        <div class="post-tag">Seguir leyendo</div>
+        <div class="related-list">
+          <a href="/blog/cuando-escalar-a-un-humano/">Cuándo escalar a un humano →</a>
+          <a href="/blog/calificacion-de-leads-con-ia/">Calificación de leads con IA →</a>
+          <a href="/blog/bandeja-unificada-multicanal/">Bandeja unificada multicanal →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">Sapio</a>
+        <p>Agentes conversacionales de marca que responden en WhatsApp, Instagram, Facebook y chat web. 24/7, con tu tono.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Producto</h4>
+        <a href="/#capacidades">Capacidades</a>
+        <a href="/#resultados">Resultados</a>
+        <a href="/#plan">Precios</a>
+        <a href="/conversations">Ver demo</a>
+      </div>
+      <div class="footer-col">
+        <h4>Recursos</h4>
+        <a href="/blog/">Blog</a>
+        <a href="/blog/que-es-un-agente-conversacional-de-ia/">Qué es un agente de IA</a>
+      </div>
+      <div class="footer-col">
+        <h4>Acceso</h4>
+        <a href="https://calendar.app.google/vUfSasn1UEhAAsTv8" target="_blank" rel="noopener">Agendar demo</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Sapio · sapio.dev</div>
+      <div>Hecho con intención desde Chile</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
