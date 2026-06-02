@@ -1254,10 +1254,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     padding-top: 32px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     font-size: 13px;
     color: #b8b5c2;
     font-family: var(--mono);
   }
+  .footer-legal {
+    display: flex;
+    gap: 24px;
+  }
+  .footer-legal a {
+    color: #b8b5c2;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-legal a:hover { color: var(--fg); }
 
   /* ===== HERO CTA — input + Enviar + Agendar demo en una sola línea ===== */
   .hero-cta {
@@ -1832,6 +1843,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .addon-detail-text { font-size: 14.5px; line-height: 1.5; inset: 12px 0 14px; }
     .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px 24px; }
     .footer-bottom { flex-direction: column; gap: 12px; align-items: flex-start; }
+    .footer-legal { flex-wrap: wrap; gap: 8px 20px; }
   }
 </style>
 </head>
@@ -2160,6 +2172,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="footer-bottom">
       <div>© 2026 Sapio · sapio.dev</div>
+      <div class="footer-legal">
+        <a href="https://agent.sapio.dev/privacy-policy" target="_blank" rel="noopener">Política de Privacidad</a>
+        <a href="https://agent.sapio.dev/terms-of-service" target="_blank" rel="noopener">Términos del Servicio</a>
+      </div>
       <div>Hecho con intención desde Chile</div>
     </div>
   </div>
