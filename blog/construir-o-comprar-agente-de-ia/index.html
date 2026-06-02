@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PJV4JL2J');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¿Construir o comprar un agente de IA? (build vs buy) | Sapio</title>
+<meta name="description" content="Construir o comprar un agente de IA: qué implica cada camino en tiempo, equipo y mantención, qué ganas con una solución lista y cómo decidir según tu caso (build vs buy).">
+<meta name="keywords" content="construir o comprar agente de IA, chatbot build vs buy, build vs buy IA, comprar agente conversacional, desarrollar agente de IA, agente de IA listo">
+<meta name="author" content="Sapio">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="canonical" href="https://sapio.dev/blog/construir-o-comprar-agente-de-ia/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Sapio">
+<meta property="og:url" content="https://sapio.dev/blog/construir-o-comprar-agente-de-ia/">
+<meta property="og:title" content="¿Construir o comprar un agente de IA? (build vs buy)">
+<meta property="og:description" content="Qué implica construirlo, qué ganas comprando una solución lista y cómo decidir según tu caso.">
+<meta property="og:image" content="https://sapio.dev/og-image.png">
+<meta property="og:locale" content="es_CL">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="¿Construir o comprar un agente de IA?">
+<meta name="twitter:description" content="Build vs buy: tiempo, equipo, mantención y cómo decidir según tu caso.">
+<meta name="twitter:image" content="https://sapio.dev/og-image.png">
+
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "¿Construir o comprar un agente de IA? (build vs buy)",
+  "description": "Construir o comprar un agente de IA: qué implica cada camino en tiempo, equipo y mantención, qué ganas con una solución lista y cómo decidir según tu caso.",
+  "image": "https://sapio.dev/og-image.png",
+  "inLanguage": "es",
+  "datePublished": "2026-06-02",
+  "dateModified": "2026-06-02",
+  "author": {"@type": "Organization", "name": "Sapio", "url": "https://sapio.dev/"},
+  "publisher": {"@type": "Organization", "name": "Sapio", "url": "https://sapio.dev/", "logo": {"@type": "ImageObject", "url": "https://sapio.dev/icon-512.png"}},
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://sapio.dev/blog/construir-o-comprar-agente-de-ia/"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://sapio.dev/"},
+    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://sapio.dev/blog/"},
+    {"@type": "ListItem", "position": 3, "name": "¿Construir o comprar un agente de IA?", "item": "https://sapio.dev/blog/construir-o-comprar-agente-de-ia/"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "¿Conviene construir o comprar un agente de IA?", "acceptedAnswer": {"@type": "Answer", "text": "Para la mayoría de las empresas conviene comprar una solución lista: el problema de atender clientes por mensajería ya está resuelto y construir desde cero exige un equipo técnico, meses de desarrollo y mantención permanente. Construir solo tiene sentido cuando el agente es un diferenciador central del producto y se cuenta con equipo dedicado."}},
+    {"@type": "Question", "name": "¿Cuánto se demora construir un agente de IA propio?", "acceptedAnswer": {"@type": "Answer", "text": "Construir un agente funcional desde cero suele tomar varios meses entre integraciones de canales, conexión con modelos de lenguaje, manejo de contexto, escalamiento a humanos y pruebas. A eso se suma el mantenimiento continuo. Una solución lista permite empezar a operar en días."}},
+    {"@type": "Question", "name": "¿Qué cuesta mantener un agente de IA construido en casa?", "acceptedAnswer": {"@type": "Answer", "text": "Más allá del desarrollo inicial, hay costos recurrentes: actualizaciones de los modelos, cambios en las APIs de cada canal, monitoreo de calidad de respuestas, infraestructura y el equipo que lo sostiene. Estos costos son fáciles de subestimar y rara vez desaparecen."}},
+    {"@type": "Question", "name": "¿Una solución comprada se puede adaptar a mi marca?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Una solución lista como Sapio se configura con el tono de tu marca y la información de tu negocio, conecta tus canales en una sola bandeja y escala a tu equipo cuando hace falta, sin que tengas que mantener la base técnica."}}
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css">
+</head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJV4JL2J"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<nav>
+  <div class="container nav-inner">
+    <a href="/" class="logo">Sapio</a>
+    <div class="nav-links">
+      <a href="/#capacidades">Capacidades</a>
+      <a href="/#resultados">Resultados</a>
+      <a href="/#plan">Precios</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#contacto">Contacto</a>
+      <span class="nav-auth">
+        <a href="https://agent.sapio.dev/login" class="nav-seg-login" target="_blank" rel="noopener">Iniciar sesión</a>
+        <a href="https://agent.sapio.dev/signup" class="nav-seg-signup" target="_blank" rel="noopener">Crear cuenta</a>
+      </span>
+    </div>
+  </div>
+</nav>
+
+<article class="article">
+  <div class="prose-wrap">
+    <nav class="breadcrumb"><a href="/">Inicio</a> / <a href="/blog/">Blog</a> / ¿Construir o comprar un agente de IA?</nav>
+    <div class="article-meta">Decisión · 6 min de lectura</div>
+    <h1>¿Construir o comprar un agente de IA? (build vs buy)</h1>
+    <p class="standfirst">La decisión de build vs buy define cuánto tardas en responder por tu marca y cuánto esfuerzo técnico cargas para siempre. Aquí está el marco para elegir bien.</p>
+
+    <div class="article-body">
+
+      <div class="tldr">
+        <div class="tldr-label">Respuesta directa</div>
+        <p>Para la mayoría de las empresas conviene <strong>comprar</strong> un agente de IA listo: el problema ya está resuelto y construir desde cero exige equipo técnico, meses de desarrollo y mantención permanente. <strong>Construir</strong> solo tiene sentido si el agente es un diferenciador central de tu producto y cuentas con un equipo dedicado a sostenerlo.</p>
+      </div>
+
+      <h2>¿Construir tu propio agente de IA o comprar uno?</h2>
+      <p>La pregunta de <strong>build vs buy</strong> aparece apenas decides que tu marca necesita responder mensajes con IA. Y es una decisión real: no es lo mismo escribir un prototipo que conecta a un modelo de lenguaje que sostener un agente que atiende clientes reales, en varios canales, sin caerse y con el tono correcto.</p>
+      <p>La trampa es subestimar la distancia entre "funciona en una demo" y "funciona en producción todos los días". Construir un chatbot que responde una pregunta es fácil; construir un <strong>agente conversacional</strong> confiable, que mantenga contexto, derive bien y no invente datos, es un proyecto de software con dueño, presupuesto y mantención.</p>
+
+      <h2>¿Qué implica construirlo (tiempo, equipo, mantención)?</h2>
+      <p>Construir en casa significa hacerte cargo de toda la cadena. En concreto:</p>
+      <ul>
+        <li><strong>Equipo técnico:</strong> necesitas desarrolladores que conecten modelos de lenguaje, diseñen el manejo de contexto y construyan la lógica de escalamiento a humanos. No es un proyecto de una persona ni de fin de semana.</li>
+        <li><strong>Integraciones de canales:</strong> cada canal (WhatsApp, Instagram, Facebook, email, chat web) tiene su propia API, sus reglas y sus cambios. Mantenerlas vivas es trabajo continuo.</li>
+        <li><strong>Tiempo a producción:</strong> entre integraciones, pruebas, control de calidad y ajustes de tono, llegar a algo confiable suele tomar varios meses.</li>
+        <li><strong>Mantención permanente:</strong> los modelos cambian, las APIs cambian, aparecen casos nuevos. Hay que monitorear calidad, corregir respuestas y sostener la infraestructura. Esto no termina nunca.</li>
+      </ul>
+      <p>Nada de esto es imposible. El punto es que el costo verdadero no es el desarrollo inicial, sino todo lo que viene después.</p>
+
+      <h2>¿Qué ganas comprando una solución lista?</h2>
+      <p>Comprar una solución lista traslada todo ese peso técnico al proveedor. Lo que ganas es directo:</p>
+      <ul>
+        <li><strong>Velocidad:</strong> empiezas a operar en días, no en meses, porque el producto ya existe y está probado.</li>
+        <li><strong>Mantención incluida:</strong> los cambios de modelos y de APIs los absorbe el proveedor; tú no mantienes una base técnica.</li>
+        <li><strong>Canales y bandeja unificada listos:</strong> los canales ya están integrados y centralizados en una sola bandeja, sin que tengas que construir cada conexión.</li>
+        <li><strong>Costo predecible:</strong> pagas una suscripción conocida en lugar de un proyecto abierto con desvíos difíciles de estimar.</li>
+        <li><strong>Foco en tu negocio:</strong> tu equipo trabaja en atender clientes y vender, no en programar y parchar un agente.</li>
+      </ul>
+
+      <h2>¿Cómo decidir según tu caso?</h2>
+      <p>No hay una respuesta única, pero sí un criterio claro. Compara los dos caminos en lo que de verdad importa:</p>
+
+      <table>
+        <thead>
+          <tr><th>&nbsp;</th><th>Construir</th><th>Comprar</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Tiempo a producción</td><td>Meses</td><td>Días</td></tr>
+          <tr><td>Equipo necesario</td><td>Desarrolladores dedicados</td><td>Configuración, sin equipo técnico</td></tr>
+          <tr><td>Integración de canales</td><td>La construyes tú</td><td>Ya integrada</td></tr>
+          <tr><td>Mantención</td><td>Permanente y tuya</td><td>Incluida en el servicio</td></tr>
+          <tr><td>Costo</td><td>Proyecto abierto</td><td>Suscripción predecible</td></tr>
+          <tr><td>Control total del código</td><td>Sí</td><td>No (configuras, no programas)</td></tr>
+        </tbody>
+      </table>
+      <p>La regla práctica: <strong>construye si el agente es el corazón de tu producto</strong> y tienes equipo para sostenerlo. <strong>Compra si lo que necesitas es atender bien a tus clientes</strong> y quieres llegar rápido sin cargar mantención. Para la mayoría de las marcas —inmobiliario, automotriz, retail— la respuesta es comprar.</p>
+
+      <h2>¿Cómo lo hace Sapio?</h2>
+      <p><strong>Sapio</strong> es un agente conversacional de IA listo para usar que responde por tu marca 24/7 en WhatsApp, Instagram, Facebook, LinkedIn, TikTok, email y chat web, todo en una sola bandeja unificada. Se configura con el tono de tu marca y la información de tu negocio, mantiene la primera respuesta crítica por debajo de los 5 minutos y escala a tu equipo cuando un caso lo amerita. No tienes que construir ni mantener nada: opera hoy con clientes en Chile y Argentina por 7 UF al mes más addons.</p>
+
+      <div class="cta-box">
+        <h2>¿Prefieres saltarte el desarrollo y empezar a responder?</h2>
+        <p>Te mostramos en una demo cómo el agente atiende tus canales 24/7 con tu tono, sin construir nada.</p>
+        <a class="btn" href="https://calendar.app.google/vUfSasn1UEhAAsTv8" target="_blank" rel="noopener">Agendar demo</a>
+      </div>
+
+      <section class="faq">
+        <h2>Preguntas frecuentes</h2>
+        <div class="faq-item">
+          <h3>¿Conviene construir o comprar un agente de IA?</h3>
+          <p>Para la mayoría conviene comprar: el problema ya está resuelto y construir desde cero exige equipo técnico, meses de desarrollo y mantención permanente. Construir solo tiene sentido si el agente es un diferenciador central de tu producto.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Cuánto se demora construir un agente de IA propio?</h3>
+          <p>Desde cero suele tomar varios meses entre integraciones de canales, conexión con modelos, manejo de contexto, escalamiento y pruebas, más mantención continua. Una solución lista permite operar en días.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Qué cuesta mantener un agente construido en casa?</h3>
+          <p>Más allá del desarrollo, hay costos recurrentes: actualizaciones de modelos, cambios en las APIs de cada canal, monitoreo de calidad, infraestructura y el equipo que lo sostiene. Son fáciles de subestimar y no desaparecen.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Una solución comprada se adapta a mi marca?</h3>
+          <p>Sí. Una solución lista como Sapio se configura con el tono de tu marca y la información de tu negocio, conecta tus canales en una sola bandeja y escala a tu equipo, sin que mantengas la base técnica.</p>
+        </div>
+      </section>
+
+      <div class="related">
+        <div class="post-tag">Seguir leyendo</div>
+        <div class="related-list">
+          <a href="/blog/que-es-un-agente-conversacional-de-ia/">Qué es un agente conversacional de IA →</a>
+          <a href="/blog/como-elegir-un-agente-conversacional-de-ia/">Cómo elegir un agente conversacional de IA →</a>
+          <a href="/blog/cuanto-cuesta-un-agente-conversacional-de-ia/">Cuánto cuesta un agente conversacional de IA →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">Sapio</a>
+        <p>Agentes conversacionales de marca que responden en WhatsApp, Instagram, Facebook y chat web. 24/7, con tu tono.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Producto</h4>
+        <a href="/#capacidades">Capacidades</a>
+        <a href="/#resultados">Resultados</a>
+        <a href="/#plan">Precios</a>
+        <a href="/conversations">Ver demo</a>
+      </div>
+      <div class="footer-col">
+        <h4>Recursos</h4>
+        <a href="/blog/">Blog</a>
+        <a href="/blog/que-es-un-agente-conversacional-de-ia/">Qué es un agente de IA</a>
+      </div>
+      <div class="footer-col">
+        <h4>Acceso</h4>
+        <a href="https://calendar.app.google/vUfSasn1UEhAAsTv8" target="_blank" rel="noopener">Agendar demo</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Sapio · sapio.dev</div>
+      <div>Hecho con intención desde Chile</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
