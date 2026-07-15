@@ -1846,22 +1846,79 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .footer-legal { flex-wrap: wrap; gap: 8px 20px; }
   }
 
-  /* ===== Sapio y tu cuenta de Google — disclosure para verificación OAuth ===== */
-  .gdata { padding: 96px 0; border-top: 1px solid var(--hair, rgba(255,255,255,0.09)); }
-  .gdata .gdata-inner { max-width: 720px; }
-  .gdata h2 {
-    font-family: var(--serif, Georgia, serif); font-weight: 400;
-    font-size: clamp(28px, 3.6vw, 40px); letter-spacing: -0.02em; line-height: 1.1;
-    margin-bottom: 22px;
+  /* ===== CANALES — compacto: 5 columnas + franja Google. Cabe en un viewport 13" ===== */
+  .channels {
+    padding: 64px 0 56px;
+    border-top: 1px solid var(--line);
+    position: relative;
+    overflow: hidden;
   }
-  .gdata p { font-size: 16.5px; line-height: 1.7; color: rgba(233,231,239,0.78); margin: 0 0 18px; max-width: 68ch; }
-  .gdata strong { color: #fff; font-weight: 600; }
-  .gdata ul { list-style: none; margin: 0 0 18px; padding: 0; }
-  .gdata li { position: relative; padding-left: 24px; margin-bottom: 10px; font-size: 16.5px; line-height: 1.65; color: rgba(233,231,239,0.78); }
-  .gdata li::before { content: ""; position: absolute; left: 4px; top: 12px; width: 6px; height: 6px; border-radius: 50%; background: #b9a6ff; }
-  .gdata a { color: #b9a6ff; text-decoration: none; border-bottom: 1px solid rgba(185,166,255,0.35); }
-  .gdata a:hover { color: #d6c9ff; border-color: #d6c9ff; }
-  .gdata .gdata-note { font-size: 14.5px; color: rgba(128,125,140,1); }
+  .channels::before {
+    content: '';
+    position: absolute;
+    top: -25%;
+    left: -12%;
+    width: 45%;
+    height: 80%;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.07), transparent 65%);
+    filter: blur(90px);
+    pointer-events: none;
+  }
+  .channels .section-title { font-size: clamp(30px, 3.2vw, 46px); }
+  .channels .section-label { margin-bottom: 16px; }
+  .channels-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin-top: 32px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    position: relative;
+  }
+  .channel-card {
+    padding: 24px 22px 22px;
+    border-right: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .channel-card:last-child { border-right: none; }
+  .channel-name {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 21px;
+    letter-spacing: -0.015em;
+    color: var(--fg);
+    transition: color 0.3s ease;
+  }
+  .channel-card:hover .channel-name { color: var(--accent-soft); }
+  .channel-tag {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  /* misma mecánica que .result-desc: oculta, se revela al hover */
+  .channel-desc {
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: #d6d2dd;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.4s ease;
+  }
+  .channel-card:hover .channel-desc { max-height: 140px; opacity: 1; }
+  @media (max-width: 900px) {
+    .channels { padding: 80px 0 64px; }
+    .channels-grid { grid-template-columns: 1fr 1fr; border: none; gap: 1px; }
+    .channel-card { border: 1px solid var(--line); border-radius: 14px; margin: -1px 0 0 -1px; }
+    .channel-desc { max-height: none; opacity: 1; }
+  }
+  @media (max-width: 560px) {
+    .channels-grid { grid-template-columns: 1fr; }
+  }
+  }
 </style>
 </head>
 <body>
@@ -2041,6 +2098,43 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<!-- CANALES — dónde responde el agente + qué hace con tu cuenta de Google -->
+<section class="channels" id="canales">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Canales</div>
+      <h2 class="section-title">Un solo agente, <em>todos tus canales</em>.</h2>
+    </div>
+    <div class="channels-grid">
+      <div class="channel-card">
+        <div class="channel-name">WhatsApp</div>
+        <div class="channel-tag">API oficial de Meta</div>
+        <p class="channel-desc">Tu número de siempre. El agente responde al instante y tu equipo interviene cuando quiere.</p>
+      </div>
+      <div class="channel-card">
+        <div class="channel-name">Instagram</div>
+        <div class="channel-tag">Cuenta profesional</div>
+        <p class="channel-desc">DM y reacciones a historias respondidos de inmediato, sin acumularse.</p>
+      </div>
+      <div class="channel-card">
+        <div class="channel-name">Messenger</div>
+        <div class="channel-tag">Página de Facebook</div>
+        <p class="channel-desc">La bandeja de tu página, atendida 24/7 junto al resto de tus canales.</p>
+      </div>
+      <div class="channel-card">
+        <div class="channel-name">Chat web</div>
+        <div class="channel-tag">Script en tu sitio</div>
+        <p class="channel-desc">Un script y el agente atiende a tus visitas en tiempo real, mientras miran.</p>
+      </div>
+      <div class="channel-card">
+        <div class="channel-name">Correo</div>
+        <div class="channel-tag">Gmail · Google OAuth</div>
+        <p class="channel-desc">Conecta tu casilla y el agente lee los correos que llegan y responde en nombre de tu negocio.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- RESULTS -->
 <section class="results" id="resultados">
   <div class="container">
@@ -2161,23 +2255,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-
-<!-- SAPIO Y TU CUENTA DE GOOGLE — propósito de la app para la verificación OAuth de Google -->
-<section class="gdata" id="google">
-  <div class="container">
-    <div class="gdata-inner">
-      <h2>Sapio y tu cuenta de Google</h2>
-      <p><strong>Sapio</strong> es una plataforma de agentes conversacionales de IA que responde a los clientes de tu negocio por WhatsApp, Instagram, Facebook, chat web y correo. Si decides conectar tu casilla de <strong>Gmail</strong>, tu agente también atiende el correo: <strong>lee los mensajes que llegan a la casilla conectada y envía las respuestas en nombre de tu negocio</strong>, con tu tono y tu información.</p>
-      <p>Para eso, Sapio solicita tu autorización mediante Google OAuth con estos permisos, y solo para estos fines:</p>
-      <ul>
-        <li><strong>Leer el correo de la casilla conectada:</strong> para que el agente entienda la consulta de tu cliente y el hilo de la conversación.</li>
-        <li><strong>Enviar correo desde esa casilla:</strong> para que el agente responda a tus clientes en nombre de tu negocio.</li>
-      </ul>
-      <p>No usamos tus correos para publicidad, no los vendemos ni los transferimos a terceros, y solo el personal autorizado accede a ellos cuando es necesario para darte soporte. Puedes desconectar tu cuenta cuando quieras desde el panel de Sapio o desde <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">los permisos de tu Cuenta de Google</a>.</p>
-      <p class="gdata-note">El uso y la transferencia de la información recibida de las APIs de Google por parte de Sapio se ajusta a la <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Política de Datos de Usuario de los Servicios de API de Google</a>, incluidos sus requisitos de Uso Limitado. Más detalle en nuestra <a href="https://agent.sapio.dev/privacy-policy" target="_blank" rel="noopener">Política de Privacidad</a>.</p>
-    </div>
-  </div>
-</section>
 
 <!-- FOOTER -->
 <footer id="contacto">
