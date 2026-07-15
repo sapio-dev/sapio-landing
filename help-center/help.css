@@ -1,0 +1,120 @@
+/* ===========================================================================
+   help.css — Centro de ayuda de Sapio (sapio.dev/help-center)
+   Complementa a blog.css en las notas del centro de ayuda.
+   TOC lateral: hairline vertical, mono label, ítem activo en acento violeta.
+   =========================================================================== */
+
+/* ===== TOC lateral (desktop ancho) ===== */
+.toc {
+  position: fixed;
+  top: calc(var(--nav-h) + 76px);
+  left: calc((100vw - var(--prose)) / 2 - 254px);
+  width: 208px;
+  display: none;
+  z-index: 5;
+}
+@media (min-width: 1240px) { .toc { display: block; } }
+
+.toc-label {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--fg-muted); margin-bottom: 14px;
+}
+.toc ul { list-style: none; margin: 0; padding: 0; border-left: 1px solid var(--hair); }
+.toc li { margin: 0; }
+.toc a {
+  display: block; padding: 7px 0 7px 16px; margin-left: -1px;
+  border-left: 1px solid transparent;
+  color: var(--fg-muted); font-size: 13.5px; line-height: 1.45;
+  transition: color .2s var(--ease), border-color .2s var(--ease);
+}
+.toc a:hover { color: var(--fg); }
+.toc a.is-active { color: var(--accent); border-left-color: var(--accent); }
+
+.toc-top {
+  display: inline-block; margin-top: 18px;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em;
+  color: var(--fg-muted);
+}
+.toc-top:hover { color: var(--accent); }
+
+/* ===== TOC plegable (pantallas angostas) ===== */
+.toc-inline {
+  margin: 0 0 36px; padding: 2px 20px;
+  background: var(--bg-soft); border: 1px solid var(--hair); border-radius: 14px;
+}
+@media (min-width: 1240px) { .toc-inline { display: none; } }
+
+.toc-inline summary {
+  cursor: pointer; list-style: none; padding: 13px 0;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--fg-muted);
+}
+.toc-inline summary::-webkit-details-marker { display: none; }
+.toc-inline summary::after { content: "+"; float: right; color: var(--accent); font-size: 14px; }
+.toc-inline[open] summary::after { content: "–"; }
+.toc-inline ul { list-style: none; margin: 0; padding: 2px 0 16px; }
+.toc-inline li { margin: 0; }
+.toc-inline a { display: block; padding: 7px 0; color: var(--fg-mid); font-size: 15.5px; }
+.toc-inline a:hover { color: var(--accent-soft); }
+
+/* ===== Ritmo de sección: hairline + aire entre bloques ===== */
+.article-body > h2 {
+  border-top: 1px solid var(--hair);
+  padding-top: 44px;
+  margin-top: 60px;
+}
+.article-body > h2:first-of-type { border-top: 0; padding-top: 8px; margin-top: 48px; }
+
+/* Kicker mono de los pasos: "PASO N" arriba, título serif limpio abajo */
+.step-kicker {
+  display: block;
+  font-family: var(--mono); font-size: 12px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--accent);
+  margin-bottom: 10px;
+}
+
+/* ===== Riel de proceso en listas numeradas ===== */
+.article-body > ol { margin-top: 26px; }
+.article-body ol li { padding-left: 42px; margin-bottom: 16px; }
+.article-body ol li::before {
+  top: 0; left: 0; width: 25px; height: 25px;
+  line-height: 23px; text-align: center;
+  border: 1px solid var(--hair-strong); border-radius: 50%;
+  background: var(--bg-soft);
+  font-size: 12px;
+}
+.article-body ol li::after {
+  content: ""; position: absolute; left: 12px; top: 31px; bottom: -12px;
+  width: 1px; background: var(--hair);
+}
+.article-body ol li:last-child::after { display: none; }
+
+/* ===== Revelado sutil al hacer scroll (solo transform/opacity) ===== */
+@media (prefers-reduced-motion: no-preference) {
+  .rv {
+    opacity: 0; transform: translateY(14px);
+    transition: opacity .65s cubic-bezier(0.16, 1, 0.3, 1),
+                transform .65s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .rv.is-in { opacity: 1; transform: none; }
+}
+
+/* ===== Atmósfera: glows violeta muy tenues sobre el negro ===== */
+body::before {
+  background:
+    radial-gradient(90% 55% at 50% -12%, rgba(139,92,246,0.16), rgba(10,10,10,0) 55%),
+    radial-gradient(55% 38% at 108% 28%, rgba(139,92,246,0.07), rgba(10,10,10,0) 62%),
+    radial-gradient(65% 42% at -8% 76%, rgba(139,92,246,0.06), rgba(10,10,10,0) 62%);
+}
+
+/* ===== Sin barras de acento a la izquierda; el énfasis vive en la tipografía ===== */
+.article .standfirst {
+  border-left: 0; padding-left: 0;
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  font-size: 22px; line-height: 1.5; color: var(--fg-mid);
+}
+.tldr::before { display: none; }
+.tldr {
+  background: linear-gradient(180deg, rgba(139,92,246,0.08), rgba(19,18,24,0) 65%), var(--bg-soft);
+  border-color: rgba(185,166,255,0.15);
+}

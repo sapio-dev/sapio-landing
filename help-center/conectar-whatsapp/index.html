@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PJV4JL2J');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conectar WhatsApp a tu agente | Centro de ayuda de Sapio</title>
+<meta name="description" content="Tutorial para conectar WhatsApp a tu agente de IA en Sapio: requisitos del número, cuenta de Meta Business, verificación y primeras pruebas.">
+<meta name="keywords" content="conectar WhatsApp Sapio, WhatsApp Business API, agente de IA WhatsApp, verificar número WhatsApp, WhatsApp con IA">
+<meta name="author" content="Sapio">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="canonical" href="https://sapio.dev/help-center/conectar-whatsapp/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Sapio">
+<meta property="og:url" content="https://sapio.dev/help-center/conectar-whatsapp/">
+<meta property="og:title" content="Conectar WhatsApp a tu agente de IA">
+<meta property="og:description" content="Requisitos, verificación del número y cómo dejar a tu agente respondiendo en WhatsApp.">
+<meta property="og:image" content="https://sapio.dev/og-image.png">
+<meta property="og:locale" content="es_CL">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Conectar WhatsApp | Sapio">
+<meta name="twitter:description" content="Deja a tu agente de IA respondiendo en WhatsApp paso a paso.">
+<meta name="twitter:image" content="https://sapio.dev/og-image.png">
+
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Conectar WhatsApp a tu agente de IA en Sapio",
+  "description": "Cómo conectar un número de WhatsApp Business a tu agente: requisitos, verificación y pruebas.",
+  "inLanguage": "es",
+  "totalTime": "PT8M",
+  "step": [
+    {"@type": "HowToStep", "position": 1, "name": "Revisa los requisitos", "text": "Necesitas una cuenta de Meta Business y un número propio que no esté activo en la app de WhatsApp."},
+    {"@type": "HowToStep", "position": 2, "name": "Inicia la conexión", "text": "En Configuración IA → Conexión, elige WhatsApp y sigue el flujo de Meta."},
+    {"@type": "HowToStep", "position": 3, "name": "Verifica el número", "text": "Registra el número y confírmalo con el código que llega por SMS o llamada."},
+    {"@type": "HowToStep", "position": 4, "name": "Prueba la conexión", "text": "Escribe al número desde otro teléfono y verifica que el agente responde y que la conversación aparece en el CRM."}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://sapio.dev/"},
+    {"@type": "ListItem", "position": 2, "name": "Centro de ayuda", "item": "https://sapio.dev/help-center/"},
+    {"@type": "ListItem", "position": 3, "name": "Conectar WhatsApp", "item": "https://sapio.dev/help-center/conectar-whatsapp/"}
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/blog.css">
+<link rel="stylesheet" href="/help-center/help.css">
+</head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJV4JL2J"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<nav>
+  <div class="container nav-inner">
+    <a href="/" class="logo">Sapio</a>
+    <div class="nav-links">
+      <a href="/#capacidades">Capacidades</a>
+      <a href="/#resultados">Resultados</a>
+      <a href="/#plan">Precios</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#contacto">Contacto</a>
+      <span class="nav-auth">
+        <a href="https://agent.sapio.dev/login" class="nav-seg-login" target="_blank" rel="noopener">Iniciar sesión</a>
+        <a href="https://agent.sapio.dev/signup" class="nav-seg-signup" target="_blank" rel="noopener">Crear cuenta</a>
+      </span>
+    </div>
+  </div>
+</nav>
+
+<article class="article">
+  <div class="prose-wrap">
+    <div class="breadcrumb"><a href="/">Inicio</a> / <a href="/help-center/">Centro de ayuda</a> / Conectar WhatsApp</div>
+    <div class="article-meta">Tutorial · Canales · 8 min</div>
+    <h1>Conectar WhatsApp a tu agente</h1>
+    <p class="standfirst">WhatsApp es el canal donde más conversaciones vas a recibir. La conexión usa la API oficial de Meta, y la parte más importante ocurre antes de empezar: elegir bien el número.</p>
+
+    <div class="article-body">
+
+      <div class="tldr">
+        <div class="tldr-label">En resumen</div>
+        <p>Necesitas una <strong>cuenta de Meta Business</strong> y un <strong>número que no esté activo en la app de WhatsApp</strong>. La conexión se hace desde <strong>Configuración IA → Conexión → WhatsApp</strong>, con un código de verificación por SMS o llamada. Todo el flujo toma menos de 10 minutos.</p>
+      </div>
+
+      <h2>Antes de empezar: los requisitos</h2>
+      <ul>
+        <li><strong>Cuenta de Meta Business</strong> (business.facebook.com) de tu empresa. Si no la tienes, créala antes: es gratis y toma unos minutos.</li>
+        <li><strong>Un número de teléfono propio</strong> que pueda recibir SMS o una llamada de verificación.</li>
+        <li>El número <strong>no debe estar activo en la app de WhatsApp o WhatsApp Business</strong>. Si hoy lo usas en la app, tendrás que darlo de baja ahí primero (o usar un número nuevo, que suele ser lo más simple).</li>
+      </ul>
+      <p>Un punto que conviene decidir con calma: una vez conectado a la API, ese número deja de funcionar en la app del teléfono. Todas las conversaciones pasan a atenderse desde Sapio.</p>
+
+      <h2>Paso 1 — Inicia la conexión</h2>
+      <ol>
+        <li>Entra a <strong>Configuración IA → Conexión</strong>.</li>
+        <li>En la tarjeta de <strong>WhatsApp</strong>, presiona <strong>Conectar</strong>.</li>
+        <li>Se abre el flujo oficial de Meta: inicia sesión con la cuenta que administra tu Meta Business.</li>
+      </ol>
+
+      <h2>Paso 2 — Registra y verifica el número</h2>
+      <ol>
+        <li>Dentro del flujo de Meta, selecciona (o crea) la cuenta de WhatsApp Business de tu empresa.</li>
+        <li>Ingresa el número que vas a conectar y el nombre visible de tu negocio.</li>
+        <li>Elige verificación por <strong>SMS o llamada</strong> e ingresa el código que recibes.</li>
+      </ol>
+      <p>Al terminar, la tarjeta de WhatsApp en Sapio muestra el número conectado y su estado. Si queda "verificación pendiente", espera unos minutos; el estado se actualiza solo cuando Meta confirma.</p>
+
+      <h2>Paso 3 — Prueba la conexión</h2>
+      <ol>
+        <li>Desde otro teléfono, escribe un mensaje al número conectado.</li>
+        <li>Verifica que el agente responde en segundos.</li>
+        <li>Abre el <strong>CRM</strong> en el panel: la conversación debe aparecer ahí, con el historial completo.</li>
+      </ol>
+
+      <h2>Lo que conviene saber del canal</h2>
+      <ul>
+        <li><strong>Ventana de 24 horas:</strong> WhatsApp permite responder libremente hasta 24 horas después del último mensaje del cliente. Pasado ese plazo, para iniciar tú la conversación se usan <strong>plantillas aprobadas</strong>, que gestionas desde Broadcast.</li>
+        <li><strong>El agente responde todo lo que llega:</strong> si quieres intervenir una conversación puntual, escribes tú desde el CRM y el agente se hace a un lado en esa conversación (<a href="/help-center/gestionar-conversaciones/">más sobre esto aquí</a>).</li>
+        <li><strong>Perfil del negocio:</strong> foto, descripción y datos del perfil de WhatsApp se administran desde el Meta Business Manager.</li>
+      </ul>
+
+      <div class="cta-box">
+        <h2>¿Dudas con el número o la cuenta de Meta?</h2>
+        <p>Es la parte donde más equipos se traban. En una demo lo conectamos contigo en vivo.</p>
+        <a class="btn" href="https://calendar.app.google/vUfSasn1UEhAAsTv8" target="_blank" rel="noopener">Agendar demo</a>
+      </div>
+
+      <section class="faq">
+        <h2>Preguntas frecuentes</h2>
+        <div class="faq-item">
+          <h3>¿Puedo usar el número que ya uso en WhatsApp Business (la app)?</h3>
+          <p>Sí, pero hay que liberarlo primero. Si el número está activo en la app de WhatsApp o WhatsApp Business, debes darlo de baja ahí antes de conectarlo, y dejará de funcionar en el teléfono. Y si ya está conectado a la API de WhatsApp con otro proveedor, primero debe ser dado de baja de esa cuenta original. Si no quieres perder el uso en la app, te recomendamos conectar un número nuevo dedicado al agente.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Pierdo el historial de chats de la app?</h3>
+          <p>El historial de la app no se traspasa a la API: las conversaciones en Sapio parten desde la conexión en adelante. Guarda un respaldo desde la app si necesitas conservar chats antiguos.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Qué pasa si el estado queda en "verificación pendiente"?</h3>
+          <p>Meta a veces demora en confirmar el registro del número. El estado se revisa y actualiza automáticamente; si después de unas horas sigue pendiente, desconecta y vuelve a ejecutar el flujo, o escríbenos.</p>
+        </div>
+      </section>
+
+      <div class="related">
+        <span class="post-tag">Sigue con</span>
+        <div class="related-list">
+          <a href="/help-center/conectar-instagram-y-facebook/">Conectar Instagram y Facebook</a>
+          <a href="/help-center/instalar-el-chat-web/">Instalar el chat web en tu sitio</a>
+          <a href="/help-center/gestionar-conversaciones/">Gestiona tus conversaciones</a>
+          <a href="/blog/whatsapp-business-api-que-es/">WhatsApp Business API: qué es</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">Sapio</a>
+        <p>Agentes conversacionales de marca que responden en WhatsApp, Instagram, Facebook y chat web. 24/7, con tu tono.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Producto</h4>
+        <a href="/#capacidades">Capacidades</a>
+        <a href="/#resultados">Resultados</a>
+        <a href="/#plan">Precios</a>
+        <a href="/conversations">Ver demo</a>
+      </div>
+      <div class="footer-col">
+        <h4>Recursos</h4>
+        <a href="/blog/">Blog</a>
+        <a href="/help-center/">Centro de ayuda</a>
+      </div>
+      <div class="footer-col">
+        <h4>Acceso</h4>
+        <a href="https://agent.sapio.dev/signup" target="_blank" rel="noopener">Crear cuenta</a>
+        <a href="https://calendar.app.google/vUfSasn1UEhAAsTv8" target="_blank" rel="noopener">Agendar demo</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Sapio · sapio.dev</div>
+      <div>Hecho con intención desde Chile</div>
+    </div>
+  </div>
+</footer>
+
+<script src="/help-center/toc.js" defer></script>
+
+</body>
+</html>

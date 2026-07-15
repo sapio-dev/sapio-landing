@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PJV4JL2J');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Derivaciones: pasa el caso a tu equipo | Centro de ayuda de Sapio</title>
+<meta name="description" content="Cómo funcionan las derivaciones en Sapio: cuándo el agente pasa un caso a tu equipo, quién recibe el aviso, en qué horario y cómo atenderlo sin perder contexto.">
+<meta name="keywords" content="derivación a humano, handoff agente de IA, escalar a humano, derivaciones Sapio, traspaso a humano sin perder contexto">
+<meta name="author" content="Sapio">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="canonical" href="https://sapio.dev/help-center/derivar-a-un-humano/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Sapio">
+<meta property="og:url" content="https://sapio.dev/help-center/derivar-a-un-humano/">
+<meta property="og:title" content="Derivaciones: cuándo y cómo el agente pasa el caso a tu equipo">
+<meta property="og:description" content="Configura quién recibe cada derivación, en qué horario y cómo atenderla sin perder contexto.">
+<meta property="og:image" content="https://sapio.dev/og-image.png">
+<meta property="og:locale" content="es_CL">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Derivaciones a tu equipo | Sapio">
+<meta name="twitter:description" content="Cuándo deriva el agente, quién recibe el aviso y cómo atenderlo.">
+<meta name="twitter:image" content="https://sapio.dev/og-image.png">
+
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Configurar y atender derivaciones en Sapio",
+  "description": "Cómo definir cuándo el agente deriva a un humano, quién recibe el aviso y cómo atender la derivación.",
+  "inLanguage": "es",
+  "totalTime": "PT6M",
+  "step": [
+    {"@type": "HowToStep", "position": 1, "name": "Define cuándo derivar", "text": "En las instrucciones del agente, describe las señales que ameritan pasar el caso a una persona."},
+    {"@type": "HowToStep", "position": 2, "name": "Configura quién recibe el aviso", "text": "Asigna el correo del ejecutivo responsable y su horario de atención."},
+    {"@type": "HowToStep", "position": 3, "name": "Atiende desde Derivaciones", "text": "La página Derivaciones lista los casos pendientes; abre el chat con todo el contexto y responde."},
+    {"@type": "HowToStep", "position": 4, "name": "Devuelve el caso a la IA", "text": "Al cerrar el caso, reasigna la conversación al agente para que retome la atención."}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://sapio.dev/"},
+    {"@type": "ListItem", "position": 2, "name": "Centro de ayuda", "item": "https://sapio.dev/help-center/"},
+    {"@type": "ListItem", "position": 3, "name": "Derivaciones", "item": "https://sapio.dev/help-center/derivar-a-un-humano/"}
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/blog.css">
+<link rel="stylesheet" href="/help-center/help.css">
+</head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJV4JL2J"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<nav>
+  <div class="container nav-inner">
+    <a href="/" class="logo">Sapio</a>
+    <div class="nav-links">
+      <a href="/#capacidades">Capacidades</a>
+      <a href="/#resultados">Resultados</a>
+      <a href="/#plan">Precios</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#contacto">Contacto</a>
+      <span class="nav-auth">
+        <a href="https://agent.sapio.dev/login" class="nav-seg-login" target="_blank" rel="noopener">Iniciar sesión</a>
+        <a href="https://agent.sapio.dev/signup" class="nav-seg-signup" target="_blank" rel="noopener">Crear cuenta</a>
+      </span>
+    </div>
+  </div>
+</nav>
+
+<article class="article">
+  <div class="prose-wrap">
+    <div class="breadcrumb"><a href="/">Inicio</a> / <a href="/help-center/">Centro de ayuda</a> / Derivaciones</div>
+    <div class="article-meta">Tutorial · Operación diaria · 6 min</div>
+    <h1>Derivaciones: cuándo y cómo el agente pasa el caso a tu equipo</h1>
+    <p class="standfirst">Un buen agente sabe lo que no le corresponde resolver. Las derivaciones son el puente: el agente detecta el momento, avisa a la persona correcta y le entrega la conversación con todo el contexto.</p>
+
+    <div class="article-body">
+
+      <div class="tldr">
+        <div class="tldr-label">En resumen</div>
+        <p>Defines en las <strong>instrucciones</strong> cuándo derivar, y por tema o proyecto asignas <strong>quién recibe el aviso por correo</strong> y en qué horario. Los casos quedan en la página <strong>Derivaciones</strong>, marcados como "necesita humano": el agente no interviene en esa conversación hasta que tu equipo la devuelva a la IA.</p>
+      </div>
+
+      <h2>Cuándo deriva el agente</h2>
+      <p>Las señales típicas — todas configurables en las instrucciones:</p>
+      <ul>
+        <li>El cliente <strong>pide hablar con una persona</strong>, explícitamente o con evidente frustración.</li>
+        <li>El caso <strong>supera lo que el agente puede resolver</strong>: un reclamo delicado, una negociación, una condición especial.</li>
+        <li>El cliente <strong>llegó al punto del embudo</strong> donde tu proceso exige contacto humano: por ejemplo, listo para firmar o para coordinar una visita.</li>
+      </ul>
+      <p>También puedes condicionar la derivación al estado del embudo: por ejemplo, que el agente no derive a un vendedor hasta que el cliente esté calificado.</p>
+
+      <h2>Paso 1 — Define las reglas en las instrucciones</h2>
+      <ol>
+        <li>En <strong>Configuración IA</strong>, escribe en las instrucciones las situaciones que ameritan derivar, con ejemplos concretos.</li>
+        <li>Indica también lo que el agente debe decir al derivar: "un ejecutivo te contactará dentro del horario hábil" ajusta mejor las expectativas que un genérico "te contactaremos".</li>
+      </ol>
+
+      <h2>Paso 2 — Configura quién recibe cada derivación</h2>
+      <ol>
+        <li>Asigna el <strong>correo del ejecutivo responsable</strong> — puede ser distinto por proyecto, sucursal o tema.</li>
+        <li>Define su <strong>horario de atención</strong> en tu zona horaria: fuera de ese horario, el agente lo comunica al cliente y el aviso espera al horario hábil.</li>
+      </ol>
+
+      <h2>Paso 3 — Atiende la derivación</h2>
+      <ol>
+        <li>El ejecutivo recibe un <strong>correo con el contexto</strong>: quién es el cliente, canal y motivo de la derivación.</li>
+        <li>En el panel, la página <strong>Derivaciones</strong> lista todos los casos pendientes; el punto rojo en la barra indica casos sin revisar.</li>
+        <li>Abre la conversación: el historial completo está ahí — nada que repreguntar al cliente.</li>
+        <li>Responde directamente desde el panel, por el mismo canal donde escribió el cliente.</li>
+      </ol>
+      <p>Mientras el caso esté en manos humanas, el agente no responde ni envía seguimientos en esa conversación.</p>
+
+      <h2>Paso 4 — Devuelve el caso a la IA</h2>
+      <p>Cuando el tema quedó resuelto, reasigna la conversación al agente. Desde ahí retoma la atención normal: responde mensajes nuevos y aplica los seguimientos que correspondan.</p>
+
+      <div class="cta-box">
+        <h2>¿Quieres diseñar bien tu flujo de derivación?</h2>
+        <p>En una demo revisamos tu proceso comercial y definimos contigo cuándo deriva el agente y a quién.</p>
+        <a class="btn" href="https://calendar.app.google/vUfSasn1UEhAAsTv8" target="_blank" rel="noopener">Agendar demo</a>
+      </div>
+
+      <section class="faq">
+        <h2>Preguntas frecuentes</h2>
+        <div class="faq-item">
+          <h3>¿El cliente se da cuenta de que lo derivaron?</h3>
+          <p>El agente se lo dice con naturalidad: le avisa que una persona del equipo continuará la conversación y en qué plazo. El cliente sigue escribiendo por el mismo canal; no tiene que cambiar de número ni de chat.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Qué pasa si nadie atiende la derivación?</h3>
+          <p>El caso queda visible en la página Derivaciones y la conversación permanece marcada como "necesita humano" hasta que alguien la tome o la devuelva a la IA. El agente no la retoma solo, para evitar respuestas automáticas en un caso que pediste tratar en persona.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Puedo derivar a personas distintas según el tema?</h3>
+          <p>Sí: el correo del responsable se configura por proyecto o tema, de modo que una consulta de postventa y una oportunidad de venta lleguen a personas distintas, cada una con su horario.</p>
+        </div>
+      </section>
+
+      <div class="related">
+        <span class="post-tag">Sigue con</span>
+        <div class="related-list">
+          <a href="/help-center/gestionar-conversaciones/">Gestiona tus conversaciones</a>
+          <a href="/help-center/personalidad-instrucciones-y-preview/">Personalidad, instrucciones y Preview</a>
+          <a href="/blog/cuando-escalar-a-un-humano/">Cuándo escalar a un humano</a>
+          <a href="/blog/traspaso-a-humano-sin-perder-contexto/">Traspaso a humano sin perder contexto</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">Sapio</a>
+        <p>Agentes conversacionales de marca que responden en WhatsApp, Instagram, Facebook y chat web. 24/7, con tu tono.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Producto</h4>
+        <a href="/#capacidades">Capacidades</a>
+        <a href="/#resultados">Resultados</a>
+        <a href="/#plan">Precios</a>
+        <a href="/conversations">Ver demo</a>
+      </div>
+      <div class="footer-col">
+        <h4>Recursos</h4>
+        <a href="/blog/">Blog</a>
+        <a href="/help-center/">Centro de ayuda</a>
+      </div>
+      <div class="footer-col">
+        <h4>Acceso</h4>
+        <a href="https://agent.sapio.dev/signup" target="_blank" rel="noopener">Crear cuenta</a>
+        <a href="https://calendar.app.google/vUfSasn1UEhAAsTv8" target="_blank" rel="noopener">Agendar demo</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Sapio · sapio.dev</div>
+      <div>Hecho con intención desde Chile</div>
+    </div>
+  </div>
+</footer>
+
+<script src="/help-center/toc.js" defer></script>
+
+</body>
+</html>

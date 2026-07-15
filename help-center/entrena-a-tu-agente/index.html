@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PJV4JL2J');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entrena a tu agente con tus documentos | Centro de ayuda de Sapio</title>
+<meta name="description" content="Cómo entrenar tu agente de IA en Sapio: sube catálogo, precios y preguntas frecuentes en PDF, Word o Excel, y agrega archivos que el agente puede enviar al cliente.">
+<meta name="keywords" content="entrenar agente de IA, subir documentos agente, RAG Sapio, catálogo agente de IA, archivos enviables Sapio">
+<meta name="author" content="Sapio">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="canonical" href="https://sapio.dev/help-center/entrena-a-tu-agente/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Sapio">
+<meta property="og:url" content="https://sapio.dev/help-center/entrena-a-tu-agente/">
+<meta property="og:title" content="Entrena a tu agente con tus documentos">
+<meta property="og:description" content="Sube tu catálogo, precios y FAQ para que el agente responda con tu información real.">
+<meta property="og:image" content="https://sapio.dev/og-image.png">
+<meta property="og:locale" content="es_CL">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Entrena a tu agente con tus documentos | Sapio">
+<meta name="twitter:description" content="Catálogo, precios y FAQ: así aprende tu agente de IA.">
+<meta name="twitter:image" content="https://sapio.dev/og-image.png">
+
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Entrenar a tu agente de IA con tus documentos en Sapio",
+  "description": "Cómo subir catálogo, precios y preguntas frecuentes para que el agente responda con la información real de tu negocio.",
+  "inLanguage": "es",
+  "totalTime": "PT7M",
+  "step": [
+    {"@type": "HowToStep", "position": 1, "name": "Prepara el material", "text": "Reúne catálogo, precios, preguntas frecuentes y políticas en PDF, Word o Excel."},
+    {"@type": "HowToStep", "position": 2, "name": "Sube los archivos", "text": "En Configuración IA → Entrenamiento, sube los documentos y espera a que se procesen."},
+    {"@type": "HowToStep", "position": 3, "name": "Agrega archivos para enviar", "text": "En Archivos a enviar sube fotos y brochures que el agente puede mandar al cliente en la conversación."},
+    {"@type": "HowToStep", "position": 4, "name": "Verifica en Preview", "text": "Haz preguntas reales sobre productos y precios y comprueba que responde con tus datos."}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://sapio.dev/"},
+    {"@type": "ListItem", "position": 2, "name": "Centro de ayuda", "item": "https://sapio.dev/help-center/"},
+    {"@type": "ListItem", "position": 3, "name": "Entrena a tu agente", "item": "https://sapio.dev/help-center/entrena-a-tu-agente/"}
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/blog.css">
+<link rel="stylesheet" href="/help-center/help.css">
+</head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJV4JL2J"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<nav>
+  <div class="container nav-inner">
+    <a href="/" class="logo">Sapio</a>
+    <div class="nav-links">
+      <a href="/#capacidades">Capacidades</a>
+      <a href="/#resultados">Resultados</a>
+      <a href="/#plan">Precios</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#contacto">Contacto</a>
+      <span class="nav-auth">
+        <a href="https://agent.sapio.dev/login" class="nav-seg-login" target="_blank" rel="noopener">Iniciar sesión</a>
+        <a href="https://agent.sapio.dev/signup" class="nav-seg-signup" target="_blank" rel="noopener">Crear cuenta</a>
+      </span>
+    </div>
+  </div>
+</nav>
+
+<article class="article">
+  <div class="prose-wrap">
+    <div class="breadcrumb"><a href="/">Inicio</a> / <a href="/help-center/">Centro de ayuda</a> / Entrena a tu agente</div>
+    <div class="article-meta">Tutorial · Configura tu agente · 7 min</div>
+    <h1>Entrena a tu agente con tus documentos</h1>
+    <p class="standfirst">Un agente sin entrenamiento conversa bien pero no sabe nada de tu negocio. Aquí le das el conocimiento: catálogo, precios, preguntas frecuentes y los archivos que puede enviar al cliente.</p>
+
+    <div class="article-body">
+
+      <div class="tldr">
+        <div class="tldr-label">En resumen</div>
+        <p>Sube tus documentos (PDF, Word, Excel) en <strong>Configuración IA → Entrenamiento</strong>. El contenido se divide y se indexa para que el agente lo consulte al responder. Las fotos y brochures que quieres que el agente <em>envíe</em> al cliente van aparte, en <strong>Archivos a enviar</strong>.</p>
+      </div>
+
+      <h2>Paso 1 — Prepara el material</h2>
+      <p>Lo que funciona mejor como entrenamiento:</p>
+      <ul>
+        <li><strong>Catálogo de productos o servicios</strong>, con nombres, características y precios vigentes.</li>
+        <li><strong>Preguntas frecuentes</strong> con sus respuestas, tal como las contesta tu equipo.</li>
+        <li><strong>Políticas:</strong> despacho, cambios y devoluciones, garantías, formas de pago, horarios.</li>
+      </ul>
+      <p>Y lo que conviene dejar fuera:</p>
+      <ul>
+        <li><strong>Datos internos:</strong> márgenes, costos, metas de venta o cualquier cosa que no dirías a un cliente. El agente responde con lo que sabe; si no debe decirlo, no lo subas.</li>
+        <li><strong>Información vencida:</strong> listas de precios antiguas o promociones terminadas confunden más de lo que ayudan.</li>
+      </ul>
+
+      <h2>Paso 2 — Sube los archivos</h2>
+      <ol>
+        <li>Entra a <strong>Configuración IA → Entrenamiento</strong>.</li>
+        <li>Sube tus documentos en PDF, Word o Excel.</li>
+        <li>Espera a que cada archivo termine de procesarse: el contenido se divide en fragmentos y se indexa para que el agente lo encuentre al responder.</li>
+      </ol>
+      <p>Puedes subir varios archivos y reemplazarlos cuando cambien. Si actualizas tu lista de precios, elimina la anterior y sube la nueva: el agente usa lo que está cargado en ese momento.</p>
+
+      <h2>Paso 3 — Archivos que el agente puede enviar</h2>
+      <p>Distinto del entrenamiento: hay archivos que no son conocimiento sino <strong>material para compartir</strong> — fotos de productos, brochures, fichas en PDF.</p>
+      <ol>
+        <li>Ve a <strong>Configuración IA → Archivos a enviar</strong>.</li>
+        <li>Sube las imágenes o PDF con un nombre descriptivo (el agente elige qué enviar según ese nombre y el contexto).</li>
+        <li>En la conversación, cuando el cliente pida "mándame fotos" o "¿tienes el brochure?", el agente adjunta el archivo correcto.</li>
+      </ol>
+
+      <h2>Paso 4 — Verifica en Preview</h2>
+      <ol>
+        <li>Abre <strong>Configuración IA → Preview</strong>.</li>
+        <li>Haz las preguntas que hacen tus clientes de verdad: precios específicos, disponibilidad, políticas de cambio.</li>
+        <li>Si el agente responde "no tengo esa información", es señal de que falta subir ese contenido — mejor eso a que invente.</li>
+      </ol>
+
+      <h2>Buenas prácticas</h2>
+      <ul>
+        <li><strong>Un tema por documento</strong> ayuda: "precios_2026.xlsx", "faq_despachos.pdf". Facilita actualizar sin tocar el resto.</li>
+        <li><strong>Datos que cambian a cada minuto</strong> (stock en vivo, estados de pedido) no van en documentos: para eso existe la <a href="/blog/conectar-tu-agente-de-ia-con-tus-sistemas/">conexión por API con tus sistemas</a>.</li>
+        <li><strong>Revisa después de cada cambio de temporada:</strong> precios, horarios y promociones son lo primero que queda obsoleto.</li>
+      </ul>
+
+      <div class="cta-box">
+        <h2>¿Tienes el material pero no el tiempo?</h2>
+        <p>Mándanos tus documentos en la demo y dejamos el agente entrenado contigo, con pruebas incluidas.</p>
+        <a class="btn" href="https://calendar.app.google/vUfSasn1UEhAAsTv8" target="_blank" rel="noopener">Agendar demo</a>
+      </div>
+
+      <section class="faq">
+        <h2>Preguntas frecuentes</h2>
+        <div class="faq-item">
+          <h3>¿Qué formatos puedo subir?</h3>
+          <p>PDF, Word y Excel son los formatos habituales. Si tu información está en otro lado (una página web, un sistema), cópiala a un documento o consulta por la conexión vía API.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Cuánto tarda en aprender un documento nuevo?</h3>
+          <p>El procesamiento toma desde segundos hasta un par de minutos según el tamaño del archivo. Apenas termina, el agente ya puede usar ese contenido en sus respuestas.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Por qué el agente dice "no tengo esa información"?</h3>
+          <p>Porque está diseñado para no inventar: si un dato no está en su entrenamiento, lo reconoce en vez de improvisar. La solución es subir el documento que contiene ese dato y volver a probar.</p>
+        </div>
+      </section>
+
+      <div class="related">
+        <span class="post-tag">Sigue con</span>
+        <div class="related-list">
+          <a href="/help-center/personalidad-instrucciones-y-preview/">Personalidad, instrucciones y Preview</a>
+          <a href="/help-center/conectar-whatsapp/">Conectar WhatsApp</a>
+          <a href="/help-center/instalar-el-chat-web/">Instalar el chat web en tu sitio</a>
+          <a href="/help-center/gestionar-conversaciones/">Gestiona tus conversaciones</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">Sapio</a>
+        <p>Agentes conversacionales de marca que responden en WhatsApp, Instagram, Facebook y chat web. 24/7, con tu tono.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Producto</h4>
+        <a href="/#capacidades">Capacidades</a>
+        <a href="/#resultados">Resultados</a>
+        <a href="/#plan">Precios</a>
+        <a href="/conversations">Ver demo</a>
+      </div>
+      <div class="footer-col">
+        <h4>Recursos</h4>
+        <a href="/blog/">Blog</a>
+        <a href="/help-center/">Centro de ayuda</a>
+      </div>
+      <div class="footer-col">
+        <h4>Acceso</h4>
+        <a href="https://agent.sapio.dev/signup" target="_blank" rel="noopener">Crear cuenta</a>
+        <a href="https://calendar.app.google/vUfSasn1UEhAAsTv8" target="_blank" rel="noopener">Agendar demo</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Sapio · sapio.dev</div>
+      <div>Hecho con intención desde Chile</div>
+    </div>
+  </div>
+</footer>
+
+<script src="/help-center/toc.js" defer></script>
+
+</body>
+</html>

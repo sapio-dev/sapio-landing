@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PJV4JL2J');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Centro de ayuda de Sapio — Tutoriales para configurar tu agente de IA</title>
+<meta name="description" content="Tutoriales paso a paso para usar Sapio: crea tu agente de IA, entrénalo con tus documentos, conecta WhatsApp, Instagram, Facebook y chat web, y gestiona tus conversaciones.">
+<meta name="keywords" content="centro de ayuda Sapio, tutoriales Sapio, cómo configurar un agente de IA, conectar WhatsApp a Sapio, entrenar agente de IA">
+<meta name="author" content="Sapio">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="canonical" href="https://sapio.dev/help-center/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sapio">
+<meta property="og:url" content="https://sapio.dev/help-center/">
+<meta property="og:title" content="Centro de ayuda de Sapio — Tutoriales del producto">
+<meta property="og:description" content="Guías paso a paso: crea tu agente, entrénalo, conecta tus canales y gestiona conversaciones.">
+<meta property="og:image" content="https://sapio.dev/og-image.png">
+<meta property="og:locale" content="es_CL">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Centro de ayuda de Sapio">
+<meta name="twitter:description" content="Tutoriales paso a paso para configurar y operar tu agente de IA.">
+<meta name="twitter:image" content="https://sapio.dev/og-image.png">
+
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Centro de ayuda de Sapio",
+  "description": "Tutoriales paso a paso para configurar y operar tu agente conversacional de IA en Sapio.",
+  "url": "https://sapio.dev/help-center/",
+  "inLanguage": "es",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Sapio",
+    "url": "https://sapio.dev/",
+    "logo": "https://sapio.dev/icon-512.png"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/blog.css">
+<link rel="stylesheet" href="/help-center/help.css">
+<style>
+  /* ===== Home del centro de ayuda — hero compacto + buscador + tarjetas ===== */
+  .hc-hero { padding: calc(var(--nav-h) + 84px) 0 56px; text-align: center; }
+  .hc-hero .eyebrow { margin-bottom: 22px; }
+  .hc-hero h1 {
+    font-family: var(--serif); font-weight: 300; color: var(--fg);
+    font-size: clamp(38px, 5.4vw, 64px); line-height: 1.04; letter-spacing: -0.032em;
+    max-width: 18ch; margin: 0 auto;
+  }
+  .hc-hero p { margin: 20px auto 0; font-size: 18px; color: var(--fg-mid); max-width: 46ch; }
+
+  /* buscador */
+  .hc-search { position: relative; max-width: 560px; margin: 36px auto 0; }
+  .hc-search svg {
+    position: absolute; left: 22px; top: 50%; transform: translateY(-50%);
+    width: 17px; height: 17px; color: var(--fg-muted); pointer-events: none;
+  }
+  .hc-search input {
+    width: 100%; padding: 17px 24px 17px 52px;
+    background: var(--card); color: var(--fg);
+    border: 1px solid var(--hair-strong); border-radius: 999px;
+    font-family: var(--sans); font-size: 16px; outline: none;
+    transition: border-color .25s var(--ease), box-shadow .25s var(--ease);
+  }
+  .hc-search input::placeholder { color: var(--fg-muted); }
+  .hc-search input:focus {
+    border-color: rgba(185,166,255,0.55);
+    box-shadow: 0 0 0 4px rgba(185,166,255,0.10);
+  }
+
+  /* grupos de tarjetas */
+  .hc-main { padding: 8px 0 96px; }
+  .hc-group { margin-top: 56px; }
+  .hc-group-title {
+    display: flex; align-items: baseline; gap: 14px;
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--fg-muted); font-weight: 500;
+    border-bottom: 1px solid var(--hair-strong); padding-bottom: 14px; margin-bottom: 26px;
+  }
+  .hc-group-title .num { color: var(--accent); }
+  .hc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+
+  .hc-card {
+    position: relative; display: flex; flex-direction: column; gap: 12px;
+    background: var(--card); border: 1px solid var(--hair); border-radius: 20px;
+    padding: 28px 26px 24px; overflow: hidden;
+    transition: transform .3s var(--ease), border-color .3s var(--ease), background .3s var(--ease);
+  }
+  .hc-card::after {
+    content: "→"; position: absolute; right: 24px; bottom: 20px;
+    color: var(--fg-muted); font-size: 18px; opacity: 0; transform: translateX(-6px);
+    transition: opacity .25s var(--ease), transform .25s var(--ease), color .25s var(--ease);
+  }
+  .hc-card:hover { transform: translateY(-3px); border-color: rgba(185,166,255,0.4); background: #16141d; }
+  .hc-card:hover::after { opacity: 1; transform: translateX(0); color: var(--accent); }
+  .hc-card-tag {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--accent);
+  }
+  .hc-card-title {
+    font-family: var(--serif); font-weight: 400; color: var(--fg);
+    font-size: 23px; line-height: 1.16; letter-spacing: -0.015em;
+    transition: color .25s var(--ease);
+  }
+  .hc-card:hover .hc-card-title { color: var(--accent-soft); }
+  .hc-card-dek { font-size: 14.5px; line-height: 1.55; color: var(--fg-mid); padding-right: 24px; }
+  .hc-card-time {
+    margin-top: auto; padding-top: 10px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; color: var(--fg-muted);
+  }
+
+  /* sin resultados */
+  .hc-empty {
+    display: none; text-align: center; padding: 72px 0 24px; color: var(--fg-mid);
+  }
+  .hc-empty .big { font-family: var(--serif); font-size: 26px; color: var(--fg); margin-bottom: 10px; }
+  .hc-empty a { color: var(--accent); }
+
+  @media (max-width: 960px) { .hc-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 600px) {
+    .hc-hero { padding-top: calc(var(--nav-h) + 56px); }
+    .hc-grid { grid-template-columns: 1fr; }
+    .hc-search input { font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJV4JL2J"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<nav>
+  <div class="container nav-inner">
+    <a href="/" class="logo">Sapio</a>
+    <div class="nav-links">
+      <a href="/#capacidades">Capacidades</a>
+      <a href="/#resultados">Resultados</a>
+      <a href="/#plan">Precios</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#contacto">Contacto</a>
+      <span class="nav-auth">
+        <a href="https://agent.sapio.dev/login" class="nav-seg-login" target="_blank" rel="noopener">Iniciar sesión</a>
+        <a href="https://agent.sapio.dev/signup" class="nav-seg-signup" target="_blank" rel="noopener">Crear cuenta</a>
+      </span>
+    </div>
+  </div>
+</nav>
+
+<header class="hc-hero">
+  <div class="container">
+    <div class="eyebrow">Centro de ayuda</div>
+    <h1>¿En qué te podemos ayudar?</h1>
+    <p>Tutoriales paso a paso para configurar tu agente, conectar tus canales y operar el día a día.</p>
+    <div class="hc-search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="hcSearch" type="search" placeholder="Busca un tutorial: WhatsApp, entrenar, derivar…" autocomplete="off">
+    </div>
+  </div>
+</header>
+
+
+<main class="hc-main">
+  <div class="container">
+
+    <section class="hc-group" data-group>
+      <h2 class="hc-group-title"><span class="num">01</span> Configura tu agente</h2>
+      <div class="hc-grid">
+        <a class="hc-card" href="/help-center/primeros-pasos/" data-keywords="cuenta signup registro empezar panel crm board organización trial">
+          <span class="hc-card-tag">Empieza aquí</span>
+          <span class="hc-card-title">Primeros pasos: crea tu cuenta y tu agente</span>
+          <span class="hc-card-dek">Desde crear la cuenta hasta la primera conversación de prueba, con el recorrido por el panel.</span>
+          <span class="hc-card-time">Tutorial · 10 min</span>
+        </a>
+        <a class="hc-card" href="/help-center/personalidad-instrucciones-y-preview/" data-keywords="tono voz marca reglas instrucciones feedbacks probar preview personalidad emojis">
+          <span class="hc-card-tag">Configuración</span>
+          <span class="hc-card-title">Personalidad, instrucciones y Preview</span>
+          <span class="hc-card-dek">Define cómo habla tu agente, qué reglas de negocio sigue y pruébalo antes de publicarlo.</span>
+          <span class="hc-card-time">Tutorial · 6 min</span>
+        </a>
+        <a class="hc-card" href="/help-center/entrena-a-tu-agente/" data-keywords="entrenamiento documentos pdf excel word catálogo precios faq conocimiento archivos enviar fotos brochure">
+          <span class="hc-card-tag">Configuración</span>
+          <span class="hc-card-title">Entrena a tu agente con tus documentos</span>
+          <span class="hc-card-dek">Sube catálogo, precios y preguntas frecuentes para que responda con tu información real.</span>
+          <span class="hc-card-time">Tutorial · 7 min</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="hc-group" data-group>
+      <h2 class="hc-group-title"><span class="num">02</span> Conecta tus canales</h2>
+      <div class="hc-grid">
+        <a class="hc-card" href="/help-center/conectar-whatsapp/" data-keywords="whatsapp número meta business api verificación sms plantillas 24 horas">
+          <span class="hc-card-tag">WhatsApp</span>
+          <span class="hc-card-title">Conectar WhatsApp</span>
+          <span class="hc-card-dek">Requisitos del número, verificación con Meta y las primeras pruebas del canal.</span>
+          <span class="hc-card-time">Tutorial · 8 min</span>
+        </a>
+        <a class="hc-card" href="/help-center/conectar-instagram-y-facebook/" data-keywords="instagram facebook messenger dm mensajes directos página cuenta profesional historias">
+          <span class="hc-card-tag">Instagram · Facebook</span>
+          <span class="hc-card-title">Conectar Instagram y Facebook</span>
+          <span class="hc-card-dek">Vincula tu cuenta profesional de Instagram y tu página de Facebook en un par de minutos.</span>
+          <span class="hc-card-time">Tutorial · 5 min</span>
+        </a>
+        <a class="hc-card" href="/help-center/instalar-el-chat-web/" data-keywords="widget chat web sitio script instalar wordpress shopify tag manager en vivo">
+          <span class="hc-card-tag">Chat web</span>
+          <span class="hc-card-title">Instalar el chat web en tu sitio</span>
+          <span class="hc-card-dek">Copia un script, pégalo en tu sitio y atiende a tus visitas en tiempo real.</span>
+          <span class="hc-card-time">Tutorial · 4 min</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="hc-group" data-group>
+      <h2 class="hc-group-title"><span class="num">03</span> Opera el día a día</h2>
+      <div class="hc-grid">
+        <a class="hc-card" href="/help-center/gestionar-conversaciones/" data-keywords="crm bandeja board kanban estados embudo tags intervenir takeover clasificar conversaciones cierre">
+          <span class="hc-card-tag">Operación</span>
+          <span class="hc-card-title">Gestiona tus conversaciones: CRM, Board y estados</span>
+          <span class="hc-card-dek">La bandeja unificada, el tablero kanban y cómo intervenir una conversación cuando quieras.</span>
+          <span class="hc-card-time">Tutorial · 7 min</span>
+        </a>
+        <a class="hc-card" href="/help-center/derivar-a-un-humano/" data-keywords="derivación derivaciones handoff escalar humano ejecutivo correo horario equipo">
+          <span class="hc-card-tag">Operación</span>
+          <span class="hc-card-title">Derivaciones: pasa el caso a tu equipo</span>
+          <span class="hc-card-dek">Configura quién recibe cada derivación, en qué horario y cómo atenderla sin perder contexto.</span>
+          <span class="hc-card-time">Tutorial · 6 min</span>
+        </a>
+      </div>
+    </section>
+
+    <div class="hc-empty" id="hcEmpty">
+      <div class="big">No encontramos tutoriales para esa búsqueda.</div>
+      <p>Prueba con otra palabra, o <a href="https://calendar.app.google/vUfSasn1UEhAAsTv8" target="_blank" rel="noopener">agenda una demo</a> y lo resolvemos contigo.</p>
+    </div>
+
+    <div class="cta-box">
+      <h2>¿No encuentras lo que buscas?</h2>
+      <p>Agenda una demo y te acompañamos en la configuración, con tu información real.</p>
+      <a class="btn" href="https://calendar.app.google/vUfSasn1UEhAAsTv8" target="_blank" rel="noopener">Agendar demo</a>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">Sapio</a>
+        <p>Agentes conversacionales de marca que responden en WhatsApp, Instagram, Facebook y chat web. 24/7, con tu tono.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Producto</h4>
+        <a href="/#capacidades">Capacidades</a>
+        <a href="/#resultados">Resultados</a>
+        <a href="/#plan">Precios</a>
+        <a href="/conversations">Ver demo</a>
+      </div>
+      <div class="footer-col">
+        <h4>Recursos</h4>
+        <a href="/blog/">Blog</a>
+        <a href="/help-center/">Centro de ayuda</a>
+      </div>
+      <div class="footer-col">
+        <h4>Acceso</h4>
+        <a href="https://agent.sapio.dev/signup" target="_blank" rel="noopener">Crear cuenta</a>
+        <a href="https://calendar.app.google/vUfSasn1UEhAAsTv8" target="_blank" rel="noopener">Agendar demo</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Sapio · sapio.dev</div>
+      <div>Hecho con intención desde Chile</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Buscador del centro de ayuda: filtra tarjetas por título, descripción y keywords.
+  (function () {
+    var input = document.getElementById('hcSearch');
+    var groups = Array.prototype.slice.call(document.querySelectorAll('[data-group]'));
+    var empty = document.getElementById('hcEmpty');
+    if (!input) return;
+
+    var normalize = function (s) {
+      return (s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    };
+
+    input.addEventListener('input', function () {
+      var q = normalize(input.value.trim());
+      var anyVisible = false;
+
+      groups.forEach(function (group) {
+        var cards = Array.prototype.slice.call(group.querySelectorAll('.hc-card'));
+        var groupVisible = false;
+
+        cards.forEach(function (card) {
+          var haystack = normalize(card.textContent + ' ' + (card.getAttribute('data-keywords') || ''));
+          var show = !q || haystack.indexOf(q) !== -1;
+          card.style.display = show ? '' : 'none';
+          if (show) groupVisible = true;
+        });
+
+        group.style.display = groupVisible ? '' : 'none';
+        if (groupVisible) anyVisible = true;
+      });
+
+      empty.style.display = anyVisible ? 'none' : 'block';
+    });
+  })();
+</script>
+
+</body>
+</html>

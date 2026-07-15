@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PJV4JL2J');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personalidad, instrucciones y Preview | Centro de ayuda de Sapio</title>
+<meta name="description" content="Cómo definir el tono de tu agente de IA en Sapio, escribir instrucciones que sigan tus reglas de negocio y probarlo en Preview antes de publicarlo.">
+<meta name="keywords" content="personalidad agente de IA, instrucciones agente Sapio, tono de marca IA, probar agente de IA, preview Sapio">
+<meta name="author" content="Sapio">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="canonical" href="https://sapio.dev/help-center/personalidad-instrucciones-y-preview/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Sapio">
+<meta property="og:url" content="https://sapio.dev/help-center/personalidad-instrucciones-y-preview/">
+<meta property="og:title" content="Personalidad, instrucciones y Preview">
+<meta property="og:description" content="Define cómo habla tu agente, qué reglas sigue y pruébalo antes de publicarlo.">
+<meta property="og:image" content="https://sapio.dev/og-image.png">
+<meta property="og:locale" content="es_CL">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Personalidad, instrucciones y Preview | Sapio">
+<meta name="twitter:description" content="Define cómo habla tu agente y pruébalo antes de publicarlo.">
+<meta name="twitter:image" content="https://sapio.dev/og-image.png">
+
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Definir la personalidad e instrucciones de tu agente en Sapio",
+  "description": "Cómo definir el tono de tu agente, escribir instrucciones con tus reglas de negocio y probarlo en Preview.",
+  "inLanguage": "es",
+  "totalTime": "PT6M",
+  "step": [
+    {"@type": "HowToStep", "position": 1, "name": "Completa la sección General", "text": "Nombre del agente y contexto del negocio en Configuración IA → General."},
+    {"@type": "HowToStep", "position": 2, "name": "Define la personalidad", "text": "En Personalidad elige el tono: cercano o formal, uso de emojis, largo de las respuestas."},
+    {"@type": "HowToStep", "position": 3, "name": "Escribe las instrucciones", "text": "Crea instrucciones por tema: qué ofrecer, qué datos pedir, qué no prometer y cuándo derivar."},
+    {"@type": "HowToStep", "position": 4, "name": "Ajusta con Feedbacks", "text": "Registra correcciones puntuales que el agente incorpora en sus siguientes respuestas."},
+    {"@type": "HowToStep", "position": 5, "name": "Prueba en Preview", "text": "Conversa como cliente y verifica tono, reglas y datos antes de conectar canales."}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://sapio.dev/"},
+    {"@type": "ListItem", "position": 2, "name": "Centro de ayuda", "item": "https://sapio.dev/help-center/"},
+    {"@type": "ListItem", "position": 3, "name": "Personalidad, instrucciones y Preview", "item": "https://sapio.dev/help-center/personalidad-instrucciones-y-preview/"}
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/blog.css">
+<link rel="stylesheet" href="/help-center/help.css">
+</head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJV4JL2J"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<nav>
+  <div class="container nav-inner">
+    <a href="/" class="logo">Sapio</a>
+    <div class="nav-links">
+      <a href="/#capacidades">Capacidades</a>
+      <a href="/#resultados">Resultados</a>
+      <a href="/#plan">Precios</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#contacto">Contacto</a>
+      <span class="nav-auth">
+        <a href="https://agent.sapio.dev/login" class="nav-seg-login" target="_blank" rel="noopener">Iniciar sesión</a>
+        <a href="https://agent.sapio.dev/signup" class="nav-seg-signup" target="_blank" rel="noopener">Crear cuenta</a>
+      </span>
+    </div>
+  </div>
+</nav>
+
+<article class="article">
+  <div class="prose-wrap">
+    <div class="breadcrumb"><a href="/">Inicio</a> / <a href="/help-center/">Centro de ayuda</a> / Personalidad, instrucciones y Preview</div>
+    <div class="article-meta">Tutorial · Configura tu agente · 6 min</div>
+    <h1>Personalidad, instrucciones y Preview</h1>
+    <p class="standfirst">El agente ya existe; ahora hay que hacerlo tuyo. Aquí defines cómo habla, qué reglas de negocio sigue y cómo comprobarlo todo antes de que hable con un cliente real.</p>
+
+    <div class="article-body">
+
+      <div class="tldr">
+        <div class="tldr-label">En resumen</div>
+        <p>Todo pasa en <strong>Configuración IA</strong>: el tono se define en <strong>Personalidad</strong>, las reglas de negocio en <strong>Instrucciones</strong>, las correcciones puntuales en <strong>Feedbacks</strong>, y en <strong>Preview</strong> conversas con el agente para verificar el resultado antes de publicar.</p>
+      </div>
+
+      <h2>Paso 1 — La base: sección General</h2>
+      <p>Si vienes del tutorial de <a href="/help-center/primeros-pasos/">primeros pasos</a> ya tienes esto: nombre del agente y una descripción corta del negocio. Es el contexto mínimo sobre el que se montan la personalidad y las instrucciones.</p>
+
+      <h2>Paso 2 — Personalidad: cómo habla</h2>
+      <ol>
+        <li>Entra a <strong>Configuración IA → Personalidad</strong>.</li>
+        <li>Define el registro: cercano y relajado, o más formal y sobrio, según tu marca.</li>
+        <li>Decide detalles de estilo: emojis (ninguno, moderados, frecuentes), respuestas cortas o explicativas, cómo se despide.</li>
+      </ol>
+      <p>Una buena referencia: piensa en tu mejor vendedor y describe cómo escribe. "Cálida, directa, usa el nombre del cliente, máximo un emoji por mensaje" funciona mejor que "amable y profesional".</p>
+
+      <h2>Paso 3 — Instrucciones: qué reglas sigue</h2>
+      <p>Las instrucciones son las reglas de negocio del agente, organizadas por tema. Cada una cubre una situación concreta:</p>
+      <ul>
+        <li><strong>Qué ofrecer:</strong> tus productos o servicios, y qué destacar de cada uno.</li>
+        <li><strong>Qué datos pedir:</strong> por ejemplo, nombre y comuna antes de cotizar.</li>
+        <li><strong>Qué no hacer:</strong> no prometer descuentos, no dar plazos de entrega exactos, no hablar de la competencia.</li>
+        <li><strong>Cuándo derivar:</strong> las señales que ameritan pasar el caso a una persona.</li>
+      </ul>
+      <ol>
+        <li>En <strong>Configuración IA</strong>, ve a la sección de instrucciones.</li>
+        <li>Crea una instrucción por tema; corta y concreta rinde más que un texto largo con todo mezclado.</li>
+        <li>Si no sabes por dónde partir, usa el asistente: describe tu negocio y te propone un set inicial de instrucciones.</li>
+      </ol>
+
+      <h2>Paso 4 — Feedbacks: correcciones sobre la marcha</h2>
+      <p>Cuando el agente responde algo que no te gusta, no hace falta reescribir las instrucciones: en <strong>Feedbacks</strong> registras la corrección ("no digas que hay stock sin confirmar", "a los precios agrégales IVA incluido") y el agente la incorpora en sus siguientes respuestas.</p>
+
+      <h2>Paso 5 — Preview: pruébalo antes de publicar</h2>
+      <ol>
+        <li>Abre <strong>Configuración IA → Preview</strong>.</li>
+        <li>Conversa como si fueras un cliente exigente: pide precios, pon objeciones, escribe con faltas de ortografía, cambia de tema.</li>
+        <li>Verifica tres cosas: el <strong>tono</strong> (¿suena a tu marca?), las <strong>reglas</strong> (¿pide los datos que definiste?, ¿deriva cuando corresponde?) y los <strong>datos</strong> (¿responde con tu información real o le falta entrenamiento?).</li>
+      </ol>
+      <p>Si en las pruebas el agente no sabe responder sobre tus productos, el siguiente paso es <a href="/help-center/entrena-a-tu-agente/">entrenarlo con tus documentos</a>.</p>
+
+      <div class="cta-box">
+        <h2>¿Quieres afinar el tono con nosotros?</h2>
+        <p>En una demo revisamos tu caso y dejamos la personalidad y las instrucciones configuradas contigo.</p>
+        <a class="btn" href="https://calendar.app.google/vUfSasn1UEhAAsTv8" target="_blank" rel="noopener">Agendar demo</a>
+      </div>
+
+      <section class="faq">
+        <h2>Preguntas frecuentes</h2>
+        <div class="faq-item">
+          <h3>¿Los cambios se aplican de inmediato?</h3>
+          <p>Sí. Lo que edites en Personalidad, Instrucciones o Feedbacks aplica en la siguiente respuesta del agente, tanto en Preview como en los canales conectados.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Es mejor una instrucción larga o varias cortas?</h3>
+          <p>Varias cortas, una por tema. El agente sigue mejor reglas concretas y acotadas, y a ti te resulta más fácil encontrar y ajustar la que necesitas cambiar.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Qué pasa si una instrucción contradice a otra?</h3>
+          <p>El agente intenta reconciliarlas, pero el resultado se vuelve impredecible. Si notas respuestas inconsistentes, revisa que no tengas dos instrucciones diciendo cosas opuestas sobre el mismo tema.</p>
+        </div>
+      </section>
+
+      <div class="related">
+        <span class="post-tag">Sigue con</span>
+        <div class="related-list">
+          <a href="/help-center/entrena-a-tu-agente/">Entrena a tu agente con tus documentos</a>
+          <a href="/help-center/conectar-whatsapp/">Conectar WhatsApp</a>
+          <a href="/help-center/primeros-pasos/">Primeros pasos: crea tu cuenta y tu agente</a>
+          <a href="/help-center/gestionar-conversaciones/">Gestiona tus conversaciones</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">Sapio</a>
+        <p>Agentes conversacionales de marca que responden en WhatsApp, Instagram, Facebook y chat web. 24/7, con tu tono.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Producto</h4>
+        <a href="/#capacidades">Capacidades</a>
+        <a href="/#resultados">Resultados</a>
+        <a href="/#plan">Precios</a>
+        <a href="/conversations">Ver demo</a>
+      </div>
+      <div class="footer-col">
+        <h4>Recursos</h4>
+        <a href="/blog/">Blog</a>
+        <a href="/help-center/">Centro de ayuda</a>
+      </div>
+      <div class="footer-col">
+        <h4>Acceso</h4>
+        <a href="https://agent.sapio.dev/signup" target="_blank" rel="noopener">Crear cuenta</a>
+        <a href="https://calendar.app.google/vUfSasn1UEhAAsTv8" target="_blank" rel="noopener">Agendar demo</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Sapio · sapio.dev</div>
+      <div>Hecho con intención desde Chile</div>
+    </div>
+  </div>
+</footer>
+
+<script src="/help-center/toc.js" defer></script>
+
+</body>
+</html>

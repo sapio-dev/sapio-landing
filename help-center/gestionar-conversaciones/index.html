@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PJV4JL2J');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gestiona tus conversaciones: CRM, Board y estados | Centro de ayuda de Sapio</title>
+<meta name="description" content="Cómo trabajar la bandeja de Sapio: el CRM unificado, el tablero kanban por estados del embudo, y cómo intervenir una conversación sin pisarte con el agente.">
+<meta name="keywords" content="CRM Sapio, bandeja unificada, kanban conversaciones, estados del embudo, intervenir conversación IA">
+<meta name="author" content="Sapio">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="canonical" href="https://sapio.dev/help-center/gestionar-conversaciones/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Sapio">
+<meta property="og:url" content="https://sapio.dev/help-center/gestionar-conversaciones/">
+<meta property="og:title" content="Gestiona tus conversaciones: CRM, Board y estados">
+<meta property="og:description" content="La bandeja unificada, el tablero kanban y cómo intervenir una conversación cuando quieras.">
+<meta property="og:image" content="https://sapio.dev/og-image.png">
+<meta property="og:locale" content="es_CL">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gestiona tus conversaciones | Sapio">
+<meta name="twitter:description" content="CRM unificado, kanban por estados e intervención humana.">
+<meta name="twitter:image" content="https://sapio.dev/og-image.png">
+
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Gestionar conversaciones en Sapio: CRM, Board y estados",
+  "description": "Cómo usar la bandeja unificada, los estados del embudo y el tablero kanban, y cómo intervenir una conversación.",
+  "inLanguage": "es",
+  "totalTime": "PT7M",
+  "step": [
+    {"@type": "HowToStep", "position": 1, "name": "Trabaja la bandeja (CRM)", "text": "Todas las conversaciones de todos los canales, en una sola lista con filtros."},
+    {"@type": "HowToStep", "position": 2, "name": "Configura los estados del embudo", "text": "En Configuración IA → Tags define los estados; el agente clasifica cada conversación solo."},
+    {"@type": "HowToStep", "position": 3, "name": "Usa el Board", "text": "El tablero kanban muestra el embudo completo; arrastra tarjetas para corregir estados."},
+    {"@type": "HowToStep", "position": 4, "name": "Interviene cuando quieras", "text": "Escribe tú en la conversación: el agente se pausa en ese chat hasta que lo devuelvas a la IA."}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://sapio.dev/"},
+    {"@type": "ListItem", "position": 2, "name": "Centro de ayuda", "item": "https://sapio.dev/help-center/"},
+    {"@type": "ListItem", "position": 3, "name": "Gestiona tus conversaciones", "item": "https://sapio.dev/help-center/gestionar-conversaciones/"}
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/blog.css">
+<link rel="stylesheet" href="/help-center/help.css">
+</head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJV4JL2J"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<nav>
+  <div class="container nav-inner">
+    <a href="/" class="logo">Sapio</a>
+    <div class="nav-links">
+      <a href="/#capacidades">Capacidades</a>
+      <a href="/#resultados">Resultados</a>
+      <a href="/#plan">Precios</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#contacto">Contacto</a>
+      <span class="nav-auth">
+        <a href="https://agent.sapio.dev/login" class="nav-seg-login" target="_blank" rel="noopener">Iniciar sesión</a>
+        <a href="https://agent.sapio.dev/signup" class="nav-seg-signup" target="_blank" rel="noopener">Crear cuenta</a>
+      </span>
+    </div>
+  </div>
+</nav>
+
+<article class="article">
+  <div class="prose-wrap">
+    <div class="breadcrumb"><a href="/">Inicio</a> / <a href="/help-center/">Centro de ayuda</a> / Gestiona tus conversaciones</div>
+    <div class="article-meta">Tutorial · Operación diaria · 7 min</div>
+    <h1>Gestiona tus conversaciones: CRM, Board y estados</h1>
+    <p class="standfirst">El agente atiende; tú supervisas. La bandeja te muestra todo lo que pasa en todos los canales, los estados te dicen dónde está cada cliente en el embudo, y puedes tomar el control de cualquier conversación cuando quieras.</p>
+
+    <div class="article-body">
+
+      <div class="tldr">
+        <div class="tldr-label">En resumen</div>
+        <p>El <strong>CRM</strong> es la bandeja unificada: WhatsApp, Instagram, Facebook y chat web en una sola lista. El agente clasifica cada conversación en un <strong>estado del embudo</strong> (configurable en Tags), y el <strong>Board</strong> lo muestra como kanban. Si escribes tú en un chat, el agente se pausa en esa conversación hasta que la devuelvas a la IA.</p>
+      </div>
+
+      <h2>El CRM: tu bandeja unificada</h2>
+      <p>Es la primera pantalla del panel. Cada fila es una conversación, venga del canal que venga, con el último mensaje a la vista:</p>
+      <ul>
+        <li><strong>Filtra por canal o estado</strong> para enfocarte: por ejemplo, solo WhatsApp, o solo los que están "cotizando".</li>
+        <li><strong>Abre cualquier conversación</strong> para ver el historial completo, incluyendo lo que respondió el agente y por qué archivos o datos preguntó el cliente.</li>
+        <li><strong>Las conversaciones inactivas se cierran solas</strong> pasadas 24 horas sin respuesta del cliente (una hora en el chat web). Si el cliente vuelve a escribir, la conversación revive con su historial.</li>
+      </ul>
+
+      <h2>Estados del embudo: el agente clasifica solo</h2>
+      <p>Cada conversación tiene un estado que refleja dónde está el cliente en tu proceso: recién llegado, calificando, cotizando, listo para cerrar, ganado, perdido — los que tú definas.</p>
+      <ol>
+        <li>Configura los estados en <strong>Configuración IA → Tags</strong>: nombre, descripción y comportamiento de cada uno.</li>
+        <li>La descripción importa: el agente la lee para decidir cuándo asignar cada estado. "Cotizando: el cliente pidió precio de un producto específico" clasifica mejor que solo "Cotizando".</li>
+        <li>Puedes marcar estados como <strong>notificables</strong>: cuando una conversación llega a ese estado, tu equipo recibe un aviso por correo.</li>
+      </ol>
+
+      <h2>El Board: tu embudo como kanban</h2>
+      <ul>
+        <li>Cada columna es un estado; cada tarjeta, una conversación.</li>
+        <li><strong>Arrastra una tarjeta</strong> a otra columna para corregir el estado manualmente; el agente respeta tu clasificación.</li>
+        <li>Es la vista para la pregunta de negocio: ¿cuántos están por cerrar?, ¿dónde se estancan?</li>
+      </ul>
+
+      <h2>Intervenir una conversación</h2>
+      <p>Cualquier miembro del equipo puede tomar el control de un chat:</p>
+      <ol>
+        <li>Abre la conversación en el CRM y <strong>escribe tu mensaje</strong>: sale por el mismo canal (WhatsApp, Instagram, etc.) a nombre de tu negocio.</li>
+        <li>Desde ese momento <strong>el agente se pausa en esa conversación</strong>: no responde ni envía seguimientos mientras esté en manos humanas. En el resto de las conversaciones sigue trabajando normal.</li>
+        <li>Cuando termines, <strong>devuelve la conversación a la IA</strong> para que el agente retome la atención.</li>
+      </ol>
+      <p>Esto también aplica si respondes un DM desde la app nativa de Instagram o Messenger: el agente lo detecta y se hace a un lado en ese chat.</p>
+
+      <div class="cta-box">
+        <h2>¿Quieres ver la bandeja funcionando con datos reales?</h2>
+        <p>En una demo te mostramos el flujo completo: de mensaje entrante a estado del embudo, con intervención humana incluida.</p>
+        <a class="btn" href="https://calendar.app.google/vUfSasn1UEhAAsTv8" target="_blank" rel="noopener">Agendar demo</a>
+      </div>
+
+      <section class="faq">
+        <h2>Preguntas frecuentes</h2>
+        <div class="faq-item">
+          <h3>¿El agente puede volver a escribirle a un cliente que dejó de responder?</h3>
+          <p>Sí: la reactivación envía seguimientos automáticos a conversaciones que se enfriaron, con el espaciado que configures. Los estados terminales (ganado, perdido, detenido) quedan excluidos a propósito.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Qué diferencia hay entre intervenir y derivar?</h3>
+          <p>Intervenir es que tú decidas entrar a un chat. Derivar es que el agente decida pasarlo a tu equipo según las reglas que definiste — con aviso por correo incluido. El resultado es parecido (atención humana), el origen es distinto. <a href="/help-center/derivar-a-un-humano/">Más sobre derivaciones aquí</a>.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Varios usuarios pueden trabajar la bandeja a la vez?</h3>
+          <p>Sí. La bandeja se actualiza en tiempo real para todos los miembros de la organización, y cualquiera puede abrir, intervenir o reclasificar conversaciones.</p>
+        </div>
+      </section>
+
+      <div class="related">
+        <span class="post-tag">Sigue con</span>
+        <div class="related-list">
+          <a href="/help-center/derivar-a-un-humano/">Derivaciones: pasa el caso a tu equipo</a>
+          <a href="/help-center/personalidad-instrucciones-y-preview/">Personalidad, instrucciones y Preview</a>
+          <a href="/help-center/conectar-whatsapp/">Conectar WhatsApp</a>
+          <a href="/blog/bandeja-unificada-multicanal/">Bandeja unificada: todos tus canales</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">Sapio</a>
+        <p>Agentes conversacionales de marca que responden en WhatsApp, Instagram, Facebook y chat web. 24/7, con tu tono.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Producto</h4>
+        <a href="/#capacidades">Capacidades</a>
+        <a href="/#resultados">Resultados</a>
+        <a href="/#plan">Precios</a>
+        <a href="/conversations">Ver demo</a>
+      </div>
+      <div class="footer-col">
+        <h4>Recursos</h4>
+        <a href="/blog/">Blog</a>
+        <a href="/help-center/">Centro de ayuda</a>
+      </div>
+      <div class="footer-col">
+        <h4>Acceso</h4>
+        <a href="https://agent.sapio.dev/signup" target="_blank" rel="noopener">Crear cuenta</a>
+        <a href="https://calendar.app.google/vUfSasn1UEhAAsTv8" target="_blank" rel="noopener">Agendar demo</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Sapio · sapio.dev</div>
+      <div>Hecho con intención desde Chile</div>
+    </div>
+  </div>
+</footer>
+
+<script src="/help-center/toc.js" defer></script>
+
+</body>
+</html>

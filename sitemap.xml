@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://sapio.dev/</loc><lastmod>2026-06-02</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://sapio.dev/blog/</loc><lastmod>2026-06-02</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sapio.dev/help-center/</loc><lastmod>2026-07-15</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sapio.dev/help-center/primeros-pasos/</loc><lastmod>2026-07-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sapio.dev/help-center/personalidad-instrucciones-y-preview/</loc><lastmod>2026-07-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sapio.dev/help-center/entrena-a-tu-agente/</loc><lastmod>2026-07-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sapio.dev/help-center/conectar-whatsapp/</loc><lastmod>2026-07-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sapio.dev/help-center/conectar-instagram-y-facebook/</loc><lastmod>2026-07-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sapio.dev/help-center/instalar-el-chat-web/</loc><lastmod>2026-07-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sapio.dev/help-center/gestionar-conversaciones/</loc><lastmod>2026-07-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sapio.dev/help-center/derivar-a-un-humano/</loc><lastmod>2026-07-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://sapio.dev/blog/agendar-citas-con-ia/</loc><lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://sapio.dev/blog/agendar-reuniones-comerciales-con-ia/</loc><lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://sapio.dev/blog/agente-conversacional-vs-chatbot/</loc><lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
