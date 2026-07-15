@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PJV4JL2J');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reactivación: seguimientos automáticos | Centro de ayuda de Sapio</title>
+<meta name="description" content="Cómo configurar la reactivación en Sapio: reglas de seguimiento para que el agente retome solo las conversaciones que se enfrían, sin insistir a quien no corresponde.">
+<meta name="keywords" content="reactivación Sapio, seguimiento automático de leads, follow up con IA, retomar conversaciones frías, seguimientos WhatsApp">
+<meta name="author" content="Sapio">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="canonical" href="https://sapio.dev/help-center/reactivacion-y-seguimientos/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Sapio">
+<meta property="og:url" content="https://sapio.dev/help-center/reactivacion-y-seguimientos/">
+<meta property="og:title" content="Reactivación: seguimientos automáticos">
+<meta property="og:description" content="El agente retoma solo las conversaciones que se enfrían — con criterio y sin insistir de más.">
+<meta property="og:image" content="https://sapio.dev/og-image.png">
+<meta property="og:locale" content="es_CL">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Reactivación y seguimientos | Sapio">
+<meta name="twitter:description" content="Seguimientos automáticos para conversaciones que se enfrían.">
+<meta name="twitter:image" content="https://sapio.dev/og-image.png">
+
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Configurar la reactivación de conversaciones en Sapio",
+  "description": "Cómo definir reglas de seguimiento automático para que el agente retome conversaciones que dejaron de responder.",
+  "inLanguage": "es",
+  "totalTime": "PT5M",
+  "step": [
+    {"@type": "HowToStep", "position": 1, "name": "Crea una regla de reactivación", "text": "En Configuración IA → Reactivación define cuándo dispara, cuántos intentos y con qué espaciado."},
+    {"@type": "HowToStep", "position": 2, "name": "Orienta el mensaje", "text": "El agente redacta cada seguimiento según el contexto; tú defines el enfoque."},
+    {"@type": "HowToStep", "position": 3, "name": "Monitorea en el CRM", "text": "Los seguimientos aparecen en la conversación; ajusta cadencia según resultados."}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://sapio.dev/"},
+    {"@type": "ListItem", "position": 2, "name": "Centro de ayuda", "item": "https://sapio.dev/help-center/"},
+    {"@type": "ListItem", "position": 3, "name": "Reactivación y seguimientos", "item": "https://sapio.dev/help-center/reactivacion-y-seguimientos/"}
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/blog.css">
+<link rel="stylesheet" href="/help-center/help.css">
+</head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJV4JL2J"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<nav>
+  <div class="container nav-inner">
+    <a href="/" class="logo">Sapio</a>
+    <div class="nav-links">
+      <a href="/#capacidades">Capacidades</a>
+      <a href="/#resultados">Resultados</a>
+      <a href="/#plan">Precios</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#contacto">Contacto</a>
+      <span class="nav-auth">
+        <a href="https://agent.sapio.dev/login" class="nav-seg-login" target="_blank" rel="noopener">Iniciar sesión</a>
+        <a href="https://agent.sapio.dev/signup" class="nav-seg-signup" target="_blank" rel="noopener">Crear cuenta</a>
+      </span>
+    </div>
+  </div>
+</nav>
+
+<article class="article">
+  <div class="prose-wrap">
+    <div class="breadcrumb"><a href="/">Inicio</a> / <a href="/help-center/">Centro de ayuda</a> / Reactivación y seguimientos</div>
+    <div class="article-meta">Tutorial · Crecimiento · 5 min</div>
+    <h1>Reactivación: seguimientos automáticos</h1>
+    <p class="standfirst">La mayoría de las ventas no se pierden por un "no": se pierden por silencio. La reactivación hace que el agente retome solo las conversaciones que se enfriaron — con criterio, y sabiendo cuándo no insistir.</p>
+
+    <div class="article-body">
+
+      <div class="tldr">
+        <div class="tldr-label">En resumen</div>
+        <p>En <strong>Configuración IA → Reactivación</strong> creas reglas de seguimiento: cuánto tiempo sin respuesta dispara el mensaje, cuántos intentos y con qué espaciado. El agente redacta cada seguimiento según el contexto de la conversación, y excluye solo los casos donde no corresponde: estados terminales o chats en manos de tu equipo.</p>
+      </div>
+
+      <h2>Qué es la reactivación</h2>
+      <p>Cuando un cliente deja de responder, el agente no lo da por perdido: pasado el tiempo que definas, le escribe un seguimiento que retoma la conversación donde quedó — "¿pudiste revisar la cotización?" en vez de un genérico "¿sigues ahí?". Si el cliente responde, la conversación continúa normal; si no, el agente reintenta según tu regla y luego se detiene.</p>
+
+      <h2>Paso 1 — Crea una regla</h2>
+      <ol>
+        <li>Entra a <strong>Configuración IA → Reactivación</strong>.</li>
+        <li>Crea una regla y define el <strong>disparador</strong>: cuánto tiempo sin respuesta del cliente amerita un seguimiento (horas o días, según tu ciclo de venta).</li>
+        <li>Define <strong>cuántos intentos</strong> y su <strong>espaciado</strong>. Una cadencia probada: primer seguimiento al día siguiente, segundo a los 3 días, y detenerse.</li>
+      </ol>
+
+      <h2>Paso 2 — Orienta el mensaje</h2>
+      <p>No escribes el texto exacto: el agente redacta cada seguimiento según lo que se estaba conversando, con la personalidad que ya definiste. Lo que sí puedes orientar es el <strong>enfoque</strong> — por ejemplo, que el primer intento aporte algo nuevo (un dato, una foto) en vez de solo preguntar, y que el último ofrezca dejar el tema ahí con la puerta abierta.</p>
+
+      <h2>Paso 3 — Monitorea y ajusta</h2>
+      <ol>
+        <li>Los seguimientos aparecen en la conversación del <strong>CRM</strong>, como cualquier mensaje del agente.</li>
+        <li>Mira en <strong>Análisis</strong> cuántas conversaciones frías revivieron.</li>
+        <li>Si notas respuestas molestas, alarga el espaciado o reduce los intentos: la reactivación rinde cuando se siente atención, no presión.</li>
+      </ol>
+
+      <h2>Cuándo NO reactiva el agente</h2>
+      <ul>
+        <li><strong>Estados terminales:</strong> conversaciones marcadas como ganadas, perdidas o detenidas quedan fuera a propósito — insistirle a un cliente que ya compró (o que pidió que no le escriban) hace daño.</li>
+        <li><strong>Casos en manos humanas:</strong> si la conversación fue derivada o alguien de tu equipo la tomó, el agente no envía seguimientos hasta que vuelva a la IA.</li>
+        <li><strong>WhatsApp con ventana cerrada:</strong> pasadas 24 horas del último mensaje del cliente, WhatsApp exige plantilla aprobada para volver a escribir. Para recaptación masiva fuera de ventana, usa <a href="/help-center/broadcast-y-plantillas/">Broadcast con plantillas</a>.</li>
+      </ul>
+
+      <div class="cta-box">
+        <h2>¿Cuánta venta se te enfría cada mes?</h2>
+        <p>En una demo revisamos tu embudo y definimos una cadencia de seguimientos que recupere sin molestar.</p>
+        <a class="btn" href="https://calendar.app.google/vUfSasn1UEhAAsTv8" target="_blank" rel="noopener">Agendar demo</a>
+      </div>
+
+      <section class="faq">
+        <h2>Preguntas frecuentes</h2>
+        <div class="faq-item">
+          <h3>¿Cuántos seguimientos conviene configurar?</h3>
+          <p>Dos o tres suele ser el punto justo: recupera a la mayoría de los distraídos sin volverse insistente. Más de tres intentos rara vez suma respuestas y sí suma bloqueos.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Puedo excluir una conversación puntual?</h3>
+          <p>Sí: márcala en un estado terminal (perdido o detenido) o tómala tú — en ambos casos el agente deja de enviar seguimientos en ese chat.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Los seguimientos se envían de madrugada?</h3>
+          <p>El espaciado que defines controla el ritmo, y conviene configurarlo en horas que tengan sentido para tu público. Si un caso es sensible al horario, la señal más segura es revisar cómo quedan programados los primeros seguimientos de tu regla y ajustar.</p>
+        </div>
+      </section>
+
+      <div class="related">
+        <span class="post-tag">Sigue con</span>
+        <div class="related-list">
+          <a href="/help-center/broadcast-y-plantillas/">Broadcast y plantillas de WhatsApp</a>
+          <a href="/help-center/gestionar-conversaciones/">Gestiona tus conversaciones</a>
+          <a href="/help-center/analisis-y-metricas/">Análisis: indicadores e Informe IA</a>
+          <a href="/blog/seguimiento-de-leads-automatizado/">Seguimiento de leads automatizado</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">Sapio</a>
+        <p>Agentes conversacionales de marca que responden en WhatsApp, Instagram, Facebook y chat web. 24/7, con tu tono.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Producto</h4>
+        <a href="/#capacidades">Capacidades</a>
+        <a href="/#resultados">Resultados</a>
+        <a href="/#plan">Precios</a>
+        <a href="/conversations">Ver demo</a>
+      </div>
+      <div class="footer-col">
+        <h4>Recursos</h4>
+        <a href="/blog/">Blog</a>
+        <a href="/help-center/">Centro de ayuda</a>
+      </div>
+      <div class="footer-col">
+        <h4>Acceso</h4>
+        <a href="https://agent.sapio.dev/signup" target="_blank" rel="noopener">Crear cuenta</a>
+        <a href="https://calendar.app.google/vUfSasn1UEhAAsTv8" target="_blank" rel="noopener">Agendar demo</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Sapio · sapio.dev</div>
+      <div>Hecho con intención desde Chile</div>
+    </div>
+  </div>
+</footer>
+
+<script src="/help-center/toc.js" defer></script>
+
+</body>
+</html>

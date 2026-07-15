@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PJV4JL2J');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Análisis: indicadores e Informe IA | Centro de ayuda de Sapio</title>
+<meta name="description" content="Cómo leer la sección Análisis de Sapio: indicadores de conversaciones por canal y estado, y el Informe IA con embudo, fugas a corregir y palancas de crecimiento.">
+<meta name="keywords" content="análisis Sapio, métricas de conversaciones, informe IA, embudo de ventas conversacional, indicadores atención al cliente">
+<meta name="author" content="Sapio">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="canonical" href="https://sapio.dev/help-center/analisis-y-metricas/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Sapio">
+<meta property="og:url" content="https://sapio.dev/help-center/analisis-y-metricas/">
+<meta property="og:title" content="Análisis: indicadores e Informe IA">
+<meta property="og:description" content="Lee tus métricas de conversaciones y deja que el Informe IA te diga dónde crecer y qué corregir.">
+<meta property="og:image" content="https://sapio.dev/og-image.png">
+<meta property="og:locale" content="es_CL">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Análisis e Informe IA | Sapio">
+<meta name="twitter:description" content="Indicadores de conversaciones y un informe que prioriza qué mejorar.">
+<meta name="twitter:image" content="https://sapio.dev/og-image.png">
+
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Usar la sección Análisis de Sapio",
+  "description": "Cómo leer los indicadores de conversaciones y el Informe IA para mejorar el rendimiento del agente.",
+  "inLanguage": "es",
+  "totalTime": "PT5M",
+  "step": [
+    {"@type": "HowToStep", "position": 1, "name": "Revisa los indicadores", "text": "Volumen de conversaciones por canal, estados del embudo y derivaciones del período."},
+    {"@type": "HowToStep", "position": 2, "name": "Lee el Informe IA", "text": "Resumen del período, embudo con puntos de fuga, palancas de crecimiento y fugas a corregir."},
+    {"@type": "HowToStep", "position": 3, "name": "Cierra el ciclo", "text": "Convierte los hallazgos en cambios de instrucciones, entrenamiento o cadencia de seguimientos."}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://sapio.dev/"},
+    {"@type": "ListItem", "position": 2, "name": "Centro de ayuda", "item": "https://sapio.dev/help-center/"},
+    {"@type": "ListItem", "position": 3, "name": "Análisis y métricas", "item": "https://sapio.dev/help-center/analisis-y-metricas/"}
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/blog.css">
+<link rel="stylesheet" href="/help-center/help.css">
+</head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJV4JL2J"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<nav>
+  <div class="container nav-inner">
+    <a href="/" class="logo">Sapio</a>
+    <div class="nav-links">
+      <a href="/#capacidades">Capacidades</a>
+      <a href="/#resultados">Resultados</a>
+      <a href="/#plan">Precios</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#contacto">Contacto</a>
+      <span class="nav-auth">
+        <a href="https://agent.sapio.dev/login" class="nav-seg-login" target="_blank" rel="noopener">Iniciar sesión</a>
+        <a href="https://agent.sapio.dev/signup" class="nav-seg-signup" target="_blank" rel="noopener">Crear cuenta</a>
+      </span>
+    </div>
+  </div>
+</nav>
+
+<article class="article">
+  <div class="prose-wrap">
+    <div class="breadcrumb"><a href="/">Inicio</a> / <a href="/help-center/">Centro de ayuda</a> / Análisis y métricas</div>
+    <div class="article-meta">Tutorial · Operación diaria · 5 min</div>
+    <h1>Análisis: indicadores e Informe IA</h1>
+    <p class="standfirst">Atender bien es la mitad; la otra mitad es saber qué está pasando. Análisis te muestra los números de tus conversaciones y, además, te dice qué significan y qué hacer con ellos.</p>
+
+    <div class="article-body">
+
+      <div class="tldr">
+        <div class="tldr-label">En resumen</div>
+        <p>La sección <strong>Análisis</strong> tiene dos vistas: <strong>Indicadores</strong>, con las métricas de tus conversaciones (volumen, canales, estados del embudo, derivaciones), y el <strong>Informe IA</strong>, que analiza el período y te entrega el embudo con sus puntos de fuga, las <strong>fugas a corregir</strong> y las <strong>palancas de crecimiento</strong> priorizadas.</p>
+      </div>
+
+      <h2>Paso 1 — Revisa los indicadores</h2>
+      <ol>
+        <li>Abre <strong>Análisis</strong> en la barra superior.</li>
+        <li>Mira el <strong>volumen del período</strong>: cuántas conversaciones llegaron y por qué canal (WhatsApp, Instagram, Facebook, chat web).</li>
+        <li>Revisa la distribución por <strong>estado del embudo</strong>: cuántos calificando, cotizando, ganados, perdidos.</li>
+        <li>Observa las <strong>derivaciones</strong>: cuántos casos pasaron a tu equipo y por qué.</li>
+      </ol>
+      <p>Tres señales que conviene mirar cada semana: el canal que más crece, el estado donde se acumulan conversaciones, y la proporción entre ganados y perdidos.</p>
+
+      <h2>Paso 2 — Lee el Informe IA</h2>
+      <p>La segunda vista no te da gráficos: te da conclusiones. El informe analiza las conversaciones del período y entrega:</p>
+      <ul>
+        <li><strong>Resumen del período:</strong> qué pasó, en lenguaje claro.</li>
+        <li><strong>El embudo y sus fugas:</strong> en qué punto del proceso se caen los clientes — por ejemplo, muchos cotizan y pocos avanzan.</li>
+        <li><strong>Fugas a corregir:</strong> los problemas concretos detectados, priorizados por impacto.</li>
+        <li><strong>Palancas de crecimiento:</strong> las oportunidades que los números sugieren — qué reforzar, qué probar.</li>
+      </ul>
+
+      <h2>Paso 3 — Cierra el ciclo</h2>
+      <p>El valor está en convertir hallazgos en cambios. Algunos ejemplos del mapeo:</p>
+      <ul>
+        <li><strong>El agente responde "no tengo esa información" seguido</strong> → falta <a href="/help-center/entrena-a-tu-agente/">entrenamiento</a> sobre ese tema.</li>
+        <li><strong>Muchas conversaciones mueren en un estado</strong> → revisa las <a href="/help-center/personalidad-instrucciones-y-preview/">instrucciones</a> de esa etapa o suma <a href="/help-center/reactivacion-y-seguimientos/">seguimientos</a>.</li>
+        <li><strong>Derivaciones que no debieron serlo</strong> → afina las reglas de <a href="/help-center/derivar-a-un-humano/">derivación</a>.</li>
+        <li><strong>Un canal crece y otro no</strong> → mueve tu inversión de tráfico con datos.</li>
+      </ul>
+
+      <div class="cta-box">
+        <h2>¿Quieres una lectura experta de tus números?</h2>
+        <p>En una demo revisamos tu embudo real y priorizamos juntos las dos o tres mejoras de mayor impacto.</p>
+        <a class="btn" href="https://calendar.app.google/vUfSasn1UEhAAsTv8" target="_blank" rel="noopener">Agendar demo</a>
+      </div>
+
+      <section class="faq">
+        <h2>Preguntas frecuentes</h2>
+        <div class="faq-item">
+          <h3>¿Qué período cubre el análisis?</h3>
+          <p>Los indicadores se calculan sobre el período que estés viendo en la sección, y el Informe IA analiza ese mismo rango. Para decisiones de fondo, compara al menos dos períodos antes de mover algo grande.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿El Informe IA lee el contenido de mis conversaciones?</h3>
+          <p>Analiza las conversaciones de tu propia organización para producir el informe — es lo que le permite decirte por qué se caen los clientes, no solo cuántos. Los datos no salen de tu organización.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Quién puede ver Análisis?</h3>
+          <p>Los usuarios de tu organización con acceso al panel. Si quieres que alguien vea solo la operación sin las métricas, conversemos el caso: los roles cubren los escenarios más comunes.</p>
+        </div>
+      </section>
+
+      <div class="related">
+        <span class="post-tag">Sigue con</span>
+        <div class="related-list">
+          <a href="/help-center/gestionar-conversaciones/">Gestiona tus conversaciones</a>
+          <a href="/help-center/reactivacion-y-seguimientos/">Reactivación y seguimientos</a>
+          <a href="/help-center/entrena-a-tu-agente/">Entrena a tu agente</a>
+          <a href="/blog/metricas-de-atencion-al-cliente/">Métricas de atención al cliente</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">Sapio</a>
+        <p>Agentes conversacionales de marca que responden en WhatsApp, Instagram, Facebook y chat web. 24/7, con tu tono.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Producto</h4>
+        <a href="/#capacidades">Capacidades</a>
+        <a href="/#resultados">Resultados</a>
+        <a href="/#plan">Precios</a>
+        <a href="/conversations">Ver demo</a>
+      </div>
+      <div class="footer-col">
+        <h4>Recursos</h4>
+        <a href="/blog/">Blog</a>
+        <a href="/help-center/">Centro de ayuda</a>
+      </div>
+      <div class="footer-col">
+        <h4>Acceso</h4>
+        <a href="https://agent.sapio.dev/signup" target="_blank" rel="noopener">Crear cuenta</a>
+        <a href="https://calendar.app.google/vUfSasn1UEhAAsTv8" target="_blank" rel="noopener">Agendar demo</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Sapio · sapio.dev</div>
+      <div>Hecho con intención desde Chile</div>
+    </div>
+  </div>
+</footer>
+
+<script src="/help-center/toc.js" defer></script>
+
+</body>
+</html>

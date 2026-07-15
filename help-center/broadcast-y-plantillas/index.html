@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PJV4JL2J');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Broadcast y plantillas de WhatsApp | Centro de ayuda de Sapio</title>
+<meta name="description" content="Cómo crear plantillas de WhatsApp aprobadas por Meta y enviar campañas con Broadcast en Sapio: destinatarios por filtros o Excel, asignación post-envío y seguimiento.">
+<meta name="keywords" content="plantillas WhatsApp Sapio, broadcast WhatsApp, envío masivo WhatsApp, campañas WhatsApp con IA, plantilla aprobada Meta">
+<meta name="author" content="Sapio">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="canonical" href="https://sapio.dev/help-center/broadcast-y-plantillas/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Sapio">
+<meta property="og:url" content="https://sapio.dev/help-center/broadcast-y-plantillas/">
+<meta property="og:title" content="Broadcast y plantillas de WhatsApp">
+<meta property="og:description" content="Crea plantillas aprobadas por Meta y envía campañas que tu agente atiende al instante.">
+<meta property="og:image" content="https://sapio.dev/og-image.png">
+<meta property="og:locale" content="es_CL">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Broadcast y plantillas de WhatsApp | Sapio">
+<meta name="twitter:description" content="Campañas de WhatsApp con plantillas, atendidas por tu agente de IA.">
+<meta name="twitter:image" content="https://sapio.dev/og-image.png">
+
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Enviar campañas de WhatsApp con Broadcast y plantillas en Sapio",
+  "description": "Cómo crear plantillas de WhatsApp aprobadas por Meta y enviar campañas masivas que el agente de IA atiende.",
+  "inLanguage": "es",
+  "totalTime": "PT7M",
+  "step": [
+    {"@type": "HowToStep", "position": 1, "name": "Ten una plantilla aprobada", "text": "Crea la plantilla con su categoría y variables, y espera la aprobación de Meta."},
+    {"@type": "HowToStep", "position": 2, "name": "Arma el envío", "text": "En Broadcast elige el número, la plantilla y los destinatarios: filtros del CRM o un Excel."},
+    {"@type": "HowToStep", "position": 3, "name": "Define la asignación post-envío", "text": "Decide si las respuestas las atiende el agente de IA o quedan para tu equipo."},
+    {"@type": "HowToStep", "position": 4, "name": "Envía y haz seguimiento", "text": "Monitorea el progreso; las respuestas caen al CRM con el contexto de la campaña."}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://sapio.dev/"},
+    {"@type": "ListItem", "position": 2, "name": "Centro de ayuda", "item": "https://sapio.dev/help-center/"},
+    {"@type": "ListItem", "position": 3, "name": "Broadcast y plantillas", "item": "https://sapio.dev/help-center/broadcast-y-plantillas/"}
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/blog.css">
+<link rel="stylesheet" href="/help-center/help.css">
+</head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJV4JL2J"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<nav>
+  <div class="container nav-inner">
+    <a href="/" class="logo">Sapio</a>
+    <div class="nav-links">
+      <a href="/#capacidades">Capacidades</a>
+      <a href="/#resultados">Resultados</a>
+      <a href="/#plan">Precios</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#contacto">Contacto</a>
+      <span class="nav-auth">
+        <a href="https://agent.sapio.dev/login" class="nav-seg-login" target="_blank" rel="noopener">Iniciar sesión</a>
+        <a href="https://agent.sapio.dev/signup" class="nav-seg-signup" target="_blank" rel="noopener">Crear cuenta</a>
+      </span>
+    </div>
+  </div>
+</nav>
+
+<article class="article">
+  <div class="prose-wrap">
+    <div class="breadcrumb"><a href="/">Inicio</a> / <a href="/help-center/">Centro de ayuda</a> / Broadcast y plantillas</div>
+    <div class="article-meta">Tutorial · Crecimiento · 7 min</div>
+    <h1>Broadcast y plantillas de WhatsApp</h1>
+    <p class="standfirst">Hasta aquí el agente respondía a quien escribe. Con Broadcast das el primer paso tú: campañas de WhatsApp con plantillas aprobadas, que tu agente atiende apenas alguien contesta.</p>
+
+    <div class="article-body">
+
+      <div class="tldr">
+        <div class="tldr-label">En resumen</div>
+        <p>WhatsApp solo permite iniciar conversaciones con <strong>plantillas aprobadas por Meta</strong>. En <strong>Broadcast</strong> eliges el número, la plantilla y los destinatarios (filtros de tu CRM o un Excel), defines quién atiende las respuestas y envías. Cada respuesta cae al CRM con el contexto de la campaña.</p>
+      </div>
+
+      <h2>Cuándo necesitas una plantilla</h2>
+      <p>WhatsApp abre una <strong>ventana de 24 horas</strong> desde el último mensaje del cliente: dentro de ella se conversa libre. Para escribir tú primero —o retomar una conversación fría— Meta exige usar una <strong>plantilla pre-aprobada</strong>. Casos típicos:</p>
+      <ul>
+        <li><strong>Campañas:</strong> anunciar una promoción, un nuevo producto, un evento.</li>
+        <li><strong>Recaptación:</strong> volver a contactar clientes que cotizaron y no cerraron.</li>
+        <li><strong>Operación:</strong> recordatorios de pago, avisos de estado, confirmaciones.</li>
+      </ul>
+
+      <h2>Paso 1 — Ten una plantilla aprobada</h2>
+      <ol>
+        <li>Crea la plantilla desde el panel (requiere rol de administrador o dueño): nombre, idioma y <strong>categoría</strong> — marketing o utilidad, según el contenido.</li>
+        <li>Escribe el texto con sus <strong>variables</strong> (por ejemplo, el nombre del cliente) para personalizar cada envío.</li>
+        <li>Envíala a revisión: Meta la aprueba o rechaza, normalmente en minutos u horas. El estado se ve en el panel.</li>
+      </ol>
+      <p>Consejo: la categoría importa. Una plantilla con tono promocional enviada como "utilidad" es causa frecuente de rechazo.</p>
+
+      <h2>Paso 2 — Arma el envío en Broadcast</h2>
+      <ol>
+        <li>Abre <strong>Broadcast</strong> en la barra superior.</li>
+        <li>Elige el <strong>número de WhatsApp</strong> desde el que sale la campaña y la <strong>plantilla</strong> aprobada.</li>
+        <li>Define los destinatarios de una de dos formas: <strong>filtros de tu CRM</strong> (por estado del embudo, canal, fechas) o <strong>subiendo un Excel</strong> con los contactos.</li>
+        <li>Completa las variables de la plantilla y revisa la vista previa.</li>
+      </ol>
+
+      <h2>Paso 3 — Define la asignación post-envío</h2>
+      <p>Antes de enviar decides quién atiende lo que la campaña genere:</p>
+      <ul>
+        <li><strong>El agente de IA:</strong> responde cada contestación al instante, califica y escala lo que corresponda. Es la opción por defecto para campañas de volumen.</li>
+        <li><strong>Tu equipo:</strong> las respuestas quedan esperando atención humana — útil para campañas delicadas o listas pequeñas de alto valor.</li>
+      </ul>
+
+      <h2>Paso 4 — Envía y haz seguimiento</h2>
+      <ol>
+        <li>Lanza el envío y sigue el <strong>progreso</strong> en pantalla.</li>
+        <li>Cada respuesta aparece en el <strong>CRM</strong> como una conversación más, y el agente sabe <strong>de qué campaña viene</strong>: responde con ese contexto en vez de partir de cero.</li>
+        <li>Mide los resultados en <strong>Análisis</strong>: cuántos respondieron y qué estados alcanzaron.</li>
+      </ol>
+
+      <h2>Buenas prácticas</h2>
+      <ul>
+        <li><strong>Envía solo a quien dio su consentimiento.</strong> Además de la norma, los bloqueos y reportes de spam degradan la calificación de tu número ante Meta.</li>
+        <li><strong>Segmenta:</strong> una plantilla pensada para quienes cotizaron rinde más que un mensaje genérico a toda la base.</li>
+        <li><strong>Considera el costo:</strong> Meta cobra por conversación iniciada con plantilla, según categoría y país.</li>
+      </ul>
+
+      <div class="cta-box">
+        <h2>¿Planeas tu primera campaña?</h2>
+        <p>En una demo diseñamos contigo la plantilla, la segmentación y el flujo de respuestas con el agente.</p>
+        <a class="btn" href="https://calendar.app.google/vUfSasn1UEhAAsTv8" target="_blank" rel="noopener">Agendar demo</a>
+      </div>
+
+      <section class="faq">
+        <h2>Preguntas frecuentes</h2>
+        <div class="faq-item">
+          <h3>¿Por qué Meta rechazó mi plantilla?</h3>
+          <p>Las causas más comunes: categoría incorrecta (contenido promocional declarado como utilidad), texto con formato confuso o variables mal usadas, y políticas de contenido de WhatsApp. Ajusta el texto o la categoría y vuelve a enviarla a revisión.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Puedo escribirle a alguien que nunca me ha escrito?</h3>
+          <p>Sí — es justamente lo que permiten las plantillas, siempre que tengas su número con consentimiento. Es la única forma de iniciar tú una conversación en WhatsApp Business API.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿El agente sabe qué campaña respondió el cliente?</h3>
+          <p>Sí. La conversación queda anclada a la campaña que la originó, así el agente entiende referencias como "me interesa lo del descuento" sin que el cliente tenga que explicar de qué habla.</p>
+        </div>
+      </section>
+
+      <div class="related">
+        <span class="post-tag">Sigue con</span>
+        <div class="related-list">
+          <a href="/help-center/conectar-whatsapp/">Conectar WhatsApp</a>
+          <a href="/help-center/reactivacion-y-seguimientos/">Reactivación y seguimientos</a>
+          <a href="/help-center/analisis-y-metricas/">Análisis: indicadores e Informe IA</a>
+          <a href="/help-center/gestionar-conversaciones/">Gestiona tus conversaciones</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">Sapio</a>
+        <p>Agentes conversacionales de marca que responden en WhatsApp, Instagram, Facebook y chat web. 24/7, con tu tono.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Producto</h4>
+        <a href="/#capacidades">Capacidades</a>
+        <a href="/#resultados">Resultados</a>
+        <a href="/#plan">Precios</a>
+        <a href="/conversations">Ver demo</a>
+      </div>
+      <div class="footer-col">
+        <h4>Recursos</h4>
+        <a href="/blog/">Blog</a>
+        <a href="/help-center/">Centro de ayuda</a>
+      </div>
+      <div class="footer-col">
+        <h4>Acceso</h4>
+        <a href="https://agent.sapio.dev/signup" target="_blank" rel="noopener">Crear cuenta</a>
+        <a href="https://calendar.app.google/vUfSasn1UEhAAsTv8" target="_blank" rel="noopener">Agendar demo</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Sapio · sapio.dev</div>
+      <div>Hecho con intención desde Chile</div>
+    </div>
+  </div>
+</footer>
+
+<script src="/help-center/toc.js" defer></script>
+
+</body>
+</html>
