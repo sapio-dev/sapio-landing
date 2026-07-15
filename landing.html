@@ -11,7 +11,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sapio — El agente que responde por tu marca, 24/7</title>
-<meta name="description" content="Agentes conversacionales de IA que responden en WhatsApp, Instagram, Facebook y chat web con el tono de tu marca. Mientras tu equipo duerme, tu marca sigue respondiendo.">
+<meta name="description" content="Agentes conversacionales de IA que responden en WhatsApp, Instagram, Facebook, chat web y correo (Gmail) con el tono de tu marca. Mientras tu equipo duerme, tu marca sigue respondiendo.">
 <meta name="keywords" content="agente conversacional, IA para WhatsApp, chatbot de marca, chat web para sitio, widget de chat, atención al cliente con IA, respuesta automática WhatsApp Instagram">
 <meta name="author" content="Sapio">
 <meta name="theme-color" content="#0a0a0a">
@@ -22,7 +22,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:site_name" content="Sapio">
 <meta property="og:url" content="https://sapio.dev/">
 <meta property="og:title" content="Sapio — El agente que responde por tu marca, 24/7">
-<meta property="og:description" content="Agentes conversacionales de IA que responden en WhatsApp, Instagram, Facebook y chat web con el tono de tu marca. 24/7.">
+<meta property="og:description" content="Agentes conversacionales de IA que responden en WhatsApp, Instagram, Facebook, chat web y correo (Gmail) con el tono de tu marca. 24/7.">
 <meta property="og:image" content="https://sapio.dev/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -33,7 +33,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@sapio">
 <meta name="twitter:title" content="Sapio — El agente que responde por tu marca, 24/7">
-<meta name="twitter:description" content="Agentes conversacionales de IA que responden en WhatsApp, Instagram, Facebook y chat web con el tono de tu marca. 24/7.">
+<meta name="twitter:description" content="Agentes conversacionales de IA que responden en WhatsApp, Instagram, Facebook, chat web y correo (Gmail) con el tono de tu marca. 24/7.">
 <meta name="twitter:image" content="https://sapio.dev/og-image.png">
 <meta name="twitter:image:alt" content="Sapio Agent — Agente conversacional de marca">
 
@@ -50,7 +50,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   "name": "Sapio Agent",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Web",
-  "description": "Agentes conversacionales de IA que responden en WhatsApp, Instagram, Facebook y chat web con el tono de tu marca, 24/7.",
+  "description": "Agentes conversacionales de IA que responden en WhatsApp, Instagram, Facebook, chat web y correo (Gmail) con el tono de tu marca, 24/7.",
   "url": "https://sapio.dev/",
   "offers": {
     "@type": "Offer",
@@ -65,7 +65,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   "name": "Sapio",
   "url": "https://sapio.dev/",
   "logo": "https://sapio.dev/icon-512.png",
-  "description": "Sapio es un agente conversacional de IA que responde por tu marca 24/7 en WhatsApp, Instagram, Facebook y chat web, con el tono de tu marca.",
+  "description": "Sapio es un agente conversacional de IA que responde por tu marca 24/7 en WhatsApp, Instagram, Facebook, chat web y correo (Gmail), con el tono de tu marca.",
   "areaServed": ["CL", "AR"],
   "knowsLanguage": "es"
 }
@@ -1845,6 +1845,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .footer-bottom { flex-direction: column; gap: 12px; align-items: flex-start; }
     .footer-legal { flex-wrap: wrap; gap: 8px 20px; }
   }
+
+  /* ===== Sapio y tu cuenta de Google — disclosure para verificación OAuth ===== */
+  .gdata { padding: 96px 0; border-top: 1px solid var(--hair, rgba(255,255,255,0.09)); }
+  .gdata .gdata-inner { max-width: 720px; }
+  .gdata h2 {
+    font-family: var(--serif, Georgia, serif); font-weight: 400;
+    font-size: clamp(28px, 3.6vw, 40px); letter-spacing: -0.02em; line-height: 1.1;
+    margin-bottom: 22px;
+  }
+  .gdata p { font-size: 16.5px; line-height: 1.7; color: rgba(233,231,239,0.78); margin: 0 0 18px; max-width: 68ch; }
+  .gdata strong { color: #fff; font-weight: 600; }
+  .gdata ul { list-style: none; margin: 0 0 18px; padding: 0; }
+  .gdata li { position: relative; padding-left: 24px; margin-bottom: 10px; font-size: 16.5px; line-height: 1.65; color: rgba(233,231,239,0.78); }
+  .gdata li::before { content: ""; position: absolute; left: 4px; top: 12px; width: 6px; height: 6px; border-radius: 50%; background: #b9a6ff; }
+  .gdata a { color: #b9a6ff; text-decoration: none; border-bottom: 1px solid rgba(185,166,255,0.35); }
+  .gdata a:hover { color: #d6c9ff; border-color: #d6c9ff; }
+  .gdata .gdata-note { font-size: 14.5px; color: rgba(128,125,140,1); }
 </style>
 </head>
 <body>
@@ -1994,7 +2011,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <div class="module-content">
                 <div class="module-name">Está donde tus clientes ya escriben</div>
                 <div class="module-hook">"En todos sus canales, sin que cambien de app."</div>
-                <div class="module-desc">WhatsApp, Instagram, Facebook y tu sitio web. Sin pedirles que cambien de canal ni llenar formularios. Donde te buscan, ahí los atiendes.</div>
+                <div class="module-desc">WhatsApp, Instagram, Facebook, correo (Gmail) y tu sitio web. Sin pedirles que cambien de canal ni llenar formularios. Donde te buscan, ahí los atiendes.</div>
               </div>
             </div>
             <div class="module">
@@ -2144,13 +2161,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+
+<!-- SAPIO Y TU CUENTA DE GOOGLE — propósito de la app para la verificación OAuth de Google -->
+<section class="gdata" id="google">
+  <div class="container">
+    <div class="gdata-inner">
+      <h2>Sapio y tu cuenta de Google</h2>
+      <p><strong>Sapio</strong> es una plataforma de agentes conversacionales de IA que responde a los clientes de tu negocio por WhatsApp, Instagram, Facebook, chat web y correo. Si decides conectar tu casilla de <strong>Gmail</strong>, tu agente también atiende el correo: <strong>lee los mensajes que llegan a la casilla conectada y envía las respuestas en nombre de tu negocio</strong>, con tu tono y tu información.</p>
+      <p>Para eso, Sapio solicita tu autorización mediante Google OAuth con estos permisos, y solo para estos fines:</p>
+      <ul>
+        <li><strong>Leer el correo de la casilla conectada:</strong> para que el agente entienda la consulta de tu cliente y el hilo de la conversación.</li>
+        <li><strong>Enviar correo desde esa casilla:</strong> para que el agente responda a tus clientes en nombre de tu negocio.</li>
+      </ul>
+      <p>No usamos tus correos para publicidad, no los vendemos ni los transferimos a terceros, y solo el personal autorizado accede a ellos cuando es necesario para darte soporte. Puedes desconectar tu cuenta cuando quieras desde el panel de Sapio o desde <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">los permisos de tu Cuenta de Google</a>.</p>
+      <p class="gdata-note">El uso y la transferencia de la información recibida de las APIs de Google por parte de Sapio se ajusta a la <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Política de Datos de Usuario de los Servicios de API de Google</a>, incluidos sus requisitos de Uso Limitado. Más detalle en nuestra <a href="https://agent.sapio.dev/privacy-policy" target="_blank" rel="noopener">Política de Privacidad</a>.</p>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer id="contacto">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="logo">Sapio</div>
-        <p>Agentes conversacionales de marca que responden en WhatsApp, Instagram, Facebook y chat web. 24/7, con tu tono.</p>
+        <p>Agentes conversacionales de marca que responden en WhatsApp, Instagram, Facebook, chat web y correo (Gmail). 24/7, con tu tono.</p>
       </div>
       <div class="footer-col">
         <h4>Producto</h4>
