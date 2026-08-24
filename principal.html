@@ -66,21 +66,21 @@ section{position:relative;scroll-margin-top:88px;transition:opacity .25s linear}
 /* ============ TIPOGRAFÍA ============ */
 .eyebrow{
   font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--ink-3);display:block;margin-bottom:22px;
+  color:var(--ink-3);display:block;margin-bottom:16px;
 }
 .giro .eyebrow{margin-bottom:14px}
 h1{
-  font-size:clamp(31px,6.1vw,80px);font-weight:600;
+  font-size:clamp(29px,5vw,65px);font-weight:600;
   letter-spacing:-.038em;line-height:1.04;
   overflow-wrap:break-word;
 }
 h2{
-  font-size:clamp(26px,3.7vw,50px);font-weight:600;
+  font-size:clamp(25px,3.1vw,41px);font-weight:600;
   letter-spacing:-.032em;line-height:1.08;
   overflow-wrap:break-word;
 }
 h3{font-size:20px;font-weight:600;letter-spacing:-.02em;line-height:1.3}
-.lead{font-size:clamp(17px,1.35vw,20px);color:var(--ink-2);line-height:1.5;letter-spacing:-.012em}
+.lead{font-size:clamp(16px,1.15vw,17.5px);color:var(--ink-2);line-height:1.55;letter-spacing:-.012em}
 .body{color:var(--ink-2)}
 .mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
 .accent{color:var(--accent)}
@@ -209,8 +209,8 @@ nav.stuck .nav-in{
   max-width:900px;margin-inline:auto;text-align:center;position:relative;z-index:1;
   text-shadow:0 1px 22px rgba(8,9,10,.6);
 }
-.hero h1{margin-bottom:24px}
-.hero .lead{max-width:720px;margin:0 auto 34px}
+.hero h1{margin-bottom:19px}
+.hero .lead{max-width:690px;margin:0 auto 26px}
 
 /* form inline — alturas forzadas en desktop */
 .form-row{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:14px}
@@ -302,10 +302,44 @@ nav.stuck .nav-in{
 @media (max-width:900px){
 }
 
+/* ---- la cinta de rubros al pie del hero ----
+   Sin cápsulas: cada rubro es su ícono más el nombre en bold, y lo que los separa
+   es el aire, no una caja. Sin `margin-left:calc(50% - 50vw)`: ese truco computa
+   0px en Safari. El contenido está duplicado exacto, así que translateX(-50%)
+   cierra el loop sin costura. */
+.rubros{margin-top:34px;min-width:0}
+.rubros-vis{
+  position:relative;overflow:hidden;min-width:0;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
+          mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
+}
+.rubros-tira{
+  display:flex;width:max-content;gap:46px;align-items:center;
+  animation:rubroDeriva 64s linear infinite;will-change:transform;
+}
+.rubros:hover .rubros-tira{animation-play-state:paused}
+.rubros-tira .r{display:flex;align-items:center;gap:10px;flex:none;font-style:normal}
+.rubros-tira .r svg{
+  width:17px;height:17px;flex:none;display:block;
+  fill:none;stroke:currentColor;stroke-width:1.25;stroke-linecap:round;stroke-linejoin:round;
+  color:rgba(255,255,255,.3);
+}
+.rubros-tira .r b{
+  font-size:14.5px;font-weight:600;color:var(--ink-2);
+  letter-spacing:-.008em;white-space:nowrap;font-style:normal;
+}
+@keyframes rubroDeriva{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (max-width:640px){
+  .rubros{margin-top:26px}
+  .rubros-tira{gap:34px}
+  .rubros-tira .r b{font-size:13.5px}
+  .rubros-tira .r svg{width:16px;height:16px}
+}
+
 /* ============ EL COSTO ============ */
 .costo{padding-block:0;border-top:1px solid var(--line)}
 /* .sec-head la usan qué hace, aparece, plan y cierre — no tocar */
-.sec-head{max-width:780px;margin:0 auto 56px;text-align:center}
+.sec-head{max-width:780px;margin:0 auto 44px;text-align:center}
 .sec-head h2{margin-bottom:16px;padding-top:4px}
 .sec-head .lead{margin-inline:auto}
 
@@ -379,7 +413,7 @@ nav.stuck .nav-in{
   background:#fff;
   box-shadow:0 0 0 3px rgba(8,9,10,.95), 0 0 20px 5px color-mix(in srgb,var(--c) 70%,transparent);
 }
-.costo-item h3{font-size:clamp(23px,2.7vw,36px);letter-spacing:-.032em;line-height:1.12;margin-bottom:11px}
+.costo-item h3{font-size:clamp(22px,2.25vw,30px);letter-spacing:-.032em;line-height:1.14;margin-bottom:10px}
 .costo-item p{font-size:15px;color:var(--ink-2);line-height:1.6;max-width:580px}
 @media (max-width:900px){
   .costo-grid{grid-template-columns:1fr;gap:28px}
@@ -856,7 +890,7 @@ nav.stuck .nav-in{
 /* ============ POR DÓNDE EMPEZAR — las seis verticales ============
    Va después del clímax (lo que aparece) y antes de las objeciones: ya entendió
    qué hace y por qué es distinto, ahora elige su puerta de entrada. */
-.puertas{padding-block:76px;border-top:1px solid var(--line)}
+.puertas{padding-block:62px;border-top:1px solid var(--line)}
 .pu-lbl{font-size:11.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-3);
   font-family:var(--mono);margin-bottom:11px;text-align:center}
 .pu-lbl-2{margin-top:24px}
@@ -872,13 +906,14 @@ nav.stuck .nav-in{
 .pu-f{position:absolute;top:16px;right:16px;color:var(--ink-3);font-size:14px;
   transition:color .32s var(--ease),transform .32s var(--ease)}
 .pu:hover .pu-f{color:var(--accent);transform:translateX(2px)}
-@media (max-width:820px){.pu-grid{grid-template-columns:1fr}.puertas{padding-block:64px}}
+.pu-grid-2{grid-template-columns:repeat(2,1fr);max-width:625px}
+@media (max-width:820px){.pu-grid,.pu-grid-2{grid-template-columns:1fr;max-width:none}.puertas{padding-block:52px}}
 
 /* ============ SE CONECTA — el sistema que ya usas ============
    El objetivo es sacar la objeción de "tendría que cambiar todo" justo antes
    del precio. Íconos de trazo, no logos: nombramos categorías, no proveedores,
    así no promete integraciones puntuales que después haya que sostener. */
-.conecta{padding-block:72px;border-top:1px solid var(--line);position:relative;overflow:hidden}
+.conecta{padding-block:60px;border-top:1px solid var(--line);position:relative;overflow:hidden}
 /* El bloom que traía la colisión con .cierre y que valía la pena conservar:
    ahora es propio. Mismo radial que el cierre de la página, anclado al pie de
    la sección; overflow:hidden lo corta donde ya está casi transparente. */
@@ -941,7 +976,7 @@ nav.stuck .nav-in{
   .cx-sistemas .cx.any{grid-column:auto}}
 
 /* ============ EL PLAN — 2 col asimétrico, ratio 3:1 ============ */
-.plan{padding-block:78px;border-top:1px solid var(--line)}
+.plan{padding-block:64px;border-top:1px solid var(--line)}
 .plan .sec-head{margin-bottom:44px}
 .plan-h2{font-size:clamp(24px,3.1vw,42px)}
 .plan-grid{display:grid;grid-template-columns:1.62fr 1fr;gap:46px;align-items:start}
@@ -996,7 +1031,7 @@ nav.stuck .nav-in{
 /* ============ CIERRE ============ */
 /* el guion de "post-venta" partía la palabra y el titular caía en 3 líneas */
 .nb{white-space:nowrap}
-.cierre{padding-block:104px;border-top:1px solid var(--line);position:relative;overflow:hidden}
+.cierre{padding-block:84px;border-top:1px solid var(--line);position:relative;overflow:hidden}
 .cierre::before{
   content:'';position:absolute;bottom:-180px;left:50%;transform:translateX(-50%);
   width:min(900px,95%);height:420px;pointer-events:none;
@@ -1120,6 +1155,12 @@ footer{border-top:1px solid var(--line);padding-block:64px 40px;background:var(-
         <p>Toda demo incluye una <strong>auditoría de madurez en IA</strong> de tu operación, sin costo.</p>
       </div>
     </div>
+
+    <div class="rubros rv" style="--d:340ms">
+      <div class="rubros-vis">
+        <div class="rubros-tira" aria-hidden="true"><span class="r"><svg viewBox="0 0 20 20"><path d="M4.2 6.6h11.6l-1.1 9.8a1.5 1.5 0 0 1-1.5 1.3H6.8a1.5 1.5 0 0 1-1.5-1.3Z"/><path d="M7.4 6.6V5a2.6 2.6 0 0 1 5.2 0v1.6"/></svg><b>Ecommerce</b></span><span class="r"><svg viewBox="0 0 20 20"><path d="M10 2.6l1.4 3.9 3.9 1.4-3.9 1.4L10 13.2 8.6 9.3 4.7 7.9l3.9-1.4Z"/><path d="M15.2 13.4l.6 1.7 1.7.6-1.7.6-.6 1.7-.6-1.7-1.7-.6 1.7-.6Z"/></svg><b>Clínicas estéticas</b></span><span class="r"><svg viewBox="0 0 20 20"><path d="M3.4 17.2V7.6L10 3.4l6.6 4.2v9.6"/><path d="M2.6 17.2h14.8"/><path d="M8.2 17.2v-4.3h3.6v4.3"/></svg><b>Inmobiliarias</b></span><span class="r"><svg viewBox="0 0 20 20"><path d="M3.4 8.4h13.2v7.9a1.1 1.1 0 0 1-1.1 1.1H4.5a1.1 1.1 0 0 1-1.1-1.1Z"/><path d="M2.8 8.4 4.4 3.6h11.2l1.6 4.8"/><path d="M7.7 8.4v2a2.3 2.3 0 0 0 4.6 0v-2"/></svg><b>Retail</b></span><span class="r"><svg viewBox="0 0 20 20"><path d="M10 3.4 17.8 7 10 10.6 2.2 7Z"/><path d="M5.6 8.8v4.3c0 1.3 2 2.4 4.4 2.4s4.4-1.1 4.4-2.4V8.8"/></svg><b>Educación</b></span><span class="r"><svg viewBox="0 0 20 20"><rect x="3.2" y="7.2" width="13.6" height="9.4" rx="1.7"/><path d="M7.4 7.2V5.4a1.4 1.4 0 0 1 1.4-1.4h2.4a1.4 1.4 0 0 1 1.4 1.4v1.8"/><path d="M10 7.2v9.4"/></svg><b>Turismo</b></span><span class="r"><svg viewBox="0 0 20 20"><rect x="2.4" y="8.3" width="2.3" height="3.4" rx=".8"/><rect x="15.3" y="8.3" width="2.3" height="3.4" rx=".8"/><rect x="5.4" y="6.9" width="2.5" height="6.2" rx="1"/><rect x="12.1" y="6.9" width="2.5" height="6.2" rx="1"/><path d="M7.9 10h4.2"/></svg><b>Gimnasios</b></span><span class="r"><svg viewBox="0 0 20 20"><path d="M3.2 12.6h13.6v2.9a.9.9 0 0 1-.9.9h-1.3a.9.9 0 0 1-.9-.9v-.6H6.3v.6a.9.9 0 0 1-.9.9H4.1a.9.9 0 0 1-.9-.9Z"/><path d="M4.6 12.6 6.1 7.9a1.5 1.5 0 0 1 1.4-1h5a1.5 1.5 0 0 1 1.4 1l1.5 4.7"/></svg><b>Automotoras</b></span><span class="r"><svg viewBox="0 0 20 20"><ellipse cx="6.3" cy="7.8" rx="1.5" ry="2"/><ellipse cx="10" cy="6.5" rx="1.5" ry="2.1"/><ellipse cx="13.7" cy="7.8" rx="1.5" ry="2"/><path d="M10 10.6c-2.3 0-3.9 1.7-3.9 3.3s1.7 2.4 3.9 2.4 3.9-.8 3.9-2.4-1.6-3.3-3.9-3.3Z"/></svg><b>Veterinarias</b></span><span class="r"><svg viewBox="0 0 20 20"><path d="M6.6 3.4v4.8a1.7 1.7 0 0 0 3.4 0V3.4"/><path d="M8.3 8.2v8.4"/><path d="M14.9 3.4c-1.3 0-2.2 1.5-2.2 3.4s.9 2.9 2.2 2.9v6.9"/></svg><b>Restaurantes</b></span><span class="r"><svg viewBox="0 0 20 20"><path d="M10 3.2 4.7 5.4v4.5c0 3.3 2.2 6.1 5.3 7.1 3.1-1 5.3-3.8 5.3-7.1V5.4Z"/></svg><b>Seguros</b></span><span class="r"><svg viewBox="0 0 20 20"><rect x="2.2" y="6.6" width="8.8" height="7.2" rx="1.2"/><path d="M11 9h3.2l3.3 2.8v2H11z"/><circle cx="6" cy="15.4" r="1.6"/><circle cx="13.9" cy="15.4" r="1.6"/></svg><b>Logística</b></span><span class="r"><svg viewBox="0 0 20 20"><rect x="3" y="4.8" width="14" height="11.6" rx="2"/><path d="M10 8.2v5.2M7.4 10.8h5.2"/></svg><b>Centros médicos</b></span><span class="r"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="7"/><path d="M10 5.6v8.8"/><path d="M12.3 7.6H8.9a1.7 1.7 0 0 0 0 3.4h2.2a1.7 1.7 0 0 1 0 3.4H7.7"/></svg><b>Servicios financieros</b></span><span class="r"><svg viewBox="0 0 20 20"><path d="M3.2 14.8h13.6"/><path d="M4.9 14.8v-2.7a5.1 5.1 0 0 1 10.2 0v2.7"/><path d="M8.4 7.4V5.6a1 1 0 0 1 1-1h1.2a1 1 0 0 1 1 1v1.8"/></svg><b>Constructoras</b></span><span class="r"><svg viewBox="0 0 20 20"><rect x="2.6" y="7.4" width="14.8" height="5.2" rx="2.6"/><path d="M10 7.4v5.2"/></svg><b>Farmacias</b></span><span class="r"><svg viewBox="0 0 20 20"><path d="M4.2 6.6h11.6l-1.1 9.8a1.5 1.5 0 0 1-1.5 1.3H6.8a1.5 1.5 0 0 1-1.5-1.3Z"/><path d="M7.4 6.6V5a2.6 2.6 0 0 1 5.2 0v1.6"/></svg><b>Ecommerce</b></span><span class="r"><svg viewBox="0 0 20 20"><path d="M10 2.6l1.4 3.9 3.9 1.4-3.9 1.4L10 13.2 8.6 9.3 4.7 7.9l3.9-1.4Z"/><path d="M15.2 13.4l.6 1.7 1.7.6-1.7.6-.6 1.7-.6-1.7-1.7-.6 1.7-.6Z"/></svg><b>Clínicas estéticas</b></span><span class="r"><svg viewBox="0 0 20 20"><path d="M3.4 17.2V7.6L10 3.4l6.6 4.2v9.6"/><path d="M2.6 17.2h14.8"/><path d="M8.2 17.2v-4.3h3.6v4.3"/></svg><b>Inmobiliarias</b></span><span class="r"><svg viewBox="0 0 20 20"><path d="M3.4 8.4h13.2v7.9a1.1 1.1 0 0 1-1.1 1.1H4.5a1.1 1.1 0 0 1-1.1-1.1Z"/><path d="M2.8 8.4 4.4 3.6h11.2l1.6 4.8"/><path d="M7.7 8.4v2a2.3 2.3 0 0 0 4.6 0v-2"/></svg><b>Retail</b></span><span class="r"><svg viewBox="0 0 20 20"><path d="M10 3.4 17.8 7 10 10.6 2.2 7Z"/><path d="M5.6 8.8v4.3c0 1.3 2 2.4 4.4 2.4s4.4-1.1 4.4-2.4V8.8"/></svg><b>Educación</b></span><span class="r"><svg viewBox="0 0 20 20"><rect x="3.2" y="7.2" width="13.6" height="9.4" rx="1.7"/><path d="M7.4 7.2V5.4a1.4 1.4 0 0 1 1.4-1.4h2.4a1.4 1.4 0 0 1 1.4 1.4v1.8"/><path d="M10 7.2v9.4"/></svg><b>Turismo</b></span><span class="r"><svg viewBox="0 0 20 20"><rect x="2.4" y="8.3" width="2.3" height="3.4" rx=".8"/><rect x="15.3" y="8.3" width="2.3" height="3.4" rx=".8"/><rect x="5.4" y="6.9" width="2.5" height="6.2" rx="1"/><rect x="12.1" y="6.9" width="2.5" height="6.2" rx="1"/><path d="M7.9 10h4.2"/></svg><b>Gimnasios</b></span><span class="r"><svg viewBox="0 0 20 20"><path d="M3.2 12.6h13.6v2.9a.9.9 0 0 1-.9.9h-1.3a.9.9 0 0 1-.9-.9v-.6H6.3v.6a.9.9 0 0 1-.9.9H4.1a.9.9 0 0 1-.9-.9Z"/><path d="M4.6 12.6 6.1 7.9a1.5 1.5 0 0 1 1.4-1h5a1.5 1.5 0 0 1 1.4 1l1.5 4.7"/></svg><b>Automotoras</b></span><span class="r"><svg viewBox="0 0 20 20"><ellipse cx="6.3" cy="7.8" rx="1.5" ry="2"/><ellipse cx="10" cy="6.5" rx="1.5" ry="2.1"/><ellipse cx="13.7" cy="7.8" rx="1.5" ry="2"/><path d="M10 10.6c-2.3 0-3.9 1.7-3.9 3.3s1.7 2.4 3.9 2.4 3.9-.8 3.9-2.4-1.6-3.3-3.9-3.3Z"/></svg><b>Veterinarias</b></span><span class="r"><svg viewBox="0 0 20 20"><path d="M6.6 3.4v4.8a1.7 1.7 0 0 0 3.4 0V3.4"/><path d="M8.3 8.2v8.4"/><path d="M14.9 3.4c-1.3 0-2.2 1.5-2.2 3.4s.9 2.9 2.2 2.9v6.9"/></svg><b>Restaurantes</b></span><span class="r"><svg viewBox="0 0 20 20"><path d="M10 3.2 4.7 5.4v4.5c0 3.3 2.2 6.1 5.3 7.1 3.1-1 5.3-3.8 5.3-7.1V5.4Z"/></svg><b>Seguros</b></span><span class="r"><svg viewBox="0 0 20 20"><rect x="2.2" y="6.6" width="8.8" height="7.2" rx="1.2"/><path d="M11 9h3.2l3.3 2.8v2H11z"/><circle cx="6" cy="15.4" r="1.6"/><circle cx="13.9" cy="15.4" r="1.6"/></svg><b>Logística</b></span><span class="r"><svg viewBox="0 0 20 20"><rect x="3" y="4.8" width="14" height="11.6" rx="2"/><path d="M10 8.2v5.2M7.4 10.8h5.2"/></svg><b>Centros médicos</b></span><span class="r"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="7"/><path d="M10 5.6v8.8"/><path d="M12.3 7.6H8.9a1.7 1.7 0 0 0 0 3.4h2.2a1.7 1.7 0 0 1 0 3.4H7.7"/></svg><b>Servicios financieros</b></span><span class="r"><svg viewBox="0 0 20 20"><path d="M3.2 14.8h13.6"/><path d="M4.9 14.8v-2.7a5.1 5.1 0 0 1 10.2 0v2.7"/><path d="M8.4 7.4V5.6a1 1 0 0 1 1-1h1.2a1 1 0 0 1 1 1v1.8"/></svg><b>Constructoras</b></span><span class="r"><svg viewBox="0 0 20 20"><rect x="2.6" y="7.4" width="14.8" height="5.2" rx="2.6"/><path d="M10 7.4v5.2"/></svg><b>Farmacias</b></span></div>
+      </div>
+    </div>
   </div>
 
 </section>
@@ -1230,7 +1271,7 @@ footer{border-top:1px solid var(--line);padding-block:64px 40px;background:var(-
         </div>
         <div class="g-slide" data-i="4">
           <span class="g-txt sm">La única forma de construir la memoria de tu empresa<br>es <em>participando de su operación.</em></span>
-          <span class="g-bump" id="giroBump" aria-hidden="true"><i class="l">🤜</i><i class="r">🤛</i><span class="g-sparks"><b style="--a:8deg;--d:54px"></b><b style="--a:46deg;--d:44px"></b><b style="--a:88deg;--d:38px"></b><b style="--a:132deg;--d:46px"></b><b style="--a:172deg;--d:56px"></b><b style="--a:214deg;--d:44px"></b><b style="--a:268deg;--d:36px"></b><b style="--a:312deg;--d:48px"></b><b style="--a:340deg;--d:58px"></b><b style="--a:196deg;--d:34px"></b></span></span>
+          <span class="g-bump" id="giroBump" aria-hidden="true"><i class="l">🤜</i><span class="r">🤛</i><span class="g-sparks"><b style="--a:8deg;--d:54px"></b><b style="--a:46deg;--d:44px"></b><b style="--a:88deg;--d:38px"></b><b style="--a:132deg;--d:46px"></b><b style="--a:172deg;--d:56px"></b><b style="--a:214deg;--d:44px"></b><b style="--a:268deg;--d:36px"></b><b style="--a:312deg;--d:48px"></b><b style="--a:340deg;--d:58px"></b><b style="--a:196deg;--d:34px"></b></span></span>
 
         </div>
       </div>
@@ -1263,7 +1304,6 @@ footer{border-top:1px solid var(--line);padding-block:64px 40px;background:var(-
       qué trabajo tomamos primero.</p>
     </div>
 
-    <p class="pu-lbl rv">Por operación</p>
     <div class="pu-grid">
       <a class="pu rv" style="--d:60ms" href="/post-venta">
         <span class="pu-n">Post-venta</span>
@@ -1282,24 +1322,6 @@ footer{border-top:1px solid var(--line);padding-block:64px 40px;background:var(-
       </a>
     </div>
 
-    <p class="pu-lbl pu-lbl-2 rv" style="--d:120ms">Por rubro</p>
-    <div class="pu-grid">
-      <a class="pu rv" style="--d:60ms" href="/inmobiliaria">
-        <span class="pu-n">Inmobiliarias</span>
-        <span class="pu-d">Del interesado al propietario</span>
-        <span class="pu-f" aria-hidden="true">→</span>
-      </a>
-      <a class="pu rv" style="--d:105ms" href="/clinicas">
-        <span class="pu-n">Clínicas estéticas</span>
-        <span class="pu-d">Del interesado al paciente</span>
-        <span class="pu-f" aria-hidden="true">→</span>
-      </a>
-      <a class="pu rv" style="--d:150ms" href="/ecommerce">
-        <span class="pu-n">Ecommerce</span>
-        <span class="pu-d">Del interesado al cliente que vuelve</span>
-        <span class="pu-f" aria-hidden="true">→</span>
-      </a>
-    </div>
   </div>
 </section>
 
