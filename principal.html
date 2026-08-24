@@ -303,11 +303,17 @@ nav.stuck .nav-in{
 }
 
 /* ---- la cinta de rubros al pie del hero ----
-   Sin cápsulas: cada rubro es su ícono más el nombre en bold, y lo que los separa
-   es el aire, no una caja. Sin `margin-left:calc(50% - 50vw)`: ese truco computa
-   0px en Safari. El contenido está duplicado exacto, así que translateX(-50%)
+   Mayúsculas chicas y espaciadas, en el gris más bajo: todo lo que está debajo del
+   formulario tiene que poder ignorarse sin perder el mensaje. Sin íconos —dieciséis
+   dibujos distintos no son un sistema— y sin `margin-left:calc(50% - 50vw)`, que
+   computa 0px en Safari. La tira está duplicada exacta, así que translateX(-50%)
    cierra el loop sin costura. */
-.rubros{margin-top:34px;min-width:0}
+.rubros{margin-top:36px;padding-top:26px;position:relative;min-width:0}
+.rubros::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,
+    transparent, rgba(255,255,255,.13) 24%, rgba(255,255,255,.13) 76%, transparent);
+}
 .rubros-vis{
   position:relative;overflow:hidden;min-width:0;
   -webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
@@ -318,22 +324,15 @@ nav.stuck .nav-in{
   animation:rubroDeriva 64s linear infinite;will-change:transform;
 }
 .rubros:hover .rubros-tira{animation-play-state:paused}
-.rubros-tira .r{display:flex;align-items:center;gap:10px;flex:none;font-style:normal}
-.rubros-tira .r svg{
-  width:17px;height:17px;flex:none;display:block;
-  fill:none;stroke:currentColor;stroke-width:1.25;stroke-linecap:round;stroke-linejoin:round;
-  color:rgba(255,255,255,.3);
-}
-.rubros-tira .r b{
-  font-size:14.5px;font-weight:600;color:var(--ink-2);
-  letter-spacing:-.008em;white-space:nowrap;font-style:normal;
+.rubros-tira .r{
+  flex:none;font-size:12px;font-weight:600;color:var(--ink-3);
+  text-transform:uppercase;letter-spacing:.11em;white-space:nowrap;font-style:normal;
 }
 @keyframes rubroDeriva{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (max-width:640px){
-  .rubros{margin-top:26px}
-  .rubros-tira{gap:34px}
-  .rubros-tira .r b{font-size:13.5px}
-  .rubros-tira .r svg{width:16px;height:16px}
+  .rubros{margin-top:28px;padding-top:22px}
+  .rubros-tira{gap:36px}
+  .rubros-tira .r{font-size:11px;letter-spacing:.1em}
 }
 
 /* ============ EL COSTO ============ */
@@ -1083,11 +1082,6 @@ footer{border-top:1px solid var(--line);padding-block:64px 40px;background:var(-
      al final de la primera: en el teléfono son dos líneas de verdad, sin punto medio */
   .form-note .sep{display:none}
   .form-note a{display:block;margin-top:-6px}
-  /* El pledge sale del hero en el teléfono: eran cuatro líneas de texto gris apiladas
-     (234/135/307/157px) compitiendo bajo el botón. El argumento de la auditoría sin costo
-     se dice completo en la sección de cierre, así que acá era redundante. En escritorio
-     se queda: ahí cabe en una sola línea. */
-  .pledge{display:none}
   .addon-t{padding-block:12px}
   .foot-l{gap:0}
   .foot-l a{display:block;padding-block:12px}
@@ -1151,14 +1145,11 @@ footer{border-top:1px solid var(--line);padding-block:64px 40px;background:var(-
         <a href="https://calendar.app.google/vUfSasn1UEhAAsTv8">o agenda una demo →</a>
       </p>
 
-      <div class="pledge rv" style="--d:300ms">
-        <p>Toda demo incluye una <strong>auditoría de madurez en IA</strong> de tu operación, sin costo.</p>
-      </div>
     </div>
 
     <div class="rubros rv" style="--d:340ms">
       <div class="rubros-vis">
-        <div class="rubros-tira" aria-hidden="true"><span class="r"><svg viewBox="0 0 20 20"><path d="M4.2 6.6h11.6l-1.1 9.8a1.5 1.5 0 0 1-1.5 1.3H6.8a1.5 1.5 0 0 1-1.5-1.3Z"/><path d="M7.4 6.6V5a2.6 2.6 0 0 1 5.2 0v1.6"/></svg><b>Ecommerce</b></span><span class="r"><svg viewBox="0 0 20 20"><path d="M10 2.6l1.4 3.9 3.9 1.4-3.9 1.4L10 13.2 8.6 9.3 4.7 7.9l3.9-1.4Z"/><path d="M15.2 13.4l.6 1.7 1.7.6-1.7.6-.6 1.7-.6-1.7-1.7-.6 1.7-.6Z"/></svg><b>Clínicas estéticas</b></span><span class="r"><svg viewBox="0 0 20 20"><path d="M3.4 17.2V7.6L10 3.4l6.6 4.2v9.6"/><path d="M2.6 17.2h14.8"/><path d="M8.2 17.2v-4.3h3.6v4.3"/></svg><b>Inmobiliarias</b></span><span class="r"><svg viewBox="0 0 20 20"><path d="M3.4 8.4h13.2v7.9a1.1 1.1 0 0 1-1.1 1.1H4.5a1.1 1.1 0 0 1-1.1-1.1Z"/><path d="M2.8 8.4 4.4 3.6h11.2l1.6 4.8"/><path d="M7.7 8.4v2a2.3 2.3 0 0 0 4.6 0v-2"/></svg><b>Retail</b></span><span class="r"><svg viewBox="0 0 20 20"><path d="M10 3.4 17.8 7 10 10.6 2.2 7Z"/><path d="M5.6 8.8v4.3c0 1.3 2 2.4 4.4 2.4s4.4-1.1 4.4-2.4V8.8"/></svg><b>Educación</b></span><span class="r"><svg viewBox="0 0 20 20"><rect x="3.2" y="7.2" width="13.6" height="9.4" rx="1.7"/><path d="M7.4 7.2V5.4a1.4 1.4 0 0 1 1.4-1.4h2.4a1.4 1.4 0 0 1 1.4 1.4v1.8"/><path d="M10 7.2v9.4"/></svg><b>Turismo</b></span><span class="r"><svg viewBox="0 0 20 20"><rect x="2.4" y="8.3" width="2.3" height="3.4" rx=".8"/><rect x="15.3" y="8.3" width="2.3" height="3.4" rx=".8"/><rect x="5.4" y="6.9" width="2.5" height="6.2" rx="1"/><rect x="12.1" y="6.9" width="2.5" height="6.2" rx="1"/><path d="M7.9 10h4.2"/></svg><b>Gimnasios</b></span><span class="r"><svg viewBox="0 0 20 20"><path d="M3.2 12.6h13.6v2.9a.9.9 0 0 1-.9.9h-1.3a.9.9 0 0 1-.9-.9v-.6H6.3v.6a.9.9 0 0 1-.9.9H4.1a.9.9 0 0 1-.9-.9Z"/><path d="M4.6 12.6 6.1 7.9a1.5 1.5 0 0 1 1.4-1h5a1.5 1.5 0 0 1 1.4 1l1.5 4.7"/></svg><b>Automotoras</b></span><span class="r"><svg viewBox="0 0 20 20"><ellipse cx="6.3" cy="7.8" rx="1.5" ry="2"/><ellipse cx="10" cy="6.5" rx="1.5" ry="2.1"/><ellipse cx="13.7" cy="7.8" rx="1.5" ry="2"/><path d="M10 10.6c-2.3 0-3.9 1.7-3.9 3.3s1.7 2.4 3.9 2.4 3.9-.8 3.9-2.4-1.6-3.3-3.9-3.3Z"/></svg><b>Veterinarias</b></span><span class="r"><svg viewBox="0 0 20 20"><path d="M6.6 3.4v4.8a1.7 1.7 0 0 0 3.4 0V3.4"/><path d="M8.3 8.2v8.4"/><path d="M14.9 3.4c-1.3 0-2.2 1.5-2.2 3.4s.9 2.9 2.2 2.9v6.9"/></svg><b>Restaurantes</b></span><span class="r"><svg viewBox="0 0 20 20"><path d="M10 3.2 4.7 5.4v4.5c0 3.3 2.2 6.1 5.3 7.1 3.1-1 5.3-3.8 5.3-7.1V5.4Z"/></svg><b>Seguros</b></span><span class="r"><svg viewBox="0 0 20 20"><rect x="2.2" y="6.6" width="8.8" height="7.2" rx="1.2"/><path d="M11 9h3.2l3.3 2.8v2H11z"/><circle cx="6" cy="15.4" r="1.6"/><circle cx="13.9" cy="15.4" r="1.6"/></svg><b>Logística</b></span><span class="r"><svg viewBox="0 0 20 20"><rect x="3" y="4.8" width="14" height="11.6" rx="2"/><path d="M10 8.2v5.2M7.4 10.8h5.2"/></svg><b>Centros médicos</b></span><span class="r"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="7"/><path d="M10 5.6v8.8"/><path d="M12.3 7.6H8.9a1.7 1.7 0 0 0 0 3.4h2.2a1.7 1.7 0 0 1 0 3.4H7.7"/></svg><b>Servicios financieros</b></span><span class="r"><svg viewBox="0 0 20 20"><path d="M3.2 14.8h13.6"/><path d="M4.9 14.8v-2.7a5.1 5.1 0 0 1 10.2 0v2.7"/><path d="M8.4 7.4V5.6a1 1 0 0 1 1-1h1.2a1 1 0 0 1 1 1v1.8"/></svg><b>Constructoras</b></span><span class="r"><svg viewBox="0 0 20 20"><rect x="2.6" y="7.4" width="14.8" height="5.2" rx="2.6"/><path d="M10 7.4v5.2"/></svg><b>Farmacias</b></span><span class="r"><svg viewBox="0 0 20 20"><path d="M4.2 6.6h11.6l-1.1 9.8a1.5 1.5 0 0 1-1.5 1.3H6.8a1.5 1.5 0 0 1-1.5-1.3Z"/><path d="M7.4 6.6V5a2.6 2.6 0 0 1 5.2 0v1.6"/></svg><b>Ecommerce</b></span><span class="r"><svg viewBox="0 0 20 20"><path d="M10 2.6l1.4 3.9 3.9 1.4-3.9 1.4L10 13.2 8.6 9.3 4.7 7.9l3.9-1.4Z"/><path d="M15.2 13.4l.6 1.7 1.7.6-1.7.6-.6 1.7-.6-1.7-1.7-.6 1.7-.6Z"/></svg><b>Clínicas estéticas</b></span><span class="r"><svg viewBox="0 0 20 20"><path d="M3.4 17.2V7.6L10 3.4l6.6 4.2v9.6"/><path d="M2.6 17.2h14.8"/><path d="M8.2 17.2v-4.3h3.6v4.3"/></svg><b>Inmobiliarias</b></span><span class="r"><svg viewBox="0 0 20 20"><path d="M3.4 8.4h13.2v7.9a1.1 1.1 0 0 1-1.1 1.1H4.5a1.1 1.1 0 0 1-1.1-1.1Z"/><path d="M2.8 8.4 4.4 3.6h11.2l1.6 4.8"/><path d="M7.7 8.4v2a2.3 2.3 0 0 0 4.6 0v-2"/></svg><b>Retail</b></span><span class="r"><svg viewBox="0 0 20 20"><path d="M10 3.4 17.8 7 10 10.6 2.2 7Z"/><path d="M5.6 8.8v4.3c0 1.3 2 2.4 4.4 2.4s4.4-1.1 4.4-2.4V8.8"/></svg><b>Educación</b></span><span class="r"><svg viewBox="0 0 20 20"><rect x="3.2" y="7.2" width="13.6" height="9.4" rx="1.7"/><path d="M7.4 7.2V5.4a1.4 1.4 0 0 1 1.4-1.4h2.4a1.4 1.4 0 0 1 1.4 1.4v1.8"/><path d="M10 7.2v9.4"/></svg><b>Turismo</b></span><span class="r"><svg viewBox="0 0 20 20"><rect x="2.4" y="8.3" width="2.3" height="3.4" rx=".8"/><rect x="15.3" y="8.3" width="2.3" height="3.4" rx=".8"/><rect x="5.4" y="6.9" width="2.5" height="6.2" rx="1"/><rect x="12.1" y="6.9" width="2.5" height="6.2" rx="1"/><path d="M7.9 10h4.2"/></svg><b>Gimnasios</b></span><span class="r"><svg viewBox="0 0 20 20"><path d="M3.2 12.6h13.6v2.9a.9.9 0 0 1-.9.9h-1.3a.9.9 0 0 1-.9-.9v-.6H6.3v.6a.9.9 0 0 1-.9.9H4.1a.9.9 0 0 1-.9-.9Z"/><path d="M4.6 12.6 6.1 7.9a1.5 1.5 0 0 1 1.4-1h5a1.5 1.5 0 0 1 1.4 1l1.5 4.7"/></svg><b>Automotoras</b></span><span class="r"><svg viewBox="0 0 20 20"><ellipse cx="6.3" cy="7.8" rx="1.5" ry="2"/><ellipse cx="10" cy="6.5" rx="1.5" ry="2.1"/><ellipse cx="13.7" cy="7.8" rx="1.5" ry="2"/><path d="M10 10.6c-2.3 0-3.9 1.7-3.9 3.3s1.7 2.4 3.9 2.4 3.9-.8 3.9-2.4-1.6-3.3-3.9-3.3Z"/></svg><b>Veterinarias</b></span><span class="r"><svg viewBox="0 0 20 20"><path d="M6.6 3.4v4.8a1.7 1.7 0 0 0 3.4 0V3.4"/><path d="M8.3 8.2v8.4"/><path d="M14.9 3.4c-1.3 0-2.2 1.5-2.2 3.4s.9 2.9 2.2 2.9v6.9"/></svg><b>Restaurantes</b></span><span class="r"><svg viewBox="0 0 20 20"><path d="M10 3.2 4.7 5.4v4.5c0 3.3 2.2 6.1 5.3 7.1 3.1-1 5.3-3.8 5.3-7.1V5.4Z"/></svg><b>Seguros</b></span><span class="r"><svg viewBox="0 0 20 20"><rect x="2.2" y="6.6" width="8.8" height="7.2" rx="1.2"/><path d="M11 9h3.2l3.3 2.8v2H11z"/><circle cx="6" cy="15.4" r="1.6"/><circle cx="13.9" cy="15.4" r="1.6"/></svg><b>Logística</b></span><span class="r"><svg viewBox="0 0 20 20"><rect x="3" y="4.8" width="14" height="11.6" rx="2"/><path d="M10 8.2v5.2M7.4 10.8h5.2"/></svg><b>Centros médicos</b></span><span class="r"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="7"/><path d="M10 5.6v8.8"/><path d="M12.3 7.6H8.9a1.7 1.7 0 0 0 0 3.4h2.2a1.7 1.7 0 0 1 0 3.4H7.7"/></svg><b>Servicios financieros</b></span><span class="r"><svg viewBox="0 0 20 20"><path d="M3.2 14.8h13.6"/><path d="M4.9 14.8v-2.7a5.1 5.1 0 0 1 10.2 0v2.7"/><path d="M8.4 7.4V5.6a1 1 0 0 1 1-1h1.2a1 1 0 0 1 1 1v1.8"/></svg><b>Constructoras</b></span><span class="r"><svg viewBox="0 0 20 20"><rect x="2.6" y="7.4" width="14.8" height="5.2" rx="2.6"/><path d="M10 7.4v5.2"/></svg><b>Farmacias</b></span></div>
+        <div class="rubros-tira" aria-hidden="true"><span class="r">Ecommerce</span><span class="r">Clínicas estéticas</span><span class="r">Inmobiliarias</span><span class="r">Retail</span><span class="r">Educación</span><span class="r">Turismo</span><span class="r">Gimnasios</span><span class="r">Automotoras</span><span class="r">Veterinarias</span><span class="r">Restaurantes</span><span class="r">Seguros</span><span class="r">Logística</span><span class="r">Centros médicos</span><span class="r">Servicios financieros</span><span class="r">Constructoras</span><span class="r">Farmacias</span><span class="r">Ecommerce</span><span class="r">Clínicas estéticas</span><span class="r">Inmobiliarias</span><span class="r">Retail</span><span class="r">Educación</span><span class="r">Turismo</span><span class="r">Gimnasios</span><span class="r">Automotoras</span><span class="r">Veterinarias</span><span class="r">Restaurantes</span><span class="r">Seguros</span><span class="r">Logística</span><span class="r">Centros médicos</span><span class="r">Servicios financieros</span><span class="r">Constructoras</span><span class="r">Farmacias</span></div>
       </div>
     </div>
   </div>
