@@ -1,5 +1,6 @@
 # robots.txt — sapio.dev
-# Permitimos el rastreo completo, incluidos los crawlers de IA (AEO).
+# El sitio se mudo a gosapio.com: la portada, el blog y el centro de ayuda
+# hacen 301 hacia alla. El sitemap vive alla tambien.
 
 User-agent: *
 Allow: /
@@ -32,4 +33,4 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://sapio.dev/sitemap.xml
+Sitemap: https://gosapio.com/sitemap.xml

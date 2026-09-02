@@ -5,11 +5,28 @@
 [functions]
   node_bundler = "esbuild"
 
-# Servir landing.html como root
+# La portada se mudo a gosapio.com. landing.html sigue en el repo y accesible
+# en /landing.html; lo que cambia es a donde llega quien escribe sapio.dev.
 [[redirects]]
   from = "/"
-  to = "/landing.html"
-  status = 200
+  to = "https://gosapio.com/"
+  status = 301
+  force = true
+
+# El blog y el centro de ayuda se mudaron a gosapio.com, que quedo como
+# canonico (2026-09-02). Van con force porque los archivos siguen en el repo:
+# sin force, Netlify sirve el estatico y la redireccion nunca corre.
+[[redirects]]
+  from = "/blog/*"
+  to = "https://gosapio.com/blog/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/help-center/*"
+  to = "https://gosapio.com/help-center/:splat"
+  status = 301
+  force = true
 
 # Cabeceras de seguridad básicas
 [[headers]]
