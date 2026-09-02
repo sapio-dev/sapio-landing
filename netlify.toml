@@ -5,14 +5,11 @@
 [functions]
   node_bundler = "esbuild"
 
-# http://www iba al dominio raiz en DOS saltos: primero a https://www y de ahi
-# al apex. Esta regla se salta el intermedio. Va ANTES que el resto porque
-# Netlify aplica la primera que calza.
-[[redirects]]
-  from = "http://www.sapio.dev/*"
-  to = "https://sapio.dev/:splat"
-  status = 301
-  force = true
+# NO intentar colapsar el doble salto de http://www con una regla aca: Netlify
+# hace el upgrade a HTTPS en el mismo host ANTES de correr el motor de
+# redirecciones, asi que una regla con `from = "http://www..."` nunca se
+# alcanza. Probado el 2026-09-02: la regla se desplego y la cadena siguio
+# siendo http://www -> https://www -> apex. Es de la plataforma.
 
 # Servir landing.html como root
 [[redirects]]
