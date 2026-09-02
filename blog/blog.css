@@ -214,6 +214,14 @@ body > nav .nav-inner::after {
   border-left: 2px solid var(--accent); padding-left: 22px;
 }
 .article-body { margin-top: 48px; font-size: 18px; line-height: 1.72; color: var(--fg-dim); }
+/* Aviso de desvío: "esto que buscas está en otra página". Hereda la forma del
+   standfirst pero con la hairline apagada, para que se lea como una nota al
+   margen y no como una segunda bajada del artículo. */
+.article-body .aviso {
+  margin: 0 0 34px; padding: 2px 0 2px 22px;
+  border-left: 2px solid var(--hair-strong);
+  font-size: 16.5px; line-height: 1.6; color: var(--fg-mid);
+}
 .article-body h2 {
   font-family: var(--sans); font-weight: 600; color: var(--fg);
   font-size: 28px; line-height: 1.18; letter-spacing: -0.028em;
