@@ -897,7 +897,18 @@ nav.stuck .nav-in{
 .giro-center.bare .g-bridge{height:0;opacity:0}
 
 @media (max-width:760px){
-  .giro{--gh:360vh}
+  /* En el telefono la seccion NO secuestra el scroll. 360vh de pin son 3.6
+     pantallas en las que la pagina parece congelada: el que va rapido cree que
+     se rompio, y ese es exactamente el reporte que llego. Aca es un bloque
+     normal de una pantalla y la secuencia avanza sola con un temporizador
+     (`giroAuto` en el JS). El swipe nunca se toca. */
+  .giro{--gh:auto;height:auto}
+  .giro-snaps{display:none}
+  .giro-pin{
+    position:static;height:auto;
+    min-height:100vh;min-height:100svh;
+    padding-block:calc(var(--nav-h) + 24px) 64px;
+  }
   .g-bub.them{transform:translateX(-12px)}
   .g-bub.us{transform:translateX(12px)}
   /* 160px alcanzaban para las diapositivas de puro texto, pero la del cierre
@@ -907,6 +918,24 @@ nav.stuck .nav-in{
      con aire; mas que eso empuja el link de la tesis fuera de una pantalla de 568. */
   .g-stage{min-height:168px}
   .g-slide .g-bump{margin-top:10px}
+
+  /* El rail deja de ser un indicador y pasa a ser EL control. Las barras son de
+     3px: sin un area de toque propia no se pueden apretar con el dedo, asi que
+     el <i> se agranda con padding y pinta la barra en su ::before. */
+  .g-rail{gap:0;margin-top:24px}
+  .g-rail i{
+    width:auto;height:auto;background:none;box-shadow:none;border-radius:0;
+    flex:1;max-width:64px;padding:14px 4px;cursor:pointer;position:relative;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .g-rail i::before{
+    content:'';display:block;height:3px;border-radius:3px;
+    background:var(--line-2);transition:background .35s,box-shadow .35s;
+  }
+  .g-rail i.on::before{background:var(--accent);box-shadow:0 0 12px 2px rgba(45,144,251,.5)}
+  /* el escenario tambien avanza al toque, pero sin cursor de link: el control
+     explicito son las barras */
+  .giro-center.manual .g-stage{cursor:pointer}
 }
 
 /* ============ LO QUE APARECE — una sola afirmación ============
@@ -1327,7 +1356,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <p class="g-cap" id="giroCap">conclusiones como estas, pero de tu negocio</p>
-      <div class="g-rail" id="giroRail" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="g-rail" id="giroRail" role="tablist" aria-label="Avance de la secuencia"><i role="tab" tabindex="0" aria-label="Paso 1"></i><i role="tab" tabindex="0" aria-label="Paso 2"></i><i role="tab" tabindex="0" aria-label="Paso 3"></i><i role="tab" tabindex="0" aria-label="Paso 4"></i><i role="tab" tabindex="0" aria-label="Paso 5"></i></div>
     </div>
   </div>
 </section>
@@ -1793,19 +1822,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   // [inicio, fin] de cada estado dentro del scroll de la sección
   var TRAMOS = [[0,.10],[.10,.31],[.31,.52],[.52,.73],[.73,1]];
 
-  function syncGiro(){
-    if (!giro || !gSlides.length) return;
-    var r = giro.getBoundingClientRect();
-    if (r.bottom < 0 || r.top > window.innerHeight) return;
-    var total = r.height - window.innerHeight;
-    var p = total > 0 ? Math.min(1, Math.max(0, -r.top / total)) : 0;
-
-    var i = 0;
-    for (var n = 0; n < TRAMOS.length; n++) {
-      if (p >= TRAMOS[n][0] && (p < TRAMOS[n][1] || n === TRAMOS.length - 1)) { i = n; break; }
-    }
-    var t = TRAMOS[i];
-    var sub = Math.min(1, Math.max(0, (p - t[0]) / (t[1] - t[0])));
+  // El pintado es el mismo en los dos modos; lo unico que cambia es de donde
+  // salen (i, sub): del scroll en escritorio, de un temporizador en el telefono.
+  // Va aparte justamente para que los dos caminos no se separen con el tiempo.
+  function pintarGiro(i, sub){
     var esRegla = (i >= 1 && i <= 3);
 
     gCenter.classList.toggle('bare', !esRegla);
@@ -1839,6 +1859,102 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         gFistL.style.transform = ''; gFistR.style.transform = '';
       }
     }
+  }
+
+  var giroChico = window.matchMedia('(max-width:760px)');
+
+  function syncGiro(){
+    if (!giro || !gSlides.length || giroChico.matches) return;
+    var r = giro.getBoundingClientRect();
+    if (r.bottom < 0 || r.top > window.innerHeight) return;
+    var total = r.height - window.innerHeight;
+    var p = total > 0 ? Math.min(1, Math.max(0, -r.top / total)) : 0;
+
+    var i = 0;
+    for (var n = 0; n < TRAMOS.length; n++) {
+      if (p >= TRAMOS[n][0] && (p < TRAMOS[n][1] || n === TRAMOS.length - 1)) { i = n; break; }
+    }
+    var t = TRAMOS[i];
+    pintarGiro(i, Math.min(1, Math.max(0, (p - t[0]) / (t[1] - t[0]))));
+  }
+
+  /* ---- el giro en el telefono: avanza solo ----
+     Arranca cuando la seccion entra en vista, corre una vez y NO se reinicia:
+     quien se la salto a medias y vuelve encuentra el final —los punos— y no un
+     escenario vacio. Esa es la parte que hace que no moleste al que va rapido:
+     puede irse cuando quiera y al volver la conclusion sigue ahi. */
+  var giroAutoOn = false;
+  function giroAuto(){
+    if (giroAutoOn || !giro || !gSlides.length) return;
+    giroAutoOn = true;
+    /* ~8.5s en total. El que pasa rapido alcanza a leer la afirmacion de
+       entrada, que es la linea de la seccion; el que se queda ve las tres
+       conclusiones y el cierre. Nadie queda atrapado en ningun caso. */
+    var DUR = [1300, 1750, 1750, 1750, 2000];   // ms por estado
+    var idx = 0, t = 0, prev = 0;
+    function paso(ts){
+      if (!prev) prev = ts;
+      /* El delta va ACOTADO. rAF se detiene con la pestana en segundo plano y
+         vuelve con un salto de varios segundos: sin el tope, ese primer cuadro
+         se come la secuencia entera y el visitante encuentra el cierre sin
+         haber visto ninguno de los tres ejemplos. Acotado, retoma donde iba. */
+      t += Math.min(100, ts - prev);
+      prev = ts;
+      if (giroManual) return;                    // alguien tomo el control
+      var sub = Math.min(1, t / DUR[idx]);
+      pintarGiro(idx, sub);
+      giroIdx = idx;
+      if (sub < 1) { requestAnimationFrame(paso); return; }
+      if (idx >= DUR.length - 1) return;         // se queda en el cierre
+      idx++; t = 0;
+      requestAnimationFrame(paso);
+    }
+    requestAnimationFrame(paso);
+  }
+
+  /* ---- y el control manual ----
+     Autoplay sin freno es quitarle el mando por el otro lado: el que quiere
+     leer con calma queda igual de incomodo que el que quedaba atrapado. Al
+     primer toque la secuencia SE DETIENE y pasa a manejarla la persona; no
+     vuelve a arrancar sola, que es lo que uno espera de un carrusel.
+     El swipe no se toca nunca: sigue siendo scroll de la pagina. */
+  var giroManual = false, giroIdx = 0;
+
+  function giroTomarControl(){
+    if (giroManual) return;
+    giroManual = true;                     // `paso` se corta solo al verlo
+    if (gCenter) gCenter.classList.add('manual');
+  }
+
+  function giroIr(n){
+    giroTomarControl();
+    giroIdx = Math.max(0, Math.min(4, n));
+    pintarGiro(giroIdx, 1);                // el estado completo, sin media animacion
+  }
+
+  if (giro) {
+    gRail.forEach(function(d, n){
+      function ir(e){ if (!giroChico.matches) return; e.preventDefault(); giroIr(n); }
+      d.addEventListener('click', ir);
+      d.addEventListener('keydown', function(e){
+        if (e.key === 'Enter' || e.key === ' ') ir(e);
+      });
+    });
+    // tocar el escenario avanza uno; en el ultimo no hace nada
+    var gStage = document.querySelector('.g-stage');
+    if (gStage) gStage.addEventListener('click', function(){
+      if (!giroChico.matches) return;
+      giroIr(giroManual ? giroIdx + 1 : giroIdx);   // el primer toque solo detiene
+    });
+  }
+
+  if (giro && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function(entradas, obs){
+      entradas.forEach(function(e){
+        if (!e.isIntersecting || !giroChico.matches) return;
+        giroAuto(); obs.disconnect();
+      });
+    }, { threshold: .35 }).observe(giro);
   }
 
 
