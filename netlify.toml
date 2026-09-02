@@ -11,6 +11,24 @@
 # alcanza. Probado el 2026-09-02: la regla se desplego y la cadena siguio
 # siendo http://www -> https://www -> apex. Es de la plataforma.
 
+# /conversations e /insights son paginas de la era Sense: marca violeta, un
+# producto que ya no existe. Search Console (3 meses) muestra que solo salen
+# por consultas de MARCA —"sapio"—, no por termino de producto, asi que el
+# clic que traen aterriza en una version vieja de la empresa. Se consolidan en
+# la portada, que es la que ya rankea para la marca.
+# force porque los .html siguen en el repo y Netlify los serviria.
+[[redirects]]
+  from = "/conversations"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/insights"
+  to = "/"
+  status = 301
+  force = true
+
 # Servir landing.html como root
 [[redirects]]
   from = "/"
