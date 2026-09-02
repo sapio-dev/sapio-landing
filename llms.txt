@@ -1,0 +1,55 @@
+# Sapio
+
+> Sapio atiende a los clientes de una empresa en WhatsApp, Instagram, correo y el chat
+> de su sitio. Y mientras hace ese trabajo construye la memoria de esa operación: el
+> criterio que hoy vive en la cabeza del equipo y no está escrito en ningún manual.
+> Opera en Chile y Argentina. Plan base 10 UF al mes más adicionales.
+
+La tesis, en corto: atender clientes es el único gasto que crece exactamente al ritmo
+de las ventas. Nunca se automatizó porque el conocimiento necesario para atender bien
+no está escrito —se aprende trabajando al lado de quien lo tiene y se va con quien
+renuncia—. Por eso la única forma de construir la memoria de una empresa es
+participando de su operación, no pidiéndole que la documente.
+
+## Producto
+
+- [Portada](https://sapio.dev/): qué hace Sapio y cómo aprende.
+- [Post-venta](https://sapio.dev/post-venta): Sapio opera tu post-venta: se hace cargo de dónde va, cuándo llega y qué pasa si algo falla, en los canales donde tus clientes ya escriben. Con cada…
+- [Ventas](https://sapio.dev/ventas): Sapio opera tus ventas: contesta cada consulta apenas entra, la califica y deja la reunión agendada, en los canales donde tus clientes ya escriben.…
+- [Cobranza](https://sapio.dev/cobranza): Sapio opera tu cobranza: sale a buscar cada cuenta pendiente, acuerda el pago y deja el compromiso agendado, en los canales donde tus clientes ya…
+- [Inmobiliarias](https://sapio.dev/inmobiliaria): Sapio contesta a los que preguntan por tus proyectos y a los que ya viven en ellos: cotiza, agenda la visita, sigue hasta la reserva y recibe los…
+- [Clínicas estéticas](https://sapio.dev/clinicas): Sapio contesta a los que preguntan por tus tratamientos y a los que ya se atienden contigo: cotiza, agenda la hora, confirma y recupera al que no…
+- [Ecommerce](https://sapio.dev/ecommerce): Sapio contesta a los que preguntan antes de comprar y a los que ya compraron: resuelve la duda que frena la venta, avisa dónde va el pedido y sale a…
+
+## Cómo funciona el producto
+
+- [Centro de ayuda](https://sapio.dev/help-center/): tutoriales de configuración y operación.
+- [Primeros pasos](https://sapio.dev/help-center/primeros-pasos/)
+- [Entrenar al agente](https://sapio.dev/help-center/entrena-a-tu-agente/)
+- [Personalidad, instrucciones y feedbacks](https://sapio.dev/help-center/personalidad-instrucciones-y-preview/)
+- [Derivaciones a una persona](https://sapio.dev/help-center/derivar-a-un-humano/)
+- [Bandeja, estados y board](https://sapio.dev/help-center/gestionar-conversaciones/)
+- [Análisis e Informe IA](https://sapio.dev/help-center/analisis-y-metricas/)
+
+## Conceptos
+
+- [Qué es un agente conversacional de IA (y en qué se diferencia de un chatbot)](https://sapio.dev/blog/que-es-un-agente-conversacional-de-ia/)
+- [Agente conversacional vs chatbot: diferencias, ventajas y cuándo usar cada uno](https://sapio.dev/blog/agente-conversacional-vs-chatbot/)
+- [Bandeja unificada multicanal: WhatsApp, Instagram y Facebook en un solo lugar](https://sapio.dev/blog/bandeja-unificada-multicanal/)
+- [Velocidad de primera respuesta: por qué los primeros minutos deciden el lead](https://sapio.dev/blog/velocidad-de-primera-respuesta/)
+- [Entrenar un agente de IA con tus documentos](https://sapio.dev/blog/entrenar-un-agente-de-ia-con-tus-documentos/)
+- [Cuándo un agente de IA debe escalar a un humano (y cómo hacerlo bien)](https://sapio.dev/blog/cuando-escalar-a-un-humano/)
+
+## Decisión de compra
+
+- [¿Cuánto cuesta un agente conversacional de IA? Precios y modelos de cobro](https://sapio.dev/blog/cuanto-cuesta-un-agente-conversacional-de-ia/)
+- [Cómo elegir un agente conversacional de IA: checklist de criterios](https://sapio.dev/blog/como-elegir-un-agente-conversacional-de-ia/)
+- [¿Agente de IA o contratar más personas para atención al cliente?](https://sapio.dev/blog/agente-de-ia-o-contratar-mas-personas/)
+- [¿Construir o comprar un agente de IA? (build vs buy)](https://sapio.dev/blog/construir-o-comprar-agente-de-ia/)
+- [Agente de IA vs call center: cuándo conviene cada uno](https://sapio.dev/blog/agente-de-ia-vs-call-center/)
+- [Cómo implementar un agente de IA paso a paso (guía práctica)](https://sapio.dev/blog/como-implementar-un-agente-de-ia-paso-a-paso/)
+
+## Opcional
+
+- [Blog completo](https://sapio.dev/blog/): 80 artículos sobre atención con IA, por canal, rubro y capacidad.
+- [Sitemap](https://sapio.dev/sitemap.xml)

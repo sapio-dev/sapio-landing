@@ -5,6 +5,15 @@
 [functions]
   node_bundler = "esbuild"
 
+# http://www iba al dominio raiz en DOS saltos: primero a https://www y de ahi
+# al apex. Esta regla se salta el intermedio. Va ANTES que el resto porque
+# Netlify aplica la primera que calza.
+[[redirects]]
+  from = "http://www.sapio.dev/*"
+  to = "https://sapio.dev/:splat"
+  status = 301
+  force = true
+
 # Servir landing.html como root
 [[redirects]]
   from = "/"

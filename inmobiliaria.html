@@ -12,6 +12,38 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sapio para inmobiliarias — Gestiona del interesado al propietario</title>
 <meta name="description" content="Sapio contesta a los que preguntan por tus proyectos y a los que ya viven en ellos: cotiza, agenda la visita, sigue hasta la reserva y recibe los requerimientos de post-venta. Con cada conversación entiende mejor cómo funciona tu operación.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://sapio.dev/inmobiliaria#service",
+  "name": "Sapio para inmobiliarias",
+  "url": "https://sapio.dev/inmobiliaria",
+  "description": "IA para inmobiliarias: responde consultas por propiedad, agenda visitas y hace el seguimiento del interesado al propietario.",
+  "serviceType": "Agente de IA para atención al cliente",
+  "provider": {
+    "@id": "https://sapio.dev/#organization"
+  },
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "Chile"
+    },
+    {
+      "@type": "Country",
+      "name": "Argentina"
+    }
+  ],
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "CLF",
+    "price": "10",
+    "unitText": "UF al mes",
+    "url": "https://sapio.dev/inmobiliaria#plan"
+  }
+}
+</script>
+
 <!-- Canonical y compartir -->
 <link rel="canonical" href="https://sapio.dev/inmobiliaria">
 <meta property="og:type" content="website">
@@ -1041,6 +1073,8 @@ footer{border-top:1px solid var(--line);padding-block:64px 40px;background:var(-
 .foot-brand{font-size:17px;font-weight:600;letter-spacing:-.02em;margin-bottom:12px}
 .foot-blurb{font-size:14px;color:var(--ink-3);line-height:1.6;max-width:310px}
 .foot-h{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:16px}
+/* segundo grupo dentro de una misma columna: separa sin abrir otra columna */
+.foot-h.mt{margin-top:26px}
 .foot-l{display:flex;flex-direction:column;gap:10px}
 .foot-l a{font-size:14px;color:var(--ink-2);transition:color .2s ease}
 .foot-l a:hover{color:var(--ink)}
@@ -1408,26 +1442,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         construimos la memoria de tu inmobiliaria.</p>
       </div>
       <div>
-        <p class="foot-h">Inmobiliarias</p>
+        <p class="foot-h">Por operación</p>
         <div class="foot-l">
-          <a href="#costo">El costo</a>
-          <a href="#quehace">Qué hace</a>
-          <a href="#giro">El giro</a>
-          <a href="#conecta">Se conecta</a>
-          <a href="#plan">El plan</a>
+          <a href="/post-venta">Post-venta</a>
+          <a href="/ventas">Ventas</a>
+          <a href="/cobranza">Cobranza</a>
+        </div>
+      </div>
+      <div>
+        <p class="foot-h">Por rubro</p>
+        <div class="foot-l">
+          <a href="/inmobiliaria">Inmobiliarias</a>
+          <a href="/clinicas">Clínicas estéticas</a>
+          <a href="/ecommerce">Ecommerce</a>
         </div>
       </div>
       <div>
         <p class="foot-h">Recursos</p>
         <div class="foot-l">
-          <a href="/">Sapio Agent</a>
+          <a href="/">Portada</a>
           <a href="/blog/">Blog</a>
           <a href="/help-center/">Centro de ayuda</a>
-          <a href="/blog/agente-de-ia-para-postventa-y-soporte/">Agente de IA para post-venta</a>
         </div>
-      </div>
-      <div>
-        <p class="foot-h">Acceso</p>
+        <p class="foot-h mt">Acceso</p>
         <div class="foot-l">
           <a href="https://calendar.app.google/vUfSasn1UEhAAsTv8">Agendar demo</a>
           <a href="https://agent.sapio.dev/login">Iniciar sesión</a>
