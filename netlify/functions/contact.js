@@ -27,7 +27,11 @@ export default async (req) => {
   }
 
   const email = (body?.email || '').toString().trim().toLowerCase();
-  const source = (body?.source || 'unknown').toString().slice(0, 40);
+  // `source` lo manda el cliente y ahora viaja en el asunto del correo:
+  // se limita a lo que usan las landings (letras, numeros y guiones) para
+  // que nadie meta saltos de linea ahi con un POST directo.
+  const source = (body?.source || 'unknown').toString()
+    .replace(/[^a-zA-Z0-9_-]/g, '').slice(0, 40) || 'unknown';
 
   if (!EMAIL_RE.test(email) || email.length > 254) {
     return Response.json({ error: 'Invalid email' }, { status: 400 });
@@ -45,7 +49,7 @@ export default async (req) => {
   const html = `
     <div style="font-family: -apple-system, system-ui, sans-serif; color: #111; line-height: 1.55;">
       <p>Hola Diego,</p>
-      <p>El correo <strong>${safeEmail}</strong> quiere ser contactado para Sapio Sense.</p>
+      <p>El correo <strong>${safeEmail}</strong> quiere que lo contacten.</p>
       <p style="font-size: 12px; color: #777; margin-top: 24px;">
         Origen: ${safeSource} · sapio.dev
       </p>
@@ -53,7 +57,7 @@ export default async (req) => {
   `;
   const text = `Hola Diego,
 
-El correo ${email} quiere ser contactado para Sapio Sense.
+El correo ${email} quiere que lo contacten.
 
 Origen: ${source} · sapio.dev`;
 
@@ -62,7 +66,7 @@ Origen: ${source} · sapio.dev`;
       from: FROM_EMAIL,
       to: [TO_EMAIL],
       replyTo: email,
-      subject: `Sapio Sense — nueva consulta (${email})`,
+      subject: `Sapio — nueva consulta desde ${source} (${email})`,
       html,
       text
     });
