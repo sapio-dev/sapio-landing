@@ -65,7 +65,7 @@
 }
 .article-body > h2:first-of-type { border-top: 0; padding-top: 8px; margin-top: 48px; }
 
-/* Kicker mono de los pasos: "PASO N" arriba, título serif limpio abajo */
+/* Kicker mono de los pasos: "PASO N" arriba, título limpio abajo */
 .step-kicker {
   display: block;
   font-family: var(--mono); font-size: 12px; letter-spacing: 0.2em;
@@ -99,22 +99,22 @@
   .rv.is-in { opacity: 1; transform: none; }
 }
 
-/* ===== Atmósfera: glows violeta muy tenues sobre el negro ===== */
+/* ===== Atmósfera: los mismos glows, en el azul de la marca ===== */
 body::before {
   background:
-    radial-gradient(90% 55% at 50% -12%, rgba(139,92,246,0.16), rgba(10,10,10,0) 55%),
-    radial-gradient(55% 38% at 108% 28%, rgba(139,92,246,0.07), rgba(10,10,10,0) 62%),
-    radial-gradient(65% 42% at -8% 76%, rgba(139,92,246,0.06), rgba(10,10,10,0) 62%);
+    radial-gradient(90% 55% at 50% -12%, rgba(45,144,251,0.15), rgba(8,9,10,0) 55%),
+    radial-gradient(55% 38% at 108% 28%, rgba(230,158,74,0.05), rgba(8,9,10,0) 62%),
+    radial-gradient(65% 42% at -8% 76%, rgba(45,144,251,0.06), rgba(8,9,10,0) 62%);
 }
 
 /* ===== Sin barras de acento a la izquierda; el énfasis vive en la tipografía ===== */
 .article .standfirst {
   border-left: 0; padding-left: 0;
-  font-family: var(--serif); font-style: italic; font-weight: 400;
-  font-size: 22px; line-height: 1.5; color: var(--fg-mid);
+  font-family: var(--sans); font-style: normal; font-weight: 400;
+  font-size: 20px; line-height: 1.55; letter-spacing: -0.012em; color: var(--fg-mid);
 }
 .tldr::before { display: none; }
 .tldr {
-  background: linear-gradient(180deg, rgba(139,92,246,0.08), rgba(19,18,24,0) 65%), var(--bg-soft);
-  border-color: rgba(185,166,255,0.15);
+  background: linear-gradient(180deg, rgba(45,144,251,0.09), rgba(19,20,23,0) 65%), var(--bg-soft);
+  border-color: rgba(45,144,251,0.18);
 }

@@ -1,29 +1,31 @@
 /* ===========================================================================
-   blog.css — Blog de Sapio (sapio.dev/blog)
-   Dirección: editorial dark refinado, minimalismo a lo Apple. Fraunces display,
-   Instrument Sans cuerpo, JetBrains Mono labels. Acento violeta usado con
-   parquedad. Hairlines en vez de cajas pesadas. Mucho aire.
+   blog.css — Blog y centro de ayuda de Sapio (sapio.dev)
+   Dirección: la misma que las landings verticales. Instrument Sans para todo
+   —incluidos los titulares—, JetBrains Mono sólo en labels, azul #2d90fb con
+   parquedad, hairlines en vez de cajas. Sin serif: las landings no usan
+   ninguna, y una serif de display acá haría que el blog se leyera como otro
+   producto. La versión violeta anterior está en el historial de git.
    =========================================================================== */
 
 :root {
-  --bg: #0a0a0a;
-  --bg-soft: #100f14;
-  --fg: #ffffff;
-  --fg-dim: #e9e7ef;       /* cuerpo */
-  --fg-mid: #b6b3c2;       /* deks */
-  --fg-muted: #807d8c;     /* meta/labels */
-  --accent: #b9a6ff;       /* violeta legible sobre negro */
-  --accent-soft: #d6c9ff;
-  --hair: rgba(255,255,255,0.09);
-  --hair-strong: rgba(255,255,255,0.16);
-  --card: #131218;
-  --serif: 'Fraunces', Georgia, serif;
-  --sans: 'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --bg: #08090a;
+  --bg-soft: #0d0e10;
+  --fg: #f7f8f8;
+  --fg-dim: #d2d6dc;       /* cuerpo del artículo: más claro que --ink-2 porque
+                              acá se leen 1.500 palabras seguidas, no un lead */
+  --fg-mid: #9ca1a9;       /* deks, standfirst, footer  (= --ink-2 de la landing) */
+  --fg-muted: #6a6f77;     /* meta y labels             (= --ink-3 de la landing) */
+  --accent: #2d90fb;
+  --accent-soft: #a3b9ff;
+  --hair: rgba(255,255,255,0.08);
+  --hair-strong: rgba(255,255,255,0.14);
+  --card: #131417;
+  --sans: 'Instrument Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --mono: 'JetBrains Mono', ui-monospace, monospace;
-  --nav-h: 80px;
+  --nav-h: 70px;
   --maxw: 1080px;
   --prose: 680px;
-  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease: cubic-bezier(.16, 1, .3, 1);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -38,10 +40,16 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
-/* atmósfera: glow violeta muy sutil arriba */
+/* atmósfera: el azul de la landing, muy bajo, y el mismo grano de feTurbulence
+   que llevan los heros. Dos capas fijas, sin costo de scroll. */
 body::before {
   content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
-  background: radial-gradient(120% 60% at 50% -10%, rgba(139,92,246,0.10), rgba(10,10,10,0) 55%);
+  background: radial-gradient(120% 60% at 50% -10%, rgba(45,144,251,0.11), rgba(8,9,10,0) 55%);
+}
+body::after {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  opacity: .22; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 a { color: var(--accent); text-decoration: none; transition: color .25s var(--ease); }
 a:hover { color: var(--accent-soft); }
@@ -50,52 +58,75 @@ a:hover { color: var(--accent-soft); }
 .prose-wrap { max-width: var(--prose); margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
 .measure { max-width: var(--prose); }
 
-/* ===== NAV (solo el header de nivel superior: body > nav) — réplica de la landing ===== */
+/* ===== NAV — la píldora de vidrio de las landings =====
+   Se porta la caja completa (relleno, borde en gradiente, reflejo) pero NO la
+   luz que persigue al cursor: esa necesita JS y un scroll-spy sobre secciones
+   que un artículo no tiene. La píldora sola ya lee como el mismo objeto. */
 body > nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 50; padding: 24px 0;
-  backdrop-filter: blur(24px) saturate(140%);
-  -webkit-backdrop-filter: blur(24px) saturate(140%);
-  background: rgba(9, 9, 11, 0.82);
-  border-bottom: 1px solid var(--hair);
+  position: fixed; top: 14px; left: 0; right: 0; z-index: 80;
+  padding-inline: 32px; pointer-events: none;
 }
-body > nav .nav-inner { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+body > nav .nav-inner {
+  position: relative; max-width: 1180px; margin: 0 auto; height: 56px;
+  padding: 0 10px 0 22px;
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  pointer-events: auto; border-radius: 15px; isolation: isolate; overflow: hidden;
+  background: rgba(14,15,18,.62);
+  backdrop-filter: blur(26px) saturate(1.9) brightness(1.06);
+  -webkit-backdrop-filter: blur(26px) saturate(1.9) brightness(1.06);
+  border: 0;
+  box-shadow:
+    0 -10px 22px -18px rgba(0,0,0,.9) inset,
+    0 18px 40px -18px rgba(0,0,0,.9);
+}
+/* el borde como gradiente: claro arriba —de donde viene la luz— y casi
+   invisible abajo. Máscara sobre un padding de 1px porque border-image no
+   respeta el border-radius. */
+body > nav .nav-inner::before {
+  content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 1px;
+  pointer-events: none; z-index: 2;
+  background: linear-gradient(180deg,
+    rgba(255,255,255,.34), rgba(255,255,255,.10) 34%,
+    rgba(255,255,255,.03) 62%, rgba(255,255,255,.07));
+  -webkit-mask: linear-gradient(#000,#000) content-box, linear-gradient(#000,#000);
+          mask: linear-gradient(#000,#000) content-box, linear-gradient(#000,#000);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+}
+/* el reflejo corto de arriba, como el que deja un vidrio curvo */
+body > nav .nav-inner::after {
+  content: ''; position: absolute; left: 12%; right: 12%; top: 0; height: 42%;
+  border-radius: inherit; pointer-events: none; z-index: 2;
+  background: linear-gradient(180deg, rgba(255,255,255,.07), transparent);
+}
 .logo {
-  font-family: var(--serif); font-size: 26px; font-weight: 500;
-  letter-spacing: -0.02em; font-style: italic; color: var(--fg);
+  font-family: var(--sans); font-size: 16px; font-weight: 600;
+  letter-spacing: -0.02em; color: var(--fg); white-space: nowrap;
 }
-.logo::after { content: '.'; color: var(--accent); }
-.nav-links { display: flex; gap: 28px; align-items: center; font-size: 14px; }
-.nav-links > a { color: var(--fg-mid); letter-spacing: 0.01em; }
+.nav-links { display: flex; gap: 26px; align-items: center; font-size: 14px; }
+.nav-links > a { color: var(--fg-mid); letter-spacing: 0.01em; white-space: nowrap; }
 .nav-links > a:hover { color: var(--fg); }
-
-/* botones segmentados Iniciar sesión / Crear cuenta (idénticos a la landing) */
-.nav-auth {
-  display: inline-flex; align-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.85);
-  border-radius: 100px; overflow: hidden;
+.nav-links > a.nav-activo { color: var(--fg); }
+.nav-cta {
+  font-size: 14px; font-weight: 500; color: #0a0a0a !important; background: var(--fg);
+  padding: 0 15px; height: 32px; display: inline-flex; align-items: center;
+  border-radius: 7px; transition: opacity .2s ease;
 }
-.nav-auth a {
-  padding: 9px 18px; white-space: nowrap; color: #fff !important;
-  font-size: 14px; transition: all 0.22s ease !important;
-}
-.nav-seg-login { background: transparent; }
-.nav-seg-login:hover { background: rgba(255, 255, 255, 0.08); }
-.nav-seg-signup { font-weight: 600; border-left: 1px solid rgba(255, 255, 255, 0.85); }
-.nav-seg-signup:hover { background: var(--accent); color: #0a0a0a !important; }
+.nav-cta:hover { opacity: .85; color: #0a0a0a !important; }
 
 /* ===== HERO del blog ===== */
 .blog-hero { padding: calc(var(--nav-h) + 96px) 0 64px; }
 .eyebrow {
-  font-family: var(--mono); font-size: 12px; letter-spacing: 0.24em;
-  text-transform: uppercase; color: var(--accent); margin-bottom: 26px;
+  font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--fg-muted); margin-bottom: 26px;
 }
 .blog-hero h1 {
-  font-family: var(--serif); font-weight: 300; color: var(--fg);
-  font-size: clamp(42px, 6.4vw, 76px); line-height: 1.02; letter-spacing: -0.035em;
-  max-width: 16ch;
+  font-family: var(--sans); font-weight: 600; color: var(--fg);
+  font-size: clamp(38px, 5.8vw, 66px); line-height: 1.04; letter-spacing: -0.038em;
+  max-width: 17ch;
 }
+.blog-hero h1 .hl { color: var(--accent); }
 .blog-hero p {
-  margin-top: 26px; font-size: 20px; line-height: 1.55; color: var(--fg-mid); max-width: 52ch;
+  margin-top: 26px; font-size: 19px; line-height: 1.6; color: var(--fg-mid); max-width: 54ch;
 }
 
 /* ===== ÍNDICE EDITORIAL (home) ===== */
@@ -107,16 +138,16 @@ body > nav .nav-inner { display: flex; justify-content: space-between; align-ite
   padding: 44px 0 48px; margin-bottom: 8px;
 }
 .lead-kicker {
-  font-family: var(--mono); font-size: 12px; letter-spacing: 0.18em;
+  font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.16em;
   text-transform: uppercase; color: var(--accent); margin-bottom: 22px;
 }
 .lead-title {
-  font-family: var(--serif); font-weight: 300; color: var(--fg);
-  font-size: clamp(32px, 4.6vw, 54px); line-height: 1.04; letter-spacing: -0.03em;
-  max-width: 18ch; transition: color .25s var(--ease);
+  font-family: var(--sans); font-weight: 600; color: var(--fg);
+  font-size: clamp(30px, 4.2vw, 46px); line-height: 1.06; letter-spacing: -0.032em;
+  max-width: 19ch; transition: color .25s var(--ease);
 }
 .lead:hover .lead-title { color: var(--accent-soft); }
-.lead-dek { margin-top: 20px; font-size: 19px; line-height: 1.55; color: var(--fg-mid); max-width: 56ch; }
+.lead-dek { margin-top: 20px; font-size: 18px; line-height: 1.6; color: var(--fg-mid); max-width: 58ch; }
 .lead-cta {
   display: inline-flex; align-items: center; gap: 10px; margin-top: 28px;
   font-size: 15px; font-weight: 500; color: var(--accent);
@@ -128,7 +159,7 @@ body > nav .nav-inner { display: flex; justify-content: space-between; align-ite
 .group { margin-top: 56px; }
 .group-title {
   display: flex; align-items: baseline; gap: 16px;
-  font-family: var(--mono); font-size: 12px; letter-spacing: 0.2em;
+  font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.16em;
   text-transform: uppercase; color: var(--fg-muted); font-weight: 500;
   padding-bottom: 8px;
 }
@@ -141,18 +172,18 @@ body > nav .nav-inner { display: flex; justify-content: space-between; align-ite
   display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 28px;
   padding: 26px 12px 26px 4px; transition: padding-left .3s var(--ease), background .3s var(--ease);
 }
-.entry:hover { padding-left: 20px; background: linear-gradient(90deg, rgba(185,166,255,0.05), rgba(185,166,255,0) 70%); }
+.entry:hover { padding-left: 20px; background: linear-gradient(90deg, rgba(45,144,251,0.07), rgba(45,144,251,0) 70%); }
 .entry-main { min-width: 0; }
 .entry-title {
-  display: block; font-family: var(--serif); font-weight: 400; color: var(--fg);
-  font-size: 25px; line-height: 1.18; letter-spacing: -0.018em;
+  display: block; font-family: var(--sans); font-weight: 500; color: var(--fg);
+  font-size: 21px; line-height: 1.24; letter-spacing: -0.022em;
   transition: color .25s var(--ease);
 }
 .entry:hover .entry-title { color: var(--accent-soft); }
-.entry-dek { display: block; margin-top: 7px; font-size: 15.5px; color: var(--fg-mid); max-width: 62ch; }
+.entry-dek { display: block; margin-top: 7px; font-size: 15px; color: var(--fg-mid); max-width: 62ch; }
 .entry-side { display: flex; align-items: center; gap: 22px; white-space: nowrap; }
 .entry-tag {
-  font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.13em;
   text-transform: uppercase; color: var(--fg-muted);
 }
 .entry-arw {
@@ -164,32 +195,33 @@ body > nav .nav-inner { display: flex; justify-content: space-between; align-ite
 /* ===== ARTÍCULO ===== */
 .article { padding: calc(var(--nav-h) + 56px) 0 40px; }
 .breadcrumb {
-  font-family: var(--mono); font-size: 12px; letter-spacing: 0.04em;
+  font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.04em;
   color: var(--fg-muted); margin-bottom: 30px;
 }
 .breadcrumb a { color: var(--fg-muted); }
 .breadcrumb a:hover { color: var(--accent); }
 .article-meta {
-  font-family: var(--mono); font-size: 12px; letter-spacing: 0.16em;
+  font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.16em;
   text-transform: uppercase; color: var(--accent); margin-bottom: 22px;
 }
 .article h1 {
-  font-family: var(--serif); font-weight: 300; color: var(--fg);
-  font-size: clamp(36px, 5.2vw, 56px); line-height: 1.05; letter-spacing: -0.035em;
+  font-family: var(--sans); font-weight: 600; color: var(--fg);
+  font-size: clamp(34px, 4.8vw, 50px); line-height: 1.06; letter-spacing: -0.038em;
 }
 .article .standfirst {
-  margin-top: 26px; font-size: 22px; line-height: 1.5; color: var(--fg-mid); font-weight: 400;
+  margin-top: 26px; font-size: 20px; line-height: 1.55; color: var(--fg-mid); font-weight: 400;
+  font-style: normal;
   border-left: 2px solid var(--accent); padding-left: 22px;
 }
 .article-body { margin-top: 48px; font-size: 18px; line-height: 1.72; color: var(--fg-dim); }
 .article-body h2 {
-  font-family: var(--serif); font-weight: 400; color: var(--fg);
-  font-size: 31px; line-height: 1.16; letter-spacing: -0.022em;
+  font-family: var(--sans); font-weight: 600; color: var(--fg);
+  font-size: 28px; line-height: 1.18; letter-spacing: -0.028em;
   margin: 60px 0 18px; padding-top: 8px;
 }
 .article-body h3 {
   font-family: var(--sans); font-weight: 600; color: var(--fg);
-  font-size: 20px; letter-spacing: -0.01em; margin: 36px 0 12px;
+  font-size: 19px; letter-spacing: -0.014em; margin: 36px 0 12px;
 }
 .article-body p { margin: 0 0 22px; }
 .article-body ul, .article-body ol { margin: 0 0 24px; padding-left: 4px; list-style: none; }
@@ -205,12 +237,14 @@ body > nav .nav-inner { display: flex; justify-content: space-between; align-ite
   font-family: var(--mono); font-size: 13px; color: var(--accent); font-weight: 500;
 }
 .article-body strong { color: var(--fg); font-weight: 600; }
-.article-body a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(185,166,255,0.35); padding-bottom: 1px; transition: border-color .2s var(--ease), color .2s var(--ease); }
+.article-body a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(45,144,251,0.38); padding-bottom: 1px; transition: border-color .2s var(--ease), color .2s var(--ease); }
 .article-body a:hover { color: var(--accent-soft); border-color: var(--accent-soft); }
+/* la cita ya no es una serif en cursiva: es el mismo cuerpo, más grande y
+   descolgado sobre una hairline. Igual que los remates de las landings. */
 .article-body blockquote {
   margin: 34px 0; padding: 4px 0 4px 28px; border-left: 2px solid var(--hair-strong);
-  font-family: var(--serif); font-style: italic; font-weight: 400;
-  font-size: 23px; line-height: 1.45; color: var(--fg);
+  font-family: var(--sans); font-style: normal; font-weight: 400;
+  font-size: 21px; line-height: 1.5; letter-spacing: -0.014em; color: var(--fg);
 }
 
 /* tablas — hairline, sin caja pesada */
@@ -225,23 +259,23 @@ body > nav .nav-inner { display: flex; justify-content: space-between; align-ite
 }
 .article-body tbody tr td:first-child { color: var(--fg); font-weight: 500; }
 
-/* respuesta directa (AEO) — refinada */
+/* respuesta directa (AEO) */
 .tldr {
   position: relative; background: var(--bg-soft); border: 1px solid var(--hair);
   border-radius: 18px; padding: 28px 30px; margin: 0 0 40px; overflow: hidden;
 }
 .tldr::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--accent); }
 .tldr .tldr-label {
-  font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
   text-transform: uppercase; color: var(--accent); margin-bottom: 12px;
 }
-.tldr p { font-size: 19px; line-height: 1.55; color: var(--fg); margin: 0; }
+.tldr p { font-size: 18px; line-height: 1.6; color: var(--fg); margin: 0; }
 
 /* FAQ */
 .faq { margin-top: 64px; border-top: 1px solid var(--hair-strong); padding-top: 16px; }
-.faq h2 { font-family: var(--serif); font-weight: 400; color: var(--fg); font-size: 30px; letter-spacing: -0.02em; margin: 28px 0 8px; }
+.faq h2 { font-family: var(--sans); font-weight: 600; color: var(--fg); font-size: 27px; letter-spacing: -0.028em; margin: 28px 0 8px; }
 .faq-item { border-bottom: 1px solid var(--hair); padding: 24px 0; }
-.faq-item h3 { font-family: var(--sans); font-weight: 600; color: var(--fg); font-size: 18.5px; margin-bottom: 10px; letter-spacing: -0.01em; }
+.faq-item h3 { font-family: var(--sans); font-weight: 600; color: var(--fg); font-size: 18px; margin-bottom: 10px; letter-spacing: -0.014em; }
 .faq-item p { font-size: 16.5px; line-height: 1.6; color: var(--fg-mid); margin: 0; }
 
 /* CTA */
@@ -251,53 +285,68 @@ body > nav .nav-inner { display: flex; justify-content: space-between; align-ite
 }
 .cta-box::before {
   content: ""; position: absolute; inset: 0; pointer-events: none;
-  background: radial-gradient(80% 120% at 50% 0%, rgba(139,92,246,0.14), rgba(10,10,10,0) 60%);
+  background: radial-gradient(80% 120% at 50% 0%, rgba(45,144,251,0.16), rgba(8,9,10,0) 60%);
 }
-.cta-box h2 { position: relative; font-family: var(--serif); font-weight: 400; color: var(--fg); font-size: 31px; letter-spacing: -0.025em; margin-bottom: 14px; }
-.cta-box p { position: relative; color: var(--fg-mid); max-width: 46ch; margin: 0 auto 26px; }
+.cta-box h2 { position: relative; font-family: var(--sans); font-weight: 600; color: var(--fg); font-size: 28px; letter-spacing: -0.03em; margin-bottom: 14px; line-height: 1.14; }
+.cta-box p { position: relative; color: var(--fg-mid); max-width: 48ch; margin: 0 auto 26px; font-size: 16.5px; line-height: 1.6; }
 .btn {
   position: relative; display: inline-block; background: var(--fg); color: #0a0a0a;
-  padding: 14px 32px; border-radius: 999px; font-weight: 600; font-size: 15px;
-  transition: transform .25s var(--ease), background .25s var(--ease);
+  padding: 13px 26px; border-radius: 8px; font-weight: 500; font-size: 15px;
+  transition: opacity .2s ease;
 }
-.btn:hover { background: var(--accent-soft); color: #0a0a0a; transform: translateY(-2px); }
+.btn:hover { background: var(--fg); color: #0a0a0a; opacity: .85; }
 /* el botón no debe heredar el subrayado/color de los enlaces del cuerpo */
-.article-body a.btn { color: #0a0a0a; border-bottom: none; padding: 14px 32px; }
+.article-body a.btn { color: #0a0a0a; border-bottom: none; padding: 13px 26px; }
 .article-body a.btn:hover { color: #0a0a0a; border-bottom: none; }
 
 /* relacionados */
 .related { margin: 56px 0 0; border-top: 1px solid var(--hair); padding-top: 28px; }
-.related .post-tag { font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--fg-muted); margin-bottom: 6px; display: block; }
+.related .post-tag { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--fg-muted); margin-bottom: 6px; display: block; }
 .related-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; }
 .related-list a {
   display: flex; justify-content: space-between; align-items: center; gap: 16px;
   padding: 18px 0; border-bottom: 1px solid var(--hair); color: var(--fg-dim);
-  font-family: var(--serif); font-size: 18px; font-weight: 400; transition: color .2s var(--ease);
+  font-family: var(--sans); font-size: 16px; font-weight: 500; letter-spacing: -0.014em;
+  transition: color .2s var(--ease);
 }
 .related-list a::after { content: "→"; color: var(--fg-muted); transition: transform .25s var(--ease), color .25s var(--ease); }
 .related-list a:hover { color: var(--accent-soft); }
 .related-list a:hover::after { transform: translateX(5px); color: var(--accent); }
 
 /* ===== FOOTER ===== */
-footer { border-top: 1px solid var(--hair); padding: 72px 0 48px; margin-top: 96px; position: relative; z-index: 1; }
-.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 64px; }
-.footer-brand .logo { font-size: 30px; margin-bottom: 18px; display: inline-block; }
-.footer-brand p { color: var(--fg-mid); font-size: 14px; max-width: 280px; line-height: 1.6; }
+footer { border-top: 1px solid var(--hair); padding: 64px 0 40px; margin-top: 96px; position: relative; z-index: 1; }
+.footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 44px; margin-bottom: 52px; }
+.footer-brand .logo { font-size: 17px; margin-bottom: 12px; display: inline-block; }
+.footer-brand p { color: var(--fg-muted); font-size: 14px; max-width: 310px; line-height: 1.6; }
 .footer-col h4 {
-  font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em;
-  text-transform: uppercase; color: var(--fg-muted); margin-bottom: 20px; font-weight: 500;
+  font-family: var(--sans); font-size: 12px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--fg-muted); margin-bottom: 16px; font-weight: 400;
 }
-.footer-col a { display: block; color: var(--fg-mid); font-size: 15px; margin-bottom: 13px; }
+.footer-col a { display: block; color: var(--fg-mid); font-size: 14px; margin-bottom: 10px; }
 .footer-col a:hover { color: var(--fg); }
 .footer-bottom {
-  border-top: 1px solid var(--hair); padding-top: 32px;
-  display: flex; justify-content: space-between; font-size: 12px;
-  color: var(--fg-muted); font-family: var(--mono); letter-spacing: 0.04em;
+  border-top: 1px solid var(--hair); padding-top: 26px;
+  display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+  font-size: 13px; color: var(--fg-muted); font-family: var(--sans); letter-spacing: 0;
 }
+.foot-legal { display: flex; gap: 20px; flex-wrap: wrap; }
+.foot-legal a { color: var(--fg-muted); }
+.foot-legal a:hover { color: var(--fg-mid); }
 
 /* ===== RESPONSIVE ===== */
+/* el nav colapsa por capas, no de golpe: primero se van los anchors de la
+   landing, después el login, y al final quedan sólo la marca y el CTA. Antes
+   `.nav-links > a {display:none}` se llevaba puesto también el botón de
+   "Agendar demo" y la píldora quedaba vacía en el teléfono. */
+@media (max-width: 1100px) {
+  body > nav .nav-inner { gap: 16px; }
+  .nav-links { gap: 18px; }
+}
+@media (max-width: 920px) { .nav-sec { display: none; } }
+@media (max-width: 720px) { .nav-login { display: none; } }
 @media (max-width: 860px) {
   .container { padding: 0 24px; }
+  body > nav { padding-inline: 16px; }
   .entry { grid-template-columns: 1fr; gap: 8px; }
   .entry-side { display: none; }
   .related-list { grid-template-columns: 1fr; gap: 0; }
@@ -305,9 +354,11 @@ footer { border-top: 1px solid var(--hair); padding: 72px 0 48px; margin-top: 96
 }
 @media (max-width: 600px) {
   body { font-size: 17px; }
-  .nav-links { gap: 14px; font-size: 13px; }
-  .nav-links > a { display: none; }
+  body > nav .nav-inner { height: 52px; padding-left: 16px; }
+  .nav-doc { display: none; }
+  .nav-links { gap: 12px; }
   .article-body { font-size: 17px; }
+  .cta-box { padding: 36px 24px; }
   .footer-grid { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; gap: 8px; }
 }

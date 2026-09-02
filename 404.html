@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Sapio — esta página no existe</title>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#08090a;--bg-1:#0d0e10;--ink:#f7f8f8;--ink-2:#9ca1a9;--ink-3:#6a6f77;
+  --line:rgba(255,255,255,.08);--line-2:rgba(255,255,255,.14);--accent:#2d90fb;
+  --sans:'Instrument Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,monospace;
+}
+body{
+  background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;
+  min-height:100vh;min-height:100dvh;display:grid;align-content:center;padding:56px 24px;
+}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:660px;margin:0 auto;width:100%}
+.marca{font-size:16px;font-weight:600;letter-spacing:-.02em;margin-bottom:56px;display:inline-block}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+h1{font-size:clamp(32px,5.4vw,48px);font-weight:600;letter-spacing:-.035em;line-height:1.05;margin-top:14px}
+h1 .hl{color:var(--accent)}
+.sub{color:var(--ink-2);font-size:15.5px;line-height:1.6;margin-top:16px;max-width:52ch}
+.lista{margin-top:38px;display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.item{background:var(--bg-1);padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:background .2s ease}
+.item:hover{background:#151920}
+.item .n{font-size:15.5px;font-weight:500;letter-spacing:-.015em}
+.item .d{font-size:13.5px;color:var(--ink-3);text-align:right;flex:1;min-width:0}
+.item .f{color:var(--ink-3);flex:none}
+.item:hover .f{color:var(--accent)}
+.pie{margin-top:30px;border-top:1px solid var(--line);padding-top:18px;font-size:13.5px;color:var(--ink-3)}
+.pie a{color:var(--ink-2);border-bottom:1px solid var(--line-2)}
+.pie a:hover{color:var(--ink)}
+@media(max-width:560px){
+  .item{flex-direction:column;align-items:flex-start;gap:5px}
+  .item .d{text-align:left}
+  .item .f{display:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="marca" href="/">Sapio</a>
+  <p class="kicker">Error 404</p>
+  <h1>Esta página <span class="hl">no existe.</span></h1>
+  <p class="sub">O se movió, o el link venía cortado. Desde acá puedes seguir a cualquiera de
+  estas tres, o volver a la portada.</p>
+
+  <div class="lista">
+    <a class="item" href="/post-venta"><span class="n">Post-venta</span><span class="d">Dónde va el pedido, cuándo llega y qué pasa si algo falla</span><span class="f">→</span></a>
+    <a class="item" href="/ventas"><span class="n">Ventas</span><span class="d">Contestar, cotizar y hacer el seguimiento hasta el cierre</span><span class="f">→</span></a>
+    <a class="item" href="/cobranza"><span class="n">Cobranza</span><span class="d">Salir a buscar cada cuenta pendiente y dejar el compromiso puesto</span><span class="f">→</span></a>
+  </div>
+
+  <p class="pie"><a href="/">← Volver a la portada</a></p>
+</div>
+</body>
+</html>
