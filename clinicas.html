@@ -854,7 +854,7 @@ nav.stuck .nav-in{
   .giro-pin{
     position:static;height:auto;
     min-height:100vh;min-height:100svh;
-    padding-block:calc(var(--nav-h) + 24px) 64px;
+    padding-block:var(--nav-h) 36px;
   }
   .g-bub.them{transform:translateX(-12px)}
   .g-bub.us{transform:translateX(12px)}
@@ -865,23 +865,12 @@ nav.stuck .nav-in{
   .g-stage{min-height:168px}
   .g-slide .g-bump{margin-top:10px}
 
-  /* El rail deja de ser un indicador y pasa a ser EL control. Las barras son de
-     3px: sin un area de toque propia no se pueden apretar con el dedo, asi que
-     el <i> se agranda con padding y pinta la barra en su ::before. */
-  .g-rail{gap:0;margin-top:24px}
-  .g-rail i{
-    width:auto;height:auto;background:none;box-shadow:none;border-radius:0;
-    flex:1;max-width:64px;padding:14px 4px;cursor:pointer;position:relative;
-    -webkit-tap-highlight-color:transparent;
-  }
-  .g-rail i::before{
-    content:'';display:block;height:3px;border-radius:3px;
-    background:var(--line-2);transition:background .35s,box-shadow .35s;
-  }
-  .g-rail i.on::before{background:var(--accent);box-shadow:0 0 12px 2px rgba(45,144,251,.5)}
-  /* el escenario tambien avanza al toque, pero sin cursor de link: el control
-     explicito son las barras */
-  .giro-center.manual .g-stage{cursor:pointer}
+  /* El rail es control ademas de indicador, pero NO engorda por eso: la barra
+     sigue siendo la misma de 3px y el area de toque se agranda con un ::after
+     invisible, que al ir en position:absolute no ocupa layout. Con padding la
+     fila crecia 28px y el bloque se veia tosco. */
+  .g-rail i{position:relative;cursor:pointer;-webkit-tap-highlight-color:transparent}
+  .g-rail i::after{content:'';position:absolute;inset:-15px -4px}
 }
 
 /* ============ LO QUE APARECE — una sola afirmación ============
@@ -1774,68 +1763,65 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
      quien se la salto a medias y vuelve encuentra el final —los punos— y no un
      escenario vacio. Esa es la parte que hace que no moleste al que va rapido:
      puede irse cuando quiera y al volver la conclusion sigue ahi. */
-  var giroAutoOn = false;
+  var giroIdx = 0, giroRAF = 0, giroT = 0, giroPrev = 0, giroAutoOn = false;
+
   function giroAuto(){
     if (giroAutoOn || !giro || !gSlides.length) return;
     giroAutoOn = true;
     /* ~8.5s en total. El que pasa rapido alcanza a leer la afirmacion de
        entrada, que es la linea de la seccion; el que se queda ve las tres
        conclusiones y el cierre. Nadie queda atrapado en ningun caso. */
-    var DUR = [1300, 1750, 1750, 1750, 2000];   // ms por estado
-    var idx = 0, t = 0, prev = 0;
-    function paso(ts){
-      if (!prev) prev = ts;
-      /* El delta va ACOTADO. rAF se detiene con la pestana en segundo plano y
-         vuelve con un salto de varios segundos: sin el tope, ese primer cuadro
-         se come la secuencia entera y el visitante encuentra el cierre sin
-         haber visto ninguno de los tres ejemplos. Acotado, retoma donde iba. */
-      t += Math.min(100, ts - prev);
-      prev = ts;
-      if (giroManual) return;                    // alguien tomo el control
-      var sub = Math.min(1, t / DUR[idx]);
-      pintarGiro(idx, sub);
-      giroIdx = idx;
-      if (sub < 1) { requestAnimationFrame(paso); return; }
-      if (idx >= DUR.length - 1) return;         // se queda en el cierre
-      idx++; t = 0;
-      requestAnimationFrame(paso);
-    }
-    requestAnimationFrame(paso);
+    giroCorrer(0);
   }
 
-  /* ---- y el control manual ----
-     Autoplay sin freno es quitarle el mando por el otro lado: el que quiere
-     leer con calma queda igual de incomodo que el que quedaba atrapado. Al
-     primer toque la secuencia SE DETIENE y pasa a manejarla la persona; no
-     vuelve a arrancar sola, que es lo que uno espera de un carrusel.
+  var GIRO_DUR = [1300, 1750, 1750, 1750, 2000];   // ms por estado
+
+  function giroPaso(ts){
+    if (!giroPrev) giroPrev = ts;
+    /* El delta va ACOTADO. rAF se detiene con la pestana en segundo plano y
+       vuelve con un salto de varios segundos: sin el tope, ese primer cuadro se
+       come la secuencia entera y el visitante encuentra el cierre sin haber
+       visto ninguno de los tres ejemplos. Acotado, retoma donde iba. */
+    giroT += Math.min(100, ts - giroPrev);
+    giroPrev = ts;
+    var sub = Math.min(1, giroT / GIRO_DUR[giroIdx]);
+    pintarGiro(giroIdx, sub);
+    if (sub < 1) { giroRAF = requestAnimationFrame(giroPaso); return; }
+    if (giroIdx >= GIRO_DUR.length - 1) { giroRAF = 0; return; }   // se queda en el cierre
+    giroIdx++; giroT = 0;
+    giroRAF = requestAnimationFrame(giroPaso);
+  }
+
+  // Arranca —o retoma— desde el estado que se le pida. Es lo que hace que
+  // despues de un toque la secuencia SIGA sola en vez de quedar congelada.
+  function giroCorrer(desde){
+    giroIdx = Math.max(0, Math.min(GIRO_DUR.length - 1, desde));
+    giroT = 0; giroPrev = 0;
+    if (giroRAF) cancelAnimationFrame(giroRAF);
+    giroRAF = requestAnimationFrame(giroPaso);
+  }
+
+  /* ---- adelantar a mano ----
+     El toque ADELANTA y la secuencia sigue corriendo sola desde ahi. Congelarla
+     hasta que la persona la empujara de nuevo se sentia roto: uno toca para
+     saltarse un paso, no para hacerse cargo del carrusel.
      El swipe no se toca nunca: sigue siendo scroll de la pagina. */
-  var giroManual = false, giroIdx = 0;
-
-  function giroTomarControl(){
-    if (giroManual) return;
-    giroManual = true;                     // `paso` se corta solo al verlo
-    if (gCenter) gCenter.classList.add('manual');
-  }
-
-  function giroIr(n){
-    giroTomarControl();
-    giroIdx = Math.max(0, Math.min(4, n));
-    pintarGiro(giroIdx, 1);                // el estado completo, sin media animacion
-  }
-
   if (giro) {
     gRail.forEach(function(d, n){
-      function ir(e){ if (!giroChico.matches) return; e.preventDefault(); giroIr(n); }
+      function ir(e){
+        if (!giroChico.matches || !giroAutoOn) return;
+        e.preventDefault(); giroCorrer(n);
+      }
       d.addEventListener('click', ir);
       d.addEventListener('keydown', function(e){
         if (e.key === 'Enter' || e.key === ' ') ir(e);
       });
     });
-    // tocar el escenario avanza uno; el primer toque solo detiene
+    // tocar el escenario adelanta uno; en el cierre ya no hay a donde ir
     var gStage = document.querySelector('.g-stage');
     if (gStage) gStage.addEventListener('click', function(){
-      if (!giroChico.matches) return;
-      giroIr(giroManual ? giroIdx + 1 : giroIdx);
+      if (!giroChico.matches || !giroAutoOn) return;
+      if (giroIdx < GIRO_DUR.length - 1) giroCorrer(giroIdx + 1);
     });
   }
 
