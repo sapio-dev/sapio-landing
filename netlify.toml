@@ -29,6 +29,33 @@
   status = 301
   force = true
 
+# Los mismos archivos pedidos con extension, y dos borradores que quedaron en el
+# repo y respondian 200: landing-full (la version vieja de la portada) y un
+# preview de hero sin canonical ni noindex.
+[[redirects]]
+  from = "/conversations.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/insights.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/landing-full.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/insights-hero-preview.html"
+  to = "/"
+  status = 301
+  force = true
+
 # Servir landing.html como root
 [[redirects]]
   from = "/"
