@@ -364,6 +364,54 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Necesito un equipo técnico?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. La instalación, la configuración y el entrenamiento del agente sobre tu empresa vienen incluidos en el plan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Reemplaza a mi equipo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Hace el trabajo que se repite y le pasa a una persona lo que necesita criterio. Mientras tanto, aprende de cómo trabaja tu equipo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿En qué canales atiende?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "WhatsApp, Instagram, Messenger, correo y el chat de tu sitio, todo en una misma bandeja."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué cuenta como una interacción?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cada gestión que hace la IA dentro de Sapio: responder un mensaje, agendar una reunión o ejecutar una tarea de tu operación, como registrar un pedido o enviar un recordatorio."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Hay contrato mínimo? ¿Cuánto tarda la puesta en marcha?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No hay contrato mínimo: pagas mes a mes. Y la puesta en marcha es inmediata; nosotros nos encargamos de la instalación y el entrenamiento."
+      }
+    }
+  ]
+}
+</script>
 <!-- /seo -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1105,6 +1153,22 @@ footer{margin-top:120px;border-top:1px solid var(--line);padding:64px 0 32px}
 
 /* sin guías, el pie va pegado a la banda final */
 .cierre + footer{margin-top:0}
+
+/* franja de impacto bajo el hero: cuatro porcentajes, una idea cada uno */
+.imp{background:var(--bg-2);border-bottom:1px solid var(--line);padding:48px 0}
+.imp-g{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px}
+.imp-n{display:flex;align-items:baseline;gap:2px;font-family:var(--disp);font-size:clamp(44px,4.6vw,64px);font-weight:600;letter-spacing:-.05em;line-height:.95;color:var(--ink);font-variant-numeric:tabular-nums}
+.imp-n i{font-style:normal;font-size:.5em;letter-spacing:-.02em;color:var(--accent-ink)}
+.imp-n i.w{margin-left:8px;font-size:.36em;letter-spacing:-.01em}
+.imp-l{margin-top:12px;font-size:15px;line-height:1.45;color:var(--ink-2);max-width:22ch;text-wrap:pretty}
+@media (max-width:900px){.imp{padding:36px 0}.imp-g{grid-template-columns:1fr 1fr;gap:28px 20px}.imp-n{font-size:44px}.imp-l{font-size:14px}}
+
+/* la franja entra: cada cifra sube y cuenta desde cero, escalonadas; la unidad aparece al final */
+.imp-n b{font-weight:inherit}
+.imp.anim .imp-c{opacity:0;transform:translateY(14px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.imp.anim .imp-n i{opacity:0;transition:opacity .5s ease}
+.imp.anim.go .imp-c{opacity:1;transform:none}
+.imp.anim .imp-c.done .imp-n i{opacity:1}
 </style>
 </head>
 <body>
@@ -1237,6 +1301,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 </header>
+
+<!-- franja de impacto: lo primero que ve quien no conoce Sapio (sapio_impacto_2026-10-08.md) -->
+<section class="imp" aria-label="Resultados en producción">
+  <div class="wrap imp-g">
+    <div class="imp-c"><p class="imp-n"><b data-to="20" data-pre="+">+20</b><i class="w">países</i></p><p class="imp-l">desde donde escriben clientes, atendidos en 5 canales</p></div>
+    <div class="imp-c"><p class="imp-n"><b data-to="67">67</b><i>%</i></p><p class="imp-l">de las conversaciones no necesitó pasar a una persona</p></div>
+    <div class="imp-c"><p class="imp-n"><b data-to="99">99</b><i>%</i></p><p class="imp-l">de los mensajes, respondidos en menos de un minuto</p></div>
+    <div class="imp-c" title="Estimación: 45.626 respuestas de la IA × 1,7 minutos, la mediana real de un operador al responder (producción al 8-oct-2026)"><p class="imp-n"><b data-to="1300" data-pre="≈">≈1.300</b><i class="w">horas</i></p><p class="imp-l">de trabajo ahorradas a los equipos que operan con Sapio</p></div>
+  </div>
+</section>
 
 <!-- ============================== 2 · CASO POR CASO ============================== -->
 <section class="sec" id="casos">
@@ -2050,6 +2124,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       el.scrollTo({ left: (next && !end) ? next.offsetLeft - base : 0, behavior:'smooth' });
     }, 250);
   });
+})();
+</script>
+
+<script>
+/* franja de impacto: cuenta desde cero al aparecer (una sola vez) */
+(function(){
+  var sec = document.querySelector('.imp'); if (!sec) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var cells = [].slice.call(sec.querySelectorAll('.imp-c'));
+  sec.classList.add('anim');
+  cells.forEach(function(c){ var b = c.querySelector('b'); b.textContent = (b.dataset.pre || '') + '0'; });
+  var fmt = function(n){ return n.toLocaleString('es-CL'); }, started = false;
+  function run(){
+    if (started) return; started = true; sec.classList.add('go');
+    cells.forEach(function(c, i){
+      var b = c.querySelector('b'), to = +b.dataset.to, pre = b.dataset.pre || '', D = 1600;
+      setTimeout(function(){
+        var t0 = Date.now(), iv = setInterval(function(){
+          var p = Math.min(1, (Date.now() - t0) / D), e = 1 - Math.pow(1 - p, 3);
+          b.textContent = pre + fmt(Math.round(to * e));
+          if (p >= 1){ clearInterval(iv); c.classList.add('done'); }
+        }, 30);
+      }, 150 + i * 120);
+    });
+  }
+  function check(){ var r = sec.getBoundingClientRect(); if (r.top < innerHeight * .9 && r.bottom > 0){ run(); removeEventListener('scroll', check); } }
+  addEventListener('scroll', check, { passive:true }); check(); setTimeout(check, 400);
 })();
 </script>
 <script src="https://sense.sapio.dev/api/v1/widget.js" data-token="10b5843a-63e7-42e7-ab60-5b37d981bef8" async></script>
