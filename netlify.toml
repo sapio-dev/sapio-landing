@@ -56,6 +56,32 @@
   status = 301
   force = true
 
+# 2026-10-08: las landings nuevas. Clínicas y Ecommerce pasan a Salud y Retail (páginas más amplias que
+# mantienen esos términos en el título). force porque clinicas.html y ecommerce.html siguen en el repo.
+[[redirects]]
+  from = "/clinicas"
+  to = "/salud"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/clinicas.html"
+  to = "/salud"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ecommerce"
+  to = "/retail"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ecommerce.html"
+  to = "/retail"
+  status = 301
+  force = true
+
 # Servir landing.html como root
 [[redirects]]
   from = "/"

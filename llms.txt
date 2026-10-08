@@ -13,13 +13,24 @@ participando de su operación, no pidiéndole que la documente.
 
 ## Producto
 
-- [Portada](https://sapio.dev/): qué hace Sapio y cómo aprende.
-- [Post-venta](https://sapio.dev/post-venta): Sapio opera tu post-venta: se hace cargo de dónde va, cuándo llega y qué pasa si algo falla, en los canales donde tus clientes ya escriben. Con cada…
-- [Ventas](https://sapio.dev/ventas): Sapio opera tus ventas: contesta cada consulta apenas entra, la califica y deja la reunión agendada, en los canales donde tus clientes ya escriben.…
-- [Cobranza](https://sapio.dev/cobranza): Sapio opera tu cobranza: sale a buscar cada cuenta pendiente, acuerda el pago y deja el compromiso agendado, en los canales donde tus clientes ya…
-- [Inmobiliarias](https://sapio.dev/inmobiliaria): Sapio contesta a los que preguntan por tus proyectos y a los que ya viven en ellos: cotiza, agenda la visita, sigue hasta la reserva y recibe los…
-- [Clínicas estéticas](https://sapio.dev/clinicas): Sapio contesta a los que preguntan por tus tratamientos y a los que ya se atienden contigo: cotiza, agenda la hora, confirma y recupera al que no…
-- [Ecommerce](https://sapio.dev/ecommerce): Sapio contesta a los que preguntan antes de comprar y a los que ya compraron: resuelve la duda que frena la venta, avisa dónde va el pedido y sale a…
+- [Portada](https://sapio.dev/): qué hace Sapio, resultados, industrias y precio.
+- [Agentes de IA](https://sapio.dev/agentes): Agentes de IA que atienden en WhatsApp, Instagram, correo y tu sitio, consultan tus sistemas en vivo y agendan. Nosotros los armamos y los cuidamos.
+- [Bandeja omnicanal](https://sapio.dev/bandeja): Todas tus conversaciones de WhatsApp, Instagram, Messenger, correo y tu sitio en una bandeja. El agente atiende y tu equipo toma lo que necesita criterio.
+- [Agenda](https://sapio.dev/agenda): Reservas por sucursal, persona y servicio. El agente agenda, el recordatorio sale solo por WhatsApp y la cita se confirma cuando el cliente responde.
+- [Campañas WhatsApp](https://sapio.dev/campanas): Envía plantillas aprobadas por Meta a muchos contactos, con su nombre y en el momento que elijas. Audiencias desde tu bandeja o un Excel.
+- [Informes](https://sapio.dev/informes): Elige un período y Sofi lee todas tus conversaciones: qué preguntan, dónde se caen y qué oportunidades hay. Listo para compartir en PDF.
+- [Sofi, la analista de IA](https://sapio.dev/sofi): Pregúntale a Sofi por tu operación y responde con cifras. Lee tus conversaciones y tu agenda, configura tu agente contigo y prepara acciones que confirmas.
+- [Integraciones](https://sapio.dev/integraciones): Conecta WhatsApp, Instagram, Messenger, Gmail, Outlook, el chat de tu sitio, Google Calendar y Odoo a un agente de IA. Somos BSP de Meta.
+- [WhatsApp Business API (Sapio es BSP de Meta)](https://sapio.dev/whatsapp): Somos BSP de Meta: conecta tu número a la API oficial de WhatsApp en dos minutos. Agente 24/7, envíos masivos y programados, y reactivaciones.
+
+## Soluciones
+
+- [Post-venta](https://sapio.dev/post-venta): Sapio opera tu post-venta: responde dónde va el pedido, cuándo llega y qué pasa si algo falla, en los canales donde tus clientes ya escriben.
+- [Ventas](https://sapio.dev/ventas): Sapio opera tus ventas: contesta cada consulta apenas entra, la califica y deja la reunión agendada. Y aprende qué consulta termina en venta.
+- [Cobranza](https://sapio.dev/cobranza): Sapio opera tu cobranza: sale a buscar cada cuenta pendiente, acuerda el pago y deja el compromiso puesto. Y aprende quién cumple y quién no.
+- [Inmobiliarias](https://sapio.dev/inmobiliaria): Sapio contesta a los que preguntan por tus proyectos: cotiza, agenda la visita y hace el seguimiento. Y aprende qué consulta termina en visita.
+- [Clínicas y salud](https://sapio.dev/salud): Sapio contesta a tus pacientes, agenda la hora, la confirma el día antes y sale a buscar al que no llegó. Para clínicas y centros de salud.
+- [Retail y ecommerce](https://sapio.dev/retail): Sapio resuelve la duda que frena la venta, avisa dónde va el pedido y gestiona cambios y devoluciones, en WhatsApp, Instagram y tu sitio.
 
 ## Cómo funciona el producto
 

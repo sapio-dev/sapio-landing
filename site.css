@@ -1,0 +1,167 @@
+/* ===========================================================================
+   site.css — el menú, los botones y el pie de página de las landings nuevas
+   (propuesta-*.html), compartidos por el blog y el centro de ayuda.
+   Copiado de propuesta-agentes.html: si cambia allá, se cambia acá.
+   =========================================================================== */
+:root{
+  --bg:hsl(240 11% 96.5%);
+  --bg-2:#ffffff;
+  --ink:#111214;
+  --ink-2:#4f5258;
+  --ink-3:hsl(240 5% 40%);
+  --line:rgba(17,18,20,.08);
+  --line-2:rgba(17,18,20,.14);
+  --accent:#2d90fb;
+  --sans:'Instrument Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --disp:'Inter Tight','Inter',system-ui,sans-serif;
+  --edge:32px;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+svg.f{fill:currentColor;stroke:none}
+.wrap{max-width:1200px;margin:0 auto;padding-inline:var(--edge)}
+/* los enlaces del menú y del pie heredan su color; el azul es sólo para el texto del blog */
+nav a,footer a{color:inherit;transition:none}
+nav button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+/* el orbe del menú: en estas páginas no corre el WebGL, va su versión quieta */
+.orb-s{width:18px;height:18px;border-radius:50%;background:radial-gradient(circle at 32% 30%,hsl(45 100% 76%),hsl(330 100% 72%) 38%,hsl(270 100% 70%) 64%,hsl(210 100% 60%))}
+
+.btn{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 18px;border-radius:8px;
+  font-size:15px;font-weight:500;letter-spacing:-.01em;white-space:nowrap;transition:transform .2s var(--ease),background .2s ease,box-shadow .2s ease}
+.btn-dark{background:var(--ink);color:var(--bg)}
+.btn-dark:hover{transform:translateY(-1px);box-shadow:0 8px 20px -10px rgba(17,18,20,.5)}
+.btn-ghost{background:var(--bg-2);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line-2)}
+.btn-ghost:hover{box-shadow:inset 0 0 0 1px var(--ink-3)}
+.btn .ar{transition:transform .2s var(--ease)}
+.btn:hover .ar{transform:translateX(2px)}
+#nav{position:fixed;inset:12px 0 auto;z-index:50;padding-inline:var(--edge);pointer-events:none}
+.nav-in{pointer-events:auto;max-width:1040px;margin:0 auto;height:54px;display:flex;align-items:center;gap:30px;padding:0 8px 0 18px;border-radius:14px;
+  background:color-mix(in oklab,var(--bg-2) 78%,transparent);backdrop-filter:blur(16px) saturate(160%);-webkit-backdrop-filter:blur(16px) saturate(160%);
+  box-shadow:0 0 0 1px var(--line),0 8px 24px -16px rgba(17,18,20,.25)}
+.brand{display:flex;align-items:center;font-family:var(--sans);font-size:16px;font-weight:600;letter-spacing:-.02em;white-space:nowrap} /* el logo de sapio.dev: la palabra, sin marca */
+
+.nav-links{display:flex;gap:24px;font-size:14px;color:var(--ink-2)}
+.nav-links a:hover{color:var(--ink)}
+.nav-r{margin-left:auto;display:flex;align-items:center;gap:6px}
+.nav-r .btn{height:38px;padding:0 14px;font-size:14px}
+@media (max-width:900px){.nav-links{display:none}}
+.nav-in{position:relative}
+.nav-links{align-items:center}
+.mm{display:flex;align-items:center}
+.mm > button,.mm > a{display:inline-flex;align-items:center;gap:4px;font:inherit;color:inherit;height:54px}
+.mm > button svg{width:12px;height:12px;stroke-width:2.2;transition:transform .3s var(--ease)}
+.mm:hover > button svg,.mm:focus-within > button svg{transform:rotate(180deg)}
+.mm:hover > button,.mm:focus-within > button{color:var(--ink)}
+nav.dk .mm:hover > button,nav.dk .mm:focus-within > button{color:#fff}
+.mm-p{position:absolute;top:100%;left:0;right:0;padding-top:8px;opacity:0;pointer-events:none;transform:translateY(-6px);transition:opacity .22s ease,transform .35s var(--ease)}
+.mm:hover .mm-p,.mm:focus-within .mm-p{opacity:1;pointer-events:auto;transform:none}
+.mm-in{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 28px;padding:22px 22px 18px;border-radius:18px;background:#fff;color:#111214;
+  box-shadow:0 0 0 1px rgba(17,18,20,.08),0 30px 60px -24px rgba(17,18,20,.38)}
+.mm-in > div{min-width:0}
+.mm-k{padding:0 10px 8px;font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#8a8e95}
+.mm-g{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px}
+.mm-g.one{grid-template-columns:1fr}
+.mm-i{display:grid;grid-template-columns:32px minmax(0,1fr);gap:12px;align-items:start;padding:10px;border-radius:11px;color:#111214;transition:background .2s ease}
+.mm-i:hover{background:hsl(240 11% 96.5%)}
+/* el panel es blanco aunque la barra esté oscura: el hover de la barra oscura (texto blanco) no debe llegar acá */
+nav .nav-links .mm-p a.mm-i,nav .nav-links .mm-p a.mm-i:hover,nav.dk .nav-links .mm-p a.mm-i:hover{color:#111214}
+.mm-i .mm-ic{width:32px;height:32px;border-radius:9px;display:grid;place-items:center;background:hsl(240 10% 95%);color:#4f5258}
+.mm-ic svg.i{font-size:16px}
+.mm-ic canvas.orb-m{width:18px;height:18px}
+.mm-i:hover .mm-ic{background:hsl(211 96% 52%/.1);color:hsl(211 85% 40%)}
+.mm-i b{display:block;font-size:14px;font-weight:600;letter-spacing:-.01em}
+.mm-i .mm-d{display:block;margin-top:2px;font-size:12.5px;line-height:1.4;color:#5c5f66}
+.mm-i[aria-current] b::after{content:' · estás aquí';font-weight:400;color:#8a8e95}
+.mm-i em{font-style:normal;margin-left:6px;padding:1px 6px;border-radius:999px;font-size:10.5px;font-weight:600;letter-spacing:.04em;background:hsl(211 96% 52%/.1);color:hsl(211 85% 40%);vertical-align:1px}
+
+@media (max-width:520px){.nav-r .btn-ghost{display:none}}
+nav .btn-dark:hover{color:var(--bg)}
+
+@media (max-width:600px){:root{--edge:16px}}
+
+/* ---------- bandas oscuras (hero y cierre), igual que en las landings ---------- */
+.dark{color:#f2f3f7;background:radial-gradient(70% 60% at 78% 38%,hsl(232 50% 13%),transparent 70%),linear-gradient(180deg,hsl(234 44% 7%),hsl(236 48% 5%))}
+.grain::after{content:'';position:absolute;inset:0;z-index:-1;opacity:.07;pointer-events:none;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+nav.dk .nav-in{background:hsl(235 40% 12%/.55);box-shadow:0 0 0 1px hsl(0 0% 100%/.08)}
+nav.dk .brand,nav.dk .nav-links a:hover{color:#fff}
+nav.dk .nav-links{color:hsl(0 0% 100%/.62)}
+nav.dk .btn-ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 1px hsl(0 0% 100%/.2)}
+nav.dk .btn-dark{background:#fff;color:#0d1020}
+.btn-w{background:#fff;color:#0d1020}
+.btn-w:hover{transform:translateY(-1px)}
+.btn-line{color:#fff;box-shadow:inset 0 0 0 1px hsl(0 0% 100%/.22)}
+.btn-line:hover{box-shadow:inset 0 0 0 1px hsl(0 0% 100%/.5)}
+.dark,.grain{position:relative;isolation:isolate}
+/* cierre: la banda oscura de las landings, con el orbe de Sofi en su versión quieta */
+.ct{position:relative;isolation:isolate;overflow:hidden;margin-top:120px;padding:112px 0 120px;text-align:center;font-family:var(--sans)}
+.ct + footer{margin-top:0;border-top:0}
+.ct h2{color:#fff;font-size:clamp(30px,3.6vw,46px);font-weight:600;letter-spacing:-.035em;line-height:1.08;max-width:20ch;margin:0 auto 16px;text-wrap:balance}
+.ct .ct-lead{font-size:17px;line-height:1.55;color:hsl(0 0% 100%/.66);max-width:50ch;margin:0 auto 30px;text-wrap:pretty}
+.ct .vh-act{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+/* el orbe del cierre es el orbe real (sofi.js); si el hero ya lo tiene, aquí va su copia */
+.ct .sofi-orb.ct-orb{width:176px;height:176px;margin:-28px auto 2px}
+.ct canvas.orb-m.ct-mini{width:84px;height:84px;margin:0 auto 26px}
+.ct-or{margin-top:36px;font-size:14px;color:hsl(0 0% 100%/.55)}
+.ct .sofi-in{margin:10px auto 0}
+.sofi-in button{border:0;cursor:pointer;font-family:inherit}
+.btn .ar{transition:transform .2s var(--ease)}.btn:hover .ar{transform:translateX(2px)}
+
+/* ---------- Sofi: el orbe y su campo (sofi.js), igual que en el hero de las landings ---------- */
+:root{--rad-1:45 100% 66%;--rad-2:330 100% 72%;--rad-3:270 100% 74%;--rad-4:210 100% 64%}
+.orb{width:18px;height:18px;border-radius:50%;flex:none;position:relative;
+  background:radial-gradient(circle at 34% 28%,rgba(255,255,255,.6),transparent 28%),radial-gradient(circle at 70% 26%,hsl(var(--rad-2)),transparent 56%),
+    radial-gradient(circle at 20% 58%,hsl(var(--rad-4)),transparent 56%),radial-gradient(circle at 62% 90%,hsl(var(--rad-1)),transparent 56%),
+    linear-gradient(140deg,hsl(230 42% 15%),hsl(236 52% 9%));
+  animation:breathe 4s ease-in-out infinite}
+@keyframes breathe{50%{transform:scale(1.05);filter:saturate(1.2)}}
+.sofi{display:flex;flex-direction:column;align-items:center;text-align:center}
+.sofi-orb{position:relative;width:320px;height:320px;margin:-18px 0 4px}
+.sofi-orb canvas{width:100%;height:100%;display:block}
+.sofi-orb .orb-css{position:absolute;inset:18%;border-radius:50%;display:none}
+.sofi-orb.nogl canvas{display:none}.sofi-orb.nogl .orb-css{display:block}
+.sofi-who{font-size:13px;color:hsl(0 0% 100%/.5);letter-spacing:.01em;margin-bottom:10px}
+.sofi-who b{color:hsl(0 0% 100%/.85);font-weight:600}
+.sofi-line{font-size:clamp(19px,1.6vw,23px);line-height:1.42;letter-spacing:-.015em;color:#fff;max-width:28ch;min-height:2.84em;text-wrap:balance}
+.sofi-line a{color:hsl(211 96% 76%);text-decoration:underline;text-underline-offset:4px}
+.sofi-line .car{display:inline-block;width:2px;height:1em;margin-left:2px;vertical-align:-.12em;background:hsl(0 0% 100%/.7);animation:car 1s steps(1) infinite}
+@keyframes car{50%{opacity:0}}
+.sofi-in{display:flex;align-items:center;gap:10px;width:100%;max-width:400px;margin-top:22px;border-bottom:1px solid hsl(0 0% 100%/.22);transition:border-color .25s ease}
+.sofi-in:focus-within{border-color:hsl(0 0% 100%/.7)}
+.sofi-in input{flex:1;min-width:0;height:46px;border:0;background:none;font:inherit;font-size:16px;color:#fff;text-align:left}
+.sofi-in input:focus{outline:none}
+.sofi-in input::placeholder{color:hsl(0 0% 100%/.55)}
+.sofi-in button{display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 12px;border-radius:8px;font-size:14px;font-weight:500;color:#0d1020;background:#fff;flex:none;transition:opacity .15s ease,transform .15s ease}
+.sofi-in button:active{transform:scale(.98)}
+.sofi-in button:disabled{opacity:.5;cursor:default}
+.sofi-ask{display:flex;justify-content:center;flex-wrap:wrap;gap:4px 18px;margin-top:16px}
+.sofi-ask button{font-size:13.5px;color:hsl(0 0% 100%/.6);transition:color .15s ease;padding:4px 0}
+.sofi-ask button:hover{color:#fff}
+.sofi-ask button[aria-pressed=true]{color:#fff}
+.sofi-note{margin-top:14px;font-size:12.5px;color:hsl(0 0% 100%/.55)}
+canvas.orb-m{display:block;flex:none;width:18px;height:18px;border-radius:50%}
+
+
+
+/* pie de página — tools/footer.py */
+footer{margin-top:120px;border-top:1px solid var(--line);padding:64px 0 32px}
+.ft-g{display:grid;grid-template-columns:1.5fr repeat(4,minmax(0,1fr));gap:40px 32px}
+.ft-g > div{min-width:0}
+.ft-brand p{font-size:14px;line-height:1.55;color:var(--ink-3);max-width:32ch;margin-top:12px}
+.ft-brand p.ft-meta{margin-top:10px;font-size:13px}
+.ft-cta{display:inline-flex !important;align-items:center;gap:8px;margin-top:20px;height:38px;padding:0 14px !important;border-radius:8px;
+  background:var(--ink);color:var(--bg) !important;font-size:14px;font-weight:500}
+.ft-cta svg.i{transition:transform .2s var(--ease)}.ft-cta:hover svg.i{transform:translateX(2px)}
+.ft-soc{display:flex;gap:8px;margin-top:20px}
+.ft-g .ft-soc a{display:grid;place-items:center;width:36px;height:36px;padding:0;border-radius:10px;color:var(--ink-2);box-shadow:inset 0 0 0 1px var(--line-2)}
+.ft-g .ft-soc a:hover{color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink-3)}
+.ft-h{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:12px}
+.ft-g a{display:block;font-size:14px;line-height:1.35;color:var(--ink-2);padding:5px 0}
+.ft-g a:hover{color:var(--ink)}
+.ft-g a.brand{display:inline-flex;padding:0;color:var(--ink)}
+.ft-b{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-3)}
+.ft-legal{display:flex;gap:20px;flex-wrap:wrap}
+.ft-b a{color:var(--ink-3)}.ft-b a:hover{color:var(--ink)}
+@media (max-width:1000px){.ft-g{grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 24px}.ft-brand{grid-column:1 / -1}}
+@media (max-width:560px){footer{padding:48px 0 28px}.ft-g a{font-size:14.5px;padding:6px 0}}
+/* /pie */

@@ -77,10 +77,11 @@
       aside.style.top = '';
       baseTop = parseFloat(getComputedStyle(aside).top) || 0;
     }
-    if (footer) {
-      var limit = footer.getBoundingClientRect().top - aside.offsetHeight - 48;
-      aside.style.top = Math.min(baseTop, limit) + 'px';
-    }
+    var hd = document.querySelector('.art-hd');
+    var top = hd ? Math.max(baseTop, hd.getBoundingClientRect().bottom + 56) : baseTop;
+    var stop = document.querySelector('.ct') || footer;
+    if (stop) top = Math.min(top, stop.getBoundingClientRect().top - aside.offsetHeight - 48);
+    aside.style.top = top + 'px';
 
     var y = window.scrollY + 140;
     var id = heads[0].id;

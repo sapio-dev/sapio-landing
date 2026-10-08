@@ -1,7 +1,7 @@
 /* ===========================================================================
    help.css — Centro de ayuda de Sapio (sapio.dev/help-center)
    Complementa a blog.css en las notas del centro de ayuda.
-   TOC lateral: hairline vertical, mono label, ítem activo en acento violeta.
+   TOC lateral: hairline vertical, label en mayúsculas, ítem activo en azul.
    =========================================================================== */
 
 /* ===== TOC lateral (desktop ancho) ===== */
@@ -99,14 +99,6 @@
   .rv.is-in { opacity: 1; transform: none; }
 }
 
-/* ===== Atmósfera: los mismos glows, en el azul de la marca ===== */
-body::before {
-  background:
-    radial-gradient(90% 55% at 50% -12%, rgba(45,144,251,0.15), rgba(8,9,10,0) 55%),
-    radial-gradient(55% 38% at 108% 28%, rgba(230,158,74,0.05), rgba(8,9,10,0) 62%),
-    radial-gradient(65% 42% at -8% 76%, rgba(45,144,251,0.06), rgba(8,9,10,0) 62%);
-}
-
 /* ===== Sin barras de acento a la izquierda; el énfasis vive en la tipografía ===== */
 .article .standfirst {
   border-left: 0; padding-left: 0;
@@ -115,6 +107,11 @@ body::before {
 }
 .tldr::before { display: none; }
 .tldr {
-  background: linear-gradient(180deg, rgba(45,144,251,0.09), rgba(19,20,23,0) 65%), var(--bg-soft);
-  border-color: rgba(45,144,251,0.18);
+  background: linear-gradient(180deg, rgba(45,144,251,0.07), rgba(255,255,255,0) 70%), var(--bg-soft);
+  border-color: rgba(45,144,251,0.20);
 }
+
+.toc-label, .toc-inline summary, .step-kicker { font-weight: 600; letter-spacing: 0.13em; }
+
+/* el índice plegable no se pega a la cabecera oscura */
+.toc-inline { margin-top: 32px; }
