@@ -201,17 +201,28 @@ footer{margin-top:120px;border-top:1px solid var(--line);padding:64px 0 32px}
 .ag-sub{margin-top:8px;font-size:15px;color:var(--ink-2);max-width:52ch}
 
 .fld{display:block;border:0;margin-bottom:16px;min-width:0}
-.fld-2{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+/* tú a la izquierda (nombre, correo, teléfono), la empresa a la derecha; el DOM va en ese orden y el tab también */
+.fld-cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:repeat(3,auto);grid-auto-flow:column;gap:0 12px}
 .fld label,.fld legend{display:block;font-size:14px;font-weight:500;margin-bottom:6px}
 .opt{font-weight:400;color:var(--ink-3)}
-.fld input,.fld select{width:100%;height:44px;padding:0 12px;border-radius:var(--r-ui);border:0;background:var(--bg);color:var(--ink);font:inherit;font-size:15.5px;
+.fld input,.fld select{width:100%;height:44px;padding:0 12px;border-radius:var(--r-ui);border:0;background:var(--bg-2);color:var(--ink);font:inherit;font-size:15.5px;
   box-shadow:inset 0 0 0 1px var(--line-2);transition:box-shadow .15s ease}
 .fld input:focus,.fld select:focus{outline:none;box-shadow:inset 0 0 0 1.5px var(--accent),0 0 0 4px hsl(211 96% 52%/.12)}
 .fld input[aria-invalid=true]{box-shadow:inset 0 0 0 1.5px #c43c3c}
-.tel{display:grid;grid-template-columns:auto 1fr;gap:8px}
+/* teléfono: una sola caja; el código de país vive adentro, separado por una línea */
+.tel{display:flex;height:44px;border-radius:var(--r-ui);background:var(--bg-2);box-shadow:inset 0 0 0 1px var(--line-2);transition:box-shadow .15s ease}
+.tel:focus-within{box-shadow:inset 0 0 0 1.5px var(--accent),0 0 0 4px hsl(211 96% 52%/.12)}
+.tel:has(input[aria-invalid=true]){box-shadow:inset 0 0 0 1.5px #c43c3c}
+.fld .tel input{flex:1;min-width:0;height:100%;background:none;box-shadow:none}
+.fld .tel .cc{height:100%;background:none;border-radius:var(--r-ui) 0 0 var(--r-ui);box-shadow:inset -1px 0 0 var(--line)}
+.fld .tel .cc:focus-within{box-shadow:inset -1px 0 0 var(--line)}
 /* Código de país: se ve como un campo compacto (bandera + código); el select nativo va encima, invisible, y abre la lista completa */
 .fld .cc{position:relative;display:flex;align-items:center;gap:6px;height:44px;padding:0 10px 0 12px;margin:0;border-radius:var(--r-ui);background:var(--bg);
   box-shadow:inset 0 0 0 1px var(--line-2);transition:box-shadow .15s ease;font-size:15.5px;font-weight:400;cursor:pointer;white-space:nowrap}
+/* select de una línea: misma flecha que el código de país, con aire a la derecha */
+.sel{position:relative}
+.fld .sel select{appearance:none;-webkit-appearance:none;padding-right:38px;cursor:pointer}
+.sel .i{position:absolute;right:12px;top:50%;width:15px;height:15px;margin-top:-7.5px;pointer-events:none;color:var(--ink-3);fill:none;stroke:currentColor;stroke-width:2}
 .fld .cc .i{width:15px;height:15px;color:var(--ink-3);fill:none;stroke:currentColor;stroke-width:2}
 .fld .cc:focus-within{box-shadow:inset 0 0 0 1.5px var(--accent),0 0 0 4px hsl(211 96% 52%/.12)}
 .fld .cc select{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;box-shadow:none}
@@ -243,12 +254,13 @@ footer{margin-top:120px;border-top:1px solid var(--line);padding:64px 0 32px}
 
 .mm-ic .orb-dot{width:16px;height:16px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ffd65c,#ff76bd 40%,#4d99ff 75%)}
 
+@media (min-width:1001px) and (max-height:860px){.ag{padding-top:104px}.ag-k{margin-bottom:14px}}
 @media (max-width:1000px){.ag-g{grid-template-columns:1fr;gap:36px}.ag-l h1{max-width:none}}
 @media (max-width:560px){
   :root{--edge:16px}
   .ag{padding-top:96px}
   .ag-card{padding:20px 16px;margin-inline:-4px}
-  .fld-2{grid-template-columns:1fr}
+  .fld-cols{grid-template-columns:1fr;grid-template-rows:none;grid-auto-flow:row}
   .ag-steps{display:none}
   .ag-meta{margin-top:20px}
 }
@@ -364,26 +376,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- paso 1: datos -->
       <form id="agForm" class="ag-step" novalidate>
         <p class="ag-k">Paso 1 de 2</p>
+        <div class="fld-cols">
         <div class="fld"><label for="fName">Nombre</label><input id="fName" name="name" autocomplete="name" required><p class="err" id="eName"></p></div>
         <div class="fld"><label for="fEmail">Correo de trabajo</label><input id="fEmail" name="email" type="email" inputmode="email" autocomplete="email" placeholder="tu@empresa.cl" required><p class="err" id="eEmail"></p></div>
         <div class="fld"><label for="fPhone">Teléfono</label><div class="tel"><label class="cc"><span class="cc-v" id="fCcV" aria-hidden="true">🇨🇱 +56</span><svg class="i" aria-hidden="true"><use href="#chev"/></svg><select id="fCc" name="cc" aria-label="Código de país" autocomplete="tel-country-code"><option value="56" data-flag="🇨🇱" selected>🇨🇱 Chile +56</option><option value="54" data-flag="🇦🇷">🇦🇷 Argentina +54</option><option value="591" data-flag="🇧🇴">🇧🇴 Bolivia +591</option><option value="55" data-flag="🇧🇷">🇧🇷 Brasil +55</option><option value="57" data-flag="🇨🇴">🇨🇴 Colombia +57</option><option value="506" data-flag="🇨🇷">🇨🇷 Costa Rica +506</option><option value="593" data-flag="🇪🇨">🇪🇨 Ecuador +593</option><option value="503" data-flag="🇸🇻">🇸🇻 El Salvador +503</option><option value="34" data-flag="🇪🇸">🇪🇸 España +34</option><option value="1" data-flag="🇺🇸">🇺🇸 Estados Unidos +1</option><option value="502" data-flag="🇬🇹">🇬🇹 Guatemala +502</option><option value="504" data-flag="🇭🇳">🇭🇳 Honduras +504</option><option value="52" data-flag="🇲🇽">🇲🇽 México +52</option><option value="505" data-flag="🇳🇮">🇳🇮 Nicaragua +505</option><option value="507" data-flag="🇵🇦">🇵🇦 Panamá +507</option><option value="595" data-flag="🇵🇾">🇵🇾 Paraguay +595</option><option value="51" data-flag="🇵🇪">🇵🇪 Perú +51</option><option value="1" data-flag="🇵🇷">🇵🇷 Puerto Rico +1</option><option value="1" data-flag="🇩🇴">🇩🇴 República Dominicana +1</option><option value="598" data-flag="🇺🇾">🇺🇾 Uruguay +598</option><option value="58" data-flag="🇻🇪">🇻🇪 Venezuela +58</option></select></label><input id="fPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="9 1234 5678" required></div><p class="err" id="ePhone"></p></div>
-        <div class="fld-2">
           <div class="fld"><label for="fCompany">Empresa</label><input id="fCompany" name="company" autocomplete="organization" required><p class="err" id="eCompany"></p></div>
           <div class="fld"><label for="fWebsite">Sitio web <span class="opt">opcional</span></label><input id="fWebsite" name="website" inputmode="url" autocomplete="url" placeholder="tuempresa.cl"></div>
+        <div class="fld"><label for="fVolume">Consultas al mes <span class="opt">opcional</span></label>
+          <div class="sel"><select id="fVolume" name="volume"><option value="">Prefiero no decir</option><option value="&lt;500">Menos de 500</option><option value="500-2000">500 a 2.000</option><option value="2000-10000">2.000 a 10.000</option><option value="&gt;10000">Más de 10.000</option></select><svg class="i" aria-hidden="true"><use href="#chev"/></svg></div></div>
         </div>
         <fieldset class="fld">
           <legend>¿Qué quieres automatizar?</legend>
           <div class="chips" id="fInterest">
             <label><input type="radio" name="interest" value="ventas"><span>Ventas</span></label>
-            <label><input type="radio" name="interest" value="post-venta"><span>Atención y post-venta</span></label>
+            <label><input type="radio" name="interest" value="post-venta"><span>Post-venta</span></label>
             <label><input type="radio" name="interest" value="agendamiento"><span>Agendamiento</span></label>
             <label><input type="radio" name="interest" value="cobranza"><span>Cobranza</span></label>
             <label><input type="radio" name="interest" value="otro"><span>Otro</span></label>
           </div>
           <p class="err" id="eInterest"></p>
         </fieldset>
-        <div class="fld"><label for="fVolume">Consultas al mes <span class="opt">opcional</span></label>
-          <select id="fVolume" name="volume"><option value="">Prefiero no decir</option><option value="&lt;500">Menos de 500</option><option value="500-2000">500 a 2.000</option><option value="2000-10000">2.000 a 10.000</option><option value="&gt;10000">Más de 10.000</option></select></div>
         <input class="hp" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
         <button type="submit" class="btn btn-dark ag-go" id="agBtn">Continuar a la agenda<svg class="i ar"><use href="#arrowR"/></svg></button>
         <p class="ag-err" id="agErr" role="alert"></p>
