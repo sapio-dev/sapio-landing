@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="es-CL" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PJV4JL2J');</script>
+<title>Hablar con un experto | Sapio</title>
+<meta name="description" content="Revisemos tu operación en 30 minutos: qué procesos se pueden automatizar con Sapio, con tus canales y tus sistemas.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://sapio.dev/agendar">
+<meta name="theme-color" content="#0a0c1a">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@600;800&display=swap" rel="stylesheet">
+<style>
+/* =====================================================================
+   PROPUESTA v0 — diagramación de Nexor + relato de Vambe, con la marca
+   de Sapio (Instrument Sans, azul #2d90fb) y la app real recreada con
+   sus propios tokens (Inter, vidrio blanco, burbuja violeta).
+   ===================================================================== */
+:root{
+  --bg:hsl(240 11% 96.5%); /* papel frío de mycellium-app: la landing y el producto son la misma marca */
+  --bg-2:#ffffff;
+  --bg-3:hsl(240 10% 93.5%);
+  --ink:#111214;
+  --ink-2:#4f5258;
+  --ink-3:hsl(240 5% 40%);  /* Tinta Apagada de la app, 5,6:1 */
+  --line:rgba(17,18,20,.08);
+  --line-2:rgba(17,18,20,.14);
+  --accent:#2d90fb;
+  --accent-ink:hsl(211 85% 40%); /* Cobalto Profundo: texto azul chico sobre papel */
+  --warm:#e69e4a;
+  --panel:#0f1012;         /* el panel oscuro de producto */
+  --panel-2:#17181b;
+  --panel-ink:#f4f4f5;
+  --panel-ink-2:#a1a4ab;
+  --sans:'Instrument Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --app:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --disp:'Inter Tight','Inter',system-ui,sans-serif;
+  --maxw:1200px;
+  --edge:32px;
+  --r-card:18px;
+  --r-ui:12px;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --shadow-1:0 1px 2px rgba(17,18,20,.04),0 8px 24px -12px rgba(17,18,20,.10);
+  --shadow-2:0 4px 24px -4px rgba(0,0,0,.08),0 28px 56px -20px rgba(15,23,42,.14);
+  /* app: tokens reales de mycellium-app (DESIGN.md) */
+  --m-bg:hsl(240 11% 96.5%); --m-card:#fff; --m-fg:hsl(240 9% 11%); --m-mfg:hsl(240 5% 40%);
+  --m-muted:240 10% 93.5%; --m-border:240 10% 89%; --m-input:240 10% 86%;
+  --m-brand:hsl(211 96% 44%); --m-brand-h:211 96% 44%; --m-brand-soft:222 100% 96%; --m-warning:33 95% 32%; --m-success:152 62% 30%;
+  --rad-1:45 100% 66%; --rad-2:330 100% 72%; --rad-3:270 100% 74%; --rad-4:210 100% 64%;
+  --app-bg:var(--m-bg); --app-fg:var(--m-fg);
+}
+[data-theme=dark]{
+  --bg:#0b0c0e; --bg-2:#121316; --bg-3:#16171a;
+  --ink:#f4f4f5; --ink-2:#a8abb2; --ink-3:#8a8e95;
+  --line:rgba(255,255,255,.08); --line-2:rgba(255,255,255,.14);
+  --accent-ink:#5aa8ff;
+  --panel:#151619; --panel-2:#1c1d21;
+  --shadow-1:0 1px 2px rgba(0,0,0,.3),0 8px 24px -12px rgba(0,0,0,.5);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;
+  letter-spacing:-.005em;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background .4s ease,color .4s ease}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+::selection{background:var(--accent);color:#fff}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--edge)}
+section{position:relative;scroll-margin-top:0}
+svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+svg.f{fill:currentColor;stroke:none}
+
+/* ---------- tipografía ---------- */
+h1{font-size:clamp(38px,5vw,64px);font-weight:600;letter-spacing:-.04em;line-height:1.02;text-wrap:balance}
+h2{font-size:clamp(28px,3.2vw,42px);font-weight:600;letter-spacing:-.033em;line-height:1.08;text-wrap:balance}
+h3{font-size:18px;font-weight:600;letter-spacing:-.02em;line-height:1.3}
+.hl{color:var(--accent)}
+.lead{font-size:clamp(16px,1.2vw,18px);color:var(--ink-2);line-height:1.55;text-wrap:pretty}
+.note{font-size:14px;color:var(--ink-3);line-height:1.5;max-width:30ch;text-wrap:pretty}
+.mute{color:var(--ink-3)}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+
+/* ---------- botones ---------- */
+.btn{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 18px;border-radius:8px;
+  font-size:15px;font-weight:500;letter-spacing:-.01em;white-space:nowrap;transition:transform .2s var(--ease),background .2s ease,box-shadow .2s ease}
+.btn-dark{background:var(--ink);color:var(--bg)}
+.btn-dark:hover{transform:translateY(-1px);box-shadow:0 8px 20px -10px rgba(17,18,20,.5)}
+.btn-ghost{background:var(--bg-2);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line-2)}
+.btn-ghost:hover{box-shadow:inset 0 0 0 1px var(--ink-3)}
+.btn .ar{transition:transform .2s var(--ease)}
+.btn:hover .ar{transform:translateX(2px)}
+
+/* ---------- aparición ---------- */
+.rv{opacity:0;transform:translateY(12px);transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:var(--d,0ms)}
+.rv.in{opacity:1;transform:none}
+
+/* =====================================================================
+   NAV — barra flotante, botones de 8px como en mycellium
+   ===================================================================== */
+nav{position:fixed;inset:12px 0 auto;z-index:50;padding-inline:var(--edge);pointer-events:none}
+.nav-in{pointer-events:auto;max-width:1040px;margin:0 auto;height:54px;display:flex;align-items:center;gap:30px;padding:0 8px 0 18px;border-radius:14px;
+  background:color-mix(in oklab,var(--bg-2) 78%,transparent);backdrop-filter:blur(16px) saturate(160%);-webkit-backdrop-filter:blur(16px) saturate(160%);
+  box-shadow:0 0 0 1px var(--line),0 8px 24px -16px rgba(17,18,20,.25)}
+.brand{display:flex;align-items:center;font-family:var(--sans);font-size:16px;font-weight:600;letter-spacing:-.02em;white-space:nowrap} /* el logo de sapio.dev: la palabra, sin marca */
+
+.nav-links{display:flex;gap:24px;font-size:14px;color:var(--ink-2)}
+.nav-links a:hover{color:var(--ink)}
+.nav-r{margin-left:auto;display:flex;align-items:center;gap:6px}
+.nav-r .btn{height:38px;padding:0 14px;font-size:14px}
+@media (max-width:900px){.nav-links{display:none}}
+/* =====================================================================
+   MENÚ — paneles anchos (Producto · Soluciones · Recursos), como un mega menú:
+   ícono, nombre y una línea. Se abre al pasar el mouse o con el teclado.
+   ===================================================================== */
+.nav-in{position:relative}
+.nav-links{align-items:center}
+.mm{display:flex;align-items:center}
+.mm > button,.mm > a{display:inline-flex;align-items:center;gap:4px;font:inherit;color:inherit;height:54px}
+.mm > button svg{width:12px;height:12px;stroke-width:2.2;transition:transform .3s var(--ease)}
+.mm:hover > button svg,.mm:focus-within > button svg{transform:rotate(180deg)}
+.mm:hover > button,.mm:focus-within > button{color:var(--ink)}
+nav.dk .mm:hover > button,nav.dk .mm:focus-within > button{color:#fff}
+.mm-p{position:absolute;top:100%;left:0;right:0;padding-top:8px;opacity:0;pointer-events:none;transform:translateY(-6px);transition:opacity .22s ease,transform .35s var(--ease)}
+.mm:hover .mm-p,.mm:focus-within .mm-p{opacity:1;pointer-events:auto;transform:none}
+.mm-in{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 28px;padding:22px 22px 18px;border-radius:18px;background:#fff;color:#111214;
+  box-shadow:0 0 0 1px rgba(17,18,20,.08),0 30px 60px -24px rgba(17,18,20,.38)}
+.mm-in > div{min-width:0}
+.mm-k{padding:0 10px 8px;font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#8a8e95}
+.mm-g{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px}
+.mm-g.one{grid-template-columns:1fr}
+.mm-i{display:grid;grid-template-columns:32px minmax(0,1fr);gap:12px;align-items:start;padding:10px;border-radius:11px;color:#111214;transition:background .2s ease}
+.mm-i:hover{background:hsl(240 11% 96.5%)}
+/* el panel es blanco aunque la barra esté oscura: el hover de la barra oscura (texto blanco) no debe llegar acá */
+nav .nav-links .mm-p a.mm-i,nav .nav-links .mm-p a.mm-i:hover,nav.dk .nav-links .mm-p a.mm-i:hover{color:#111214}
+.mm-i .mm-ic{width:32px;height:32px;border-radius:9px;display:grid;place-items:center;background:hsl(240 10% 95%);color:#4f5258}
+.mm-ic svg.i{font-size:16px}
+.mm-ic canvas.orb-m{width:18px;height:18px}
+.mm-i:hover .mm-ic{background:hsl(211 96% 52%/.1);color:hsl(211 85% 40%)}
+.mm-i b{display:block;font-size:14px;font-weight:600;letter-spacing:-.01em}
+.mm-i .mm-d{display:block;margin-top:2px;font-size:12.5px;line-height:1.4;color:#5c5f66}
+.mm-i[aria-current] b::after{content:' · estás aquí';font-weight:400;color:#8a8e95}
+.mm-i em{font-style:normal;margin-left:6px;padding:1px 6px;border-radius:999px;font-size:10.5px;font-weight:600;letter-spacing:.04em;background:hsl(211 96% 52%/.1);color:hsl(211 85% 40%);vertical-align:1px}
+
+@media (max-width:520px){.nav-r .btn-ghost{display:none}}
+
+
+
+
+/* pie de página — tools/footer.py */
+footer{margin-top:120px;border-top:1px solid var(--line);padding:64px 0 32px}
+.ft-g{display:grid;grid-template-columns:1.5fr repeat(4,minmax(0,1fr));gap:40px 32px}
+.ft-g > div{min-width:0}
+.ft-brand p{font-size:14px;line-height:1.55;color:var(--ink-3);max-width:32ch;margin-top:12px}
+.ft-brand p.ft-meta{margin-top:10px;font-size:13px}
+.ft-cta{display:inline-flex !important;align-items:center;gap:8px;margin-top:20px;height:38px;padding:0 14px !important;border-radius:8px;
+  background:var(--ink);color:var(--bg) !important;font-size:14px;font-weight:500}
+.ft-cta svg.i{transition:transform .2s var(--ease)}.ft-cta:hover svg.i{transform:translateX(2px)}
+.ft-soc{display:flex;gap:8px;margin-top:20px}
+.ft-g .ft-soc a{display:grid;place-items:center;width:36px;height:36px;padding:0;border-radius:10px;color:var(--ink-2);box-shadow:inset 0 0 0 1px var(--line-2)}
+.ft-g .ft-soc a:hover{color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink-3)}
+.ft-h{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:12px}
+.ft-g a{display:block;font-size:14px;line-height:1.35;color:var(--ink-2);padding:5px 0}
+.ft-g a:hover{color:var(--ink)}
+.ft-g a.brand{display:inline-flex;padding:0;color:var(--ink)}
+.ft-b{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-3)}
+.ft-legal{display:flex;gap:20px;flex-wrap:wrap}
+.ft-b a{color:var(--ink-3)}.ft-b a:hover{color:var(--ink)}
+@media (max-width:1000px){.ft-g{grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 24px}.ft-brand{grid-column:1 / -1}}
+@media (max-width:560px){footer{padding:48px 0 28px}.ft-g a{font-size:14.5px;padding:6px 0}}
+
+/* =====================================================================
+   /agendar — precalificación antes de la agenda (WEB-02)
+   ===================================================================== */
+.ag{padding:132px 0 40px}
+.ag-g{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,520px);gap:72px;align-items:start}
+.eb{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:18px}
+.ag-l h1{font-size:clamp(36px,4.2vw,54px);max-width:13ch}
+.ag-l .lead{margin-top:20px;max-width:42ch}
+.ag-steps{list-style:none;counter-reset:s;margin-top:36px;display:grid;gap:14px;max-width:44ch}
+.ag-steps li{counter-increment:s;display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;font-size:15.5px;color:var(--ink-2);line-height:1.5}
+.ag-steps li::before{content:counter(s);display:grid;place-items:center;width:28px;height:28px;border-radius:50%;font-size:13px;font-weight:600;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line-2)}
+.ag-steps b{color:var(--ink);font-weight:600}
+.ag-meta{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:32px;font-size:14px;color:var(--ink-3)}
+.ag-meta span{display:inline-flex;align-items:center;gap:6px}
+
+.ag-card{background:var(--bg-2);border-radius:var(--r-card);box-shadow:0 0 0 1px var(--line),var(--shadow-2);padding:28px}
+.ag-k{display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:var(--ink-3);margin-bottom:18px}
+.ag-k.ok{color:hsl(var(--m-success))}
+.ag-h{font-size:clamp(22px,2vw,28px);outline:none}
+.ag-sub{margin-top:8px;font-size:15px;color:var(--ink-2);max-width:52ch}
+
+.fld{display:block;border:0;margin-bottom:16px;min-width:0}
+.fld-2{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+.fld label,.fld legend{display:block;font-size:14px;font-weight:500;margin-bottom:6px}
+.opt{font-weight:400;color:var(--ink-3)}
+.fld input,.fld select{width:100%;height:44px;padding:0 12px;border-radius:var(--r-ui);border:0;background:var(--bg);color:var(--ink);font:inherit;font-size:15.5px;
+  box-shadow:inset 0 0 0 1px var(--line-2);transition:box-shadow .15s ease}
+.fld input:focus,.fld select:focus{outline:none;box-shadow:inset 0 0 0 1.5px var(--accent),0 0 0 4px hsl(211 96% 52%/.12)}
+.fld input[aria-invalid=true]{box-shadow:inset 0 0 0 1.5px #c43c3c}
+.tel{display:grid;grid-template-columns:auto 1fr;gap:8px}
+/* Código de país: se ve como un campo compacto (bandera + código); el select nativo va encima, invisible, y abre la lista completa */
+.fld .cc{position:relative;display:flex;align-items:center;gap:6px;height:44px;padding:0 10px 0 12px;margin:0;border-radius:var(--r-ui);background:var(--bg);
+  box-shadow:inset 0 0 0 1px var(--line-2);transition:box-shadow .15s ease;font-size:15.5px;font-weight:400;cursor:pointer;white-space:nowrap}
+.fld .cc .i{width:15px;height:15px;color:var(--ink-3);fill:none;stroke:currentColor;stroke-width:2}
+.fld .cc:focus-within{box-shadow:inset 0 0 0 1.5px var(--accent),0 0 0 4px hsl(211 96% 52%/.12)}
+.fld .cc select{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;box-shadow:none}
+.err{font-size:13px;color:#b42d2d;margin-top:5px;min-height:0}
+.err:empty{display:none}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{margin:0;font-weight:400;cursor:pointer}
+.chips input{position:absolute;opacity:0;width:1px;height:1px}
+.chips span{display:inline-flex;align-items:center;height:36px;padding:0 13px;border-radius:999px;font-size:14px;color:var(--ink-2);box-shadow:inset 0 0 0 1px var(--line-2);transition:background .15s ease,color .15s ease,box-shadow .15s ease}
+.chips label:hover span{box-shadow:inset 0 0 0 1px var(--ink-3)}
+.chips input:checked + span{background:var(--ink);color:var(--bg);box-shadow:none}
+.chips input:focus-visible + span{outline:2px solid var(--accent);outline-offset:2px}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.ag-go{width:100%;justify-content:center;height:48px;margin-top:6px;font-size:15.5px}
+.ag-go[disabled]{opacity:.6;cursor:progress;transform:none}
+.ag-err{font-size:14px;color:#b42d2d;margin-top:10px}
+.ag-err:empty{display:none}
+.ag-priv{margin-top:14px;font-size:13px;color:var(--ink-3);line-height:1.5}
+.ag-priv a{text-decoration:underline;text-underline-offset:2px}
+.ag-priv a:hover{color:var(--ink)}
+
+/* paso 2: la agenda necesita ancho; la columna izquierda se recoge */
+.ag-g.wide{grid-template-columns:1fr}
+.ag-g.wide .ag-l{display:none}
+.ag-g.wide .ag-card{max-width:1040px;margin:0 auto;width:100%}
+.cal-embed{margin-top:20px;min-height:0;overflow:auto}
+.cal-embed:not(:empty){min-height:560px}
+#agDone .btn{margin-top:22px}
+
+.mm-ic .orb-dot{width:16px;height:16px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ffd65c,#ff76bd 40%,#4d99ff 75%)}
+
+@media (max-width:1000px){.ag-g{grid-template-columns:1fr;gap:36px}.ag-l h1{max-width:none}}
+@media (max-width:560px){
+  :root{--edge:16px}
+  .ag{padding-top:96px}
+  .ag-card{padding:20px 16px;margin-inline:-4px}
+  .fld-2{grid-template-columns:1fr}
+  .ag-steps{display:none}
+  .ag-meta{margin-top:20px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none !important}}
+
+</style>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJV4JL2J"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="wa" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.13a8.23 8.23 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.21-8.24 8.21Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.98-.14.16-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42h-.47c-.16 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.29Z"/></symbol>
+    <symbol id="globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+    <symbol id="ig" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></symbol>
+    <symbol id="fb" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+    <symbol id="mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+    <symbol id="msg" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+    <symbol id="bookmark" viewBox="0 0 24 24"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></symbol>
+    <symbol id="bot" viewBox="0 0 24 24"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/></symbol>
+    <symbol id="user" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+    <symbol id="list" viewBox="0 0 24 24"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/><path d="M14 4h7M14 9h7M14 15h7M14 20h7"/></symbol>
+    <symbol id="grid" viewBox="0 0 24 24"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></symbol>
+    <symbol id="clip" viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4M12 16h4M8 11h.01M8 16h.01"/></symbol>
+    <symbol id="mega" viewBox="0 0 24 24"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></symbol>
+    <symbol id="zap" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></symbol>
+    <symbol id="chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></symbol>
+    <symbol id="note" viewBox="0 0 24 24"><path d="M15.5 3H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V8.5L15.5 3Z"/><path d="M15 3v6h6"/></symbol>
+    <symbol id="phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+    <symbol id="tag" viewBox="0 0 24 24"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><path d="M7 7h.01"/></symbol>
+    <symbol id="ucheck" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m16 11 2 2 4-4"/></symbol>
+    <symbol id="search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+    <symbol id="send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></symbol>
+    <symbol id="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+    <symbol id="check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="db" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></symbol>
+    <symbol id="crm" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M5.5 17c.7-2 2-3 3.5-3s2.8 1 3.5 3M15 9h3M15 13h3"/></symbol>
+    <symbol id="layers" viewBox="0 0 24 24"><path d="m12 2 10 5-10 5L2 7l10-5Z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></symbol>
+    <symbol id="cal" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+    <symbol id="box" viewBox="0 0 24 24"><path d="M21 8 12 3 3 8v8l9 5 9-5V8Z"/><path d="m3 8 9 5 9-5M12 13v8"/></symbol>
+    <symbol id="cart" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18M16 10a4 4 0 0 1-8 0"/></symbol>
+    <symbol id="sheet" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></symbol>
+    <symbol id="headset" viewBox="0 0 24 24"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></symbol>
+    <symbol id="calday" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"/></symbol>
+    <symbol id="hand" viewBox="0 0 24 24"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3M3 4h8"/></symbol>
+    <symbol id="ic-msgs" viewBox="0 0 24 24"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z"/><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></symbol>
+    <symbol id="lchk" viewBox="0 0 24 24"><path d="m3 17 2 2 4-4M3 7l2 2 4-4M13 6h8M13 12h8M13 18h8"/></symbol>
+    <symbol id="urc" viewBox="0 0 24 24"><path d="M2 21a8 8 0 0 1 13.292-6"/><circle cx="10" cy="8" r="5"/><path d="m16 19 2 2 4-4"/></symbol>
+    <symbol id="dash" viewBox="0 0 24 24"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></symbol>
+    <symbol id="lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+    <symbol id="tri" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4M12 17h.01"/></symbol>
+    <symbol id="uround" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></symbol>
+    <symbol id="chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="msgr" viewBox="0 0 24 24"><path d="M12 2C6.4 2 2 6.1 2 11.6c0 2.9 1.2 5.4 3.1 7.1v3.3l3-1.7c1.2.3 2.5.5 3.9.5 5.6 0 10-4.1 10-9.6S17.6 2 12 2Z"/><path d="m7 13.5 3.2-3.4 2.4 2.1 4.4-3.7"/></symbol>
+    <symbol id="arrowup" viewBox="0 0 24 24"><path d="m5 12 7-7 7 7M12 19V5"/></symbol>
+    <symbol id="arrowR" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="arrowL" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+    <symbol id="bub" viewBox="0 0 20 20"><path d="M10 2.6c-4.4 0-8 2.9-8 6.5 0 2 1.1 3.8 2.9 5v3.1l2.7-1.6c.8.2 1.6.3 2.4.3 4.4 0 8-2.9 8-6.5S14.4 2.6 10 2.6Z"/></symbol>
+  </defs>
+</svg>
+
+<nav id="nav">
+  <div class="wrap nav-in">
+    <a href="/" class="brand">Sapio</a>
+    <div class="nav-links">
+      <div class="mm"><button type="button" aria-haspopup="true">Producto<svg class="i"><use href="#chev"/></svg></button>
+        <div class="mm-p"><div class="mm-in">
+          <div><p class="mm-k">Plataforma</p><div class="mm-g"><a class="mm-i" href="/agentes"><span class="mm-ic"><svg class="i"><use href="#bot"/></svg></span><span><b>Agentes de IA</b><span class="mm-d">Atienden y operan en tus canales, con tus datos.</span></span></a><a class="mm-i" href="/bandeja"><span class="mm-ic"><svg class="i"><use href="#ic-msgs"/></svg></span><span><b>Bandeja omnicanal</b><span class="mm-d">Conversaciones, derivaciones y pendientes en un lugar.</span></span></a><a class="mm-i" href="/agenda"><span class="mm-ic"><svg class="i"><use href="#cal"/></svg></span><span><b>Agenda</b><span class="mm-d">Horas, visitas y recordatorios, sin pasar por nadie.</span></span></a><a class="mm-i" href="/campanas"><span class="mm-ic"><svg class="i"><use href="#mega"/></svg></span><span><b>Campañas WhatsApp</b><span class="mm-d">Avisos, recordatorios y reactivación de clientes.</span></span></a><a class="mm-i" href="/informes"><span class="mm-ic"><svg class="i"><use href="#chart"/></svg></span><span><b>Informes<em>beta</em></b><span class="mm-d">Lo que aparece al leer miles de conversaciones.</span></span></a><a class="mm-i" href="/sofi"><span class="mm-ic"><span class="orb-dot"></span></span><span><b>Sofi</b><span class="mm-d">La analista de IA: pregúntale por tu operación.</span></span></a></div></div>
+          <div><p class="mm-k">Integraciones</p><div class="mm-g"><a class="mm-i" href="/whatsapp"><span class="mm-ic"><svg class="i f"><use href="#wa"/></svg></span><span><b>WhatsApp Business</b></span></a><a class="mm-i" href="/integraciones#instagram"><span class="mm-ic"><svg class="i"><use href="#ig"/></svg></span><span><b>Instagram y Messenger</b></span></a><a class="mm-i" href="/integraciones#correo"><span class="mm-ic"><svg class="i"><use href="#mail"/></svg></span><span><b>Gmail y Outlook</b></span></a><a class="mm-i" href="/integraciones#chat"><span class="mm-ic"><svg class="i"><use href="#msg"/></svg></span><span><b>Chat de tu sitio</b></span></a><a class="mm-i" href="/integraciones#agenda"><span class="mm-ic"><svg class="i"><use href="#cal"/></svg></span><span><b>Google Calendar y Outlook</b></span></a><a class="mm-i" href="/integraciones#odoo"><span class="mm-ic"><svg class="i"><use href="#layers"/></svg></span><span><b>Odoo y tu ERP</b></span></a><a class="mm-i" href="/integraciones#api"><span class="mm-ic"><svg class="i"><use href="#db"/></svg></span><span><b>El que uses tú, vía API</b></span></a><a class="mm-i" href="/integraciones"><span class="mm-ic"><svg class="i"><use href="#grid"/></svg></span><span><b>Todas las integraciones</b></span></a></div></div>
+        </div></div>
+      </div>
+      <div class="mm"><button type="button" aria-haspopup="true">Soluciones<svg class="i"><use href="#chev"/></svg></button>
+        <div class="mm-p"><div class="mm-in">
+          <div><p class="mm-k">Por operación</p><div class="mm-g one"><a class="mm-i" href="/post-venta"><span class="mm-ic"><svg class="i"><use href="#box"/></svg></span><span><b>Post-venta</b><span class="mm-d">Dónde va el pedido, cambios y reclamos.</span></span></a><a class="mm-i" href="/ventas"><span class="mm-ic"><svg class="i"><use href="#tag"/></svg></span><span><b>Ventas</b><span class="mm-d">Califica, cotiza y lleva hasta el cierre.</span></span></a><a class="mm-i" href="/cobranza"><span class="mm-ic"><svg class="i"><use href="#sheet"/></svg></span><span><b>Cobranza</b><span class="mm-d">Recuerda cuotas y registra los pagos.</span></span></a></div></div>
+          <div><p class="mm-k">Por industria</p><div class="mm-g one"><a class="mm-i" href="/inmobiliaria"><span class="mm-ic"><svg class="i"><use href="#grid"/></svg></span><span><b>Inmobiliario</b><span class="mm-d">Del interesado del portal a la visita.</span></span></a><a class="mm-i" href="/salud"><span class="mm-ic"><svg class="i"><use href="#hand"/></svg></span><span><b>Salud</b><span class="mm-d">Agenda, confirma y responde a pacientes.</span></span></a><a class="mm-i" href="/retail"><span class="mm-ic"><svg class="i"><use href="#cart"/></svg></span><span><b>Retail & Ecommerce</b><span class="mm-d">Stock, pedidos y despachos, en segundos.</span></span></a><a class="mm-i" href="/#industrias"><span class="mm-ic"><svg class="i"><use href="#plus"/></svg></span><span><b>Tu industria</b><span class="mm-d">Revisemos tu caso.</span></span></a></div></div>
+        </div></div>
+      </div>
+      <div class="mm"><button type="button" aria-haspopup="true">Recursos<svg class="i"><use href="#chev"/></svg></button>
+        <div class="mm-p"><div class="mm-in">
+          <div><div class="mm-g one"><a class="mm-i" href="/blog/"><span class="mm-ic"><svg class="i"><use href="#note"/></svg></span><span><b>Blog</b><span class="mm-d">Guías para operar con IA.</span></span></a><a class="mm-i" href="/help-center/"><span class="mm-ic"><svg class="i"><use href="#headset"/></svg></span><span><b>Centro de ayuda</b><span class="mm-d">Cómo configurar y usar Sapio.</span></span></a></div></div>
+          <div><div class="mm-g one"><a class="mm-i" href="/#aprende"><span class="mm-ic"><svg class="i"><use href="#zap"/></svg></span><span><b>Cómo aprende</b><span class="mm-d">La memoria de tu empresa, explicada.</span></span></a><a class="mm-i" href="/#faq"><span class="mm-ic"><svg class="i"><use href="#list"/></svg></span><span><b>Preguntas frecuentes</b><span class="mm-d">Lo que nos preguntan antes de partir.</span></span></a></div></div>
+        </div></div>
+      </div>
+      <a href="/#resultados">Resultados</a>
+      <a href="/#precio">Precio</a>
+    </div>
+    <div class="nav-r">
+      <a href="https://sense.sapio.dev/login" class="btn btn-ghost">Iniciar sesión</a>
+      <a href="#agendar" class="btn btn-dark">Hablar con un experto</a>
+    </div>
+  </div>
+</nav>
+
+<main class="ag" id="agendar">
+  <div class="wrap ag-g" id="agGrid">
+    <div class="ag-l">
+      <p class="eb">Hablar con un experto</p>
+      <h1>Revisemos tu operación en 30&nbsp;minutos.</h1>
+      <p class="lead">Nos cuentas cómo atienden hoy y te mostramos qué procesos se pueden automatizar con Sapio, con tus canales y tus sistemas.</p>
+      <ol class="ag-steps">
+        <li><span><b>Dejas tus datos.</b> Así llegamos a la reunión sabiendo de qué se trata.</span></li>
+        <li><span><b>Eliges la hora.</b> La agenda se abre aquí mismo, apenas envías.</span></li>
+        <li><span><b>Te llega la invitación</b> con el link de la videollamada.</span></li>
+      </ol>
+      <p class="ag-meta"><span><svg class="i"><use href="#clock"/></svg>30 minutos</span><span><svg class="i"><use href="#check"/></svg>Sin costo</span><span><svg class="i"><use href="#cal"/></svg>Por videollamada</span></p>
+    </div>
+
+    <div class="ag-card">
+      <!-- paso 1: datos -->
+      <form id="agForm" class="ag-step" novalidate>
+        <p class="ag-k">Paso 1 de 2</p>
+        <div class="fld"><label for="fName">Nombre</label><input id="fName" name="name" autocomplete="name" required><p class="err" id="eName"></p></div>
+        <div class="fld"><label for="fEmail">Correo de trabajo</label><input id="fEmail" name="email" type="email" inputmode="email" autocomplete="email" placeholder="tu@empresa.cl" required><p class="err" id="eEmail"></p></div>
+        <div class="fld"><label for="fPhone">Teléfono</label><div class="tel"><label class="cc"><span class="cc-v" id="fCcV" aria-hidden="true">🇨🇱 +56</span><svg class="i" aria-hidden="true"><use href="#chev"/></svg><select id="fCc" name="cc" aria-label="Código de país" autocomplete="tel-country-code"><option value="56" data-flag="🇨🇱" selected>🇨🇱 Chile +56</option><option value="54" data-flag="🇦🇷">🇦🇷 Argentina +54</option><option value="591" data-flag="🇧🇴">🇧🇴 Bolivia +591</option><option value="55" data-flag="🇧🇷">🇧🇷 Brasil +55</option><option value="57" data-flag="🇨🇴">🇨🇴 Colombia +57</option><option value="506" data-flag="🇨🇷">🇨🇷 Costa Rica +506</option><option value="593" data-flag="🇪🇨">🇪🇨 Ecuador +593</option><option value="503" data-flag="🇸🇻">🇸🇻 El Salvador +503</option><option value="34" data-flag="🇪🇸">🇪🇸 España +34</option><option value="1" data-flag="🇺🇸">🇺🇸 Estados Unidos +1</option><option value="502" data-flag="🇬🇹">🇬🇹 Guatemala +502</option><option value="504" data-flag="🇭🇳">🇭🇳 Honduras +504</option><option value="52" data-flag="🇲🇽">🇲🇽 México +52</option><option value="505" data-flag="🇳🇮">🇳🇮 Nicaragua +505</option><option value="507" data-flag="🇵🇦">🇵🇦 Panamá +507</option><option value="595" data-flag="🇵🇾">🇵🇾 Paraguay +595</option><option value="51" data-flag="🇵🇪">🇵🇪 Perú +51</option><option value="1" data-flag="🇵🇷">🇵🇷 Puerto Rico +1</option><option value="1" data-flag="🇩🇴">🇩🇴 República Dominicana +1</option><option value="598" data-flag="🇺🇾">🇺🇾 Uruguay +598</option><option value="58" data-flag="🇻🇪">🇻🇪 Venezuela +58</option></select></label><input id="fPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="9 1234 5678" required></div><p class="err" id="ePhone"></p></div>
+        <div class="fld-2">
+          <div class="fld"><label for="fCompany">Empresa</label><input id="fCompany" name="company" autocomplete="organization" required><p class="err" id="eCompany"></p></div>
+          <div class="fld"><label for="fWebsite">Sitio web <span class="opt">opcional</span></label><input id="fWebsite" name="website" inputmode="url" autocomplete="url" placeholder="tuempresa.cl"></div>
+        </div>
+        <fieldset class="fld">
+          <legend>¿Qué quieres automatizar?</legend>
+          <div class="chips" id="fInterest">
+            <label><input type="radio" name="interest" value="ventas"><span>Ventas</span></label>
+            <label><input type="radio" name="interest" value="post-venta"><span>Atención y post-venta</span></label>
+            <label><input type="radio" name="interest" value="agendamiento"><span>Agendamiento</span></label>
+            <label><input type="radio" name="interest" value="cobranza"><span>Cobranza</span></label>
+            <label><input type="radio" name="interest" value="otro"><span>Otro</span></label>
+          </div>
+          <p class="err" id="eInterest"></p>
+        </fieldset>
+        <div class="fld"><label for="fVolume">Consultas al mes <span class="opt">opcional</span></label>
+          <select id="fVolume" name="volume"><option value="">Prefiero no decir</option><option value="&lt;500">Menos de 500</option><option value="500-2000">500 a 2.000</option><option value="2000-10000">2.000 a 10.000</option><option value="&gt;10000">Más de 10.000</option></select></div>
+        <input class="hp" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button type="submit" class="btn btn-dark ag-go" id="agBtn">Continuar a la agenda<svg class="i ar"><use href="#arrowR"/></svg></button>
+        <p class="ag-err" id="agErr" role="alert"></p>
+        <p class="ag-priv">Usamos estos datos solo para coordinar la reunión y escribirte sobre ella. <a href="/privacidad">Política de Privacidad</a>.</p>
+      </form>
+
+      <!-- paso 2: agenda -->
+      <div id="agCal" class="ag-step" hidden>
+        <p class="ag-k">Paso 2 de 2</p>
+        <h2 class="ag-h" tabindex="-1" id="agCalH">Listo. Ahora elige la hora.</h2>
+        <p class="ag-sub">Tus datos ya van cargados. La reunión queda agendada cuando confirmes un horario.</p>
+        <div id="calEmbed" class="cal-embed"></div>
+      </div>
+
+      <!-- cierre: reserva -->
+      <div id="agDone" class="ag-step" hidden>
+        <p class="ag-k ok" id="agDoneK"><svg class="i"><use href="#check"/></svg>Reunión confirmada</p>
+        <h2 class="ag-h" tabindex="-1" id="agDoneH">Nos vemos en la videollamada.</h2>
+        <p class="ag-sub" id="agDoneP">La invitación con el link ya va camino a <b data-email></b>.</p>
+        <a class="btn btn-ghost" href="/">Volver al inicio</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="ft-g">
+      <div class="ft-brand"><a href="/" class="brand">Sapio</a><p>Operamos empresas con inteligencia artificial: atendemos a tus clientes y hacemos el trabajo de tu equipo, con tus datos.</p><p class="ft-meta">Somos BSP de Meta · Hecho en Chile</p><a class="ft-cta" href="#agendar">Hablar con un experto<svg class="i"><use href="#arrowR"/></svg></a><div class="ft-soc"><a href="https://www.linkedin.com/company/sapio-dev" aria-label="Sapio en LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3v-11Zm6.5 0h3.83v1.5h.05c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.67 4.8 6.13v5.43h-4v-4.82c0-1.15-.02-2.63-1.6-2.63-1.6 0-1.85 1.25-1.85 2.55v4.9h-4v-11Z"/></svg></a><a href="https://www.instagram.com/sapio.dev/" aria-label="Sapio en Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a></div></div>
+      <div><p class="ft-h">Producto</p><a href="/agentes">Agentes de IA</a><a href="/bandeja">Bandeja omnicanal</a><a href="/agenda">Agenda</a><a href="/campanas">Campañas WhatsApp</a><a href="/informes">Informes</a><a href="/sofi">Sofi, la IA de Sapio</a></div>
+      <div><p class="ft-h">Integraciones</p><a href="/whatsapp">WhatsApp Business</a><a href="/integraciones#instagram">Instagram y Messenger</a><a href="/integraciones#correo">Gmail y Outlook</a><a href="/integraciones#chat">Chat de tu sitio</a><a href="/integraciones#agenda">Google Calendar y Outlook</a><a href="/integraciones#odoo">Odoo y tu ERP</a><a href="/integraciones">Todas las integraciones</a></div>
+      <div><p class="ft-h">Soluciones</p><a href="/post-venta">Post-venta</a><a href="/ventas">Ventas</a><a href="/cobranza">Cobranza</a><a href="/inmobiliaria">Inmobiliario</a><a href="/salud">Salud</a><a href="/retail">Retail &amp; Ecommerce</a></div>
+      <div><p class="ft-h">Recursos</p><a href="/blog/">Blog</a><a href="/help-center/">Centro de ayuda</a><a href="/#faq">Preguntas frecuentes</a><a href="/#precio">Precio</a><a href="#agendar">Hablar con un experto</a><a href="https://sense.sapio.dev/login">Iniciar sesión</a></div>
+    </div>
+    <div class="ft-b"><span>© 2026 Sapio · sapio.dev</span><span class="ft-legal"><a href="/privacidad">Política de Privacidad</a><a href="/terminos">Términos del Servicio</a></span></div>
+  </div>
+</footer>
+
+<script src="/js/funnel.js"></script>
+<script>
+/* /agendar — guarda el prospecto ANTES de abrir la agenda (WEB-02) y solo dice
+   "Reunión confirmada" cuando el backend recibió la reserva desde Cal.com (WEB-05).
+   Mientras el sitio siga en Netlify no hay backend: /api/leads no existe y la página
+   abre Cal.com igual, con los datos cargados; la reserva queda en el calendario. */
+(function(){
+  var $ = function(s){ return document.querySelector(s); };
+  var F = window.SapioFunnel;
+  var CAL_LINK = 'sapio-dev-cxug4f/30min';
+  var form = $('#agForm'), btn = $('#agBtn'), errBox = $('#agErr');
+  var requestId = F.uuid(), lead = null, started = false;
+
+  /* el interés se deduce de la página desde la que llegó; se puede cambiar */
+  var ORIGEN = { ventas:'ventas', 'post-venta':'post-venta', cobranza:'cobranza', agenda:'agendamiento',
+    salud:'agendamiento', inmobiliaria:'ventas', retail:'post-venta' };
+  var origen = new URLSearchParams(location.search).get('origen') || '';
+  var pre = ORIGEN[origen];
+  if (pre) form.querySelector('input[name=interest][value="' + pre + '"]').checked = true;
+  var from = '';
+  try { var r = new URL(document.referrer); if (r.host === location.host) from = r.pathname; } catch (e) {}
+
+  form.addEventListener('focusin', function(){
+    if (started) return; started = true;
+    F.push('lead_form_start', { entry_point: origen || 'directo' });
+  });
+
+  var FIELDS = { name:['#fName','#eName'], email:['#fEmail','#eEmail'], phone:['#fPhone','#ePhone'], company:['#fCompany','#eCompany'], interest:['#fInterest input','#eInterest'] };
+  function showErrors(errors){
+    var first = null;
+    Object.keys(FIELDS).forEach(function(k){
+      var input = $(FIELDS[k][0]), msg = errors[k] || '';
+      $(FIELDS[k][1]).textContent = msg;
+      if (k !== 'interest') input.setAttribute('aria-invalid', msg ? 'true' : 'false');
+      if (msg && !first) first = input;
+    });
+    if (first) first.focus();
+  }
+  /* Código de país + número. Si escribió el número con + o con el código adelante, no se duplica. */
+  var ccSel = $('#fCc');
+  function ccLabel(){ var o = ccSel.options[ccSel.selectedIndex]; $('#fCcV').textContent = o.getAttribute('data-flag') + ' +' + o.value; $('#fPhone').placeholder = o.value === '56' ? '9 1234 5678' : 'Número'; }
+  ccSel.addEventListener('change', ccLabel); ccLabel();
+  function fullPhone(cc, raw){
+    raw = (raw || '').trim();
+    if (!raw) return '';
+    if (raw.charAt(0) === '+') return raw;
+    var d = raw.replace(/\D/g, '').replace(/^0+/, '');
+    if (d.indexOf(cc) === 0 && d.length - cc.length >= 8) d = d.slice(cc.length);
+    return '+' + cc + d;
+  }
+  /* Lo que llenó en el paso 1, para que Diego lo vea en la invitación del calendario (notas de Cal.com) */
+  function calNotes(d){
+    var chip = $('#fInterest input:checked'), vol = $('#fVolume');
+    return [
+      'Empresa: ' + d.company,
+      d.website ? 'Sitio web: ' + d.website : '',
+      chip ? 'Quiere automatizar: ' + chip.nextElementSibling.textContent : '',
+      d.volume ? 'Consultas al mes: ' + vol.options[vol.selectedIndex].text : ''
+    ].filter(Boolean).join('\n');
+  }
+  function local(d){
+    var e = {};
+    if (!d.name) e.name = 'Escribe tu nombre.';
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(d.email)) e.email = 'Revisa el correo; parece incompleto.';
+    var digits = d.phone.replace(/\D/g, '');
+    if (digits.length < 8 || digits.length > 15) e.phone = 'Revisa el teléfono; parece incompleto.';
+    if (!d.company) e.company = 'Escribe el nombre de tu empresa.';
+    if (!d.interest) e.interest = 'Elige qué quieres automatizar.';
+    return e;
+  }
+
+  function show(id){
+    ['#agForm','#agCal','#agDone'].forEach(function(s){ $(s).hidden = s !== id; });
+    var h = $(id + ' .ag-h'); if (h) h.focus({ preventScroll:true });
+    scrollTo({ top:0 });
+  }
+  function fillEmail(){ document.querySelectorAll('[data-email]').forEach(function(el){ el.textContent = lead.email; }); }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var fd = new FormData(form);
+    var d = { name:(fd.get('name')||'').trim(), email:(fd.get('email')||'').trim(), phone:fullPhone(fd.get('cc'), fd.get('phone')), company:(fd.get('company')||'').trim(),
+      website:(fd.get('website')||'').trim(), interest:fd.get('interest') || '', volume:fd.get('volume') || '' };
+    var errs = local(d);
+    showErrors(errs);
+    if (Object.keys(errs).length) return;
+    errBox.textContent = '';
+    btn.disabled = true;
+    fetch('/api/leads', {
+      method:'POST', headers:{ 'content-type':'application/json' },
+      body: JSON.stringify({ request_id:requestId, name:d.name, email:d.email, phone:d.phone, company:d.company, website:d.website,
+        interest:d.interest, volume:d.volume || null, hp:fd.get('hp') || '', source_form:'agendar',
+        page_path: from || ('/agendar' + (origen ? '?origen=' + origen : '')), attribution: F.touches() })
+    }).then(function(r){
+        // sin backend (Netlify): 404/405 o una página HTML en vez de JSON
+        if (r.status === 404 || r.status === 405) return { status:r.status, body:{ ok:true, lead_id:null } };
+        return r.json().then(function(j){ return { status:r.status, body:j }; }, function(){ return { status:r.status, body:{ ok:true, lead_id:null } }; });
+      })
+      .then(function(res){
+        if (res.status === 400 && res.body.errors){ showErrors(res.body.errors); throw 0; }
+        if (!res.body.ok) throw new Error(res.body.error || 'error');
+        lead = { id:res.body.lead_id, name:d.name, email:d.email, phone:res.body.phone || d.phone, url:res.body.booking_url || CAL_LINK, notes:calNotes(d) };
+        // event_id = request_id: un reintento del mismo envío no cuenta dos leads
+        if (!res.body.duplicate) F.push('generate_lead', { event_id:requestId, lead_id:lead.id, interest:d.interest, entry_point:origen || 'directo' });
+        fillEmail();
+        $('#agCalH').textContent = 'Listo, ' + d.name.split(' ')[0] + '. Ahora elige la hora.';
+        openCalendar();
+      })
+      .catch(function(err){
+        if (err === 0) return;
+        // el request_id se mantiene: reintentar no crea un duplicado
+        errBox.textContent = 'No pudimos enviar tus datos. Revisa tu conexión y vuelve a intentar.';
+      })
+      .then(function(){ btn.disabled = false; });
+  });
+
+  function bookingStarted(){
+    F.push('booking_started', { lead_id:lead.id });
+    if (lead.id) fetch('/api/leads/' + lead.id + '/booking-started', { method:'POST', headers:{ 'content-type':'application/json' }, body:'{}' }).catch(function(){});
+  }
+
+  function openCalendar(){
+    $('#agGrid').classList.add('wide');
+    show('#agCal');
+    if ($('#calEmbed').childElementCount) return;
+    (function (C, A, L) { var p = function (a, ar) { a.q.push(ar); }; var d = C.document; C.Cal = C.Cal || function () { var cal = C.Cal; var ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement('script')).src = A; cal.loaded = true; } if (ar[0] === L) { var api = function () { p(api, arguments); }; var namespace = ar[1]; api.q = api.q || []; if (typeof namespace === 'string') { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ['initNamespace', namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, 'https://app.cal.com/embed/embed.js', 'init');
+    Cal('init', 'demo', { origin:'https://cal.com' });
+    var cfg = { layout:'month_view', name:lead.name, email:lead.email, attendeePhoneNumber:lead.phone, notes:lead.notes };
+    if (lead.id) cfg['metadata[lead_id]'] = lead.id;
+    Cal.ns.demo('inline', { elementOrSelector:'#calEmbed', calLink:lead.url, config:cfg });
+    Cal.ns.demo('ui', { hideEventTypeDetails:false, layout:'month_view' });
+    bookingStarted();
+    var done = false;
+    function booked(){ if (done) return; done = true; confirmBooking(); }
+    Cal.ns.demo('on', { action:'bookingSuccessfulV2', callback:booked });
+    Cal.ns.demo('on', { action:'bookingSuccessful', callback:booked });
+  }
+
+  /* Cal.com avisa al navegador que reservó; "confirmada" recién cuando el webhook llegó al backend */
+  function confirmBooking(){
+    // Sin backend no hay webhook que esperar: la confirmación es la de Cal.com.
+    if (!lead.id){
+      F.push('demo_booking_confirmed', { event_id:requestId + ':booked', confirmed_by:'cal_embed' });
+      return show('#agDone');
+    }
+    var tries = 0;
+    (function poll(){
+      fetch('/api/leads/' + lead.id + '/status', { cache:'no-store' }).then(function(r){ return r.json(); }).then(function(j){
+        if (j.status === 'meeting_booked'){
+          F.push('demo_booking_confirmed', { event_id:lead.id + ':booked', lead_id:lead.id });
+          return show('#agDone');
+        }
+        if (++tries < 10) return setTimeout(poll, 1500);
+        $('#agDoneK').innerHTML = '<svg class="i"><use href="#check"/></svg>Reserva enviada';
+        $('#agDoneH').textContent = 'La confirmación te llega por correo.';
+        $('#agDoneP').innerHTML = 'Revisa <b data-email></b> en unos minutos.'; fillEmail();
+        show('#agDone');
+      }).catch(function(){ if (++tries < 10) setTimeout(poll, 1500); });
+    })();
+  }
+
+})();
+</script>
+
+</body>
+</html>
