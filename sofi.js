@@ -107,9 +107,12 @@
     var v = SI.value.trim().replace(/\s+/g, '');
     if (!/^(https?:\/\/)?([\w-]+\.)+[a-z]{2,}(\/\S*)?$/i.test(v)) { say('Escribe la dirección de tu sitio, por ejemplo <b>tuempresa.cl</b>, y armo tu agente.'); SI.focus(); return; }
     SB.disabled = true; target = .9;
-    say('Perfecto. Te llevo a armar tu agente con <b>' + v.replace(/^https?:\/\//, '').replace(/</g, '&lt;') + '</b>…');
+    say('Listo. Abrí una pestaña nueva para armar tu agente con <b>' + v.replace(/^https?:\/\//, '').replace(/</g, '&lt;') + '</b>.');
     var q = new URLSearchParams({ url: v, utm_source: 'sapio.dev', utm_medium: 'sofi', utm_campaign: SF.dataset.campaign || 'blog' });
-    setTimeout(function () { location.href = TRY + '?' + q.toString(); }, reduce || !LINE ? 0 : 900);
+    /* pestaña nueva: se abre dentro del submit para que el navegador no la bloquee; si la bloquea igual, va en esta misma */
+    var u = TRY + '?' + q.toString(), w = window.open(u, '_blank');
+    if (w) { try { w.opener = null; } catch (err) {} setTimeout(function () { SB.disabled = false; target = .25; }, 1200); }
+    else location.href = u;
   });
   if (LINE && LINE.dataset.hola) setTimeout(function () { say(LINE.dataset.hola); }, reduce ? 0 : 700);
 })();
