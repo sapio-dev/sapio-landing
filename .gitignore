@@ -6,6 +6,7 @@ node_modules/
 .DS_Store
 *.bak-*
 *.mp4
+!video/*.mp4
 
 # Design iteration scratch (no son producción)
 hero-glow-opciones.html

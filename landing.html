@@ -881,6 +881,62 @@ footer{margin-top:120px;border-top:1px solid var(--line);padding:64px 0 32px}
 .imp.anim .imp-n i{opacity:0;transition:opacity .5s ease}
 .imp.anim.go .imp-c{opacity:1;transform:none}
 .imp.anim .imp-c.done .imp-n i{opacity:1}
+
+/* película: video propio (video/sapio-pelicula.mp4, 1080p) con controles mínimos; baja recién al acercar el mouse o al dar play */
+.pel{padding:72px 0}
+.pel-g{display:grid;grid-template-columns:minmax(0,8fr) minmax(0,4fr);gap:48px;align-items:center}
+.pel-t{order:2;display:grid;gap:16px}
+.pel-k{font-size:13px;font-weight:500;color:var(--ink-3);letter-spacing:.01em}
+.pel-v{position:relative;aspect-ratio:16/9;background:#0b0c1a;overflow:hidden;isolation:isolate;border-radius:var(--r-card);box-shadow:var(--shadow-2);cursor:pointer}
+.pel-v video{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover}
+.pel-cover{all:unset;position:absolute;inset:0;display:grid;place-items:end start;padding:clamp(14px,2.2vw,28px);cursor:pointer}
+.pel-cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pel-v.on .pel-cover{display:none}
+.pel-play{position:relative;display:inline-flex;align-items:center;gap:12px;height:56px;padding:0 24px 0 8px;border-radius:999px;background:#fff;color:#111214;font:600 15px/1 var(--sans);box-shadow:0 14px 40px -12px rgba(0,0,0,.6);transition:transform .3s var(--ease)}
+.pel-cover:hover .pel-play{transform:scale(1.04)}
+.pel-play .c{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#111214}
+.pel-play .c svg{width:14px;height:14px;fill:#fff;margin-left:2px}
+.pel-play em{font-style:normal;color:#6b6e75;font-weight:500}
+/* cargando (conexión lenta): un anillo chico al centro, sólo si tarda */
+.pel-wait{position:absolute;left:50%;top:50%;width:36px;height:36px;margin:-18px 0 0 -18px;border-radius:50%;border:3px solid rgba(255,255,255,.2);border-top-color:#fff;opacity:0;pointer-events:none;transition:opacity .2s .4s;animation:pelspin .8s linear infinite}
+.pel-v.wait .pel-wait{opacity:1}
+@keyframes pelspin{to{transform:rotate(360deg)}}
+/* en pausa: velo con el botón de play */
+.pel-pause{position:absolute;inset:0;display:grid;place-items:center;background:rgba(8,9,22,.45);opacity:0;pointer-events:none;transition:opacity .15s}
+.pel-v.paused .pel-pause{opacity:1}
+.pel-pause span{display:grid;place-items:center;width:68px;height:68px;border-radius:50%;background:#fff}
+.pel-pause svg{width:20px;height:20px;fill:#111214;margin-left:3px}
+/* barra: aparece al mover el mouse y en pausa */
+.pel-bar{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;gap:6px;padding:28px 14px 12px;background:linear-gradient(transparent,rgba(5,6,16,.6));opacity:0;pointer-events:none;transition:opacity .25s ease}
+.pel-v.on.ui .pel-bar,.pel-v.paused .pel-bar{opacity:1;pointer-events:auto}
+.pel-bar button{all:unset;cursor:pointer;display:grid;place-items:center;width:34px;height:34px;border-radius:8px;color:#fff}
+.pel-bar button:hover{background:rgba(255,255,255,.12)}
+.pel-bar svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.pel-bar .i-play{fill:currentColor;stroke:none}
+.pel-bar .i-play,.pel-v.paused .pel-bar .i-pause,.pel-bar .i-muted,.pel-v.muted .pel-bar .i-vol{display:none}
+.pel-v.paused .pel-bar .i-play,.pel-v.muted .pel-bar .i-muted{display:block}
+.pel-bar .t{flex:1;height:14px;margin:0 6px;cursor:pointer;position:relative}
+.pel-bar .t::before,.pel-bar .t b,.pel-bar .t i{content:"";position:absolute;left:0;top:50%;height:3px;margin-top:-1.5px;border-radius:2px}
+.pel-bar .t::before{right:0;background:rgba(255,255,255,.2)}
+.pel-bar .t b{width:0;background:rgba(255,255,255,.35)}
+.pel-bar .t i{width:0;background:#fff}
+.pel-bar .s{font:500 12px/1 var(--sans);color:rgba(255,255,255,.8);font-variant-numeric:tabular-nums;min-width:34px}
+/* al terminar: el llamado a agendar */
+.pel-end{position:absolute;inset:0;display:none;place-items:center;align-content:center;gap:18px;background:rgba(8,9,22,.95);color:#fff;text-align:center;cursor:default}
+.pel-v.end .pel-end{display:grid}
+.pel-end p{font:600 clamp(20px,2.2vw,28px)/1.2 var(--sans);letter-spacing:-.02em}
+.pel-end div{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.pel-end .btn-ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.3)}
+.pel-v:fullscreen{border-radius:0}
+/* 13": #casos se ve al 90 % (zoom); aquí se replica el mismo ancho a mano para que los bordes calcen */
+@media (min-width:901px) and (max-height:860px){#pelicula .wrap{max-width:calc(var(--maxw) * .9);padding-inline:calc(var(--edge) * .9)}#pelicula h2{font-size:calc(clamp(28px,3.2vw,42px) * .9)}}
+@media (max-width:900px){
+  .pel{padding:48px 0}
+  .pel-g{grid-template-columns:1fr;gap:24px}
+  .pel-t{order:0}
+  .pel-v{border-radius:12px}
+  .pel-play{height:46px;font-size:14px}.pel-play .c{width:34px;height:34px}
+}
 </style>
 </head>
 <body>
@@ -1021,6 +1077,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="imp-c"><p class="imp-n"><b data-to="67">67</b><i>%</i></p><p class="imp-l">de las conversaciones no necesitó pasar a una persona</p></div>
     <div class="imp-c"><p class="imp-n"><b data-to="99">99</b><i>%</i></p><p class="imp-l">de los mensajes, respondidos en menos de un minuto</p></div>
     <div class="imp-c" title="Estimación: 45.626 respuestas de la IA × 1,7 minutos, la mediana real de un operador al responder (producción al 8-oct-2026)"><p class="imp-n"><b data-to="1300" data-pre="≈">≈1.300</b><i class="w">horas</i></p><p class="imp-l">de trabajo ahorradas a los equipos que operan con Sapio</p></div>
+  </div>
+</section>
+
+<!-- ============================== LA PELÍCULA (también en YouTube: mgtvg3QuzKA) ============================== -->
+<section class="pel" id="pelicula" aria-label="Sapio en 75 segundos">
+  <div class="wrap pel-g">
+    <div class="pel-t">
+      <p class="pel-k rv">El video · 1:15</p>
+      <h2 class="rv" style="--d:60ms">Sapio, en 75 segundos.</h2>
+      <p class="note rv" style="--d:100ms">Del mensaje que nadie alcanzó a responder al informe que lee tu directorio.</p>
+      <div class="rv" style="--d:140ms"><a href="/agendar?origen=video" class="btn btn-dark">Hablar con un experto <span class="ar">→</span></a></div>
+    </div>
+    <div class="pel-v rv" style="--d:120ms" id="pelV">
+      <video preload="none" playsinline poster="img/pelicula-poster.jpg" data-src="video/sapio-pelicula.mp4"></video>
+      <span class="pel-wait"></span>
+      <div class="pel-pause"><span><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></div>
+      <button type="button" class="pel-cover" data-a="start" aria-label="Reproducir el video de Sapio, 1 minuto 15 segundos"><img src="img/pelicula-poster.jpg" alt="" width="1600" height="900" loading="lazy"><span class="pel-play"><span class="c"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span>Ver el video <em>1:15</em></span></button>
+      <div class="pel-bar">
+        <button type="button" data-a="toggle" aria-label="Pausar o reproducir"><svg class="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></svg><svg class="i-play" viewBox="0 0 24 24"><path d="M7 4.5l12 7.5-12 7.5z"/></svg></button>
+        <span class="t" data-a="seek"><b></b><i></i></span>
+        <span class="s">0:00</span>
+        <button type="button" data-a="mute" aria-label="Silenciar o activar el sonido"><svg class="i-vol" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><svg class="i-muted" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="m22 9-6 6M16 9l6 6"/></svg></button>
+        <button type="button" data-a="fs" aria-label="Pantalla completa"><svg viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/></svg></button>
+      </div>
+      <div class="pel-end"><p>¿Lo vemos con tu operación?</p><div><a href="/agendar?origen=video" class="btn btn-dark" style="background:#fff;color:#111214">Hablar con un experto <span class="ar">→</span></a><button type="button" class="btn btn-ghost" data-a="again">Ver de nuevo</button></div></div>
+    </div>
   </div>
 </section>
 
@@ -1870,5 +1952,55 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </script>
 <script src="https://sense.sapio.dev/api/v1/widget.js" data-token="10b5843a-63e7-42e7-ab60-5b37d981bef8" async></script>
 <script src="/js/funnel.js" defer></script>
+<script>
+/* la película: video propio. No baja nada hasta que el mouse se acerca o se da play (cuida el ancho de banda);
+   la interfaz cambia en el mismo clic y el anillo de carga aparece sólo si la conexión tarda */
+(function(){
+  var box = document.getElementById('pelV'); if(!box) return;
+  var v = box.querySelector('video'), bar = box.querySelector('.t i'), buf = box.querySelector('.t b'), s = box.querySelector('.s');
+  var dl = window.dataLayer = window.dataLayer || [], hit = {};
+  function ev(n){ if(hit[n]) return; hit[n] = 1; dl.push({event:'video_' + n, video:'pelicula'}); }
+  function fmt(t){ t = Math.floor(t); return Math.floor(t/60) + ':' + ('0' + t%60).slice(-2); }
+  function cls(c, on){ box.classList.toggle(c, on); }
+  function arm(){ if(!v.src){ v.src = v.dataset.src; v.preload = 'auto'; } }
+  box.addEventListener('pointerenter', arm);
+  box.addEventListener('touchstart', arm, {passive:true});
+
+  function start(){
+    arm(); cls('on', true); cls('end', false); cls('paused', false); hit.complete = 0;
+    if(v.ended) v.currentTime = 0;
+    v.muted = false; cls('muted', false);
+    var p = v.play(); if(p && p.catch) p.catch(function(){ v.muted = true; cls('muted', true); v.play(); });
+  }
+  v.addEventListener('playing', function(){ cls('wait', false); cls('paused', false); ev('play'); });
+  v.addEventListener('waiting', function(){ cls('wait', true); });
+  v.addEventListener('canplay', function(){ cls('wait', false); });
+  v.addEventListener('pause', function(){ if(!v.ended) cls('paused', true); });
+  v.addEventListener('timeupdate', function(){
+    var d = v.duration || 75, r = v.currentTime / d;
+    bar.style.width = (r * 100) + '%'; s.textContent = fmt(v.currentTime);
+    if(r >= .5) ev('50');
+  });
+  v.addEventListener('progress', function(){ if(v.buffered.length) buf.style.width = (v.buffered.end(v.buffered.length - 1) / (v.duration || 75) * 100) + '%'; });
+  v.addEventListener('ended', function(){ cls('end', true); cls('paused', false); ev('complete'); if(document.fullscreenElement) document.exitFullscreen(); });
+
+  var hide; box.addEventListener('mousemove', function(){ cls('ui', true); clearTimeout(hide); hide = setTimeout(function(){ cls('ui', false); }, 1800); });
+  box.addEventListener('mouseleave', function(){ clearTimeout(hide); cls('ui', false); });
+  box.addEventListener('click', function(e){
+    if(e.target.closest('a') || e.target.closest('.pel-end') && !e.target.closest('[data-a]')) return;
+    var a = e.target.closest('[data-a]'), act = a ? a.dataset.a : 'toggle';
+    if(act === 'start' || act === 'again') return start();
+    if(!box.classList.contains('on')) return;
+    if(act === 'toggle'){ if(v.paused){ cls('paused', false); v.play(); } else { cls('paused', true); v.pause(); } }
+    if(act === 'mute'){ v.muted = !v.muted; cls('muted', v.muted); }
+    if(act === 'fs'){ if(document.fullscreenElement) document.exitFullscreen(); else if(box.requestFullscreen) box.requestFullscreen(); else if(v.webkitEnterFullscreen) v.webkitEnterFullscreen(); }
+    if(act === 'seek'){ var r = a.getBoundingClientRect(); v.currentTime = Math.max(0, Math.min(1, (e.clientX - r.left) / r.width)) * (v.duration || 75); }
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.code !== 'Space' || !box.classList.contains('on') || box.classList.contains('end') || !box.matches(':hover')) return;
+    e.preventDefault(); if(v.paused){ cls('paused', false); v.play(); } else { cls('paused', true); v.pause(); }
+  });
+})();
+</script>
 </body>
 </html>
