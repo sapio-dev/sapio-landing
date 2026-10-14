@@ -36,11 +36,13 @@ participando de su operación, no pidiéndole que la documente.
 
 - [Centro de ayuda](https://sapio.dev/help-center/): tutoriales de configuración y operación.
 - [Primeros pasos](https://sapio.dev/help-center/primeros-pasos/)
-- [Entrenar al agente](https://sapio.dev/help-center/entrena-a-tu-agente/)
-- [Personalidad, instrucciones y feedbacks](https://sapio.dev/help-center/personalidad-instrucciones-y-preview/)
-- [Derivaciones a una persona](https://sapio.dev/help-center/derivar-a-un-humano/)
-- [Bandeja, estados y board](https://sapio.dev/help-center/gestionar-conversaciones/)
-- [Análisis e Informe IA](https://sapio.dev/help-center/analisis-y-metricas/)
+- [Enséñale a tu agente](https://sapio.dev/help-center/entrena-a-tu-agente/)
+- [Configura cómo habla tu agente](https://sapio.dev/help-center/personalidad-instrucciones-y-preview/)
+- [Derivar a una persona](https://sapio.dev/help-center/derivar-a-un-humano/)
+- [Conectar Gmail u Outlook](https://sapio.dev/help-center/conectar-correo/)
+- [Agenda y reservas](https://sapio.dev/help-center/agenda-y-reservas/)
+- [Atiende en la bandeja](https://sapio.dev/help-center/gestionar-conversaciones/)
+- [Resumen, Informes y Sofi](https://sapio.dev/help-center/analisis-y-metricas/)
 
 ## Conceptos
 

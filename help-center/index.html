@@ -97,6 +97,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   .hc-group-title .num { color: var(--accent); }
   .hc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .hc-grid.c4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 
   .hc-card {
     position: relative; display: flex; flex-direction: column; gap: 12px;
@@ -160,6 +161,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .hc-group { margin-top: 88px; }
   .hc-card { border: 0; box-shadow: inset 0 0 0 1px var(--hair); }
   .hc-card:hover { border: 0; box-shadow: inset 0 0 0 1px var(--hair), 0 22px 44px -24px rgba(15,23,42,.26); }
+  @media (max-width: 1180px) { .hc-grid.c4 { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 960px) { .hc-grid { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 600px) {
     .hc-hero { padding-top: calc(var(--nav-h) + 56px); }
@@ -215,10 +217,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p>Tutoriales paso a paso para configurar tu agente, conectar tus canales y operar el día a día. Y para lo que viene después de la instalación: cómo el agente va aprendiendo el criterio de tu equipo.</p>
     <div class="hc-search">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-      <input id="hcSearch" type="search" placeholder="Busca un tutorial: WhatsApp, entrenar, derivar…" autocomplete="off">
+      <input id="hcSearch" type="search" placeholder="Busca un tutorial: WhatsApp, correo, agenda, derivar…" autocomplete="off">
     </div>
     </div>
-    <aside class="hc-start" aria-label="Para empezar"><p class="hc-start-k">Para empezar</p><a href="/help-center/primeros-pasos/"><span class="g-ic"><svg class="i"><use href="#bot"/></svg></span><span><b>Primeros pasos</b><small>Crea tu cuenta y tu primer agente.</small></span><svg class="i ar"><use href="#arrowR"/></svg></a><a href="/help-center/conectar-whatsapp/"><span class="g-ic"><svg class="i"><use href="#ic-msgs"/></svg></span><span><b>Conectar WhatsApp</b><small>El número, Meta y la primera prueba.</small></span><svg class="i ar"><use href="#arrowR"/></svg></a><a href="/help-center/entrena-a-tu-agente/"><span class="g-ic"><svg class="i"><use href="#note"/></svg></span><span><b>Entrena a tu agente</b><small>Tus documentos, precios y preguntas.</small></span><svg class="i ar"><use href="#arrowR"/></svg></a><a href="/help-center/derivar-a-un-humano/"><span class="g-ic"><svg class="i"><use href="#user"/></svg></span><span><b>Derivaciones</b><small>Cuándo y a quién pasa el caso.</small></span><svg class="i ar"><use href="#arrowR"/></svg></a></aside>
+    <aside class="hc-start" aria-label="Para empezar"><p class="hc-start-k">Para empezar</p><a href="/help-center/primeros-pasos/"><span class="g-ic"><svg class="i"><use href="#bot"/></svg></span><span><b>Primeros pasos</b><small>Entra, recorre el menú y prueba tu agente.</small></span><svg class="i ar"><use href="#arrowR"/></svg></a><a href="/help-center/conectar-whatsapp/"><span class="g-ic"><svg class="i"><use href="#ic-msgs"/></svg></span><span><b>Conectar WhatsApp</b><small>Con tu app o en una línea dedicada.</small></span><svg class="i ar"><use href="#arrowR"/></svg></a><a href="/help-center/entrena-a-tu-agente/"><span class="g-ic"><svg class="i"><use href="#note"/></svg></span><span><b>Enséñale a tu agente</b><small>Conocimiento, aprendizajes y correcciones.</small></span><svg class="i ar"><use href="#arrowR"/></svg></a><a href="/help-center/derivar-a-un-humano/"><span class="g-ic"><svg class="i"><use href="#user"/></svg></span><span><b>Derivar a una persona</b><small>Cuándo deriva y a quién avisa.</small></span><svg class="i ar"><use href="#arrowR"/></svg></a></aside>
   </div>
 </header>
 
@@ -227,97 +229,109 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
 
     <section class="hc-group" data-group>
-      <h2 class="hc-group-title"><span class="g-ic"><svg class="i"><use href="#bot"/></svg></span>Configura tu agente</h2>
+      <h2 class="hc-group-title"><span class="g-ic"><svg class="i"><use href="#bot"/></svg></span>Tu agente</h2>
       <div class="hc-grid">
-        <a class="hc-card" href="/help-center/primeros-pasos/" data-keywords="cuenta signup registro empezar panel crm board organización trial">
+        <a class="hc-card" href="/help-center/primeros-pasos/" data-keywords="cuenta registro empezar menú prueba try acceso login">
           <span class="hc-card-tag">Empieza aquí</span>
-          <span class="hc-card-title">Primeros pasos: crea tu cuenta y tu agente</span>
-          <span class="hc-card-dek">Desde crear la cuenta hasta la primera conversación de prueba, con el recorrido por el panel.</span>
-          <span class="hc-card-time">Tutorial · 10 min</span>
+          <span class="hc-card-title">Primeros pasos en Sapio</span>
+          <span class="hc-card-dek">Cómo entras, qué hay en cada sección del menú y cómo probar a tu agente.</span>
+          <span class="hc-card-time">Tutorial · 8 min</span>
         </a>
-        <a class="hc-card" href="/help-center/personalidad-instrucciones-y-preview/" data-keywords="tono voz marca reglas instrucciones feedbacks probar preview personalidad emojis">
+        <a class="hc-card" href="/help-center/personalidad-instrucciones-y-preview/" data-keywords="tono voz personalidad instrucciones reglas comentarios probar preview emojis">
           <span class="hc-card-tag">Configuración</span>
-          <span class="hc-card-title">Personalidad, instrucciones y Preview</span>
-          <span class="hc-card-dek">Define cómo habla tu agente, qué reglas de negocio sigue y pruébalo antes de publicarlo.</span>
-          <span class="hc-card-time">Tutorial · 6 min</span>
+          <span class="hc-card-title">Configura cómo habla tu agente</span>
+          <span class="hc-card-dek">Identidad, personalidad, reglas, comentarios públicos y la pestaña Probar.</span>
+          <span class="hc-card-time">Tutorial · 8 min</span>
         </a>
-        <a class="hc-card" href="/help-center/entrena-a-tu-agente/" data-keywords="entrenamiento documentos pdf excel word catálogo precios faq conocimiento archivos enviar fotos brochure">
-          <span class="hc-card-tag">Configuración</span>
-          <span class="hc-card-title">Entrena a tu agente con tus documentos</span>
-          <span class="hc-card-dek">Sube catálogo, precios y preguntas frecuentes para que responda con tu información real.</span>
-          <span class="hc-card-time">Tutorial · 7 min</span>
+        <a class="hc-card" href="/help-center/entrena-a-tu-agente/" data-keywords="entrenar documentos pdf catálogo conocimiento aprendizajes es así corregir memoria">
+          <span class="hc-card-tag">Aprendizaje</span>
+          <span class="hc-card-title">Enséñale a tu agente</span>
+          <span class="hc-card-dek">Conocimiento, archivos que envía, aprendizajes por confirmar y correcciones.</span>
+          <span class="hc-card-time">Tutorial · 9 min</span>
         </a>
       </div>
     </section>
 
     <section class="hc-group" data-group>
       <h2 class="hc-group-title"><span class="g-ic"><svg class="i"><use href="#ic-msgs"/></svg></span>Conecta tus canales</h2>
-      <div class="hc-grid">
-        <a class="hc-card" href="/help-center/conectar-whatsapp/" data-keywords="whatsapp número meta business api verificación sms plantillas 24 horas">
+      <div class="hc-grid c4">
+        <a class="hc-card" href="/help-center/conectar-whatsapp/" data-keywords="whatsapp número meta business coexistencia línea varias líneas">
           <span class="hc-card-tag">WhatsApp</span>
           <span class="hc-card-title">Conectar WhatsApp</span>
-          <span class="hc-card-dek">Requisitos del número, verificación con Meta y las primeras pruebas del canal.</span>
-          <span class="hc-card-time">Tutorial · 8 min</span>
-        </a>
-        <a class="hc-card" href="/help-center/conectar-instagram-y-facebook/" data-keywords="instagram facebook messenger dm mensajes directos página cuenta profesional historias">
-          <span class="hc-card-tag">Instagram · Facebook</span>
-          <span class="hc-card-title">Conectar Instagram y Facebook</span>
-          <span class="hc-card-dek">Vincula tu cuenta profesional de Instagram y tu página de Facebook en un par de minutos.</span>
-          <span class="hc-card-time">Tutorial · 5 min</span>
-        </a>
-        <a class="hc-card" href="/help-center/instalar-el-chat-web/" data-keywords="widget chat web sitio script instalar wordpress shopify tag manager en vivo">
-          <span class="hc-card-tag">Chat web</span>
-          <span class="hc-card-title">Instalar el chat web en tu sitio</span>
-          <span class="hc-card-dek">Copia un script, pégalo en tu sitio y atiende a tus visitas en tiempo real.</span>
-          <span class="hc-card-time">Tutorial · 4 min</span>
-        </a>
-      </div>
-    </section>
-
-    <section class="hc-group" data-group>
-      <h2 class="hc-group-title"><span class="g-ic"><svg class="i"><use href="#list"/></svg></span>Opera el día a día</h2>
-      <div class="hc-grid">
-        <a class="hc-card" href="/help-center/gestionar-conversaciones/" data-keywords="crm bandeja board kanban estados embudo tags intervenir takeover clasificar conversaciones cierre">
-          <span class="hc-card-tag">Operación</span>
-          <span class="hc-card-title">Gestiona tus conversaciones: CRM, Board y estados</span>
-          <span class="hc-card-dek">La bandeja unificada, el tablero kanban y cómo intervenir una conversación cuando quieras.</span>
-          <span class="hc-card-time">Tutorial · 7 min</span>
-        </a>
-        <a class="hc-card" href="/help-center/derivar-a-un-humano/" data-keywords="derivación derivaciones handoff escalar humano ejecutivo correo horario equipo">
-          <span class="hc-card-tag">Operación</span>
-          <span class="hc-card-title">Derivaciones: pasa el caso a tu equipo</span>
-          <span class="hc-card-dek">Configura quién recibe cada derivación, en qué horario y cómo atenderla sin perder contexto.</span>
+          <span class="hc-card-dek">Con tu app de WhatsApp Business o en una línea solo para Sapio.</span>
           <span class="hc-card-time">Tutorial · 6 min</span>
         </a>
-        <a class="hc-card" href="/help-center/analisis-y-metricas/" data-keywords="análisis métricas indicadores informe ia embudo fugas palancas crecimiento reportes datos">
-          <span class="hc-card-tag">Operación</span>
-          <span class="hc-card-title">Análisis: indicadores e Informe IA</span>
-          <span class="hc-card-dek">Lee tus métricas por canal y estado, y deja que el Informe IA priorice qué corregir y dónde crecer.</span>
+        <a class="hc-card" href="/help-center/conectar-instagram-y-facebook/" data-keywords="instagram facebook messenger dm historias menciones meta">
+          <span class="hc-card-tag">Instagram y Messenger</span>
+          <span class="hc-card-title">Conectar Instagram y Messenger</span>
+          <span class="hc-card-dek">Un solo paso con Meta, y eliges a qué responde tu agente.</span>
+          <span class="hc-card-time">Tutorial · 5 min</span>
+        </a>
+        <a class="hc-card" href="/help-center/conectar-correo/" data-keywords="correo email gmail outlook casilla responder registro">
+          <span class="hc-card-tag">Correo</span>
+          <span class="hc-card-title">Conectar Gmail u Outlook</span>
+          <span class="hc-card-dek">El agente contesta en el mismo hilo, o los correos solo quedan registrados.</span>
+          <span class="hc-card-time">Tutorial · 6 min</span>
+        </a>
+        <a class="hc-card" href="/help-center/instalar-el-chat-web/" data-keywords="chat web widget sitio código snippet wordpress shopify">
+          <span class="hc-card-tag">Chat web</span>
+          <span class="hc-card-title">Instalar el chat en tu sitio</span>
+          <span class="hc-card-dek">Activa el widget, pega el código y ajusta cómo se ve y saluda.</span>
+          <span class="hc-card-time">Tutorial · 6 min</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="hc-group" data-group>
+      <h2 class="hc-group-title"><span class="g-ic"><svg class="i"><use href="#list"/></svg></span>El día a día</h2>
+      <div class="hc-grid c4">
+        <a class="hc-card" href="/help-center/gestionar-conversaciones/" data-keywords="bandeja conversaciones tomar devolver al agente asignar notas etiquetas tablero board">
+          <span class="hc-card-tag">Bandeja</span>
+          <span class="hc-card-title">Atiende en la bandeja</span>
+          <span class="hc-card-dek">Bandejas, tomar y devolver al agente, notas, etiquetas y Tablero.</span>
+          <span class="hc-card-time">Tutorial · 9 min</span>
+        </a>
+        <a class="hc-card" href="/help-center/derivar-a-un-humano/" data-keywords="derivar humano escalar derivaciones avisos devolver a la ia">
+          <span class="hc-card-tag">Derivación</span>
+          <span class="hc-card-title">Derivar a una persona</span>
+          <span class="hc-card-dek">Cuándo deriva, a quién avisa y Devolver a la IA si nadie contesta.</span>
+          <span class="hc-card-time">Tutorial · 8 min</span>
+        </a>
+        <a class="hc-card" href="/help-center/reactivacion-y-seguimientos/" data-keywords="reactivación seguimientos leads fríos horario seguro retomar">
+          <span class="hc-card-tag">Seguimientos</span>
+          <span class="hc-card-title">Reactivación y horario seguro</span>
+          <span class="hc-card-dek">Cuándo y para qué le vuelve a escribir a quien dejó de responder.</span>
+          <span class="hc-card-time">Tutorial · 5 min</span>
+        </a>
+        <a class="hc-card" href="/help-center/invitar-a-tu-equipo/" data-keywords="usuarios equipo roles administrador permisos acceso crear usuario">
+          <span class="hc-card-tag">Equipo</span>
+          <span class="hc-card-title">Suma a tu equipo</span>
+          <span class="hc-card-dek">Crea usuarios, elige su rol, arma equipos y limita qué ve cada uno.</span>
           <span class="hc-card-time">Tutorial · 5 min</span>
         </a>
       </div>
     </section>
 
     <section class="hc-group" data-group>
-      <h2 class="hc-group-title"><span class="g-ic"><svg class="i"><use href="#user"/></svg></span>Crecimiento y equipo</h2>
+      <h2 class="hc-group-title"><span class="g-ic"><svg class="i"><use href="#chart"/></svg></span>Agenda, campañas y análisis</h2>
       <div class="hc-grid">
-        <a class="hc-card" href="/help-center/broadcast-y-plantillas/" data-keywords="broadcast plantillas whatsapp campañas envío masivo excel marketing recaptación meta aprobación">
-          <span class="hc-card-tag">WhatsApp</span>
-          <span class="hc-card-title">Broadcast y plantillas de WhatsApp</span>
-          <span class="hc-card-dek">Crea plantillas aprobadas por Meta y envía campañas que tu agente atiende apenas responden.</span>
+        <a class="hc-card" href="/help-center/agenda-y-reservas/" data-keywords="agenda reservas citas horas recordatorios reagendar cancelar calendario">
+          <span class="hc-card-tag">Agenda</span>
+          <span class="hc-card-title">Agenda y reservas</span>
+          <span class="hc-card-dek">Sucursales, servicios, recordatorios y un agente que agenda, reagenda y cancela.</span>
+          <span class="hc-card-time">Tutorial · 8 min</span>
+        </a>
+        <a class="hc-card" href="/help-center/broadcast-y-plantillas/" data-keywords="campañas plantillas whatsapp envío masivo excel difusión broadcast meta">
+          <span class="hc-card-tag">Campañas</span>
+          <span class="hc-card-title">Campañas y plantillas</span>
+          <span class="hc-card-dek">Plantillas aprobadas por Meta, tu lista en Excel y envíos programados.</span>
+          <span class="hc-card-time">Tutorial · 9 min</span>
+        </a>
+        <a class="hc-card" href="/help-center/analisis-y-metricas/" data-keywords="resumen dashboard informes pdf sofi métricas indicadores clasificaciones">
+          <span class="hc-card-tag">Análisis</span>
+          <span class="hc-card-title">Resumen, Informes y Sofi</span>
+          <span class="hc-card-dek">El panel, los informes en PDF y la analista a la que le preguntas.</span>
           <span class="hc-card-time">Tutorial · 7 min</span>
-        </a>
-        <a class="hc-card" href="/help-center/reactivacion-y-seguimientos/" data-keywords="reactivación seguimientos follow up leads fríos retomar conversaciones cadencia recuperar">
-          <span class="hc-card-tag">Crecimiento</span>
-          <span class="hc-card-title">Reactivación: seguimientos automáticos</span>
-          <span class="hc-card-dek">El agente retoma solo las conversaciones que se enfrían, con criterio y sin insistir de más.</span>
-          <span class="hc-card-time">Tutorial · 5 min</span>
-        </a>
-        <a class="hc-card" href="/help-center/invitar-a-tu-equipo/" data-keywords="invitar usuarios equipo roles permisos administrador miembro dueño organización multiusuario">
-          <span class="hc-card-tag">Equipo</span>
-          <span class="hc-card-title">Invita a tu equipo</span>
-          <span class="hc-card-dek">Suma usuarios con roles y trabajen sobre la misma bandeja, sin pisarse con la IA.</span>
-          <span class="hc-card-time">Tutorial · 4 min</span>
         </a>
       </div>
     </section>

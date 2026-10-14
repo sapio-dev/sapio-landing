@@ -10,9 +10,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Derivaciones: pasa el caso a tu equipo | Centro de ayuda de Sapio</title>
-<meta name="description" content="Cómo funcionan las derivaciones en Sapio: cuándo el agente pasa un caso a tu equipo, quién recibe el aviso, en qué horario y cómo atenderlo sin perder contexto.">
-<meta name="keywords" content="derivación a humano, handoff agente de IA, escalar a humano, derivaciones Sapio, traspaso a humano sin perder contexto">
+<title>Derivar a una persona: cuándo deriva el agente y quién recibe el caso | Centro de ayuda de Sapio</title>
+<meta name="description" content="Cómo funciona la derivación en Sapio: cuándo el agente le pasa una conversación a tu equipo, a quién avisa, cómo se atiende en Derivaciones y cómo activar Devolver a la IA.">
+<meta name="keywords" content="derivar a un humano, derivación agente IA, escalar a una persona, devolver a la IA, derivaciones Sapio">
 <meta name="author" content="Sapio">
 <meta name="theme-color" content="#f4f4f6">
 <link rel="canonical" href="https://sapio.dev/help-center/derivar-a-un-humano/">
@@ -20,13 +20,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Sapio">
 <meta property="og:url" content="https://sapio.dev/help-center/derivar-a-un-humano/">
-<meta property="og:title" content="Derivaciones: cuándo y cómo el agente pasa el caso a tu equipo">
-<meta property="og:description" content="Configura quién recibe cada derivación, en qué horario y cómo atenderla sin perder contexto.">
+<meta property="og:title" content="Derivar a una persona: cuándo deriva el agente y quién recibe el caso">
+<meta property="og:description" content="Cuándo deriva el agente, a quién avisa y qué pasa si nadie atiende: Derivaciones y Devolver a la IA.">
 <meta property="og:image" content="https://sapio.dev/og/og-ayuda.jpg">
 <meta property="og:locale" content="es_CL">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Derivaciones a tu equipo | Sapio">
-<meta name="twitter:description" content="Cuándo deriva el agente, quién recibe el aviso y cómo atenderlo.">
+<meta name="twitter:title" content="Derivar a una persona">
+<meta name="twitter:description" content="Cuándo deriva el agente, a quién avisa y qué pasa si nadie atiende: Derivaciones y Devolver a la IA.">
 <meta name="twitter:image" content="https://sapio.dev/og/og-ayuda.jpg">
 
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -37,15 +37,67 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Configurar y atender derivaciones en Sapio",
-  "description": "Cómo definir cuándo el agente deriva a un humano, quién recibe el aviso y cómo atender la derivación.",
+  "name": "Derivar a una persona: cuándo deriva el agente y quién recibe el caso",
+  "description": "Cómo funciona la derivación en Sapio: cuándo el agente le pasa una conversación a tu equipo, a quién avisa, cómo se atiende en Derivaciones y cómo activar Devolver a la IA.",
   "inLanguage": "es",
-  "totalTime": "PT6M",
+  "totalTime": "PT8M",
   "step": [
-    {"@type": "HowToStep", "position": 1, "name": "Define cuándo derivar", "text": "En las instrucciones del agente, describe las señales que ameritan pasar el caso a una persona."},
-    {"@type": "HowToStep", "position": 2, "name": "Configura quién recibe el aviso", "text": "Asigna el correo del ejecutivo responsable y su horario de atención."},
-    {"@type": "HowToStep", "position": 3, "name": "Atiende desde Derivaciones", "text": "La página Derivaciones lista los casos pendientes; abre el chat con todo el contexto y responde."},
-    {"@type": "HowToStep", "position": 4, "name": "Devuelve el caso a la IA", "text": "Al cerrar el caso, reasigna la conversación al agente para que retome la atención."}
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Define cuándo deriva",
+      "text": "En Configuración → Agentes → tu agente → Configuración → Derivación, marca en qué casos escala y agrega reglas propias."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Elige quién la recibe",
+      "text": "En Quién la recibe, elige un equipo, personas, correos sin cuenta o repartir por turno."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Atiende en Derivaciones",
+      "text": "En el menú Derivaciones, abre el caso con Ver conversación y márcalo como Atendida."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Activa Devolver a la IA",
+      "text": "En la sub-pestaña Devolver a la IA, elige después de cuánto tiempo sin respuesta el agente retoma la conversación en WhatsApp."
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿El agente retoma solo una derivación?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Solo si activas Devolver a la IA: en WhatsApp, cuando el cliente lleva esperando más del plazo que elegiste. Si no, la conversación espera a una persona o a que alguien presione Devolver al agente."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Me llegan avisos al celular?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Los avisos llegan por correo y por la campana dentro de Sapio. Si tienes el correo en el celular, te llegan ahí."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo avisarle a alguien que no usa Sapio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Agrégalo en Correos sin cuenta: recibe un correo con lo conversado."
+      }
+    }
   ]
 }
 </script>
@@ -54,9 +106,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://sapio.dev/"},
-    {"@type": "ListItem", "position": 2, "name": "Centro de ayuda", "item": "https://sapio.dev/help-center/"},
-    {"@type": "ListItem", "position": 3, "name": "Derivaciones", "item": "https://sapio.dev/help-center/derivar-a-un-humano/"}
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://sapio.dev/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Centro de ayuda",
+      "item": "https://sapio.dev/help-center/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Derivar a una persona",
+      "item": "https://sapio.dev/help-center/derivar-a-un-humano/"
+    }
   ]
 }
 </script>
@@ -109,10 +176,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <article class="article">
   <header class="art-hd dark grain"><div class="prose-wrap">
-    <div class="breadcrumb"><a href="/">Inicio</a> / <a href="/help-center/">Centro de ayuda</a> / Derivaciones</div>
-    <div class="article-meta">Tutorial · Operación diaria · 6 min</div>
-    <h1>Derivaciones: cuándo y cómo el agente pasa el caso a tu equipo</h1>
-    <p class="standfirst">Un buen agente sabe lo que no le corresponde resolver. Las derivaciones son el puente: el agente detecta el momento, avisa a la persona correcta y le entrega la conversación con todo el contexto.</p>
+    <div class="breadcrumb"><a href="/">Inicio</a> / <a href="/help-center/">Centro de ayuda</a> / Derivar a una persona</div>
+    <div class="article-meta">Tutorial · Día a día · 8 min</div>
+    <h1>Derivar a una persona</h1>
+    <p class="standfirst">El agente sabe cuándo un caso necesita a alguien de tu equipo. Aquí defines cuándo deriva, a quién le avisa y qué pasa si nadie lo toma a tiempo.</p>
   </div></header>
   <div class="prose-wrap">
 
@@ -120,61 +187,70 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="tldr">
         <div class="tldr-label">En resumen</div>
-        <p>Defines en las <strong>instrucciones</strong> cuándo derivar, y por tema o proyecto asignas <strong>quién recibe el aviso por correo</strong> y en qué horario. Los casos quedan en la página <strong>Derivaciones</strong>, marcados como "necesita humano": el agente no interviene en esa conversación hasta que tu equipo la devuelva a la IA.</p>
+        <p>En la pestaña <strong>Configuración → Derivación</strong> de tu agente marcas cuándo escala y <strong>quién la recibe</strong>. El aviso llega por <strong>correo</strong> y por la <strong>campana</strong> de Sapio, y el caso espera en <strong>Derivaciones</strong>. Si quieres que el agente retome cuando nadie contesta, activa <strong>Devolver a la IA</strong> (en WhatsApp).</p>
       </div>
 
-      <h2>Cuándo deriva el agente</h2>
-      <p>Las señales típicas — todas configurables en las instrucciones:</p>
+      <h2>Paso 1 — Define cuándo deriva</h2>
+      <p>Abre tu agente en <strong>Configuración → Agentes</strong> y entra a <strong>Configuración → Derivación</strong>. En <strong>Escala cuando el contacto</strong> marcas los casos:</p>
       <ul>
-        <li>El cliente <strong>pide hablar con una persona</strong>, explícitamente o con evidente frustración.</li>
-        <li>El caso <strong>supera lo que el agente puede resolver</strong>: un reclamo delicado, una negociación, una condición especial.</li>
-        <li>El cliente <strong>llegó al punto del embudo</strong> donde tu proceso exige contacto humano: por ejemplo, listo para firmar o para coordinar una visita.</li>
+        <li>Pide hablar con un humano.</li>
+        <li>Pide cotización o presupuesto.</li>
+        <li>Pide agendar visita o reunión.</li>
+        <li>Pregunta condiciones de pago o disponibilidad.</li>
+        <li>Pregunta algo que el agente no sabe.</li>
+        <li>Muestra alta intención de compra.</li>
+        <li>Tiene un reclamo o queja seria.</li>
       </ul>
-      <p>También puedes condicionar la derivación al estado del embudo: por ejemplo, que el agente no derive a un vendedor hasta que el cliente esté calificado.</p>
+      <p>En <strong>Reglas adicionales</strong> escribes los casos propios de tu negocio.</p>
 
-      <h2>Paso 1 — Define las reglas en las instrucciones</h2>
-      <ol>
-        <li>En <strong>Configuración IA</strong>, escribe en las instrucciones las situaciones que ameritan derivar, con ejemplos concretos.</li>
-        <li>Indica también lo que el agente debe decir al derivar: "un ejecutivo te contactará dentro del horario hábil" ajusta mejor las expectativas que un genérico "te contactaremos".</li>
-      </ol>
-
-      <h2>Paso 2 — Configura quién recibe cada derivación</h2>
-      <ol>
-        <li>Asigna el <strong>correo del ejecutivo responsable</strong> — puede ser distinto por proyecto, sucursal o tema.</li>
-        <li>Define su <strong>horario de atención</strong> en tu zona horaria: fuera de ese horario, el agente lo comunica al cliente y el aviso espera al horario hábil.</li>
-      </ol>
+      <h2>Paso 2 — Elige quién la recibe</h2>
+      <p>En <strong>Quién la recibe</strong> decides a quién se avisa. Por defecto se avisa a toda la organización. Puedes elegir:</p>
+      <ul>
+        <li>Un <strong>equipo</strong> o <strong>personas</strong> específicas.</li>
+        <li><strong>Correos sin cuenta</strong>: alguien que no usa Sapio recibe un correo con lo conversado.</li>
+        <li><strong>Repartir por turno</strong> entre las personas elegidas.</li>
+      </ul>
+      <p>El aviso llega por <strong>correo</strong> y por la <strong>campana</strong> de notificaciones de Sapio, que puede sonar al llegar. En el menú, <strong>Derivaciones</strong> muestra cuántas siguen sin atender.</p>
 
       <h2>Paso 3 — Atiende la derivación</h2>
+      <p>Al derivar, el agente deja de responder y la conversación queda marcada como <em>Derivada</em>, con el motivo y el caso armado. En <strong>Derivaciones</strong>:</p>
       <ol>
-        <li>El ejecutivo recibe un <strong>correo con el contexto</strong>: quién es el cliente, canal y motivo de la derivación.</li>
-        <li>En el panel, la página <strong>Derivaciones</strong> lista todos los casos pendientes; el punto rojo en la barra indica casos sin revisar.</li>
-        <li>Abre la conversación: el historial completo está ahí — nada que repreguntar al cliente.</li>
-        <li>Responde directamente desde el panel, por el mismo canal donde escribió el cliente.</li>
+        <li>Filtra por <em>Sin atender</em>.</li>
+        <li>Presiona <strong>Ver conversación</strong> y responde tú.</li>
+        <li>Cuando termines, márcala como <strong>Atendida</strong>. Si quieres que el agente siga, presiona <strong>Devolver al agente</strong>.</li>
       </ol>
-      <p>Mientras el caso esté en manos humanas, el agente no responde ni envía seguimientos en esa conversación.</p>
 
-      <h2>Paso 4 — Devuelve el caso a la IA</h2>
-      <p>Cuando el tema quedó resuelto, reasigna la conversación al agente. Desde ahí retoma la atención normal: responde mensajes nuevos y aplica los seguimientos que correspondan.</p>
-      <p><strong>Y antes de cerrar, deja el criterio anotado.</strong> Si tu ejecutivo resolvió el caso aplicando algo que el agente no sabía —por qué aceptó esa excepción, por qué a ese cliente sí—, ese es el momento de registrarlo en <a href="/help-center/personalidad-instrucciones-y-preview/">Feedbacks</a>. Es un minuto, y es lo que hace que la derivación sirva dos veces.</p>
-      <p>Visto así, la lista de casos que derivas no es fija. Muchos suben al equipo simplemente porque nadie escribió cómo se resuelven; a medida que esas resoluciones quedan registradas, <strong>la frontera se corre sola</strong> y tu equipo recibe cada vez menos de lo repetido y más de lo que de verdad necesita su criterio.</p>
+      <h2>Paso 4 — Si nadie contesta: Devolver a la IA</h2>
+      <p>A veces alguien toma un caso, responde una vez y el cliente queda esperando. Para eso existe <strong>Devolver a la IA</strong>, en la sub-pestaña del mismo nombre:</p>
+      <ol>
+        <li>Presiona <strong>Activar Devolver a la IA</strong>.</li>
+        <li>Elige <strong>Devolver tras</strong>: 30 minutos, 1 hora, 2, 4 u 8 horas, o 1 día sin respuesta de la persona.</li>
+      </ol>
+      <p>Cómo funciona:</p>
+      <ul>
+        <li>Viene <strong>apagado</strong>: nada cambia hasta que lo activas.</li>
+        <li>Aplica a <strong>toda la organización</strong> y, por ahora, <strong>solo en WhatsApp</strong>.</li>
+        <li>Solo devuelve la conversación si el <strong>cliente está esperando</strong> una respuesta. Si lo último lo dijo tu equipo, la conversación sigue con quien la tomó.</li>
+        <li>Se revisa cada 5 minutos.</li>
+      </ul>
 
       <section class="faq">
         <h2>Preguntas frecuentes</h2>
-        <details class="faq-item"><summary><h3>¿El cliente se da cuenta de que lo derivaron?</h3><svg class="i"><use href="#plus"/></svg></summary><p>El agente se lo dice con naturalidad: le avisa que una persona del equipo continuará la conversación y en qué plazo. El cliente sigue escribiendo por el mismo canal; no tiene que cambiar de número ni de chat.</p>
+        <details class="faq-item"><summary><h3>¿El agente retoma solo una derivación?</h3><svg class="i"><use href="#plus"/></svg></summary><p>Solo si activas Devolver a la IA: en WhatsApp, cuando el cliente lleva esperando más del plazo que elegiste. Si no, la conversación espera a una persona o a que alguien presione Devolver al agente.</p>
         </details>
-        <details class="faq-item"><summary><h3>¿Qué pasa si nadie atiende la derivación?</h3><svg class="i"><use href="#plus"/></svg></summary><p>El caso queda visible en la página Derivaciones y la conversación permanece marcada como "necesita humano" hasta que alguien la tome o la devuelva a la IA. El agente no la retoma solo, para evitar respuestas automáticas en un caso que pediste tratar en persona.</p>
+        <details class="faq-item"><summary><h3>¿Me llegan avisos al celular?</h3><svg class="i"><use href="#plus"/></svg></summary><p>Los avisos llegan por correo y por la campana dentro de Sapio. Si tienes el correo en el celular, te llegan ahí.</p>
         </details>
-        <details class="faq-item"><summary><h3>¿Puedo derivar a personas distintas según el tema?</h3><svg class="i"><use href="#plus"/></svg></summary><p>Sí: el correo del responsable se configura por proyecto o tema, de modo que una consulta de postventa y una oportunidad de venta lleguen a personas distintas, cada una con su horario.</p>
+        <details class="faq-item"><summary><h3>¿Puedo avisarle a alguien que no usa Sapio?</h3><svg class="i"><use href="#plus"/></svg></summary><p>Sí. Agrégalo en Correos sin cuenta: recibe un correo con lo conversado.</p>
         </details>
       </section>
 
       <div class="related">
         <span class="post-tag">Sigue con</span>
         <div class="related-list">
-          <a href="/help-center/gestionar-conversaciones/">Gestiona tus conversaciones</a>
-          <a href="/help-center/personalidad-instrucciones-y-preview/">Personalidad, instrucciones y Preview</a>
-          <a href="/blog/cuando-escalar-a-un-humano/">Cuándo escalar a un humano</a>
-          <a href="/blog/traspaso-a-humano-sin-perder-contexto/">Traspaso a humano sin perder contexto</a>
+          <a href="/help-center/gestionar-conversaciones/">Atiende en la bandeja</a>
+          <a href="/help-center/personalidad-instrucciones-y-preview/">Configura cómo habla tu agente</a>
+          <a href="/help-center/invitar-a-tu-equipo/">Suma a tu equipo</a>
+          <a href="/help-center/reactivacion-y-seguimientos/">Reactivación y horario seguro</a>
         </div>
       </div>
 

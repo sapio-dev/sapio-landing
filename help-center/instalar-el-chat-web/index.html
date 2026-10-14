@@ -10,9 +10,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Instalar el chat web en tu sitio | Centro de ayuda de Sapio</title>
-<meta name="description" content="Cómo instalar el widget de chat de Sapio en tu sitio: copia el script, pégalo al final de tu página y atiende a tus visitas con tu agente de IA en tiempo real.">
-<meta name="keywords" content="chat web Sapio, widget de chat IA, instalar chat en mi sitio, chat para sitio web, script widget Sapio">
+<title>Instalar el chat de Sapio en tu sitio web | Centro de ayuda de Sapio</title>
+<meta name="description" content="Cómo activar el widget web de Sapio, copiar el código antes de &lt;/body&gt;, autorizar tus dominios y ajustar la apariencia, el saludo y el acceso a WhatsApp.">
+<meta name="keywords" content="chat web con IA, widget web Sapio, instalar chat en sitio web, código chat IA, chat de tu sitio">
 <meta name="author" content="Sapio">
 <meta name="theme-color" content="#f4f4f6">
 <link rel="canonical" href="https://sapio.dev/help-center/instalar-el-chat-web/">
@@ -20,13 +20,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Sapio">
 <meta property="og:url" content="https://sapio.dev/help-center/instalar-el-chat-web/">
-<meta property="og:title" content="Instalar el chat web en tu sitio">
-<meta property="og:description" content="Copia un script, pégalo en tu sitio y atiende a tus visitas en tiempo real.">
+<meta property="og:title" content="Instalar el chat de Sapio en tu sitio web">
+<meta property="og:description" content="Activa el widget, pega el código en tu sitio y ajusta cómo se ve y cómo saluda.">
 <meta property="og:image" content="https://sapio.dev/og/og-ayuda.jpg">
 <meta property="og:locale" content="es_CL">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Instalar el chat web | Sapio">
-<meta name="twitter:description" content="El widget de chat de tu agente de IA, instalado en minutos.">
+<meta name="twitter:title" content="Instalar el chat en tu sitio">
+<meta name="twitter:description" content="Activa el widget, pega el código en tu sitio y ajusta cómo se ve y cómo saluda.">
 <meta name="twitter:image" content="https://sapio.dev/og/og-ayuda.jpg">
 
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -37,16 +37,59 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Instalar el chat web de Sapio en tu sitio",
-  "description": "Cómo copiar el script del widget de chat y dejarlo funcionando en tu sitio web.",
+  "name": "Instalar el chat de Sapio en tu sitio web",
+  "description": "Cómo activar el widget web de Sapio, copiar el código antes de </body>, autorizar tus dominios y ajustar la apariencia, el saludo y el acceso a WhatsApp.",
   "inLanguage": "es",
-  "totalTime": "PT4M",
+  "totalTime": "PT6M",
   "step": [
-    {"@type": "HowToStep", "position": 1, "name": "Copia el script", "text": "En Configuración IA → Conexión, sección Chat web, copia el fragmento de código del widget."},
-    {"@type": "HowToStep", "position": 2, "name": "Pégalo en tu sitio", "text": "Inserta el script antes del cierre de <script src="/site.js?v=20261008h" defer></script>
-<script src="/sofi.js?v=20261008h" defer></script>
-</body>, o mediante tu CMS o gestor de etiquetas."},
-    {"@type": "HowToStep", "position": 3, "name": "Prueba el chat", "text": "Abre tu sitio, inicia una conversación y verifica que aparece en el CRM en tiempo real."}
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Activa el widget",
+      "text": "En Configuración → Integraciones, abre Widget web, completa nombre, color, mensaje de bienvenida y dominios, y presiona Activar widget."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Copia el código",
+      "text": "En la pestaña Instalación, presiona Copiar."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Pégalo en tu sitio",
+      "text": "Pega el código antes de </body> en todas las páginas, o pídeselo a quien administra tu sitio."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Verifica la instalación",
+      "text": "En Instalación verás «El snippet se cargó hace…» cuando Sapio lo detecte."
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Tengo que pegar el código en cada página?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tiene que estar en todas las páginas donde quieras el chat. La mayoría de los sitios tiene un lugar común (el pie de página) donde se pega una sola vez."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué hago si alguien copió el código en otro sitio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En Instalación presiona Regenerar token y vuelve a pegar el código nuevo en tu sitio. Además, solo carga en los dominios permitidos."
+      }
+    }
   ]
 }
 </script>
@@ -55,9 +98,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://sapio.dev/"},
-    {"@type": "ListItem", "position": 2, "name": "Centro de ayuda", "item": "https://sapio.dev/help-center/"},
-    {"@type": "ListItem", "position": 3, "name": "Instalar el chat web", "item": "https://sapio.dev/help-center/instalar-el-chat-web/"}
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://sapio.dev/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Centro de ayuda",
+      "item": "https://sapio.dev/help-center/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Instalar el chat en tu sitio",
+      "item": "https://sapio.dev/help-center/instalar-el-chat-web/"
+    }
   ]
 }
 </script>
@@ -110,10 +168,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <article class="article">
   <header class="art-hd dark grain"><div class="prose-wrap">
-    <div class="breadcrumb"><a href="/">Inicio</a> / <a href="/help-center/">Centro de ayuda</a> / Instalar el chat web</div>
-    <div class="article-meta">Tutorial · Canales · 4 min</div>
-    <h1>Instalar el chat web en tu sitio</h1>
-    <p class="standfirst">Es el canal más rápido de activar: un script en tu sitio y el agente empieza a atender a tus visitas. Sin cuentas de Meta ni verificaciones de por medio.</p>
+    <div class="breadcrumb"><a href="/">Inicio</a> / <a href="/help-center/">Centro de ayuda</a> / Instalar el chat en tu sitio</div>
+    <div class="article-meta">Tutorial · Canales · 6 min</div>
+    <h1>Instalar el chat en tu sitio</h1>
+    <p class="standfirst">El widget web pone a tu agente en tu sitio, en una ventana de chat. Lo activas, copias un código y lo pegas una sola vez.</p>
   </div></header>
   <div class="prose-wrap">
 
@@ -121,45 +179,44 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="tldr">
         <div class="tldr-label">En resumen</div>
-        <p>Copia el script del widget desde <strong>Configuración IA → Conexión</strong> y pégalo en tu sitio <strong>antes del cierre de <code>&lt;/body&gt;</code></strong>. Las conversaciones llegan al CRM en tiempo real, con el indicador "En vivo" mientras el visitante sigue en la página.</p>
+        <p>En <strong>Configuración → Integraciones</strong>, abre <strong>Widget web</strong> y presiona <strong>Activar widget</strong>. En <strong>Instalación</strong> copia el código y pégalo antes de <code>&lt;/body&gt;</code> en tu sitio, y agrega tu dominio en <strong>Dónde puede cargar</strong>. Sapio te avisa cuando detecta el código.</p>
       </div>
 
-      <h2>Paso 1 — Copia el script</h2>
-      <ol>
-        <li>Entra a <strong>Configuración IA → Conexión</strong>.</li>
-        <li>En la sección de <strong>chat web</strong>, copia el fragmento de código del widget (un par de líneas de script con tu identificador).</li>
-      </ol>
-
-      <h2>Paso 2 — Pégalo en tu sitio</h2>
-      <p>El script va justo antes del cierre de <code>&lt;/body&gt;</code>, en todas las páginas donde quieras el chat. Según tu plataforma:</p>
+      <h2>Paso 1 — Activa el widget</h2>
+      <p>Entra a <strong>Configuración → Integraciones</strong> y abre <strong>Widget web</strong>. La primera vez te pide:</p>
       <ul>
-        <li><strong>Sitio propio (HTML):</strong> pega el script en la plantilla base, antes de <code>&lt;/body&gt;</code>.</li>
-        <li><strong>WordPress:</strong> usa el editor del tema (footer.php) o un plugin para insertar código en el footer.</li>
-        <li><strong>Shopify:</strong> Tienda online → Temas → Editar código → theme.liquid, antes de <code>&lt;/body&gt;</code>.</li>
-        <li><strong>Google Tag Manager:</strong> crea una etiqueta HTML personalizada con el script, disparada en todas las páginas.</li>
+        <li>El <strong>nombre</strong> que verán tus clientes y el <strong>color principal</strong>.</li>
+        <li>El <strong>mensaje de bienvenida</strong>.</li>
+        <li>Los <strong>dominios permitidos</strong>: los sitios donde puede cargar (por ejemplo, tuempresa.cl).</li>
       </ul>
+      <p>Presiona <strong>Activar widget</strong>.</p>
 
-      <h2>Paso 3 — Prueba el chat</h2>
+      <h2>Paso 2 — Copia el código y pégalo</h2>
       <ol>
-        <li>Abre tu sitio en una ventana normal y en una de incógnito.</li>
-        <li>Inicia una conversación como visitante: pregunta por un producto, pide un precio.</li>
-        <li>Abre el <strong>CRM</strong> en el panel: la conversación aparece al instante, con el indicador <strong>"En vivo"</strong> mientras el visitante siga en la página.</li>
+        <li>En la pestaña <strong>Instalación</strong>, presiona <strong>Copiar</strong>.</li>
+        <li>Pégalo en tu sitio <strong>antes de <code>&lt;/body&gt;</code></strong>, en todas las páginas donde quieras el chat. En WordPress, Shopify o similares, suele ir en la sección para scripts del pie de página.</li>
+        <li>Si no administras el sitio, envíaselo a quien lo hace.</li>
       </ol>
+      <p>Cuando Sapio detecta el código, en Instalación verás <em>El snippet se cargó hace…</em>. Si todavía dice <em>Aún no detectamos el snippet</em>, revisa que el dominio esté en <strong>Dónde puede cargar</strong>.</p>
 
-      <h2>Lo que conviene saber del canal</h2>
+      <h2>Paso 3 — Ajusta cómo se ve</h2>
+      <p>En la pestaña <strong>Apariencia</strong> cambias la foto, el nombre del chat, el color, el título del saludo y el subtítulo.</p>
+
+      <h2>Paso 4 — Ajusta cómo conversa</h2>
+      <p>En la pestaña <strong>Conversación</strong> defines:</p>
       <ul>
-        <li><strong>"En vivo":</strong> te dice que el visitante está ahora mismo en tu sitio. Es el mejor momento para intervenir tú si el caso lo amerita.</li>
-        <li><strong>Cierre por inactividad:</strong> si el visitante deja de escribir, la conversación se cierra sola después de una hora. Si vuelve, parte una nueva.</li>
-        <li><strong>Sin registro para el visitante:</strong> el chat no pide correo ni datos para empezar a conversar; el agente los pide en la conversación cuando corresponde (por ejemplo, para hacer seguimiento).</li>
+        <li>El <strong>mensaje de bienvenida</strong> y el texto del formulario de datos.</li>
+        <li>El <strong>saludo automático</strong>: no saludar, solo en celular, o en celular y computador.</li>
+        <li>Si el chat se abre solo en computador.</li>
+        <li>Un acceso a tu <strong>WhatsApp</strong>, con código QR, para quien prefiera seguir por ahí.</li>
       </ul>
+      <p>Para quitarlo del sitio sin borrar el código, usa el interruptor <em>Activo</em> / <em>Apagado</em>.</p>
 
       <section class="faq">
         <h2>Preguntas frecuentes</h2>
-        <details class="faq-item"><summary><h3>¿El widget hace lento mi sitio?</h3><svg class="i"><use href="#plus"/></svg></summary><p>No: el script carga de forma diferida y no bloquea el renderizado de la página. El peso es mínimo y no afecta tus Core Web Vitals.</p>
+        <details class="faq-item"><summary><h3>¿Tengo que pegar el código en cada página?</h3><svg class="i"><use href="#plus"/></svg></summary><p>Tiene que estar en todas las páginas donde quieras el chat. La mayoría de los sitios tiene un lugar común (el pie de página) donde se pega una sola vez.</p>
         </details>
-        <details class="faq-item"><summary><h3>¿Puedo instalarlo solo en algunas páginas?</h3><svg class="i"><use href="#plus"/></svg></summary><p>Sí. El chat aparece únicamente en las páginas donde pegues el script (o donde tu gestor de etiquetas lo dispare). Muchos negocios lo ponen en todo el sitio salvo el checkout.</p>
-        </details>
-        <details class="faq-item"><summary><h3>¿El agente del chat web es el mismo de WhatsApp?</h3><svg class="i"><use href="#plus"/></svg></summary><p>Sí: es el mismo agente, con el mismo entrenamiento y personalidad, respondiendo en otro canal. Todas las conversaciones llegan a la misma bandeja.</p>
+        <details class="faq-item"><summary><h3>¿Qué hago si alguien copió el código en otro sitio?</h3><svg class="i"><use href="#plus"/></svg></summary><p>En Instalación presiona Regenerar token y vuelve a pegar el código nuevo en tu sitio. Además, solo carga en los dominios permitidos.</p>
         </details>
       </section>
 
@@ -167,9 +224,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="post-tag">Sigue con</span>
         <div class="related-list">
           <a href="/help-center/conectar-whatsapp/">Conectar WhatsApp</a>
-          <a href="/help-center/conectar-instagram-y-facebook/">Conectar Instagram y Facebook</a>
-          <a href="/help-center/gestionar-conversaciones/">Gestiona tus conversaciones</a>
-          <a href="/blog/chat-web-con-ia-para-tu-sitio/">Chat web con IA para tu sitio</a>
+          <a href="/help-center/conectar-correo/">Conectar Gmail u Outlook</a>
+          <a href="/help-center/gestionar-conversaciones/">Atiende en la bandeja</a>
+          <a href="/help-center/primeros-pasos/">Primeros pasos en Sapio</a>
         </div>
       </div>
 

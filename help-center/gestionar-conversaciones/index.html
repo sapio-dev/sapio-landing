@@ -10,9 +10,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gestiona tus conversaciones: CRM, Board y estados | Centro de ayuda de Sapio</title>
-<meta name="description" content="Cómo trabajar la bandeja de Sapio: el CRM unificado, el tablero kanban por estados del embudo, y cómo intervenir una conversación sin pisarte con el agente.">
-<meta name="keywords" content="CRM Sapio, bandeja unificada, kanban conversaciones, estados del embudo, intervenir conversación IA">
+<title>Atiende en la bandeja: conversaciones, Tablero y acciones | Centro de ayuda de Sapio</title>
+<meta name="description" content="Cómo trabajar las conversaciones en Sapio: bandejas y filtros, tomar una conversación o devolverla al agente, asignar, notas internas, etiquetas, resultado y el Tablero.">
+<meta name="keywords" content="bandeja omnicanal Sapio, gestionar conversaciones, devolver al agente, tomar conversación, tablero conversaciones">
 <meta name="author" content="Sapio">
 <meta name="theme-color" content="#f4f4f6">
 <link rel="canonical" href="https://sapio.dev/help-center/gestionar-conversaciones/">
@@ -20,13 +20,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Sapio">
 <meta property="og:url" content="https://sapio.dev/help-center/gestionar-conversaciones/">
-<meta property="og:title" content="Gestiona tus conversaciones: CRM, Board y estados">
-<meta property="og:description" content="La bandeja unificada, el tablero kanban y cómo intervenir una conversación cuando quieras.">
+<meta property="og:title" content="Atiende en la bandeja: conversaciones, Tablero y acciones">
+<meta property="og:description" content="Bandejas, tomar y devolver al agente, notas, etiquetas y Tablero: el día a día en Sapio.">
 <meta property="og:image" content="https://sapio.dev/og/og-ayuda.jpg">
 <meta property="og:locale" content="es_CL">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Gestiona tus conversaciones | Sapio">
-<meta name="twitter:description" content="CRM unificado, kanban por estados e intervención humana.">
+<meta name="twitter:title" content="Atiende en la bandeja">
+<meta name="twitter:description" content="Bandejas, tomar y devolver al agente, notas, etiquetas y Tablero: el día a día en Sapio.">
 <meta name="twitter:image" content="https://sapio.dev/og/og-ayuda.jpg">
 
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -37,15 +37,67 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Gestionar conversaciones en Sapio: CRM, Board y estados",
-  "description": "Cómo usar la bandeja unificada, los estados del embudo y el tablero kanban, y cómo intervenir una conversación.",
+  "name": "Atiende en la bandeja: conversaciones, Tablero y acciones",
+  "description": "Cómo trabajar las conversaciones en Sapio: bandejas y filtros, tomar una conversación o devolverla al agente, asignar, notas internas, etiquetas, resultado y el Tablero.",
   "inLanguage": "es",
-  "totalTime": "PT7M",
+  "totalTime": "PT9M",
   "step": [
-    {"@type": "HowToStep", "position": 1, "name": "Trabaja la bandeja (CRM)", "text": "Todas las conversaciones de todos los canales, en una sola lista con filtros."},
-    {"@type": "HowToStep", "position": 2, "name": "Configura los estados del embudo", "text": "En Configuración IA → Tags define los estados; el agente clasifica cada conversación solo."},
-    {"@type": "HowToStep", "position": 3, "name": "Usa el Board", "text": "El tablero kanban muestra el embudo completo; arrastra tarjetas para corregir estados."},
-    {"@type": "HowToStep", "position": 4, "name": "Interviene cuando quieras", "text": "Escribe tú en la conversación: el agente se pausa en ese chat hasta que lo devuelvas a la IA."}
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Elige una bandeja",
+      "text": "En Conversaciones, usa Abiertas, Todas, No leídas, Pendientes, Derivadas, Cerradas o la bandeja de un canal."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Toma la conversación",
+      "text": "Presiona Asignarme o escribe directamente y confirma Sí, respondo yo. El agente deja de responder en ese hilo."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Devuélvela al agente",
+      "text": "Cuando termines, presiona Devolver al agente para que siga atendiendo."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Deja el registro",
+      "text": "Usa notas internas, datos del contacto, etiquetas y marca el resultado: Ganada, Perdida, No contactar o Sin resultado."
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿El agente puede contestar mientras yo escribo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Apenas tomas la conversación o confirmas que respondes tú, el agente deja de responder en ese hilo hasta que la devuelves."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo limitar qué conversaciones ve cada persona?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Un administrador lo define por etiqueta en la pestaña Acceso de cada usuario. Ver Suma a tu equipo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo exportar las conversaciones?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Un administrador puede exportarlas en CSV o Excel desde Configuración → Datos."
+      }
+    }
   ]
 }
 </script>
@@ -54,9 +106,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://sapio.dev/"},
-    {"@type": "ListItem", "position": 2, "name": "Centro de ayuda", "item": "https://sapio.dev/help-center/"},
-    {"@type": "ListItem", "position": 3, "name": "Gestiona tus conversaciones", "item": "https://sapio.dev/help-center/gestionar-conversaciones/"}
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://sapio.dev/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Centro de ayuda",
+      "item": "https://sapio.dev/help-center/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Atiende en la bandeja",
+      "item": "https://sapio.dev/help-center/gestionar-conversaciones/"
+    }
   ]
 }
 </script>
@@ -109,10 +176,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <article class="article">
   <header class="art-hd dark grain"><div class="prose-wrap">
-    <div class="breadcrumb"><a href="/">Inicio</a> / <a href="/help-center/">Centro de ayuda</a> / Gestiona tus conversaciones</div>
-    <div class="article-meta">Tutorial · Operación diaria · 7 min</div>
-    <h1>Gestiona tus conversaciones: CRM, Board y estados</h1>
-    <p class="standfirst">El agente atiende; tú supervisas. La bandeja te muestra todo lo que pasa en todos los canales, los estados te dicen dónde está cada cliente en el embudo, y puedes tomar el control de cualquier conversación cuando quieras.</p>
+    <div class="breadcrumb"><a href="/">Inicio</a> / <a href="/help-center/">Centro de ayuda</a> / Atiende en la bandeja</div>
+    <div class="article-meta">Tutorial · Día a día · 9 min</div>
+    <h1>Atiende en la bandeja</h1>
+    <p class="standfirst">Todo lo que llega por WhatsApp, Instagram, Messenger, correo y el chat de tu sitio cae en Conversaciones. Así se trabaja una conversación, sola o con el agente.</p>
   </div></header>
   <div class="prose-wrap">
 
@@ -120,59 +187,58 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="tldr">
         <div class="tldr-label">En resumen</div>
-        <p>El <strong>CRM</strong> es la bandeja unificada: WhatsApp, Instagram, Messenger, correo y chat web en una sola lista. El agente clasifica cada conversación en un <strong>estado del embudo</strong> (configurable en Tags), y el <strong>Board</strong> lo muestra como kanban. Si escribes tú en un chat, el agente se pausa en esa conversación hasta que la devuelvas a la IA.</p>
+        <p>En <strong>Conversaciones</strong> usas las bandejas de la izquierda (Abiertas, No leídas, Derivadas, por canal…). Si escribes tú, la conversación pasa a ser tuya y el agente deja de responder ahí; con <strong>Devolver al agente</strong> vuelve a atender. Notas, etiquetas y resultado van en el panel de la derecha.</p>
       </div>
 
-      <h2>El CRM: tu bandeja unificada</h2>
-      <p>Es la primera pantalla del panel. Cada fila es una conversación, venga del canal que venga, con el último mensaje a la vista:</p>
+      <h2>Las bandejas</h2>
+      <p>En <strong>Conversaciones</strong>, a la izquierda, están las bandejas: <strong>Abiertas</strong>, <strong>Todas</strong>, <strong>No leídas</strong>, <strong>Pendientes</strong>, <strong>Derivadas</strong> y <strong>Cerradas</strong>, más una por cada canal conectado. Arriba puedes cambiar entre la vista <em>Bandeja</em> y la vista <em>Lista</em>, que muestra columnas como país, canal, sentimiento, intención e indicadores.</p>
+
+      <h2>Tomar una conversación</h2>
+      <p>Mientras el agente atiende, puedes leer todo en tiempo real. Para entrar tú:</p>
       <ul>
-        <li><strong>Filtra por canal o estado</strong> para enfocarte: por ejemplo, solo WhatsApp, o solo los que están "cotizando".</li>
-        <li><strong>Abre cualquier conversación</strong> para ver el historial completo, incluyendo lo que respondió el agente y por qué archivos o datos preguntó el cliente.</li>
-        <li><strong>Las conversaciones inactivas se cierran solas</strong> pasadas 24 horas sin respuesta del cliente (una hora en el chat web). Si el cliente vuelve a escribir, la conversación revive con su historial.</li>
+        <li>Presiona <strong>Asignarme</strong>, o <strong>Tomar el hilo</strong> si la tiene otra persona.</li>
+        <li>O escribe directamente: Sapio te pregunta <em>¿Respondes tú esta conversación?</em> y confirmas con <strong>Sí, respondo yo</strong>.</li>
+      </ul>
+      <p>Desde ese momento el agente deja de responder en ese hilo. Para que vuelva, presiona <strong>Devolver al agente</strong>. Si tu equipo activó <a href="/help-center/derivar-a-un-humano/">Devolver a la IA</a>, en WhatsApp vuelve solo cuando el cliente lleva esperando más del plazo elegido.</p>
+
+      <h2>Otras acciones</h2>
+      <ul>
+        <li><strong>Asignar a otra persona</strong>, o quitar la asignación.</li>
+        <li><strong>Pausar agente</strong> / <strong>Reanudar agente</strong> solo en esa conversación.</li>
+        <li><strong>Cerrar</strong> / <strong>Reabrir</strong>.</li>
+        <li><strong>Marcar como leída</strong> o no leída, y <strong>marcar gestión pendiente</strong> para no olvidarla.</li>
+        <li><strong>Escribir</strong> primero a un contacto. En WhatsApp, si pasaron más de 24 horas desde su último mensaje, se usa una plantilla aprobada.</li>
       </ul>
 
-      <h2>Estados del embudo: el agente clasifica solo</h2>
-      <p>Cada conversación tiene un estado que refleja dónde está el cliente en tu proceso: recién llegado, calificando, cotizando, listo para cerrar, ganado, perdido — los que tú definas.</p>
-      <ol>
-        <li>Configura los estados en <strong>Configuración IA → Tags</strong>: nombre, descripción y comportamiento de cada uno.</li>
-        <li>La descripción importa: el agente la lee para decidir cuándo asignar cada estado. "Cotizando: el cliente pidió precio de un producto específico" clasifica mejor que solo "Cotizando".</li>
-        <li>Vale la pena invertir tiempo acá por algo que va más allá del orden diario: <strong>los estados son la estructura sobre la que después se puede mirar el conjunto</strong>. Sin ellos, tus conversaciones son un montón de texto; con ellos, el <a href="/help-center/analisis-y-metricas/">Informe IA</a> puede mostrarte en qué punto exacto se te caen los clientes.</li>
-        <li>Puedes marcar estados como <strong>notificables</strong>: cuando una conversación llega a ese estado, tu equipo recibe un aviso por correo.</li>
-      </ol>
-
-      <h2>El Board: tu embudo como kanban</h2>
+      <h2>El panel de la derecha</h2>
       <ul>
-        <li>Cada columna es un estado; cada tarjeta, una conversación.</li>
-        <li><strong>Arrastra una tarjeta</strong> a otra columna para corregir el estado manualmente; el agente respeta tu clasificación.</li>
-        <li>Es la vista para la pregunta de negocio: ¿cuántos están por cerrar?, ¿dónde se estancan?</li>
+        <li><strong>Notas internas:</strong> lo que tu equipo necesita saber; el cliente no las ve.</li>
+        <li><strong>Datos del contacto:</strong> pares como RUT o número de pedido.</li>
+        <li><strong>Etiquetas del equipo</strong> para ordenar.</li>
+        <li><strong>Marcar el resultado:</strong> Ganada, Perdida, No contactar o Sin resultado.</li>
       </ul>
+      <p>Bajo cada respuesta del agente puedes marcar <em>Buena respuesta</em> o <strong>Corregir</strong>; así <a href="/help-center/entrena-a-tu-agente/">aprende</a>.</p>
 
-      <h2>Intervenir una conversación</h2>
-      <p>Cualquier miembro del equipo puede tomar el control de un chat:</p>
-      <ol>
-        <li>Abre la conversación en el CRM y <strong>escribe tu mensaje</strong>: sale por el mismo canal (WhatsApp, Instagram, etc.) a nombre de tu negocio.</li>
-        <li>Desde ese momento <strong>el agente se pausa en esa conversación</strong>: no responde ni envía seguimientos mientras esté en manos humanas. En el resto de las conversaciones sigue trabajando normal.</li>
-        <li>Cuando termines, <strong>devuelve la conversación a la IA</strong> para que el agente retome la atención.</li>
-      </ol>
-      <p>Esto también aplica si respondes un DM desde la app nativa de Instagram o Messenger: el agente lo detecta y se hace a un lado en ese chat.</p>
+      <h2>El Tablero</h2>
+      <p>En <strong>Tablero</strong> ves las mismas conversaciones en columnas por estado y las mueves arrastrándolas. Con <strong>Activar el aviso</strong> en una columna, recibes un correo cuando el agente mueve una conversación a ese estado.</p>
 
       <section class="faq">
         <h2>Preguntas frecuentes</h2>
-        <details class="faq-item"><summary><h3>¿El agente puede volver a escribirle a un cliente que dejó de responder?</h3><svg class="i"><use href="#plus"/></svg></summary><p>Sí: la reactivación envía seguimientos automáticos a conversaciones que se enfriaron, con el espaciado que configures. Los estados terminales (ganado, perdido, detenido) quedan excluidos a propósito.</p>
+        <details class="faq-item"><summary><h3>¿El agente puede contestar mientras yo escribo?</h3><svg class="i"><use href="#plus"/></svg></summary><p>No. Apenas tomas la conversación o confirmas que respondes tú, el agente deja de responder en ese hilo hasta que la devuelves.</p>
         </details>
-        <details class="faq-item"><summary><h3>¿Qué diferencia hay entre intervenir y derivar?</h3><svg class="i"><use href="#plus"/></svg></summary><p>Intervenir es que tú decidas entrar a un chat. Derivar es que el agente decida pasarlo a tu equipo según las reglas que definiste — con aviso por correo incluido. El resultado es parecido (atención humana), el origen es distinto. <a href="/help-center/derivar-a-un-humano/">Más sobre derivaciones aquí</a>.</p>
+        <details class="faq-item"><summary><h3>¿Puedo limitar qué conversaciones ve cada persona?</h3><svg class="i"><use href="#plus"/></svg></summary><p>Sí. Un administrador lo define por etiqueta en la pestaña Acceso de cada usuario. Ver <a href="/help-center/invitar-a-tu-equipo/">Suma a tu equipo</a>.</p>
         </details>
-        <details class="faq-item"><summary><h3>¿Varios usuarios pueden trabajar la bandeja a la vez?</h3><svg class="i"><use href="#plus"/></svg></summary><p>Sí. La bandeja se actualiza en tiempo real para todos los miembros de la organización, y cualquiera puede abrir, intervenir o reclasificar conversaciones.</p>
+        <details class="faq-item"><summary><h3>¿Puedo exportar las conversaciones?</h3><svg class="i"><use href="#plus"/></svg></summary><p>Sí. Un administrador puede exportarlas en CSV o Excel desde Configuración → Datos.</p>
         </details>
       </section>
 
       <div class="related">
         <span class="post-tag">Sigue con</span>
         <div class="related-list">
-          <a href="/help-center/derivar-a-un-humano/">Derivaciones: pasa el caso a tu equipo</a>
-          <a href="/help-center/personalidad-instrucciones-y-preview/">Personalidad, instrucciones y Preview</a>
-          <a href="/help-center/conectar-whatsapp/">Conectar WhatsApp</a>
-          <a href="/blog/bandeja-unificada-multicanal/">Bandeja unificada: todos tus canales</a>
+          <a href="/help-center/derivar-a-un-humano/">Derivar a una persona</a>
+          <a href="/help-center/entrena-a-tu-agente/">Enséñale a tu agente</a>
+          <a href="/help-center/invitar-a-tu-equipo/">Suma a tu equipo</a>
+          <a href="/help-center/analisis-y-metricas/">Resumen, Informes y Sofi</a>
         </div>
       </div>
 
