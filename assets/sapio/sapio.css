@@ -1426,3 +1426,22 @@ html:not(.js) .tt-avance { display: none; }
 
 /* El campo libre del análisis (02/11): lo que el visitante escribió en la portada. */
 .campo textarea { height: auto; min-height: 64px; padding-top: 12px; padding-bottom: 12px; line-height: 1.45; font-family: inherit; resize: vertical; }
+
+/* Pantallas bajas: un 13" con la barra del navegador deja 600 a 720 px de alto. La portada cabe entera en
+   la ventana, con los logos de clientes a la vista; los encabezados interiores no se pasan del borde; y la
+   agenda del análisis entra sin cortar la última semana. (02/11: «en una pantalla de 13 se ve como cortado») */
+@media (min-width: 961px) and (max-height: 820px) {
+  .hero-campo { min-height: max(540px, min(100svh, 1000px)); }
+  .hero-campo .hero-h1 { font-size: min(clamp(2.6rem, 1.05rem + 4.3vw, 5.1rem), 10.5svh); }
+  .hero-campo .hero-in { padding-top: clamp(20px, 4vh, 96px); padding-bottom: clamp(24px, 5vh, 120px); }
+  .hero-campo .hero-sub { margin-top: clamp(14px, 2.6vh, 28px); }
+  .hero-campo .hero-ctas { margin-top: clamp(20px, 3.6vh, 38px); }
+  .hero-campo .hero-logos-in { height: 80px; }
+  .int-hero .losa { min-height: max(520px, min(calc(88svh - 20px), 860px)); }
+  .analisis { padding-top: calc(68px + 16px); }
+  .agenda .analisis-txt .display { font-size: clamp(2.2rem, 0.8rem + 2.4vw, 3rem); }
+  .agenda .ficha { padding-top: 18px; padding-bottom: 20px; }
+  #fCal .ficha-h { font-size: 1.4rem; }
+  #fCal .ficha-sub { margin-top: 4px; }
+  .agenda .cal-caja { margin-top: 12px; }
+}
