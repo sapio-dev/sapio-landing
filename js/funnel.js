@@ -3,12 +3,15 @@
    solo tipo de página, punto de entrada e identificadores opacos.
 
    Eventos:
-     cta_demo_click          clic en «Hablar con un experto»
+     cta_demo_click          clic en «Hablar con un experto» / «Pide el análisis», o envío de un
+                             formulario que lleva al análisis («¿Qué hace tu equipo a mano?»)
      agent_creation_started  envío válido de «Crear mi agente» (objetivo distinto)
      lead_form_start         primer campo tocado en /agendar
      generate_lead           el backend confirmó el formulario
      booking_started         se abrió la agenda
-     demo_booking_confirmed  el backend recibió la reserva desde Cal.com */
+     demo_booking_confirmed  el backend recibió la reserva desde Cal.com
+     video_play / video_50 / video_complete
+                             los mini videos del sitio nuevo (assets/sapio/sapio.js), una vez por video */
 (function () {
   var FT = 'sapio_ft', LT = 'sapio_lt';
   var dl = window.dataLayer = window.dataLayer || [];
@@ -25,12 +28,15 @@
 
   function pageType() {
     var p = location.pathname;
-    if (p === '/' || p === '/landing.html') return 'inicio';
+    if (p === '/' || p === '/landing.html' || p === '/en/') return 'inicio';
     if (p.indexOf('/blog') === 0) return 'blog';
     if (p.indexOf('/help-center') === 0) return 'ayuda';
     if (/^\/(post-venta|ventas|cobranza)$/.test(p)) return 'solucion';
     if (/^\/(inmobiliaria|salud|retail)$/.test(p)) return 'industria';
-    if (p === '/agendar') return 'agendar';
+    // El sitio nuevo (noviembre 2026): las industrias y «Lo que hacemos», en español y en inglés.
+    if (/^\/(industrias|en\/industries)(\/|$)/.test(p)) return 'industria';
+    if (/^\/(lo-que-hacemos|en\/what-we-do)\/?$/.test(p)) return 'solucion';
+    if (p === '/agendar' || p.indexOf('/analisis') === 0 || p.indexOf('/en/analysis') === 0) return 'agendar';
     return 'producto';
   }
 
@@ -65,9 +71,15 @@
     var a = e.target.closest && e.target.closest('a[href]');
     if (!a) return;
     var h = a.getAttribute('href');
-    if (h.indexOf('/agendar') === 0 || h.indexOf('calendar.app.google') > -1) {
+    if (h.indexOf('/agendar') === 0 || h.indexOf('/analisis') === 0 || h.indexOf('/en/analysis') === 0 || h.indexOf('calendar.app.google') > -1) {
       push('cta_demo_click', { entry_point: entryPoint(a) });
     }
+  }, true);
+
+  // Un formulario que lleva al análisis también es un clic al CTA: el campo «¿Qué hace tu equipo a mano?».
+  document.addEventListener('submit', function (e) {
+    var f = e.target, act = f && f.getAttribute && (f.getAttribute('action') || '');
+    if (act && /^\/(agendar|analisis|en\/analysis)/.test(act)) push('cta_demo_click', { entry_point: entryPoint(f) });
   }, true);
 
   // «Crear mi agente»: misma validación que el formulario de Sofi; solo cuenta si sigue.

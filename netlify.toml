@@ -60,33 +60,224 @@
 # mantienen esos términos en el título). force porque clinicas.html y ecommerce.html siguen en el repo.
 [[redirects]]
   from = "/clinicas"
-  to = "/salud"
+  to = "/industrias/clinicas/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/clinicas.html"
-  to = "/salud"
+  to = "/industrias/clinicas/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/ecommerce"
-  to = "/retail"
+  to = "/industrias/retail-y-ecommerce/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/ecommerce.html"
-  to = "/retail"
+  to = "/industrias/retail-y-ecommerce/"
   status = 301
   force = true
 
-# Servir landing.html como root
+
+# 2026-11-02: el sitio nuevo pasa a ser sapio.dev. Cada página del sitio anterior lleva a su par en el
+# nuevo, con o sin .html; Netlify conserva la consulta (?origen=, utm_*, gclid), así que los anuncios y
+# los «Hablar con un experto» del blog y la ayuda (/agendar?origen=…) siguen midiendo. force porque
+# algunos .html del sitio anterior siguen en el repo.
 [[redirects]]
-  from = "/"
-  to = "/landing.html"
-  status = 200
+  from = "/agendar"
+  to = "/analisis/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/agendar.html"
+  to = "/analisis/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/salud"
+  to = "/industrias/clinicas/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/salud.html"
+  to = "/industrias/clinicas/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/retail"
+  to = "/industrias/retail-y-ecommerce/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/retail.html"
+  to = "/industrias/retail-y-ecommerce/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/inmobiliaria"
+  to = "/industrias/inmobiliarias/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/inmobiliaria.html"
+  to = "/industrias/inmobiliarias/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ventas"
+  to = "/lo-que-hacemos/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ventas.html"
+  to = "/lo-que-hacemos/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/post-venta"
+  to = "/lo-que-hacemos/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/post-venta.html"
+  to = "/lo-que-hacemos/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/cobranza"
+  to = "/lo-que-hacemos/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/cobranza.html"
+  to = "/lo-que-hacemos/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/agenda"
+  to = "/lo-que-hacemos/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/agenda.html"
+  to = "/lo-que-hacemos/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/agentes"
+  to = "/lo-que-hacemos/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/agentes.html"
+  to = "/lo-que-hacemos/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/bandeja"
+  to = "/lo-que-hacemos/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/bandeja.html"
+  to = "/lo-que-hacemos/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/campanas"
+  to = "/lo-que-hacemos/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/campanas.html"
+  to = "/lo-que-hacemos/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/informes"
+  to = "/lo-que-hacemos/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/informes.html"
+  to = "/lo-que-hacemos/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/whatsapp"
+  to = "/lo-que-hacemos/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/whatsapp.html"
+  to = "/lo-que-hacemos/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sofi"
+  to = "/lo-que-hacemos/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sofi.html"
+  to = "/lo-que-hacemos/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/integraciones"
+  to = "/lo-que-hacemos/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/integraciones.html"
+  to = "/lo-que-hacemos/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/landing"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/landing.html"
+  to = "/"
+  status = 301
+  force = true
 
 # Cabeceras de seguridad básicas
 [[headers]]
@@ -95,3 +286,35 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+# Archivos internos del rediseño (contexto de producto, sistema de diseño, fuentes de la
+# portada): nunca se sirven. PRODUCT.md tiene datos de clientes.
+[[redirects]]
+  from = "/PRODUCT.md"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/DESIGN.md"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/DESIGN.json"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/servicio/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/.impeccable/*"
+  to = "/404.html"
+  status = 404
+  force = true
