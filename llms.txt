@@ -1,68 +1,49 @@
 # Sapio
 
-> Sapio atiende a los clientes de una empresa en WhatsApp, Instagram, correo y el chat
-> de su sitio. Y mientras hace ese trabajo construye la memoria de esa operación: el
-> criterio que hoy vive en la cabeza del equipo y no está escrito en ningún manual.
-> Opera en Chile y Argentina. Plan base 10 UF al mes más adicionales.
+> Sapio opera empresas con inteligencia artificial: hace el trabajo que hoy un equipo hace a mano
+> —atender y agendar, cotizar, cobrar, coordinar, escribir— dentro de los sistemas que la empresa
+> ya usa, y responde por el resultado. No deja una herramienta para que la empresa la opere: el
+> trabajo lo hace Sapio todos los días, y cada lunes cuenta qué se hizo. Se paga por el trabajo
+> hecho, con un tope mensual. Sapio SpA, hecho en Chile.
 
-La tesis, en corto: atender clientes es el único gasto que crece exactamente al ritmo
-de las ventas. Nunca se automatizó porque el conocimiento necesario para atender bien
-no está escrito —se aprende trabajando al lado de quien lo tiene y se va con quien
-renuncia—. Por eso la única forma de construir la memoria de una empresa es
-participando de su operación, no pidiéndole que la documente.
+Cómo se empieza: un análisis gratis de 30 minutos por videollamada con un experto de Sapio. Se
+mira cómo se hace hoy ese trabajo y, con autorización, casos reales que el equipo ya resolvió; el
+resultado es qué parte puede hacer Sapio, cuánto tardaría y cuánto costaría, contra lo que hoy
+cuesta hacerlo con personas.
 
-## Producto
+## Sapio
 
-- [Portada](https://sapio.dev/): qué hace Sapio, resultados, industrias y precio.
-- [Agentes de IA](https://sapio.dev/agentes): Agentes de IA que atienden en WhatsApp, Instagram, correo y tu sitio, consultan tus sistemas en vivo y agendan. Nosotros los armamos y los cuidamos.
-- [Bandeja omnicanal](https://sapio.dev/bandeja): Todas tus conversaciones de WhatsApp, Instagram, Messenger, correo y tu sitio en una bandeja. El agente atiende y tu equipo toma lo que necesita criterio.
-- [Agenda](https://sapio.dev/agenda): Reservas por sucursal, persona y servicio. El agente agenda, el recordatorio sale solo por WhatsApp y la cita se confirma cuando el cliente responde.
-- [Campañas WhatsApp](https://sapio.dev/campanas): Envía plantillas aprobadas por Meta a muchos contactos, con su nombre y en el momento que elijas. Audiencias desde tu bandeja o un Excel.
-- [Informes](https://sapio.dev/informes): Elige un período y Sofi lee todas tus conversaciones: qué preguntan, dónde se caen y qué oportunidades hay. Listo para compartir en PDF.
-- [Sofi, la analista de IA](https://sapio.dev/sofi): Pregúntale a Sofi por tu operación y responde con cifras. Lee tus conversaciones y tu agenda, configura tu agente contigo y prepara acciones que confirmas.
-- [Integraciones](https://sapio.dev/integraciones): Conecta WhatsApp, Instagram, Messenger, Gmail, Outlook, el chat de tu sitio, Google Calendar y Odoo a un agente de IA. Somos BSP de Meta.
-- [WhatsApp Business API (Sapio es BSP de Meta)](https://sapio.dev/whatsapp): Somos BSP de Meta: conecta tu número a la API oficial de WhatsApp en dos minutos. Agente 24/7, envíos masivos y programados, y reactivaciones.
+- [Portada](https://sapio.dev/): qué hace Sapio, cómo el trabajo que llega a una empresa sale listo en minutos, el método, el precio y las preguntas frecuentes.
+- [Lo que hacemos](https://sapio.dev/lo-que-hacemos/): atendemos, calificamos, agendamos, hacemos seguimiento y le pasamos al equipo lo que necesita criterio. Pieza por pieza, el trabajo que hace Sapio y cómo se ve.
+- [Cómo trabajamos](https://sapio.dev/como-trabajamos/): medimos la operación gratis, armamos a la medida el trabajo que hoy hace el equipo, lo operamos todos los días y cada lunes contamos qué hicimos.
+- [Precio](https://sapio.dev/precio/): un fijo mensual, un monto por cada unidad de trabajo y un tope. El monto sale del análisis gratis, contra lo que hoy cuesta hacer ese trabajo con personas.
+- [Misión](https://sapio.dev/mision/): la IA va a terminar operando la mayoría de las empresas. Queremos que pase hoy, y hacerlo mejor que nadie.
+- [El análisis gratis](https://sapio.dev/analisis/): 30 minutos por videollamada, sin costo; la hora se elige directo en la agenda.
 
-## Soluciones
+## Industrias
 
-- [Post-venta](https://sapio.dev/post-venta): Sapio opera tu post-venta: responde dónde va el pedido, cuándo llega y qué pasa si algo falla, en los canales donde tus clientes ya escriben.
-- [Ventas](https://sapio.dev/ventas): Sapio opera tus ventas: contesta cada consulta apenas entra, la califica y deja la reunión agendada. Y aprende qué consulta termina en venta.
-- [Cobranza](https://sapio.dev/cobranza): Sapio opera tu cobranza: sale a buscar cada cuenta pendiente, acuerda el pago y deja el compromiso puesto. Y aprende quién cumple y quién no.
-- [Inmobiliarias](https://sapio.dev/inmobiliaria): Sapio contesta a los que preguntan por tus proyectos: cotiza, agenda la visita y hace el seguimiento. Y aprende qué consulta termina en visita.
-- [Clínicas y salud](https://sapio.dev/salud): Sapio contesta a tus pacientes, agenda la hora, la confirma el día antes y sale a buscar al que no llegó. Para clínicas y centros de salud.
-- [Retail y ecommerce](https://sapio.dev/retail): Sapio resuelve la duda que frena la venta, avisa dónde va el pedido y gestiona cambios y devoluciones, en WhatsApp, Instagram y tu sitio.
+- [Todas las industrias](https://sapio.dev/industrias/): el trabajo que Sapio hace en cada una y la unidad que se paga. Si el resultado se puede contar, se puede hacer.
+- [Clínicas y centros médicos](https://sapio.dev/industrias/clinicas/): contestamos a los pacientes día y noche, agendamos, confirmamos y reagendamos sus horas; lo clínico pasa al equipo de la clínica. Se paga por hora agendada.
+- [Inmobiliarias](https://sapio.dev/industrias/inmobiliarias/): respondemos a cada interesado a la hora que escriba, lo calificamos con los criterios de la inmobiliaria y agendamos la visita a la sala de ventas. Se paga por visita agendada.
+- [Retail y e-commerce](https://sapio.dev/industrias/retail-y-ecommerce/): contestamos con el stock y los precios reales a cualquier hora, tomamos pedidos para los locales y le volvemos a escribir al que no compró. Se paga por consulta resuelta.
+- [Distribuidoras e industria](https://sapio.dev/industrias/distribuidoras-e-industria/): leemos cada correo y WhatsApp de los clientes, revisamos el stock en el ERP y dejamos pedidos, cotizaciones y casos técnicos listos para que el equipo los apruebe. Se paga por solicitud lista.
 
-## Cómo funciona el producto
+## Garantías y preguntas frecuentes
 
-- [Centro de ayuda](https://sapio.dev/help-center/): tutoriales de configuración y operación.
-- [Primeros pasos](https://sapio.dev/help-center/primeros-pasos/)
-- [Enséñale a tu agente](https://sapio.dev/help-center/entrena-a-tu-agente/)
-- [Configura cómo habla tu agente](https://sapio.dev/help-center/personalidad-instrucciones-y-preview/)
-- [Derivar a una persona](https://sapio.dev/help-center/derivar-a-un-humano/)
-- [Conectar Gmail u Outlook](https://sapio.dev/help-center/conectar-correo/)
-- [Agenda y reservas](https://sapio.dev/help-center/agenda-y-reservas/)
-- [Atiende en la bandeja](https://sapio.dev/help-center/gestionar-conversaciones/)
-- [Resumen, Informes y Sofi](https://sapio.dev/help-center/analisis-y-metricas/)
+- Lo que falla por culpa de Sapio no se cobra. Al llegar al tope, el servicio no se corta. Sin contrato mínimo: se paga mes a mes.
+- Qué trabajo puede hacer: cualquiera que un equipo haga en un computador y se le pueda enseñar a alguien nuevo, como atender y agendar, cotizar, cobrar, coordinar, escribir o dibujar.
+- No reemplaza al equipo: Sapio hace la parte que se repite y le deja al equipo lo que necesita criterio, con el caso armado.
+- No hace falta un equipo técnico: Sapio arma, conecta y cuida todo.
+- Si se equivoca, lo detecta, lo corrige y lo cuenta el lunes.
+- Trabaja dentro de lo que la empresa ya usa: WhatsApp, Instagram, Messenger, Gmail, Outlook, Google Calendar, su ERP y sus planillas.
 
-## Conceptos
+## In English
 
-- [Qué es un agente conversacional de IA (y en qué se diferencia de un chatbot)](https://sapio.dev/blog/que-es-un-agente-conversacional-de-ia/)
-- [Agente conversacional vs chatbot: diferencias, ventajas y cuándo usar cada uno](https://sapio.dev/blog/agente-conversacional-vs-chatbot/)
-- [Bandeja unificada multicanal: WhatsApp, Instagram y Facebook en un solo lugar](https://sapio.dev/blog/bandeja-unificada-multicanal/)
-- [Velocidad de primera respuesta: por qué los primeros minutos deciden el lead](https://sapio.dev/blog/velocidad-de-primera-respuesta/)
-- [Entrenar un agente de IA con tus documentos](https://sapio.dev/blog/entrenar-un-agente-de-ia-con-tus-documentos/)
-- [Cuándo un agente de IA debe escalar a un humano (y cómo hacerlo bien)](https://sapio.dev/blog/cuando-escalar-a-un-humano/)
-
-## Decisión de compra
-
-- [¿Cuánto cuesta un agente conversacional de IA? Precios y modelos de cobro](https://sapio.dev/blog/cuanto-cuesta-un-agente-conversacional-de-ia/)
-- [Cómo elegir un agente conversacional de IA: checklist de criterios](https://sapio.dev/blog/como-elegir-un-agente-conversacional-de-ia/)
-- [¿Agente de IA o contratar más personas para atención al cliente?](https://sapio.dev/blog/agente-de-ia-o-contratar-mas-personas/)
-- [¿Construir o comprar un agente de IA? (build vs buy)](https://sapio.dev/blog/construir-o-comprar-agente-de-ia/)
-- [Agente de IA vs call center: cuándo conviene cada uno](https://sapio.dev/blog/agente-de-ia-vs-call-center/)
-- [Cómo implementar un agente de IA paso a paso (guía práctica)](https://sapio.dev/blog/como-implementar-un-agente-de-ia-paso-a-paso/)
+- [Home](https://sapio.dev/en/): we run your company with artificial intelligence; you pay for work done, with a cap your bill never goes over.
+- [What we do](https://sapio.dev/en/what-we-do/) · [How we work](https://sapio.dev/en/how-we-work/) · [Pricing](https://sapio.dev/en/pricing/) · [Mission](https://sapio.dev/en/mission/) · [Industries](https://sapio.dev/en/industries/) · [Free analysis](https://sapio.dev/en/analysis/)
 
 ## Opcional
 
-- [Blog completo](https://sapio.dev/blog/): 80 artículos sobre atención con IA, por canal, rubro y capacidad.
+- [Centro de ayuda](https://sapio.dev/help-center/): cómo se usa la plataforma de Sapio (sense.sapio.dev), para clientes.
+- [Blog](https://sapio.dev/blog/): artículos sobre atención y operación con IA, por canal, rubro y capacidad.
 - [Sitemap](https://sapio.dev/sitemap.xml)
