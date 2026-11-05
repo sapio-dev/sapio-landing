@@ -316,7 +316,7 @@
 
   /* ---------- la prueba y el precio: aparecen cuando se ven ---------- */
   // La comparación entra fila por fila; el mes de ejemplo enciende un trabajo a la vez hasta el tope.
-  $$('[data-cmp], [data-mes], [data-metodo], [data-gar]').forEach((el) => alVer(el, () => el.classList.add('visto'), { threshold: 0.4 }));
+  $$('[data-cmp], [data-mes], [data-gar]').forEach((el) => alVer(el, () => el.classList.add('visto'), { threshold: 0.4 }));
 
   /* ---------- el mini video: cinco escenas del trabajo, como un video con subtítulos ---------- */
   // Cada cosa entra a su tiempo (data-d, milisegundos desde que empieza su escena). Corre solo

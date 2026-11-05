@@ -3,8 +3,10 @@
 > Sapio opera empresas con inteligencia artificial: hace el trabajo que hoy un equipo hace a mano
 > —atender y agendar, cotizar, cobrar, coordinar, escribir— dentro de los sistemas que la empresa
 > ya usa, y responde por el resultado. No deja una herramienta para que la empresa la opere: el
-> trabajo lo hace Sapio todos los días, y cada lunes cuenta qué se hizo. Se paga por el trabajo
-> hecho, con un tope mensual. Sapio SpA, hecho en Chile.
+> trabajo lo hace Sapio todos los días, y cada lunes cuenta qué se hizo. Cada empresa tiene su propia
+> operación, hecha a su medida: antes eso era cosa de grandes empresas; con IA, Sapio la arma para
+> cualquiera, sobre un mismo sistema. Se paga por el trabajo hecho, con un tope mensual. Sapio SpA,
+> hecho en Chile.
 
 Cómo se empieza: un análisis gratis de 30 minutos por videollamada con un experto de Sapio. Se
 mira cómo se hace hoy ese trabajo y, con autorización, casos reales que el equipo ya resolvió; el
