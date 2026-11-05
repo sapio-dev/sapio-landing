@@ -941,8 +941,12 @@ html:not(.js) .peli-ctrl { display: none; }
 .muro-campo .muro-i .lg-xl { width: 74px; height: 74px; max-width: none; }
 /* «¿No ves el tuyo?» pegado a los logos y por encima del borde del manifiesto, que lo oscurecía (Nico, 30/10) */
 .muro-pie { position: relative; z-index: 3; margin-top: calc(-1 * clamp(40px, 4.4vw, 64px)); text-align: center; font-size: clamp(1.2rem, 1rem + 0.75vw, 1.65rem); font-weight: 560; letter-spacing: -0.022em; line-height: 1.25; color: var(--t1); text-wrap: balance; text-shadow: 0 2px 18px rgba(14, 14, 17, 0.9); }
-/* lo que sigue al muro (el manifiesto) sube a encontrarlo; su velo aparece con su luz */
+/* lo que sigue al muro (el manifiesto) sube a encontrarlo; su velo aparece con su luz. Su borde de arriba
+   entra transparente: si no, corta con una línea recta la última fila de logos que queda debajo (Nico, 05/11). */
 .muro + .manifiesto { margin-top: calc(-1 * clamp(60px, 12vh, 140px)); }
+.muro + .manifiesto .man-pin {
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 clamp(90px, 16vh, 180px));
+  mask-image: linear-gradient(to bottom, transparent 0, #000 clamp(90px, 16vh, 180px)); }
 .man-pin .velo-man { opacity: 0; transition: opacity 1.4s ease; }
 .man-pin:has(canvas.luz.vivo) .velo-man, html:not(.js) .man-pin .velo-man { opacity: 1; }
 
