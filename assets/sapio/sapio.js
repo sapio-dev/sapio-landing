@@ -124,15 +124,31 @@
       etapas.push({ linea: n - 1, faltan: 0, enc: 0.75 });
     }
     const contador = vivoManifiesto(man, anioEl);
-    // En el final, el número se corre hasta el borde izquierdo del texto (en el teléfono ya está ahí).
+    // En el final, el número se corre hasta el borde izquierdo del texto (en el teléfono ya está ahí), y las
+    // cifras quedan a la derecha, en la columna donde estaba el año. Esa columna se ensancha con el número,
+    // así que el número no puede pasar de la mitad del ancho (menos el espacio entre columnas): con más
+    // cifras (10.000, 100.000…) se achica para caber. En el teléfono, una sola columna, basta con el ancho.
     const caja = $('.anio-caja', man);
     // Se mide con el ancho final: el separador de miles (y las columnas plegadas) todavía no se abrieron.
+    const crece = () => $$('.anio-sep, .dg.plegada', caja).reduce((s, el) => s + Math.max(0, el.scrollWidth - el.offsetWidth), 0);
     const correr = () => {
       if (!caja) return;
-      const crece = $$('.anio-sep, .dg.plegada', caja).reduce((s, el) => s + Math.max(0, el.scrollWidth - el.offsetWidth), 0);
-      man.style.setProperty('--dx', `${texto.offsetLeft - (caja.offsetLeft - crece)}px`);
+      const grid = caja.closest('.man-grid') || man;
+      const cs = getComputedStyle(grid);
+      const unaColumna = cs.gridTemplateColumns.trim().split(/\s+/).length < 2;
+      const ancho = grid.clientWidth - parseFloat(cs.paddingLeft || 0) - parseFloat(cs.paddingRight || 0);
+      const libre = unaColumna ? ancho : (ancho - (parseFloat(cs.columnGap) || 0)) / 2;
+      man.style.removeProperty('--anio-escala');
+      const numero = caja.offsetWidth + crece();
+      if (numero > libre) man.style.setProperty('--anio-escala', (libre / numero).toFixed(4));
+      man.style.setProperty('--dx', `${texto.offsetLeft - (caja.offsetLeft - crece())}px`);
     };
     addEventListener('resize', correr);
+    // Se vuelve a medir cuando el número suma una cifra (de 9.999 a 10.000) y cuando termina de cargar la letra:
+    // medido antes, el número quedaba corrido a la izquierda y se cortaba (sapio.dev, 15/11).
+    const enVivo = () => man.classList.contains('en-vivo') && correr();
+    man.addEventListener('vivo:ancho', enVivo);
+    if (document.fonts) document.fonts.ready.then(enVivo);
     if (contador) etapas.push({ linea: n - 1, faltan: 0, enc: 1, vivo: true });
     // Las columnas del año son las que no están plegadas; el año descansa en la segunda vuelta (d + 10).
     const ponerAnio = (y) => {
@@ -232,6 +248,7 @@
       const col = '0123456789'.repeat(5).split('').map((x) => `<span>${x}</span>`).join('');
       $('.anio-n', anioEl).innerHTML = texto.split('').map((ch) => (/\d/.test(ch) ? `<span class="dg plegada" style="--d:${+ch + 30}"><span class="dg-in">${col}</span></span>` : `<span class="anio-sep">${ch}</span>`)).join('');
       columnas().slice(-4).forEach((c) => c.classList.remove('plegada')); // el año vuelve a ocupar las últimas cuatro
+      man.dispatchEvent(new Event('vivo:ancho')); // el número cambió de ancho: hay que volver a ubicarlo
     };
     const pintar = (valor, spin) => {
       const texto = fmt(valor), ds = texto.replace(/\D/g, '');

@@ -330,8 +330,10 @@ canvas.campo.sin-gl { background-image: radial-gradient(rgba(214, 222, 236, 0.26
 .js .man-texto.final .man-final { opacity: 1; filter: none; transform: translateY(-50%); pointer-events: auto; }
 .man-final .link { margin-top: 26px; }
 .man-anio { display: flex; flex-direction: column; align-items: flex-end; gap: 14px; }
-.anio { font-size: clamp(4.5rem, 1.6rem + 11vw, 13.5rem); font-weight: 300; letter-spacing: -0.04em; line-height: 0.9; color: var(--t1); transition: color 0.8s var(--e-out); }
+.anio { --anio-tam: clamp(4.5rem, 1.6rem + 11vw, 13.5rem); font-size: var(--anio-tam); font-weight: 300; letter-spacing: -0.04em; line-height: 0.9; color: var(--t1); transition: color 0.8s var(--e-out); }
 .anio.hoy { color: #fff; }
+/* En vivo, el total se achica si no cabe en la columna del texto (sapio.js mide y pone --anio-escala). */
+.manifiesto.en-vivo .anio { font-size: calc(var(--anio-tam) * var(--anio-escala, 1)); }
 /* El halo va en el contenedor: como sombra del texto, cada columna de dígitos lo recortaba y se veía un rectángulo. */
 .anio-n { display: inline-flex; filter: drop-shadow(0 10px 60px rgba(120, 150, 255, 0)); transition: filter 0.8s var(--e-out); }
 .anio.hoy .anio-n { filter: drop-shadow(0 10px 60px rgba(120, 150, 255, 0.35)); }
@@ -1194,7 +1196,7 @@ html:not(.js) .tt-avance { display: none; }
   .cab { grid-template-columns: 1fr; gap: 20px; }
   .man-grid { grid-template-columns: 1fr; gap: 24px; }
   .man-anio { order: -1; align-items: flex-start; }
-  .anio { font-size: clamp(4rem, 2rem + 12vw, 7rem); }
+  .anio { --anio-tam: clamp(4rem, 2rem + 12vw, 7rem); }
   
   
   
