@@ -25,7 +25,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="/assets/sapio/fonts/host-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/sapio/fonts/martian-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/sapio/sapio.css?v=0a01457f03">
+<link rel="stylesheet" href="/assets/sapio/sapio.css?v=29855467de">
 <script>document.documentElement.classList.add('js')</script>
 <!-- Google Tag Manager: solo en sapio.dev; en local y en las vistas previas no, para que las pruebas no ensucien la medición -->
 <script>if(/^(www\.)?sapio\.dev$/.test(location.hostname)){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -114,7 +114,42 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
 
     <div class="ficha ficha-agenda" id="ficha">
-      <div id="fCal" class="ficha-paso">
+      <div class="ficha-prog" id="fProg" aria-hidden="true"><i></i><i></i></div>
+
+      <form id="fForm" class="ficha-paso" novalidate>
+        <h2 class="ficha-h" tabindex="-1" id="fFormH">Cuéntanos qué trabajo te frena.</h2>
+        <p class="ficha-sub">Cuatro preguntas para llegar a la reunión con tu caso estudiado. Después eliges la hora.</p>
+        <div class="campo campo-ancho">
+          <label for="fTarea">¿Qué tarea repetitiva le quita más tiempo a tu equipo?</label>
+          <textarea id="fTarea" name="tarea" rows="2" maxlength="600" required placeholder="Ej.: responder cotizaciones por WhatsApp"></textarea>
+          <p class="err" id="eTarea"></p>
+        </div>
+        <div class="campo campo-ancho">
+          <label for="fSistemas">¿Qué sistemas o planillas usan hoy para eso?</label>
+          <textarea id="fSistemas" name="sistemas" rows="2" maxlength="600" required placeholder="Ej.: Excel, un ERP, el correo, WhatsApp Business…"></textarea>
+          <p class="err" id="eSistemas"></p>
+        </div>
+        <fieldset class="campo campo-ancho" id="fHoras">
+          <legend>¿Cuántas horas a la semana se van en esa tarea?</legend>
+          <div class="opciones">
+            <label><input type="radio" name="horas" value="menos de 5" required><span>Menos de 5</span></label>
+            <label><input type="radio" name="horas" value="5 a 15"><span>5 a 15</span></label>
+            <label><input type="radio" name="horas" value="15 a 40"><span>15 a 40</span></label>
+            <label><input type="radio" name="horas" value="más de 40"><span>Más de 40</span></label>
+          </div>
+          <p class="err" id="eHoras"></p>
+        </fieldset>
+        <div class="campo campo-ancho">
+          <label for="fTraspaso">¿Qué información tienen que pasar a mano de un lugar a otro? <span class="opc">opcional</span></label>
+          <textarea id="fTraspaso" name="traspaso" rows="2" maxlength="600" placeholder="Ej.: los datos del pedido del correo al sistema de facturación"></textarea>
+        </div>
+        <input class="hp" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn btn-l" id="fBtn" type="submit">Elegir la hora <svg class="i ar" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <p class="ficha-priv">Tus respuestas van solo en la invitación de la reunión. <a href="/privacidad">Política de Privacidad</a>.</p>
+      </form>
+      <noscript><style>#fForm, #fProg { display: none !important; } #fCal { display: block !important; }</style></noscript>
+
+      <div id="fCal" class="ficha-paso" hidden>
         <h2 class="ficha-h">Elige la hora.</h2>
         <p class="ficha-sub">Con un experto de Sapio. La invitación te llega al correo.</p>
         <div id="calEmbed" class="cal-caja" aria-busy="true">
@@ -155,8 +190,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <script type="application/json" id="sapio-datos">{"lang":"es","agenda":{"title":"Elige la hora.","sub":"Con un experto de Sapio. La invitación te llega al correo.","loading":"Cargando la agenda…","fallback":"La agenda no cargó.","fallbackLink":"Ábrela en cal.com","privacy":"Usamos tus datos solo para coordinar la reunión.","privacyLink":"Política de Privacidad","doneK":"Reunión agendada","doneH":"Nos vemos en la videollamada.","doneP":"La invitación con el link ya va camino a tu correo.","back":"Volver al inicio"},"cal":"sapio-dev-cxug4f/30min"}</script>
 <script src="/js/funnel.js"></script>
-<script src="/assets/sapio/sapio.js?v=0a01457f03" defer></script>
-<script src="/assets/sapio/analisis.js?v=0a01457f03" defer></script>
-<script src="/assets/sapio/luz.js?v=0a01457f03" defer></script>
+<script src="/assets/sapio/sapio.js?v=29855467de" defer></script>
+<script src="/assets/sapio/analisis.js?v=29855467de" defer></script>
+<script src="/assets/sapio/luz.js?v=29855467de" defer></script>
 </body>
 </html>

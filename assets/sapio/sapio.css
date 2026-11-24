@@ -632,6 +632,9 @@ html:not(.js) .trab-ic { color: var(--azul); background: var(--azul-t); box-shad
 .campo input::placeholder, .campo textarea::placeholder { color: var(--t3); }
 .campo input:hover, .campo select:hover, .campo textarea:hover { box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.24); }
 .campo input:focus, .campo select:focus, .campo textarea:focus { outline: none; background: #1f1f25; box-shadow: inset 0 0 0 1px rgba(85, 166, 252, 0.7), 0 0 0 4px rgba(85, 166, 252, 0.16); }
+.campo textarea { height: auto; min-height: 76px; padding: 12px 14px; line-height: 1.45; resize: vertical; }
+.campo textarea[aria-invalid='true'] { box-shadow: inset 0 0 0 1px var(--rojo), 0 0 0 4px rgba(242, 115, 115, 0.14); }
+.campo-ancho + .campo-ancho { margin-top: 18px; }
 .campo input[aria-invalid='true'] { box-shadow: inset 0 0 0 1px var(--rojo), 0 0 0 4px rgba(242, 115, 115, 0.14); }
 .campo .err { min-height: 0; font-size: 13px; color: var(--rojo); }
 .campo .err:empty { display: none; }
@@ -687,6 +690,10 @@ html:not(.js) .trab-ic { color: var(--azul); background: var(--azul-t); box-shad
   .agenda .ficha { padding: 30px; }
   .agenda .cal-caja { width: 776px; }
   #fCal .ficha-h, #fCal .ficha-sub, #fCal .ficha-priv { padding-left: 28px; }
+  /* Las preguntas previas (24/11) y la barra de pasos van al mismo ancho que el contenido de la agenda
+     (720 px al centro del iframe), para que el paso 1 y el 2 queden alineados. */
+  #fForm { padding: 0 28px; }
+  .agenda .ficha-prog { margin-left: 28px; margin-right: 28px; }
 }
 @media (max-width: 960px) {
   .analisis-grid.agenda { grid-template-columns: minmax(0, 1fr); grid-template-areas: 'txt' 'ficha' 'mas'; }
