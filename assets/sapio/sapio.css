@@ -1455,6 +1455,28 @@ html:not(.js) .tt-avance { display: none; }
   #fForm .opciones span { min-height: 36px; padding: 6px 13px; }
   #fBtn { margin-top: 18px; height: 48px; }
   #fForm .ficha-priv { margin-top: 10px; }
+  /* La columna de la izquierda también cabe (24/11): todo sube un poco y los pasos se juntan. */
+  .analisis { padding-top: calc(68px + 8px); }
+  .agenda .analisis-txt .lead { margin-top: 14px; font-size: 1rem; }
+  .agenda .analisis-pasos { margin-top: 24px; gap: 12px; }
+  .agenda .analisis-pasos p { font-size: 14px; }
+  .agenda .analisis-datos { margin-top: 22px; }
+  /* La agenda: el mes de Cal.com mide 570 px y no se achica, así que la tarjeta se ciñe a él. El aviso de
+     privacidad lo repite Cal.com en su formulario. */
+  .agenda .ficha:has(#fCal:not([hidden])) { padding-top: 12px; padding-bottom: 12px; }
+  #fCal .ficha-h { font-size: 1.2rem; }
+  #fCal .ficha-sub, #fCal .ficha-priv { display: none; }
+  .agenda .cal-caja { margin-top: 8px; }
+}
+/* Con menos de 720 px de alto (13" con la barra de marcadores, o el zoom alto) ni el título entra: queda
+   solo el calendario. */
+@media (min-width: 961px) and (max-height: 720px) {
+  #fCal .ficha-h { display: none; }
+  /* Y los tres pasos quedan solo con su título. */
+  .agenda .analisis-pasos li { align-items: center; }
+  .agenda .analisis-pasos p { display: none; }
+  .agenda .ficha:has(#fCal:not([hidden])) { padding-top: 6px; padding-bottom: 6px; }
+  .agenda .cal-caja { margin-top: 0; }
 }
 
 /* Los tres pilares de la portada (05/11): el trabajo hecho, a la medida y el precio. Cada titular sube un
