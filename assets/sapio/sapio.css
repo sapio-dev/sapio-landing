@@ -1442,6 +1442,19 @@ html:not(.js) .tt-avance { display: none; }
   #fCal .ficha-h { font-size: 1.4rem; }
   #fCal .ficha-sub { margin-top: 4px; }
   .agenda .cal-caja { margin-top: 12px; }
+  /* Las preguntas previas (24/11) también caben enteras: campos de una línea que crecen al escribir,
+     menos aire entre preguntas y el mismo título compacto de la agenda. */
+  .agenda .ficha-prog { margin-bottom: 14px; }
+  /* En la agenda la barra de pasos le quitaría alto al mes: con poca pantalla se va, como antes del 24/11. */
+  .agenda .ficha-prog.dos, .agenda .ficha-prog.fin { display: none; }
+  #fForm .ficha-h { font-size: 1.4rem; }
+  #fForm .ficha-sub { margin-top: 4px; font-size: 14.5px; }
+  #fForm .campo-ancho { margin-top: 14px; }
+  #fForm .campo { gap: 5px; }
+  #fForm .campo textarea { min-height: 46px; max-height: 120px; padding-top: 11px; padding-bottom: 11px; field-sizing: content; }
+  #fForm .opciones span { min-height: 36px; padding: 6px 13px; }
+  #fBtn { margin-top: 18px; height: 48px; }
+  #fForm .ficha-priv { margin-top: 10px; }
 }
 
 /* Los tres pilares de la portada (05/11): el trabajo hecho, a la medida y el precio. Cada titular sube un
