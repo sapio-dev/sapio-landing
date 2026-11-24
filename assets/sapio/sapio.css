@@ -1456,7 +1456,11 @@ html:not(.js) .tt-avance { display: none; }
   #fBtn { margin-top: 18px; height: 48px; }
   #fForm .ficha-priv { margin-top: 10px; }
   /* La columna de la izquierda también cabe (24/11): todo sube un poco y los pasos se juntan. */
-  .analisis { padding-top: calc(68px + 8px); }
+  /* La barra es fija y llega a 78 px (68 de alto + 10 de margen): el contenido parte bajo ella y se
+     centra en el alto que queda, con el mismo aire arriba y abajo. Si no entra (la agenda en las
+     pantallas más bajas), se alinea arriba en vez de cortarse («safe»). */
+  .analisis { display: flex; flex-direction: column; justify-content: safe center; padding-top: calc(78px + 16px); padding-bottom: 16px; }
+  .analisis:has(#fCal:not([hidden])) { padding-top: calc(78px + 10px); padding-bottom: 10px; }
   .agenda .analisis-txt .lead { margin-top: 14px; font-size: 1rem; }
   .agenda .analisis-pasos { margin-top: 24px; gap: 12px; }
   .agenda .analisis-pasos p { font-size: 14px; }
@@ -1477,6 +1481,15 @@ html:not(.js) .tt-avance { display: none; }
   .agenda .analisis-pasos p { display: none; }
   .agenda .ficha:has(#fCal:not([hidden])) { padding-top: 6px; padding-bottom: 6px; }
   .agenda .cal-caja { margin-top: 0; }
+  /* Las preguntas, sin subtítulo y con menos aire (13" de 600 px de alto útil). La agenda la escala
+     analisis.js para que el mes entre entero. */
+  #fForm .ficha-sub { display: none; }
+  .agenda .ficha-prog { margin-bottom: 12px; }
+  #fForm .ficha-h { margin-bottom: 2px; }
+  #fForm .campo-ancho { margin-top: 12px; }
+  #fBtn { margin-top: 16px; }
+  .cal-caja.escalada { min-height: 0; }
+  .cal-caja.escalada iframe { transform-origin: top center; }
 }
 
 /* Los tres pilares de la portada (05/11): el trabajo hecho, a la medida y el precio. Cada titular sube un

@@ -66,6 +66,33 @@
     Cal.ns.agenda('on', { action: 'linkFailed', callback: respaldo });
     Cal.ns.agenda('on', { action: 'linkReady', callback: () => { lista = true; caja.removeAttribute('aria-busy'); caja.classList.add('lista'); } });
 
+    // Pantallas bajas (13" con ~600 px útiles): el mes de Cal.com mide ~570 px y no se achica desde
+    // afuera, así que se escala lo justo para que entre bajo la barra (nunca a menos de 80%). Cal.com
+    // cambia el alto del iframe solo (meses de 5 o 6 semanas, el formulario de la reserva): se recalcula.
+    const bajo = matchMedia('(min-width: 961px) and (max-height: 720px)');
+    const ajustar = () => {
+      const ifr = caja.querySelector('iframe');
+      if (!ifr) return;
+      ifr.style.transform = '';
+      caja.style.height = '';
+      caja.classList.remove('escalada');
+      if (!bajo.matches) return;
+      const alto = ifr.offsetHeight;
+      const libre = innerHeight - 78 - 20 - 14; // barra fija, aire de la sección, borde y relleno de la tarjeta
+      const s = Math.max(0.8, Math.min(1, libre / alto));
+      if (s >= 1) return;
+      caja.classList.add('escalada');
+      ifr.style.transform = 'scale(' + s.toFixed(3) + ')';
+      caja.style.height = Math.ceil(alto * s) + 'px';
+    };
+    new MutationObserver(() => {
+      const ifr = caja.querySelector('iframe');
+      if (!ifr || ifr.dataset.vigilado) return;
+      ifr.dataset.vigilado = '1';
+      new ResizeObserver(() => requestAnimationFrame(ajustar)).observe(ifr);
+    }).observe(caja, { childList: true, subtree: true });
+    addEventListener('resize', ajustar);
+
     Cal.ns.agenda('on', { action: 'bookerViewed', callback: () => una('booking_started', { entry_point: entrada }) });
     if (!form) {
       // Sin preguntas, el primer clic dentro de la agenda es el inicio: el foco pasa al iframe de Cal.com.
